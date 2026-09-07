@@ -1,0 +1,129 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
+import AIPropertyAssistant from '../components/AIPropertyAssistant.astro';
+import { siteConfig } from '../config/site';
+import { url } from '../utils/url';
+
+type Props = {
+  title: string;
+  description: string;
+  /** Absolute or base-relative path to a social share image. */
+  ogImage?: string;
+  noindex?: boolean;
+  /** Extra JSON-LD for this page, on top of the site-wide Organization/WebSite graph. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** The mobile action bar is hidden on pages where it would duplicate the main CTA. */
+  hideMobileBar?: boolean;
+  bodyClass?: string;
+};
+
+const {
+  title,
+  description,
+  ogImage,
+  noindex = false,
+  jsonLd,
+  hideMobileBar = false,
+  bodyClass = '',
+} = Astro.props;
+
+const fullTitle = title.includes(siteConfig.name) ? title : `${title} — ${siteConfig.name}`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'http://localhost:4321').href;
+const shareImage = new URL(ogImage ?? url('/og-default.jpg'), Astro.site ?? 'http://localhost:4321')
+  .href;
+
+const orgId = `${Astro.site ?? 'http://localhost:4321/'}#organization`;
+const siteGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'RealEstateAgent',
+      '@id': orgId,
+      name: siteConfig.name,
+      slogan: siteConfig.tagline,
+      description: siteConfig.description,
+      url: Astro.site?.href,
+      areaServed: { '@type': 'City', name: 'Hyderabad', address: { '@type': 'PostalAddress', addressRegion: siteConfig.state, addressCountry: 'IN' } },
+      ...(siteConfig.phone ? { telephone: siteConfig.phone } : {}),
+      ...(siteConfig.email ? { email: siteConfig.email } : {}),
+      sameAs: [siteConfig.social.instagram, siteConfig.social.facebook].filter(Boolean),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${Astro.site ?? 'http://localhost:4321/'}#website`,
+      url: Astro.site?.href,
+      name: siteConfig.name,
+      publisher: { '@id': orgId },
+      inLanguage: 'en-IN',
+    },
+  ],
+};
+
+const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+    <link rel="alternate icon" href={url('/favicon.ico')} sizes="any" />
+    <link rel="apple-touch-icon" href={url('/favicon.png')} />
+    <link rel="sitemap" href={url('/sitemap-index.xml')} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={shareImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={shareImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300..800&family=Anek+Telugu:wght@500;700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(siteGraph)} is:inline />
+    {
+      extraLd.map((ld) => (
+        <script type="application/ld+json" set:html={JSON.stringify(ld)} is:inline />
+      ))
+    }
+  </head>
+  <body class={bodyClass}>
+    <a
+      href="#main"
+      class="ui sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+      >Skip to content</a
+    >
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    {!hideMobileBar && <MobileActionBar />}
+    <AIPropertyAssistant />
+    <script>
+      import '../scripts/favourites';
+    </script>
+  </body>
+</html>

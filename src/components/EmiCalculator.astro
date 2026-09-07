@@ -1,0 +1,161 @@
+---
+import { calcEmi } from '../utils/emi';
+import { formatRupees } from '../utils/format';
+
+type Props = {
+  /** Starting loan amount in rupees. */
+  principal?: number;
+  ratePct?: number;
+  years?: number;
+  heading?: string;
+  compact?: boolean;
+};
+
+const {
+  principal = 5_000_000,
+  ratePct = 8.5,
+  years = 20,
+  heading = 'EMI calculator',
+  compact = false,
+} = Astro.props;
+
+// Rendered server-side so the numbers are correct before any JavaScript runs.
+const initial = calcEmi({ principal, ratePct, years });
+const principalShare = Math.round((principal / initial.totalPayment) * 100);
+---
+
+<div
+  class="rounded-panel border border-line bg-bg p-5"
+  data-emi
+  data-default-principal={principal}
+  data-default-rate={ratePct}
+  data-default-years={years}
+>
+  <h2 class:list={[compact ? 'text-[1.1rem]' : 'text-display-3']}>{heading}</h2>
+  <p class="mt-1.5 text-[0.9rem] text-ink-muted">
+    Reducing-balance EMI. Runs entirely in your browser — nothing is sent anywhere.
+  </p>
+
+  <div class="mt-5 grid gap-4 sm:grid-cols-3">
+    <div>
+      <label class="field-label" for={`emi-principal-${principal}`}>Loan amount (₹)</label>
+      <input
+        id={`emi-principal-${principal}`}
+        class="field"
+        type="number"
+        min="100000"
+        step="100000"
+        value={principal}
+        data-emi-principal
+      />
+    </div>
+    <div>
+      <label class="field-label" for={`emi-rate-${principal}`}>Interest rate (% p.a.)</label>
+      <input
+        id={`emi-rate-${principal}`}
+        class="field"
+        type="number"
+        min="0"
+        max="30"
+        step="0.05"
+        value={ratePct}
+        data-emi-rate
+      />
+    </div>
+    <div>
+      <label class="field-label" for={`emi-years-${principal}`}>Tenure (years)</label>
+      <input
+        id={`emi-years-${principal}`}
+        class="field"
+        type="number"
+        min="1"
+        max="35"
+        step="1"
+        value={years}
+        data-emi-years
+      />
+    </div>
+  </div>
+
+  <div class="mt-6 border-t border-line pt-5">
+    <p class="ui text-[0.85rem] font-semibold text-ink-muted">Monthly EMI</p>
+    <p class="ui mt-1 text-[2.1rem] font-bold leading-none tracking-[-0.035em]" data-emi-emi aria-live="polite">
+      {formatRupees(initial.emi)}
+    </p>
+
+    <!-- Composition bar: principal against total interest. -->
+    <div class="mt-5">
+      <div class="flex h-2.5 overflow-hidden rounded-full bg-line" role="presentation">
+        <div
+          class="bg-ink transition-[width] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
+          style={`width: ${principalShare}%`}
+          data-emi-bar-principal
+        >
+        </div>
+        <div
+          class="bg-gold transition-[width] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
+          style={`width: ${100 - principalShare}%`}
+          data-emi-bar-interest
+        >
+        </div>
+      </div>
+
+      <dl class="ui mt-4 grid gap-3 sm:grid-cols-3">
+        <div class="flex items-start gap-2">
+          <span class="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-ink" aria-hidden="true"></span>
+          <div>
+            <dt class="text-[0.82rem] text-ink-subtle">Principal</dt>
+            <dd class="text-[1.02rem] font-bold" data-emi-principal-out>{formatRupees(principal)}</dd>
+          </div>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-gold" aria-hidden="true"></span>
+          <div>
+            <dt class="text-[0.82rem] text-ink-subtle">Total interest</dt>
+            <dd class="text-[1.02rem] font-bold" data-emi-interest>
+              {formatRupees(initial.totalInterest)}
+            </dd>
+          </div>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm bg-line-strong" aria-hidden="true"></span>
+          <div>
+            <dt class="text-[0.82rem] text-ink-subtle">Total payment</dt>
+            <dd class="text-[1.02rem] font-bold" data-emi-total>{formatRupees(initial.totalPayment)}</dd>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { calcEmi } from '../utils/emi';
+
+  const inr = (n: number) => `₹${Math.round(n).toLocaleString('en-IN')}`;
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-emi]')) {
+    const q = <T extends Element>(sel: string) => root.querySelector<T>(sel);
+    const principalEl = q<HTMLInputElement>('[data-emi-principal]')!;
+    const rateEl = q<HTMLInputElement>('[data-emi-rate]')!;
+    const yearsEl = q<HTMLInputElement>('[data-emi-years]')!;
+
+    const update = () => {
+      const principal = Number(principalEl.value) || 0;
+      const ratePct = Number(rateEl.value) || 0;
+      const years = Number(yearsEl.value) || 1;
+      const { emi, totalInterest, totalPayment } = calcEmi({ principal, ratePct, years });
+
+      q('[data-emi-emi]')!.textContent = inr(emi);
+      q('[data-emi-principal-out]')!.textContent = inr(principal);
+      q('[data-emi-interest]')!.textContent = inr(totalInterest);
+      q('[data-emi-total]')!.textContent = inr(totalPayment);
+
+      const share = totalPayment > 0 ? (principal / totalPayment) * 100 : 100;
+      q<HTMLElement>('[data-emi-bar-principal]')!.style.width = `${share}%`;
+      q<HTMLElement>('[data-emi-bar-interest]')!.style.width = `${100 - share}%`;
+    };
+
+    for (const el of [principalEl, rateEl, yearsEl]) el.addEventListener('input', update);
+  }
+</script>

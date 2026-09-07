@@ -1,0 +1,57 @@
+---
+import Icon from './Icon.astro';
+import { getWhatsAppLink, getTelLink } from '../utils/whatsapp';
+
+type Props = {
+  /** Message used by the WhatsApp and Enquire actions on this page. */
+  message?: string;
+};
+
+const { message = "Hi, I'd like help finding a property in Hyderabad." } = Astro.props;
+const tel = getTelLink();
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 border-t border-line bg-bg md:hidden"
+  style="z-index: var(--z-bottom-bar); padding-bottom: env(safe-area-inset-bottom)"
+>
+  <div class="grid grid-cols-3 divide-x divide-line">
+    <a
+      href={getWhatsAppLink(message)}
+      target="_blank"
+      rel="noopener"
+      class="ui flex flex-col items-center gap-1 py-2.5 text-[0.72rem] font-semibold text-ink"
+    >
+      <Icon name="whatsapp" size={19} />
+      WhatsApp
+    </a>
+    {
+      tel ? (
+        <a href={tel} class="ui flex flex-col items-center gap-1 py-2.5 text-[0.72rem] font-semibold text-ink">
+          <Icon name="phone" size={19} />
+          Call
+        </a>
+      ) : (
+        <a
+          href={getWhatsAppLink('Hi, could someone call me back about a property?')}
+          target="_blank"
+          rel="noopener"
+          class="ui flex flex-col items-center gap-1 py-2.5 text-[0.72rem] font-semibold text-ink"
+        >
+          <Icon name="phone" size={19} />
+          Call back
+        </a>
+      )
+    }
+    <button
+      type="button"
+      data-assistant-open
+      class="ui flex flex-col items-center gap-1 py-2.5 text-[0.72rem] font-semibold text-gold-ink"
+    >
+      <Icon name="spark" size={19} />
+      Enquire
+    </button>
+  </div>
+</div>
+<!-- Spacer so the bar never covers the last line of the footer. -->
+<div class="h-[4.25rem] md:hidden" aria-hidden="true"></div>

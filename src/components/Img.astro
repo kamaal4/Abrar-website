@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import { getImage, type ImageKey } from '../data/images';
+
+type Props = {
+  image: ImageKey;
+  /** Override the registry alt text when the context needs something more specific. */
+  alt?: string;
+  widths?: number[];
+  sizes?: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  quality?: number;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+};
+
+const {
+  image,
+  alt,
+  widths,
+  sizes,
+  width,
+  height,
+  class: className,
+  quality = 70,
+  loading = 'lazy',
+  fetchpriority,
+} = Astro.props;
+
+const { src, credit } = getImage(image);
+---
+
+<Image
+  src={src}
+  alt={alt ?? credit.alt}
+  widths={widths}
+  quality={quality}
+  sizes={sizes}
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+  decoding={loading === 'eager' ? 'sync' : 'async'}
+  fetchpriority={fetchpriority}
+/>

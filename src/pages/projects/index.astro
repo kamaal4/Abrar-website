@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+import { getAllProjects, PROJECT_DATA_NOTICE } from '../../data/projects';
+import { statusLabels } from '../../types';
+
+const projects = getAllProjects();
+const groups = (['new-launch', 'under-construction', 'ready-to-move'] as const).map((status) => ({
+  status,
+  label: statusLabels[status],
+  items: projects.filter((p) => p.status === status),
+}));
+---
+
+<BaseLayout
+  title="Projects in Hyderabad"
+  description="New launches, under-construction towers and ready-to-move developments across Hyderabad, grouped by possession status."
+>
+  <section class="border-b border-line bg-surface">
+    <div class="shell py-8 sm:py-10">
+      <Breadcrumbs items={[{ label: 'Projects' }]} />
+      <h1 class="mt-3 text-display-2">Projects in Hyderabad</h1>
+      <p class="measure mt-3 text-[1.02rem] leading-relaxed text-ink-muted">
+        Grouped by possession status, because that is the decision that matters most. A new launch
+        and a ready building are not competing on price — they are competing on how long you wait and
+        how much risk you carry.
+      </p>
+      <p class="mt-3 text-[0.85rem] text-ink-subtle">{PROJECT_DATA_NOTICE}</p>
+    </div>
+  </section>
+
+  <div class="shell band">
+    {
+      groups
+        .filter((g) => g.items.length > 0)
+        .map((group, i) => (
+          <section class:list={[i > 0 ? 'mt-14 border-t border-line pt-10' : '']} id={group.status}>
+            <h2 class="text-display-3">{group.label}</h2>
+            <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {group.items.map((p) => (
+                <ProjectCard project={p} />
+              ))}
+            </div>
+          </section>
+        ))
+    }
+
+    <div class="mt-14 rounded-panel border border-line bg-surface p-6 sm:p-8">
+      <h2 class="text-[1.3rem]">Looking at a project we have not listed?</h2>
+      <p class="measure mt-2.5 text-[0.98rem] leading-relaxed text-ink-muted">
+        Send us the name. We will tell you what we know about the developer's delivery record, what
+        the current pricing looks like, and what to ask them before you pay anything.
+      </p>
+      <div class="mt-5">
+        <WhatsAppButton
+          label="Ask about a project"
+          message="Hi, I'd like to know more about a project in Hyderabad:"
+        />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

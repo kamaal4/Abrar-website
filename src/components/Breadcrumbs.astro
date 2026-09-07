@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+import { url } from '../utils/url';
+
+type Crumb = { label: string; href?: string };
+type Props = { items: Crumb[]; tone?: 'light' | 'dark' };
+const { items, tone = 'light' } = Astro.props;
+const all: Crumb[] = [{ label: 'Home', href: '/' }, ...items];
+---
+
+<nav aria-label="Breadcrumb" class="ui text-[0.82rem]">
+  <ol class="flex flex-wrap items-center gap-1.5">
+    {
+      all.map((c, i) => (
+        <li class="flex items-center gap-1.5">
+          {c.href && i < all.length - 1 ? (
+            <a
+              href={url(c.href)}
+              class:list={[
+                'transition-colors',
+                tone === 'dark' ? 'text-white/70 hover:text-white' : 'text-ink-subtle hover:text-ink',
+              ]}
+            >
+              {c.label}
+            </a>
+          ) : (
+            <span class:list={[tone === 'dark' ? 'text-white' : 'text-ink', 'font-semibold']}>
+              {c.label}
+            </span>
+          )}
+          {i < all.length - 1 && (
+            <Icon
+              name="chevron-right"
+              size={12}
+              class={tone === 'dark' ? 'text-white/40' : 'text-line-strong'}
+            />
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

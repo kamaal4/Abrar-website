@@ -1,0 +1,29 @@
+---
+type Props = {
+  items: { q: string; a: string }[];
+  title?: string;
+};
+const { items, title = 'Common questions' } = Astro.props;
+---
+
+<div>
+  <h2 class="text-display-3">{title}</h2>
+  <div class="mt-5 border-t border-line">
+    {
+      items.map((item) => (
+        <details class="group border-b border-line">
+          <summary
+            class="ui flex cursor-pointer items-start justify-between gap-4 py-4 text-[1.02rem] font-semibold marker:content-none"
+          >
+            {item.q}
+            <span
+              class="mt-1 shrink-0 text-ink-subtle transition-transform duration-300 group-open:rotate-45"
+              aria-hidden="true">+</span
+            >
+          </summary>
+          <p class="measure pb-5 text-[0.98rem] leading-relaxed text-ink-muted">{item.a}</p>
+        </details>
+      ))
+    }
+  </div>
+</div>

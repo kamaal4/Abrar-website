@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import Img from '../components/Img.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteConfig } from '../config/site';
+import { url } from '../utils/url';
+
+const principles = [
+  {
+    title: 'We say what we do not know',
+    copy: 'If we have not checked a document, the listing says so. If nobody can answer a question honestly — what a property will be worth in 2033, for instance — we say that too rather than inventing a number.',
+  },
+  {
+    title: 'One city, properly',
+    copy: 'We work Hyderabad and nothing else. That is what lets us tell you which stretch of a road floods, where the water supply is genuinely reliable, and which layout actually has its approvals.',
+  },
+  {
+    title: 'The total cost, not the sticker price',
+    copy: 'Stamp duty, registration, GST where it applies, corpus, interiors. We put the real number in front of you early, because that is the number that decides what you can afford.',
+  },
+  {
+    title: 'The answer that is right for you',
+    copy: 'Sometimes that is "not this property", or "not this area", or "wait six months". We would rather say it than close a sale you regret.',
+  },
+];
+
+const services = [
+  { icon: 'search' as const, title: 'Search and shortlisting', copy: 'We narrow the field against your budget, commute and horizon — then explain why each one made the list.' },
+  { icon: 'shield' as const, title: 'Document checks', copy: 'Title, encumbrance certificate, approvals, RERA, occupancy certificate. We tell you what to have your lawyer look at closely.' },
+  { icon: 'route' as const, title: 'Site visits', copy: 'Arranged, accompanied where it helps, with a list of what to actually look at while you are there.' },
+  { icon: 'calculator' as const, title: 'Cost and loan planning', copy: 'The full acquisition cost and what the EMI does to your monthly position, worked out before you commit.' },
+  { icon: 'compass' as const, title: 'Investment matching', copy: 'Which asset class fits your horizon and risk appetite — apartment, plot, land, or nothing right now.' },
+  { icon: 'send' as const, title: 'Selling and letting', copy: 'A realistic price view, listing, viewings, and offers brought to you with our honest read on each.' },
+];
+---
+
+<BaseLayout
+  title="About us"
+  description={`${siteConfig.name} — a Hyderabad-focused real estate consultancy helping buyers, sellers and investors make property decisions with complete information.`}
+>
+  <section class="border-b border-line bg-surface">
+    <div class="shell py-8 sm:py-10">
+      <Breadcrumbs items={[{ label: 'About' }]} />
+      <h1 class="mt-3 max-w-3xl text-display-2">
+        A Hyderabad property consultancy, not a listings portal
+      </h1>
+      <p class="measure mt-4 text-[1.05rem] leading-relaxed text-ink-muted">
+        {siteConfig.name} exists because buying property in this city is mostly an information problem.
+        There is no shortage of listings — there is a shortage of straight answers about which of them
+        is right for a particular household, and what is wrong with the rest.
+      </p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <div class="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-start lg:gap-14">
+        <div>
+          <h2 class="text-display-3">How we work</h2>
+          <div class="mt-6">
+            {
+              principles.map((p) => (
+                <div class="border-t border-line py-5">
+                  <h3 class="ui text-[1.08rem] font-bold">{p.title}</h3>
+                  <p class="measure mt-2 text-[0.96rem] leading-relaxed text-ink-muted">{p.copy}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="overflow-hidden rounded-panel">
+          <Img
+            image="golconda-city"
+            widths={[500, 800, 1000]}
+            sizes="(min-width: 1024px) 32rem, 92vw"
+            class="aspect-[4/5] w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band border-t border-line bg-surface">
+    <div class="shell">
+      <h2 class="text-display-3">What we do</h2>
+      <div class="mt-7 grid gap-x-12 md:grid-cols-2">
+        {
+          services.map((s) => (
+            <div class="border-t border-line py-5">
+              <h3 class="ui flex items-center gap-2.5 text-[1.05rem] font-bold">
+                <Icon name={s.icon} size={19} class="shrink-0 text-gold-ink" />
+                {s.title}
+              </h3>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">{s.copy}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <div class="rounded-panel border border-line p-6 sm:p-8">
+        <h2 class="text-display-3">About this website</h2>
+        <div class="measure mt-4 space-y-4 text-[0.98rem] leading-relaxed text-ink-muted">
+          <p>
+            We are being upfront about one thing: the properties, projects and prices currently on this
+            site are illustrative sample content, used while the live listing catalogue is being
+            built. Nothing here is an offer, and the figures are for orientation rather than
+            quotation.
+          </p>
+          <p>
+            The photographs of Hyderabad are real — most are contributed images of the city and of
+            Telangana from Wikimedia Commons, credited on the{' '}
+            <a href={url('/credits')} class="font-semibold text-gold-ink underline underline-offset-4"
+              >image credits page</a
+            >. Where an image illustrates a type of interior rather than a specific property, it is
+            stock photography.
+          </p>
+          <p>
+            The property assistant is a scripted demo, clearly labelled as one. It matches against the
+            same sample data as the rest of the site. There is no model behind it and no data leaves
+            your browser.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gold-deep text-white">
+    <div class="shell band-tight">
+      <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <h2 class="text-display-3 text-white">Start with a conversation</h2>
+          <p class="measure mt-3 text-[1rem] leading-relaxed text-white/90">
+            Tell us what you are looking for, or what you are trying to sell. You will get a reply from
+            a person, not a queue.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <WhatsAppButton
+            variant="on-dark"
+            message="Hi, I found your website and I'd like to talk about a property in Hyderabad."
+          />
+          <a href={url('/contact')} class="btn btn-outline-on-dark">Contact details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

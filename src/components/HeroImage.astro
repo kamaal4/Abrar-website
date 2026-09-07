@@ -1,0 +1,61 @@
+---
+import { getImage as getAstroImage } from 'astro:assets';
+import { getImage, type ImageKey } from '../data/images';
+
+/**
+ * Art-directed hero image.
+ *
+ * A wide panorama cropped into a phone-shaped box is a heavily upscaled sliver of the
+ * original, so narrow viewports get a different photograph entirely. <source media>
+ * means the browser downloads exactly one of them.
+ */
+type Props = {
+  wide: ImageKey;
+  narrow: ImageKey;
+  /** Viewport width below which the narrow image is used. */
+  breakpoint?: string;
+  class?: string;
+  alt?: string;
+};
+
+const { wide, narrow, breakpoint = '(max-width: 639px)', class: className, alt } = Astro.props;
+
+const wideAsset = getImage(wide);
+const narrowAsset = getImage(narrow);
+
+const wideSet = await Promise.all(
+  [900, 1280, 1440].map((w) =>
+    getAstroImage({ src: wideAsset.src, width: w, format: 'webp', quality: 70 }),
+  ),
+);
+const narrowSet = await Promise.all(
+  [480, 720, 900].map((w) =>
+    getAstroImage({ src: narrowAsset.src, width: w, format: 'webp', quality: 70 }),
+  ),
+);
+const fallback = wideSet[wideSet.length - 1]!;
+---
+
+<picture>
+  <source
+    media={breakpoint}
+    type="image/webp"
+    srcset={narrowSet.map((i) => `${i.src} ${i.attributes.width ?? i.options.width}w`).join(', ')}
+    sizes="100vw"
+  />
+  <source
+    type="image/webp"
+    srcset={wideSet.map((i) => `${i.src} ${i.attributes.width ?? i.options.width}w`).join(', ')}
+    sizes="100vw"
+  />
+  <img
+    src={fallback.src}
+    width={fallback.attributes.width ?? fallback.options.width}
+    height={fallback.attributes.height ?? fallback.options.height}
+    alt={alt ?? wideAsset.credit.alt}
+    class={className}
+    loading="eager"
+    fetchpriority="high"
+    decoding="sync"
+  />
+</picture>

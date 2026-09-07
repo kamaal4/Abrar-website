@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+import { getWhatsAppLink } from '../utils/whatsapp';
+
+type Props = {
+  /** Pre-filled message. Written in the visitor's voice, not ours. */
+  message?: string;
+  label?: string;
+  variant?: 'primary' | 'solid' | 'outline' | 'ghost' | 'on-dark' | 'outline-on-dark' | 'icon';
+  size?: 'sm' | 'md';
+  class?: string;
+  fullWidth?: boolean;
+};
+
+const {
+  message,
+  label = 'WhatsApp Us',
+  variant = 'primary',
+  size = 'md',
+  class: className = '',
+  fullWidth = false,
+} = Astro.props;
+
+const variantClass = {
+  primary: 'btn btn-primary',
+  solid: 'btn btn-solid',
+  outline: 'btn btn-outline',
+  ghost: 'btn btn-ghost',
+  'on-dark': 'btn btn-on-dark',
+  'outline-on-dark': 'btn btn-outline-on-dark',
+  icon: '',
+}[variant];
+
+const classes = [
+  variantClass,
+  size === 'sm' && variant !== 'icon' ? 'btn-sm' : '',
+  fullWidth ? 'w-full' : '',
+  className,
+].filter(Boolean).join(' ');
+---
+
+{
+  variant === 'icon' ? (
+    <a
+      href={getWhatsAppLink(message)}
+      class={`inline-flex h-10 w-10 items-center justify-center rounded-lg border border-line text-ink transition-colors hover:border-ink hover:text-gold-ink ${className}`}
+      target="_blank"
+      rel="noopener"
+      aria-label={label}
+    >
+      <Icon name="whatsapp" size={20} />
+    </a>
+  ) : (
+    <a href={getWhatsAppLink(message)} class={classes} target="_blank" rel="noopener">
+      <Icon name="whatsapp" size={size === 'sm' ? 16 : 18} />
+      {label}
+    </a>
+  )
+}

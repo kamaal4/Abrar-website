@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../config/site';
+import { url } from '../utils/url';
+---
+
+<BaseLayout
+  title="Privacy policy"
+  description={`How ${siteConfig.name} handles information on this website.`}
+>
+  <section class="border-b border-line bg-surface">
+    <div class="shell py-8 sm:py-10">
+      <Breadcrumbs items={[{ label: 'Privacy Policy' }]} />
+      <h1 class="mt-3 text-display-2">Privacy policy</h1>
+      <p class="mt-3 text-[0.9rem] text-ink-subtle">Last updated: September 2026</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell prose-body">
+      <h2>The short version</h2>
+      <p>
+        This website is a set of static pages. There is no account system, no contact form and no
+        server that receives your data. We do not run analytics or advertising trackers, and we do not
+        set cookies.
+      </p>
+
+      <h2>What stays in your browser</h2>
+      <p>
+        Two features store information locally, on your own device, and nothing is transmitted
+        anywhere:
+      </p>
+      <ul>
+        <li>
+          <strong>Saved properties.</strong> When you tap the heart on a listing, the property
+          reference is kept in your browser's local storage so it is still marked when you return.
+          Clearing your browser data removes it.
+        </li>
+        <li>
+          <strong>The property assistant.</strong> The conversation is generated entirely in your
+          browser from a fixed script. Your answers are not sent to us or to any third party, and they
+          are discarded when you close the page.
+        </li>
+      </ul>
+
+      <h2>What we receive when you contact us</h2>
+      <p>
+        Every enquiry button on this site opens WhatsApp. When you send a message you share your phone
+        number and whatever you write with us, and the message passes through WhatsApp, whose own
+        privacy terms apply. We use what you send to respond to your enquiry and to look for suitable
+        property. We do not sell it or pass it to advertisers.
+      </p>
+      <p>
+        If you follow us on Instagram or Facebook, those platforms handle that interaction under their
+        own policies.
+      </p>
+
+      <h2>Third-party services this site loads</h2>
+      <ul>
+        <li>
+          <strong>Google Fonts</strong> — typefaces are loaded from Google's font servers, which means
+          your browser makes a request to Google and Google receives your IP address as part of it.
+        </li>
+        <li>
+          <strong>Hosting</strong> — the site is served as static files, and the host's standard server
+          logs may record requests.
+        </li>
+      </ul>
+      <p>Images, scripts and styles are otherwise served from this site itself.</p>
+
+      <h2>Your choices</h2>
+      <p>
+        You can clear locally stored data at any time through your browser settings. If you have
+        contacted us and would like us to delete the conversation and your details from our records,
+        message us and we will do it.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this site later adds analytics, a form, or any other data collection, this page will be
+        updated before that happens rather than afterwards.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy can go to the same WhatsApp number as everything else — see the{' '}
+        <a href={url('/contact')}>contact page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

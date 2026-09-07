@@ -1,0 +1,223 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import Img from '../../components/Img.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import PropertyCard from '../../components/PropertyCard.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import EmiCalculator from '../../components/EmiCalculator.astro';
+import { getAllProjects, getProjectBySlug, getSimilarProjects, PROJECT_DATA_NOTICE } from '../../data/projects';
+import { getLocationBySlug } from '../../data/locations';
+import { getPropertiesByLocation } from '../../data/properties';
+import { formatPriceLong } from '../../utils/format';
+import { statusLabels } from '../../types';
+import { url } from '../../utils/url';
+import { getTelLink } from '../../utils/whatsapp';
+
+export const getStaticPaths: GetStaticPaths = () =>
+  getAllProjects().map((p) => ({ params: { slug: p.slug } }));
+
+const { slug } = Astro.params;
+const project = getProjectBySlug(slug!);
+if (!project) throw new Error(`No project for slug "${slug}"`);
+
+const location = getLocationBySlug(project.location);
+const locationName = location?.name ?? project.location;
+const similar = getSimilarProjects(project);
+const nearbyListings = getPropertiesByLocation(project.location, 3);
+const tel = getTelLink();
+
+const facts = [
+  { label: 'Starting price', value: formatPriceLong(project.startingPrice) },
+  { label: 'Configurations', value: project.configurations.join(', ') },
+  { label: 'Possession', value: project.possession },
+  { label: 'Status', value: statusLabels[project.status] },
+  { label: 'Scale', value: project.units },
+  { label: 'Land area', value: project.landArea },
+];
+
+const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} — pricing, availability and possession.`;
+---
+
+<BaseLayout
+  title={`${project.name}, ${locationName}`}
+  description={project.summary}
+>
+  <section class="relative isolate overflow-hidden bg-ink">
+    <Img
+      image={project.images[0]!}
+      widths={[900, 1280, 1440]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-10 h-full w-full object-cover opacity-70"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/60" aria-hidden="true"></div>
+
+    <div class="shell py-8 sm:py-12 lg:py-16">
+      <Breadcrumbs
+        tone="dark"
+        items={[{ label: 'Projects', href: '/projects' }, { label: project.name }]}
+      />
+      <span class="pill pill-verified mt-4 inline-flex">{statusLabels[project.status]}</span>
+      <h1 class="mt-3 text-display-2 text-white">{project.name}</h1>
+      <p class="ui mt-2 flex items-center gap-1.5 text-[1rem] text-white/85">
+        <Icon name="pin" size={17} />
+        {locationName}, Hyderabad
+      </p>
+      <p class="ui mt-5 text-[1.6rem] font-bold tracking-[-0.03em] text-white">
+        From {formatPriceLong(project.startingPrice)}
+      </p>
+    </div>
+  </section>
+
+  <div class="shell-wide py-8 lg:py-12">
+    <div class="grid gap-10 lg:grid-cols-[1fr_21rem] lg:gap-12">
+      <div class="min-w-0">
+        <dl class="ui grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-3">
+          {
+            facts.map((f) => (
+              <div class="bg-bg p-4">
+                <dt class="text-[0.8rem] text-ink-subtle">{f.label}</dt>
+                <dd class="mt-1 text-[1rem] font-bold leading-snug">{f.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <section class="mt-10">
+          <h2 class="text-display-3">About the project</h2>
+          <p class="measure mt-3 text-[1.02rem] leading-relaxed">{project.summary}</p>
+          <p class="mt-4 text-[0.85rem] text-ink-subtle">{PROJECT_DATA_NOTICE}</p>
+        </section>
+
+        <section class="mt-10">
+          <h2 class="text-display-3">What stands out</h2>
+          <ul class="mt-4 grid gap-x-10 sm:grid-cols-2">
+            {
+              project.highlights.map((h) => (
+                <li class="flex gap-2.5 border-t border-line py-3 text-[0.98rem] leading-relaxed">
+                  <Icon name="check" size={17} class="mt-1 shrink-0 text-gold-ink" />
+                  {h}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="mt-10">
+          <h2 class="text-display-3">Amenities</h2>
+          <ul class="ui mt-4 flex flex-wrap gap-1.5">
+            {
+              project.amenities.map((a) => (
+                <li class="rounded-lg border border-line bg-surface px-3 py-1.5 text-[0.88rem] font-medium">
+                  {a}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        {
+          project.images.length > 1 && (
+            <section class="mt-10">
+              <h2 class="text-display-3">Gallery</h2>
+              <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                {project.images.slice(1).map((key) => (
+                  <Img
+                    image={key}
+                    widths={[400, 640, 900]}
+                    sizes="(min-width: 640px) 28rem, 92vw"
+                    class="aspect-[16/10] w-full rounded-card object-cover"
+                  />
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        {
+          location && (
+            <section class="mt-10">
+              <h2 class="text-display-3">Getting around from here</h2>
+              <ul class="ui mt-4 grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-2">
+                {location.connectivity.map((c) => (
+                  <li class="bg-bg p-4">
+                    <p class="text-[0.95rem] font-bold">{c.label}</p>
+                    <p class="mt-0.5 text-[0.88rem] text-ink-muted">{c.detail}</p>
+                  </li>
+                ))}
+              </ul>
+              <a href={url(`/locations/${location.slug}`)} class="link-arrow mt-5">
+                More about {location.name}
+                <Icon name="arrow-right" size={16} />
+              </a>
+            </section>
+          )
+        }
+
+        <section class="mt-10">
+          <EmiCalculator
+            principal={Math.round((project.startingPrice * 0.8) / 100000) * 100000}
+            heading="EMI on the starting price"
+            compact
+          />
+        </section>
+      </div>
+
+      <aside class="lg:sticky lg:top-24 lg:self-start">
+        <div class="rounded-panel border border-line bg-surface p-5 shadow-lift">
+          <h2 class="text-[1.15rem]">Want the cost sheet?</h2>
+          <p class="mt-2 text-[0.92rem] leading-relaxed text-ink-muted">
+            We will send the unit-wise pricing, the payment plan and the RERA details for this
+            project, and tell you honestly how it compares with the alternatives nearby.
+          </p>
+          <div class="mt-5 space-y-2">
+            <WhatsAppButton fullWidth label="Get project details" message={enquiry} />
+            <WhatsAppButton
+              fullWidth
+              variant="outline"
+              label="Schedule a site visit"
+              message={`Hi, I'd like to schedule a site visit at ${project.name}, ${locationName}.`}
+            />
+            {
+              tel && (
+                <a href={tel} class="btn btn-ghost w-full">
+                  <Icon name="phone" size={17} />
+                  Call us
+                </a>
+              )
+            }
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    {
+      nearbyListings.length > 0 && (
+        <section class="mt-14 border-t border-line pt-10">
+          <SectionHead
+            title={`Other listings in ${locationName}`}
+            linkHref={`/locations/${project.location}`}
+            linkLabel={`All of ${locationName}`}
+          />
+          <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {nearbyListings.map((p) => (
+              <PropertyCard property={p} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="mt-14 border-t border-line pt-10">
+      <SectionHead title="Other projects" linkHref="/projects" linkLabel="All projects" />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {similar.map((p) => <ProjectCard project={p} />)}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

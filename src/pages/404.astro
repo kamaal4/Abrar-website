@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { url } from '../utils/url';
+
+const links = [
+  { label: 'All properties', href: '/properties' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Invest', href: '/invest' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<BaseLayout title="Page not found" description="That page does not exist." noindex>
+  <section class="band">
+    <div class="shell max-w-2xl">
+      <p class="ui text-[0.9rem] font-semibold text-gold-ink">404</p>
+      <h1 class="mt-2 text-display-2">That page does not exist</h1>
+      <p class="mt-4 text-[1.02rem] leading-relaxed text-ink-muted">
+        The link may be out of date, or a listing may have been taken down. Here is where to go
+        instead.
+      </p>
+
+      <ul class="ui mt-7 flex flex-wrap gap-1.5">
+        {
+          links.map((l) => (
+            <li>
+              <a
+                href={url(l.href)}
+                class="inline-block rounded-lg border border-line-strong px-3 py-1.5 text-[0.9rem] font-semibold transition-colors hover:border-ink hover:bg-surface"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-8 flex flex-wrap gap-2.5">
+        <WhatsAppButton
+          label="Tell us what you were looking for"
+          message="Hi, I hit a broken link on your website. I was looking for:"
+        />
+        <button type="button" class="btn btn-outline" data-assistant-open>
+          <Icon name="spark" size={17} />
+          Ask the assistant
+        </button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

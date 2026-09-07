@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteConfig } from '../config/site';
+import { getWhatsAppLink, getTelLink } from '../utils/whatsapp';
+import { url } from '../utils/url';
+
+const tel = getTelLink();
+
+const channels = [
+  {
+    icon: 'whatsapp' as const,
+    title: 'WhatsApp',
+    line: 'The fastest way to reach us',
+    copy: 'Send a message any time — typed, photographs or a voice note. This is where every enquiry on the site lands, and where you will get an answer.',
+    href: getWhatsAppLink('Hi, I found you online and would like to know more about a property.'),
+    cta: 'Chat with us on WhatsApp',
+    primary: true,
+  },
+  {
+    icon: 'instagram' as const,
+    title: 'Instagram',
+    line: 'New listings and walkthroughs',
+    copy: 'Property walkthroughs, new listings as they come in, and short notes on what is happening in specific areas.',
+    href: siteConfig.social.instagram,
+    cta: 'Follow us on Instagram',
+  },
+  {
+    icon: 'facebook' as const,
+    title: 'Facebook',
+    line: 'Listings and updates',
+    copy: 'The same listings and updates, for anyone who would rather follow along on Facebook.',
+    href: siteConfig.social.facebook,
+    cta: 'Follow us on Facebook',
+  },
+].filter((c) => Boolean(c.href));
+
+const quickAsks = [
+  { label: "I'm looking to buy", message: "Hi, I'm looking to buy a property in Hyderabad. My budget is around…" },
+  { label: "I'm looking to rent", message: "Hi, I'm looking to rent in Hyderabad. I need…" },
+  { label: 'I want to sell', message: "Hi, I'd like to sell my property in Hyderabad. Here are the details:" },
+  { label: 'I want to invest', message: "Hi, I'd like to invest in Hyderabad property. My budget and horizon are…" },
+  { label: 'I want a site visit', message: "Hi, I'd like to arrange a site visit." },
+];
+---
+
+<BaseLayout
+  title="Contact us"
+  description={`Get in touch with ${siteConfig.name} on WhatsApp, Instagram or Facebook. Based in Hyderabad, Telangana.`}
+>
+  <section class="border-b border-line bg-surface">
+    <div class="shell py-8 sm:py-10">
+      <Breadcrumbs items={[{ label: 'Contact' }]} />
+      <h1 class="mt-3 text-display-2">Get in touch</h1>
+      <p class="measure mt-3 text-[1.02rem] leading-relaxed text-ink-muted">
+        There is no contact form on this site, deliberately. Messages go straight to a consultant on
+        WhatsApp, which is faster for you and means you are talking to someone who knows the property.
+      </p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <div class="grid gap-4 lg:grid-cols-3">
+        {
+          channels.map((c) => (
+            <div
+              class:list={[
+                'flex flex-col rounded-panel border p-6',
+                c.primary ? 'border-gold bg-gold-wash' : 'border-line',
+              ]}
+            >
+              <span
+                class:list={[
+                  'inline-flex h-11 w-11 items-center justify-center rounded-xl',
+                  c.primary ? 'bg-gold text-ink' : 'bg-surface text-ink',
+                ]}
+              >
+                <Icon name={c.icon} size={22} />
+              </span>
+              <h2 class="mt-4 text-[1.25rem]">{c.title}</h2>
+              <p class="ui mt-1 text-[0.85rem] font-semibold text-gold-ink">{c.line}</p>
+              <p class="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-muted">{c.copy}</p>
+              <a
+                href={c.href}
+                target="_blank"
+                rel="noopener"
+                class:list={['btn mt-5', c.primary ? 'btn-primary' : 'btn-outline']}
+              >
+                <Icon name={c.icon} size={17} />
+                {c.cta}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
+        <div>
+          <h2 class="text-display-3">Start with one of these</h2>
+          <p class="mt-2.5 text-[0.96rem] leading-relaxed text-ink-muted">
+            Each one opens WhatsApp with a message already written. Edit it before you send.
+          </p>
+          <ul class="mt-5 space-y-2">
+            {
+              quickAsks.map((q) => (
+                <li>
+                  <a
+                    href={getWhatsAppLink(q.message)}
+                    target="_blank"
+                    rel="noopener"
+                    class="ui flex items-center justify-between gap-3 rounded-xl border border-line px-4 py-3.5 text-[0.98rem] font-semibold transition-colors hover:border-ink hover:bg-surface"
+                  >
+                    {q.label}
+                    <Icon name="whatsapp" size={18} class="shrink-0 text-gold-ink" />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-display-3">Details</h2>
+          <dl class="ui mt-5 divide-y divide-line rounded-panel border border-line">
+            {
+              siteConfig.phone && (
+                <div class="flex items-center justify-between gap-4 p-4">
+                  <dt class="flex items-center gap-2 text-[0.9rem] text-ink-muted">
+                    <Icon name="phone" size={16} />
+                    Phone
+                  </dt>
+                  <dd class="font-bold">
+                    <a href={tel ?? '#'} class="hover:text-gold-ink">{siteConfig.phone}</a>
+                  </dd>
+                </div>
+              )
+            }
+            <div class="flex items-center justify-between gap-4 p-4">
+              <dt class="flex items-center gap-2 text-[0.9rem] text-ink-muted">
+                <Icon name="mail" size={16} />
+                Email
+              </dt>
+              <dd class:list={[siteConfig.email ? 'font-bold' : 'text-[0.9rem] text-ink-subtle']}>
+                {
+                  siteConfig.email ? (
+                    <a href={`mailto:${siteConfig.email}`} class="hover:text-gold-ink">
+                      {siteConfig.email}
+                    </a>
+                  ) : (
+                    'Not published yet — WhatsApp is fastest'
+                  )
+                }
+              </dd>
+            </div>
+            <div class="flex items-center justify-between gap-4 p-4">
+              <dt class="flex items-center gap-2 text-[0.9rem] text-ink-muted">
+                <Icon name="pin" size={16} />
+                Based in
+              </dt>
+              <dd class="font-bold">{siteConfig.city}, {siteConfig.state}</dd>
+            </div>
+            <div class="flex items-center justify-between gap-4 p-4">
+              <dt class="flex items-center gap-2 text-[0.9rem] text-ink-muted">
+                <Icon name="clock" size={16} />
+                Hours
+              </dt>
+              <dd class="text-right font-bold">
+                Mon–Sat, 9am–8pm<span class="block text-[0.82rem] font-normal text-ink-subtle"
+                  >Sunday visits by arrangement</span
+                >
+              </dd>
+            </div>
+          </dl>
+
+          <div class="mt-6 rounded-panel border border-line bg-surface p-5">
+            <h3 class="ui text-[1rem] font-bold">Prefer to browse first?</h3>
+            <p class="mt-2 text-[0.92rem] leading-relaxed text-ink-muted">
+              Have a look at the listings, or let the assistant narrow it down for you.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <a href={url('/properties')} class="btn btn-outline btn-sm">Browse properties</a>
+              <button type="button" class="btn btn-ghost btn-sm" data-assistant-open>
+                <Icon name="spark" size={16} />
+                Ask the assistant
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line bg-surface">
+    <div class="shell band-tight text-center">
+      <h2 class="text-display-3">Every enquiry reaches a person</h2>
+      <p class="mx-auto measure mt-3 text-[1rem] leading-relaxed text-ink-muted">
+        Not a form queue, not an autoresponder. Send a message and someone who knows the listing will
+        reply.
+      </p>
+      <div class="mt-6 flex justify-center">
+        <WhatsAppButton message="Hi, I'd like to talk about a property in Hyderabad." />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

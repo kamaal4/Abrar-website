@@ -1,0 +1,179 @@
+---
+import Icon from './Icon.astro';
+import WhatsAppButton from './WhatsAppButton.astro';
+import { primaryNav, siteConfig } from '../config/site';
+import { url, isCurrent } from '../utils/url';
+
+const pathname = Astro.url.pathname;
+const search = Astro.url.search;
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 border-b border-line bg-bg transition-shadow duration-300"
+  style="z-index: var(--z-sticky)"
+  data-header
+>
+  <div class="shell-wide flex h-16 items-center gap-4 lg:h-20">
+    <a href={url('/')} class="group flex shrink-0 items-baseline gap-2" aria-label={`${siteConfig.name} — home`}>
+      <span class="flex flex-col leading-none">
+        <span
+          class="ui text-[0.95rem] font-bold tracking-[-0.03em] text-ink transition-colors group-hover:text-gold-ink lg:text-[1.05rem]"
+          >Invest In Real Estate</span
+        >
+        <span class="flex items-center gap-1.5">
+          <span class="ui text-[0.95rem] font-bold tracking-[-0.03em] text-gold-ink lg:text-[1.05rem]"
+            >Hyderabad</span
+          >
+          <span
+            class="text-[0.7rem] text-ink-subtle"
+            style="font-family: var(--font-telugu)"
+            aria-hidden="true">హైదరాబాద్</span
+          >
+        </span>
+      </span>
+    </a>
+
+    <nav class="ml-auto hidden items-center gap-6 lg:flex" aria-label="Main">
+      {
+        primaryNav.map((item) => (
+          <a
+            href={url(item.href)}
+            class="link-wipe text-[0.94rem] font-medium text-ink transition-colors hover:text-ink"
+            aria-current={isCurrent(item.href, pathname, search) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="ml-auto flex items-center gap-2 lg:ml-4">
+      <button
+        type="button"
+        class="ui hidden items-center gap-2 rounded-lg border border-line px-3 py-2 text-[0.9rem] font-semibold text-ink transition-colors hover:border-ink hover:text-gold-ink md:inline-flex"
+        data-assistant-open
+      >
+        <Icon name="spark" size={17} />
+        AI Property Assistant
+      </button>
+
+      <div class="hidden sm:block">
+        <WhatsAppButton size="sm" label="WhatsApp Us" message="Hi, I'd like help finding a property in Hyderabad." />
+      </div>
+      <div class="sm:hidden">
+        <WhatsAppButton variant="icon" label="Chat with us on WhatsApp" message="Hi, I'd like help finding a property in Hyderabad." />
+      </div>
+
+      <button
+        type="button"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-line text-ink lg:hidden"
+        data-menu-open
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+      >
+        <Icon name="menu" size={20} />
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog
+  id="mobile-menu"
+  class="m-0 h-full max-h-none w-[min(22rem,88vw)] max-w-none bg-bg p-0 text-ink ml-auto"
+  style="z-index: var(--z-drawer)"
+  aria-label="Site menu"
+>
+  <div class="flex h-full flex-col">
+    <div class="flex h-16 items-center justify-between border-b border-line px-5">
+      <span class="ui font-bold tracking-[-0.02em]">Menu</span>
+      <button
+        type="button"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line"
+        data-menu-close
+        aria-label="Close menu"
+      >
+        <Icon name="close" size={18} />
+      </button>
+    </div>
+
+    <nav class="flex-1 overflow-y-auto px-5 py-4" aria-label="Mobile">
+      <ul class="flex flex-col">
+        {
+          primaryNav.map((item) => (
+            <li class="border-b border-line last:border-0">
+              <a
+                href={url(item.href)}
+                class="ui flex items-center justify-between py-3.5 text-[1.05rem] font-semibold"
+                aria-current={isCurrent(item.href, pathname, search) ? 'page' : undefined}
+              >
+                {item.label}
+                <Icon name="chevron-right" size={16} class="text-ink-subtle" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul class="mt-4 flex flex-col border-t border-line pt-4">
+        {
+          [
+            { label: 'Blog', href: '/blog' },
+            { label: 'EMI Calculator', href: '/emi-calculator' },
+            { label: 'Contact', href: '/contact' },
+          ].map((item) => (
+            <li>
+              <a href={url(item.href)} class="ui block py-2.5 text-[0.98rem] text-ink-muted">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="space-y-2 border-t border-line px-5 py-4">
+      <button type="button" class="btn btn-outline w-full" data-assistant-open data-menu-close>
+        <Icon name="spark" size={17} />
+        Ask the AI Property Assistant
+      </button>
+      <WhatsAppButton fullWidth message="Hi, I'd like help finding a property in Hyderabad." />
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // The site is statically generated, so the server never sees the query string —
+  // /properties?listing=rent and ?listing=buy render the same HTML. Mark the active
+  // nav item here, where the real URL is known.
+  const markCurrent = () => {
+    const here = new URL(window.location.href);
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('a[href]')) {
+      if (!link.closest('nav')) continue;
+      const target = new URL(link.href, here);
+      if (target.pathname.replace(/\/$/, '') !== here.pathname.replace(/\/$/, '')) continue;
+      const matches = [...target.searchParams].every(([k, v]) => here.searchParams.get(k) === v);
+      const exact = matches && target.searchParams.size === here.searchParams.size;
+      if (exact) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    }
+  };
+  markCurrent();
+  window.addEventListener('popstate', markCurrent);
+
+  // Sticky header gets a shadow only once the page has actually scrolled.
+  const header = document.querySelector('[data-header]');
+  const onScroll = () => header?.classList.toggle('shadow-lift', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const menu = document.getElementById('mobile-menu') as HTMLDialogElement | null;
+  document.querySelector('[data-menu-open]')?.addEventListener('click', () => menu?.showModal());
+  document
+    .querySelectorAll('[data-menu-close]')
+    .forEach((el) => el.addEventListener('click', () => menu?.close()));
+  // Clicking the backdrop closes the drawer.
+  menu?.addEventListener('click', (event) => {
+    if (event.target === menu) menu.close();
+  });
+</script>

@@ -1,0 +1,129 @@
+---
+import { locationOptions } from '../data/locations';
+import { propertyTypeLabels, statusLabels } from '../types';
+
+/**
+ * A single filter form. On mobile it is moved into a <dialog> and back again, so
+ * there is only ever one instance — no duplicated ids, no state to keep in sync.
+ */
+const locations = locationOptions();
+const types = Object.entries(propertyTypeLabels);
+const statuses = Object.entries(statusLabels);
+const bhkChoices = [1, 2, 3, 4];
+---
+
+<form id="property-filters" class="space-y-5" aria-label="Filter properties">
+  <div>
+    <label class="field-label" for="f-q">Search</label>
+    <input
+      id="f-q"
+      name="q"
+      type="search"
+      class="field"
+      placeholder="Tolichowki, villa, 3 BHK…"
+      autocomplete="off"
+    />
+  </div>
+
+  <fieldset>
+    <legend class="field-label">Looking for</legend>
+    <div class="flex flex-wrap gap-1.5">
+      {
+        [
+          { value: '', label: 'All' },
+          { value: 'buy', label: 'Buy' },
+          { value: 'rent', label: 'Rent' },
+          { value: 'invest', label: 'Invest' },
+        ].map((o, i) => (
+          <label class="ui cursor-pointer">
+            <input
+              type="radio"
+              name="listing"
+              value={o.value}
+              checked={i === 0}
+              class="peer sr-only"
+            />
+            <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gold-ink hover:bg-surface">
+              {o.label}
+            </span>
+          </label>
+        ))
+      }
+    </div>
+  </fieldset>
+
+  <div>
+    <label class="field-label" for="f-type">Property type</label>
+    <select id="f-type" name="type" class="field">
+      <option value="">Any type</option>
+      {types.map(([value, label]) => <option value={value}>{label}</option>)}
+    </select>
+  </div>
+
+  <fieldset>
+    <legend class="field-label">Bedrooms</legend>
+    <div class="flex flex-wrap gap-1.5">
+      <label class="ui cursor-pointer">
+        <input type="radio" name="bhk" value="" checked class="peer sr-only" />
+        <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white hover:bg-surface"
+          >Any</span
+        >
+      </label>
+      {
+        bhkChoices.map((n) => (
+          <label class="ui cursor-pointer">
+            <input type="radio" name="bhk" value={String(n)} class="peer sr-only" />
+            <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white hover:bg-surface">
+              {n} BHK
+            </span>
+          </label>
+        ))
+      }
+    </div>
+  </fieldset>
+
+  <div>
+    <label class="field-label" for="f-location">Location</label>
+    <select id="f-location" name="location" class="field">
+      <option value="">All of Hyderabad</option>
+      {locations.map((l) => <option value={l.value}>{l.label}</option>)}
+    </select>
+  </div>
+
+  <div class="grid grid-cols-2 gap-2.5">
+    <div>
+      <label class="field-label" for="f-min">Min price (₹)</label>
+      <input id="f-min" name="minPrice" type="number" min="0" step="500000" class="field" placeholder="0" />
+    </div>
+    <div>
+      <label class="field-label" for="f-max">Max price (₹)</label>
+      <input id="f-max" name="maxPrice" type="number" min="0" step="500000" class="field" placeholder="Any" />
+    </div>
+  </div>
+
+  <fieldset>
+    <legend class="field-label">Possession</legend>
+    <div class="space-y-1.5">
+      {
+        statuses.map(([value, label]) => (
+          <label class="ui flex cursor-pointer items-center gap-2.5 text-[0.9rem]">
+            <input
+              type="checkbox"
+              name="status"
+              value={value}
+              class="h-4 w-4 shrink-0 accent-[oklch(0.54_0.105_78)]"
+            />
+            {label}
+          </label>
+        ))
+      }
+    </div>
+  </fieldset>
+
+  <div class="flex items-center justify-between border-t border-line pt-4">
+    <button type="reset" class="ui text-[0.86rem] font-semibold text-ink-subtle hover:text-ink"
+      >Clear all</button
+    >
+    <span class="ui text-[0.86rem] font-semibold text-ink-muted" data-filter-count></span>
+  </div>
+</form>

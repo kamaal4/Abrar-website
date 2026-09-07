@@ -1,0 +1,67 @@
+---
+import Icon from './Icon.astro';
+import { url } from '../utils/url';
+
+type Props = {
+  title: string;
+  intro?: string;
+  linkHref?: string;
+  linkLabel?: string;
+  /** h2 by default; pass 'h1' when the section opens a page. */
+  as?: 'h1' | 'h2';
+  align?: 'start' | 'between';
+  tone?: 'light' | 'dark';
+};
+
+const {
+  title,
+  intro,
+  linkHref,
+  linkLabel = 'View all',
+  as = 'h2',
+  align = 'between',
+  tone = 'light',
+} = Astro.props as Props;
+const Tag = as;
+---
+
+<div
+  class:list={[
+    'gap-4',
+    align === 'between' ? 'flex flex-wrap items-end justify-between' : 'flex flex-col',
+  ]}
+>
+  <div class="max-w-2xl">
+    <Tag
+      class:list={[
+        'text-display-3',
+        tone === 'dark' ? 'text-white' : '',
+      ]}
+    >
+      {title}
+    </Tag>
+    {
+      intro && (
+        <p
+          class:list={[
+            'measure mt-2.5 text-[1.02rem] leading-relaxed',
+            tone === 'dark' ? 'text-white/85' : 'text-ink-muted',
+          ]}
+        >
+          {intro}
+        </p>
+      )
+    }
+  </div>
+  {
+    linkHref && (
+      <a
+        href={url(linkHref)}
+        class:list={['link-arrow shrink-0', tone === 'dark' ? 'text-gold' : '']}
+      >
+        {linkLabel}
+        <Icon name="arrow-right" size={16} />
+      </a>
+    )
+  }
+</div>

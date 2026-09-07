@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import Img from '../components/Img.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteConfig } from '../config/site';
+import { getTelLink } from '../utils/whatsapp';
+
+const tel = getTelLink();
+
+const canHelpWith = [
+  { icon: 'building' as const, label: 'Flats and apartments' },
+  { icon: 'building' as const, label: 'Villas in gated layouts' },
+  { icon: 'building' as const, label: 'Independent houses' },
+  { icon: 'land' as const, label: 'Residential plots' },
+  { icon: 'area' as const, label: 'Open land' },
+  { icon: 'layers' as const, label: 'Investment and tenanted property' },
+];
+
+const whatToSend = [
+  'Where the property is — locality and, if you are comfortable, the building or layout name',
+  'What it is: BHK, built-up or plot area, floor, facing',
+  'What you are expecting on price',
+  'Whether it is vacant, self-occupied or tenanted',
+  'A few photographs, if you have them',
+];
+
+const howItWorks = [
+  {
+    title: 'You send the details',
+    copy: 'On WhatsApp, in whatever form is easiest — typed out, photographs, or a voice note. No form to fill in.',
+  },
+  {
+    title: 'We come back with a view',
+    copy: 'What comparable properties in that area are actually transacting at, and whether your expectation sits above, below or inside that range.',
+  },
+  {
+    title: 'We list and show it',
+    copy: 'If we take it on, it goes on this site and to buyers already looking in that area. We handle the visits.',
+  },
+  {
+    title: 'You decide',
+    copy: 'We bring offers and tell you what we think of each one. Nothing moves without your say.',
+  },
+];
+---
+
+<BaseLayout
+  title="Sell your property in Hyderabad"
+  description="Want to sell a flat, villa, plot or land in Hyderabad? Send us the details on WhatsApp and we will come back with a realistic view of the market."
+>
+  <section class="relative isolate overflow-hidden bg-ink">
+    <Img
+      image="manikonda-sprawl"
+      widths={[900, 1280, 1440]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.55]"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/92 via-ink/65 to-ink/70" aria-hidden="true"></div>
+
+    <div class="shell py-10 sm:py-16 lg:py-20">
+      <Breadcrumbs tone="dark" items={[{ label: 'Sell Property' }]} />
+      <h1 class="mt-4 max-w-3xl text-display-1 text-white">Want to sell your property?</h1>
+      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.15rem]">
+        Connect with buyers across Hyderabad. Send us the details on WhatsApp and we will come back
+        with what comparable properties are actually transacting at — including when that is below
+        what you were hoping for.
+      </p>
+      <div class="mt-8">
+        <WhatsAppButton
+          variant="on-dark"
+          label="Share property details on WhatsApp"
+          message="Hi, I'd like to sell my property in Hyderabad. Here are the details:"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <div class="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div>
+          <h2 class="text-display-3">What we can help with</h2>
+          <ul class="ui mt-5 grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-2">
+            {
+              canHelpWith.map((item) => (
+                <li class="flex items-center gap-2.5 bg-bg p-4 text-[0.96rem] font-semibold">
+                  <Icon name={item.icon} size={18} class="shrink-0 text-gold-ink" />
+                  {item.label}
+                </li>
+              ))
+            }
+          </ul>
+
+          <h2 class="mt-12 text-display-3">How it works</h2>
+          <ol class="mt-5 max-w-2xl">
+            {
+              howItWorks.map((step, i) => (
+                <li class="grid grid-cols-[2.25rem_1fr] gap-4 border-t border-line py-5">
+                  <span class="ui text-[1.3rem] font-bold leading-none tracking-[-0.03em] text-gold-ink">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 class="ui text-[1.05rem] font-bold">{step.title}</h3>
+                    <p class="mt-1.5 text-[0.95rem] leading-relaxed text-ink-muted">{step.copy}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+
+        <aside class="lg:sticky lg:top-24 lg:self-start">
+          <div class="rounded-panel border border-line bg-surface p-5">
+            <h2 class="text-[1.15rem]">What to send us</h2>
+            <p class="mt-2 text-[0.92rem] leading-relaxed text-ink-muted">
+              The more of this you include, the more useful our first reply will be. None of it is
+              mandatory.
+            </p>
+            <ul class="mt-4 space-y-2.5">
+              {
+                whatToSend.map((item) => (
+                  <li class="flex gap-2.5 text-[0.92rem] leading-relaxed">
+                    <Icon name="check" size={16} class="mt-1 shrink-0 text-gold-ink" />
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+
+            <div class="mt-6 space-y-2 border-t border-line pt-5">
+              <WhatsAppButton
+                fullWidth
+                label="Send details on WhatsApp"
+                message="Hi, I'd like to sell my property in Hyderabad. Here are the details:"
+              />
+              {
+                tel && (
+                  <a href={tel} class="btn btn-outline w-full">
+                    <Icon name="phone" size={17} />
+                    {siteConfig.phone}
+                  </a>
+                )
+              }
+            </div>
+
+            <p class="mt-4 text-[0.82rem] leading-relaxed text-ink-subtle">
+              We do not publish your contact details, and we will not list the property without your
+              agreement.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../config/site';
+import { url } from '../utils/url';
+---
+
+<BaseLayout
+  title="Terms of use"
+  description={`Terms governing the use of the ${siteConfig.name} website.`}
+>
+  <section class="border-b border-line bg-surface">
+    <div class="shell py-8 sm:py-10">
+      <Breadcrumbs items={[{ label: 'Terms' }]} />
+      <h1 class="mt-3 text-display-2">Terms of use</h1>
+      <p class="mt-3 text-[0.9rem] text-ink-subtle">Last updated: September 2026</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell prose-body">
+      <h2>The listings on this site are sample content</h2>
+      <p>
+        The properties, projects, prices, areas, price ranges and travel times shown here are
+        illustrative sample content, published while the live listing catalogue is being built. They
+        are not offers, they are not representations that a specific property is available, and they
+        should not be relied on as market data.
+      </p>
+
+      <h2>No advice, no guarantees</h2>
+      <p>
+        Nothing on this website is financial, legal, tax or investment advice. We do not guarantee any
+        rate of return, rate of appreciation, rental yield, or resale value on any property. Where this
+        site discusses general factors affecting the Hyderabad property market, that discussion is
+        background — not a forecast, and not a recommendation to buy.
+      </p>
+
+      <h2>Verify everything independently</h2>
+      <p>
+        Before committing to any transaction you should independently verify title, encumbrance,
+        layout and building approvals, RERA registration, occupancy certificate, measurements, and all
+        costs, using your own lawyer and your own advisers. Figures such as the indicative stamp duty
+        and registration estimates shown on listing pages are planning aids computed from published
+        rates; the amount actually payable depends on the document and the property and may differ.
+      </p>
+
+      <h2>The property assistant</h2>
+      <p>
+        The assistant on this site is a scripted demonstration. It follows a fixed set of questions and
+        matches against the same sample data as the rest of the site. It is not an artificial
+        intelligence system, it does not have access to live inventory, and its suggestions carry no
+        more weight than the sample data behind them.
+      </p>
+
+      <h2>The EMI calculator</h2>
+      <p>
+        The calculator applies the standard reducing-balance formula to the numbers you enter. It is an
+        estimate for planning. Actual loan terms, eligibility, fees and the EMI quoted to you are
+        determined by your lender.
+      </p>
+
+      <h2>External links and images</h2>
+      <p>
+        We link to third-party sites, including WhatsApp, Instagram and Facebook, and we are not
+        responsible for their content or their terms. Photographs are used under the licences recorded
+        on the <a href={url('/credits')}>image credits page</a>; copyright remains with the respective
+        authors.
+      </p>
+
+      <h2>Availability</h2>
+      <p>
+        We make no commitment that this site will be available uninterrupted or free of errors, and we
+        may change or remove any content without notice.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by the laws of India, with courts at Hyderabad, Telangana having
+        jurisdiction.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Anything unclear here can be raised with us directly — see the{' '}
+        <a href={url('/contact')}>contact page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

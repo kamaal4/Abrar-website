@@ -1,0 +1,83 @@
+---
+import Icon from './Icon.astro';
+import Img from './Img.astro';
+import { formatPrice } from '../utils/format';
+import { propertyTypeLabels, type Location } from '../types';
+import { getPropertiesByLocation } from '../data/properties';
+import { url } from '../utils/url';
+
+type Props = {
+  location: Location;
+  /** The first tile in the locations grid is deliberately larger. */
+  feature?: boolean;
+};
+
+const { location, feature = false } = Astro.props;
+const count = getPropertiesByLocation(location.slug).length;
+const href = url(`/locations/${location.slug}`);
+---
+
+<a
+  href={href}
+  class:list={[
+    'group relative isolate flex flex-col justify-end overflow-hidden rounded-card',
+    feature ? 'min-h-[22rem] sm:min-h-[26rem]' : 'min-h-[15rem]',
+  ]}
+>
+  <Img
+    image={location.image}
+    widths={feature ? [640, 900, 1280] : [400, 640, 800]}
+    sizes={feature ? '(min-width: 1024px) 40rem, 92vw' : '(min-width: 1024px) 20rem, 45vw'}
+    class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04]"
+  />
+  <div
+    class:list={[
+      'absolute inset-0 -z-10 bg-gradient-to-t',
+      feature ? 'from-ink/88 via-ink/45 to-ink/5' : 'from-ink/92 via-ink/62 to-ink/20',
+    ]}
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="p-4 text-white sm:p-5">
+    <h3
+      class:list={[
+        'font-bold tracking-[-0.03em] text-white',
+        feature ? 'text-[1.9rem] sm:text-[2.4rem]' : 'text-[1.3rem]',
+      ]}
+    >
+      {location.name}
+    </h3>
+    <p
+      class:list={[
+        'mt-1 text-white/85',
+        feature ? 'max-w-md text-[0.98rem]' : 'text-[0.86rem] line-clamp-2',
+      ]}
+    >
+      {location.tagline}
+    </p>
+
+    <div class="ui mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.82rem] text-white/90">
+      <span>{count} sample {count === 1 ? 'listing' : 'listings'}</span>
+      <span class="text-white/40">·</span>
+      <span>from {formatPrice(location.startingPrice)}</span>
+    </div>
+
+    {
+      feature && (
+        <ul class="ui mt-3 flex flex-wrap gap-1.5">
+          {location.popularTypes.slice(0, 4).map((t) => (
+            <li class="rounded-md border border-white/30 px-2 py-0.5 text-[0.75rem] font-semibold">
+              {propertyTypeLabels[t]}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <span class="ui mt-4 inline-flex items-center gap-1.5 text-[0.86rem] font-semibold text-gold">
+      Explore Location
+      <Icon name="arrow-right" size={15} class="transition-transform duration-300 group-hover:translate-x-1" />
+    </span>
+  </div>
+</a>

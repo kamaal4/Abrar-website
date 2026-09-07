@@ -1,0 +1,119 @@
+---
+import Icon from './Icon.astro';
+import Img from './Img.astro';
+import { getLocationName } from '../data/locations';
+import { formatPrice, formatRent } from '../utils/format';
+import { statusLabels, propertyTypeLabels, type Property } from '../types';
+import { url } from '../utils/url';
+import { getWhatsAppLink } from '../utils/whatsapp';
+
+type Props = {
+  property: Property;
+  /** Client-side filtering reads the data-* attributes; only the listing page needs them. */
+  filterable?: boolean;
+  eager?: boolean;
+};
+
+const { property: p, filterable = false, eager = false } = Astro.props;
+const locationName = getLocationName(p.location);
+const href = url(`/properties/${p.slug}`);
+const isRentOnly = p.listing.length === 1 && p.listing[0] === 'rent';
+const areaUnit = p.areaUnit === 'sqyd' ? 'sq.yd' : 'sq.ft';
+
+const specs = [
+  p.bhk ? { icon: 'bed' as const, label: `${p.bhk} BHK` } : null,
+  p.bathrooms ? { icon: 'bath' as const, label: `${p.bathrooms} Bath` } : null,
+  p.parking ? { icon: 'car' as const, label: `${p.parking} Parking` } : null,
+  { icon: 'area' as const, label: `${p.area.toLocaleString('en-IN')} ${areaUnit}` },
+].filter(Boolean);
+
+const enquiry = `Hi, I'm interested in the ${p.title} in ${locationName}. Could you share more details?`;
+---
+
+<article
+  class="card group flex flex-col"
+  data-property={filterable ? p.slug : undefined}
+  data-listing={filterable ? p.listing.join(' ') : undefined}
+  data-type={filterable ? p.type : undefined}
+  data-bhk={filterable ? (p.bhk ?? '') : undefined}
+  data-location={filterable ? p.location : undefined}
+  data-price={filterable ? p.price : undefined}
+  data-status={filterable ? p.status : undefined}
+  data-title={filterable ? p.title.toLowerCase() : undefined}
+>
+  <div class="relative">
+    <a href={href} class="card-media block aspect-[4/3]" tabindex="-1" aria-hidden="true">
+      <Img
+        image={p.images[0]!}
+        widths={[400, 640, 800]}
+        sizes="(min-width: 1024px) 24rem, (min-width: 640px) 45vw, 90vw"
+        class="h-full w-full object-cover"
+        loading={eager ? 'eager' : 'lazy'}
+      />
+    </a>
+
+    <div class="pointer-events-none absolute left-3 top-3 flex flex-wrap gap-1.5">
+      {p.verified && <span class="pill pill-verified"><Icon name="check" size={13} />Verified</span>}
+      <span class="pill pill-dark">{statusLabels[p.status]}</span>
+    </div>
+
+    <button
+      type="button"
+      class="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/40 bg-ink/55 text-white transition-colors hover:bg-ink data-[saved=true]:bg-gold data-[saved=true]:text-ink"
+      data-favourite={p.slug}
+      aria-pressed="false"
+      aria-label={`Save ${p.title}`}
+    >
+      <Icon name="heart" size={17} />
+    </button>
+  </div>
+
+  <div class="flex flex-1 flex-col p-4">
+    <p class="ui flex items-baseline gap-2">
+      <span class="text-[1.35rem] font-bold leading-none tracking-[-0.03em]">
+        {isRentOnly && p.rent ? formatRent(p.rent) : formatPrice(p.price)}
+      </span>
+      {
+        !isRentOnly && p.rent && (
+          <span class="text-[0.82rem] font-medium text-ink-muted">or {formatRent(p.rent)}</span>
+        )
+      }
+    </p>
+
+    <h3 class="mt-1.5 text-[1.02rem] font-bold leading-snug">
+      <a href={href} class="hover:text-gold-ink">{p.title}</a>
+    </h3>
+
+    <p class="ui mt-1 flex items-center gap-1 text-[0.86rem] text-ink-muted">
+      <Icon name="pin" size={14} />
+      {locationName}, Hyderabad
+      <span class="text-line-strong">·</span>
+      {propertyTypeLabels[p.type]}
+    </p>
+
+    <ul class="ui mt-3 flex flex-wrap gap-x-3.5 gap-y-1.5 border-t border-line pt-3 text-[0.82rem] text-ink-muted">
+      {
+        specs.map((s) => (
+          <li class="flex items-center gap-1.5">
+            <Icon name={s!.icon} size={15} class="text-ink-subtle" />
+            {s!.label}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-4 flex gap-2 pt-0.5">
+      <a href={href} class="btn btn-outline btn-sm flex-1">View Details</a>
+      <a
+        href={getWhatsAppLink(enquiry)}
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary btn-sm shrink-0"
+        aria-label={`Enquire about ${p.title} on WhatsApp`}
+      >
+        <Icon name="whatsapp" size={16} />
+        <span class="sr-only sm:not-sr-only">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</article>

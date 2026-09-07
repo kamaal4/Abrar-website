@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import Img from '../components/Img.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import SectionHead from '../components/SectionHead.astro';
+import { getPropertiesByListing } from '../data/properties';
+import { url } from '../utils/url';
+
+const investListings = getPropertiesByListing('invest').slice(0, 3);
+
+const factors = [
+  {
+    title: 'A diversified employment base',
+    copy: 'Offices are spread across HITEC City, Gachibowli, the Financial District, Nanakramguda and the eastern belt rather than concentrated in one district. Demand does not depend on a single corridor holding up.',
+  },
+  {
+    title: 'Infrastructure that got built',
+    copy: 'The 158-km Outer Ring Road and the operating metro lines are in the ground, not in a presentation. That distinction matters when you are assessing whether a location will actually become commutable.',
+  },
+  {
+    title: 'Residential growth across price points',
+    copy: 'There is stock from ₹30 lakh plots on the western fringe to ₹5 crore towers in Kokapet. A given budget usually has a viable location, rather than one entry price for the whole city.',
+  },
+  {
+    title: 'Emerging corridors with room left',
+    copy: 'Kollur, Mokila, Shankarpally and the northern belt still have land. That is where the longer-horizon positions are, with the risk profile that goes with them.',
+  },
+];
+
+const options = [
+  {
+    icon: 'building' as const,
+    title: 'Residential apartments',
+    horizon: '3–7 years',
+    copy: 'Rentable from day one, financeable at long tenures, and the most liquid asset class at resale. Yields are modest; you are buying the combination of rent, location and exit-ability.',
+    href: '/properties?type=flat&listing=invest',
+  },
+  {
+    icon: 'land' as const,
+    title: 'Residential plots',
+    horizon: '5–10 years',
+    copy: 'No income, almost no holding cost, and value driven entirely by what happens around it. Rewards diligence on approvals and title more than any other option here.',
+    href: '/properties?type=plot',
+  },
+  {
+    icon: 'area' as const,
+    title: 'Open land',
+    horizon: '7+ years',
+    copy: 'A pure land position on the city fringe. Lumpy, illiquid, and only sensible with your own funds and your own verification.',
+    href: '/properties?type=open-land',
+  },
+  {
+    icon: 'clock' as const,
+    title: 'Under-construction',
+    horizon: '3–6 years',
+    copy: 'Lower entry price in exchange for delivery risk and the rent you keep paying while you wait. The developer’s handover record is the variable that matters most.',
+    href: '/properties?status=under-construction',
+  },
+  {
+    icon: 'route' as const,
+    title: 'Rental properties',
+    horizon: 'Ongoing',
+    copy: 'Completed units in areas with real tenant demand — the western IT corridor above all. Occupancy and turnover matter more than headline yield.',
+    href: '/properties?listing=rent',
+  },
+];
+
+const process = [
+  { title: 'Understand your goal', copy: 'Income, appreciation, a future home, or diversification. These point at different assets.' },
+  { title: 'Define the budget', copy: 'Purchase price plus stamp duty, registration, GST where it applies, brokerage and interiors — minus what you need to keep liquid.' },
+  { title: 'Shortlist locations', copy: 'Three, not ten. Chosen against your commute and horizon rather than against a headline.' },
+  { title: 'Compare properties', copy: 'On carpet area and total cost, never on super built-up rate. Loading factors differ enough to invert a comparison.' },
+  { title: 'Visit', copy: 'Twice where possible — once at peak hour, once at the weekend. Approach roads after rain tell you a lot.' },
+  { title: 'Evaluate the paper', copy: 'Title, encumbrance certificate, approvals, RERA registration, occupancy certificate. With your own lawyer.' },
+  { title: 'Invest', copy: 'Only once the downside is underwritten: what happens if possession slips two years, or you need to exit in year three.' },
+];
+---
+
+<BaseLayout
+  title="Invest in Hyderabad real estate"
+  description="How to approach property investment in Hyderabad — what the city genuinely offers, the options available at each horizon, and a process for deciding."
+>
+  <section class="relative isolate overflow-hidden bg-ink">
+    <Img
+      image="orr-night"
+      widths={[900, 1280, 1440]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.6]"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/92 via-ink/60 to-ink/70" aria-hidden="true"></div>
+
+    <div class="shell py-10 sm:py-16 lg:py-24">
+      <Breadcrumbs tone="dark" items={[{ label: 'Invest' }]} />
+      <h1 class="mt-4 max-w-3xl text-display-1 text-white">
+        Invest in Hyderabad real estate with confidence
+      </h1>
+      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.15rem]">
+        Confidence here means understanding what you are buying and what could go wrong with it — not
+        being handed a return projection. Below is how we actually work through an investment
+        decision with people.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-2.5">
+        <WhatsAppButton
+          variant="on-dark"
+          label="Talk to a property consultant"
+          message="Hi, I'd like to talk to a consultant about investing in Hyderabad property."
+        />
+        <a href="#options" class="btn btn-outline-on-dark">
+          See the options
+          <Icon name="chevron-down" size={16} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <SectionHead
+        title="Why Hyderabad"
+        intro="General factors that make the city a reasonable place to hold property. None of these is a guarantee, and none of them makes a specific property a good buy."
+        align="start"
+      />
+      <div class="mt-8 grid gap-x-12 md:grid-cols-2">
+        {
+          factors.map((f) => (
+            <div class="border-t border-line py-5">
+              <h3 class="ui text-[1.08rem] font-bold">{f.title}</h3>
+              <p class="mt-2 text-[0.96rem] leading-relaxed text-ink-muted">{f.copy}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="measure mt-6 rounded-panel border border-line bg-surface p-5 text-[0.92rem] leading-relaxed text-ink-muted">
+        <strong class="ui font-bold text-ink">What we will not tell you:</strong> a percentage return,
+        a doubling period, or which area is about to take off. Nobody has that information, and anyone
+        who offers it is selling you something.
+      </p>
+    </div>
+  </section>
+
+  <section class="band border-t border-line bg-surface" id="options">
+    <div class="shell">
+      <SectionHead
+        title="Investment options"
+        intro="Five different instruments with genuinely different risk, liquidity and horizon. The right one depends on your answers, not on which is performing best."
+        align="start"
+      />
+      <div class="mt-8 space-y-px overflow-hidden rounded-panel border border-line bg-line">
+        {
+          options.map((o) => (
+            <div class="grid gap-3 bg-bg p-5 sm:grid-cols-[1fr_2fr_auto] sm:items-center sm:gap-6">
+              <div>
+                <h3 class="ui flex items-center gap-2 text-[1.08rem] font-bold">
+                  <Icon name={o.icon} size={19} class="shrink-0 text-gold-ink" />
+                  {o.title}
+                </h3>
+                <p class="ui mt-1 text-[0.82rem] text-ink-subtle">Typical horizon · {o.horizon}</p>
+              </div>
+              <p class="text-[0.95rem] leading-relaxed text-ink-muted">{o.copy}</p>
+              <a href={url(o.href)} class="link-arrow shrink-0 text-[0.9rem]">
+                Browse
+                <Icon name="arrow-right" size={15} />
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- The one genuinely numbered sequence on this site. -->
+  <section class="band">
+    <div class="shell">
+      <SectionHead
+        title="How we work through it"
+        intro="Seven steps, in this order. Skipping to step seven is how people end up with a property that does not do what they wanted."
+        align="start"
+      />
+      <ol class="mt-8 max-w-3xl">
+        {
+          process.map((step, i) => (
+            <li class="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-line py-5">
+              <span class="ui text-[1.4rem] font-bold leading-none tracking-[-0.03em] text-gold-ink">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 class="ui text-[1.08rem] font-bold">{step.title}</h3>
+                <p class="mt-1.5 text-[0.96rem] leading-relaxed text-ink-muted">{step.copy}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band border-t border-line bg-surface">
+    <div class="shell">
+      <SectionHead
+        title="Investment listings"
+        intro="Sample stock we would put in front of an investor, across all three horizons."
+        linkHref="/properties?listing=invest"
+        linkLabel="All investment listings"
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {investListings.map((p) => <PropertyCard property={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gold-deep text-white">
+    <div class="shell band-tight text-center">
+      <h2 class="text-display-2 text-white">Talk to a property consultant</h2>
+      <p class="mx-auto measure mt-4 text-[1.02rem] leading-relaxed text-white/90">
+        Tell us your budget, your horizon and whether you are borrowing. We will tell you which of the
+        five options above your situation actually points to.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-2.5">
+        <WhatsAppButton
+          variant="on-dark"
+          label="WhatsApp a consultant"
+          message="Hi, I'd like to discuss a property investment in Hyderabad. My budget and horizon are:"
+        />
+        <a href={url('/emi-calculator')} class="btn btn-outline-on-dark">
+          <Icon name="calculator" size={17} />
+          Work out the EMI
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

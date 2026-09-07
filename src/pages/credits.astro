@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { attributedImages, imageKeys } from '../data/images';
+
+const attributed = attributedImages();
+const stockCount = imageKeys.length - attributed.length;
+---
+
+<BaseLayout
+  title="Image credits"
+  description="Photograph credits and licences for the images used on this website."
+>
+  <section class="border-b border-line bg-surface">
+    <div class="shell py-8 sm:py-10">
+      <Breadcrumbs items={[{ label: 'Image Credits' }]} />
+      <h1 class="mt-3 text-display-2">Image credits</h1>
+      <p class="measure mt-3 text-[1.02rem] leading-relaxed text-ink-muted">
+        Most photographs on this site are real images of Hyderabad and Telangana, contributed to
+        Wikimedia Commons by the people credited below and used under their respective Creative
+        Commons licences. {stockCount} further images are stock photographs used to illustrate a type
+        of interior or building rather than a specific property.
+      </p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <h2 class="text-display-3">Wikimedia Commons</h2>
+      <div class="scroll-x mt-5 rounded-panel border border-line">
+        <table class="w-full min-w-[40rem] text-left text-[0.92rem]">
+          <thead class="ui border-b border-line bg-surface text-[0.8rem] text-ink-muted">
+            <tr>
+              <th scope="col" class="p-3.5 font-semibold">Image</th>
+              <th scope="col" class="p-3.5 font-semibold">Author</th>
+              <th scope="col" class="p-3.5 font-semibold">Licence</th>
+              <th scope="col" class="p-3.5 font-semibold">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              attributed.map((c) => (
+                <tr class="border-b border-line last:border-0 align-top">
+                  <td class="p-3.5">{c.alt}</td>
+                  <td class="ui p-3.5 font-semibold">{c.author}</td>
+                  <td class="ui p-3.5 text-ink-muted">{c.license}</td>
+                  <td class="p-3.5">
+                    <a
+                      href={c.source}
+                      target="_blank"
+                      rel="noopener"
+                      class="text-gold-ink underline underline-offset-2"
+                    >
+                      File page
+                    </a>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="measure mt-6 text-[0.9rem] leading-relaxed text-ink-subtle">
+        Licence terms: CC BY, CC BY-SA and CC0 as listed above. Full licence texts are available at{' '}
+        <a
+          href="https://creativecommons.org/licenses/"
+          target="_blank"
+          rel="noopener"
+          class="underline underline-offset-2">creativecommons.org/licenses</a
+        >. If you are an author listed here and would like an attribution corrected or an image
+        removed, message us and we will act on it.
+      </p>
+
+      <h2 class="mt-12 text-display-3">Stock photography</h2>
+      <p class="measure mt-3 text-[0.96rem] leading-relaxed text-ink-muted">
+        {stockCount} images are from Unsplash, used under the Unsplash licence. These illustrate a
+        general type of interior or building and are not photographs of the specific sample properties
+        they appear alongside.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

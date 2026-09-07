@@ -1,0 +1,417 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import Img from '../../components/Img.astro';
+import PropertyCard from '../../components/PropertyCard.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+import EmiCalculator from '../../components/EmiCalculator.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import { getAllProperties, getPropertyBySlug, getSimilarProperties, SAMPLE_DATA_NOTICE } from '../../data/properties';
+import { getLocationBySlug } from '../../data/locations';
+import { getProjectBySlug } from '../../data/projects';
+import { getImage } from '../../data/images';
+import { formatPriceLong, formatRent, formatRupees, formatDate } from '../../utils/format';
+import { propertyTypeLabels, statusLabels } from '../../types';
+import { url } from '../../utils/url';
+import { getTelLink } from '../../utils/whatsapp';
+
+export const getStaticPaths: GetStaticPaths = () =>
+  getAllProperties().map((p) => ({ params: { slug: p.slug } }));
+
+const { slug } = Astro.params;
+const property = getPropertyBySlug(slug!);
+if (!property) throw new Error(`No property for slug "${slug}"`);
+
+const location = getLocationBySlug(property.location);
+const locationName = location?.name ?? property.location;
+const project = property.project ? getProjectBySlug(property.project) : undefined;
+const similar = getSimilarProperties(property);
+const areaUnit = property.areaUnit === 'sqyd' ? 'sq.yd' : 'sq.ft';
+const isRentOnly = property.listing.length === 1 && property.listing[0] === 'rent';
+const tel = getTelLink();
+const hero = getImage(property.images[0]!);
+
+const keyDetails = [
+  property.bhk ? { icon: 'bed' as const, label: 'Configuration', value: `${property.bhk} BHK` } : null,
+  { icon: 'area' as const, label: 'Area', value: `${property.area.toLocaleString('en-IN')} ${areaUnit}` },
+  property.bathrooms ? { icon: 'bath' as const, label: 'Bathrooms', value: String(property.bathrooms) } : null,
+  property.parking ? { icon: 'car' as const, label: 'Parking', value: `${property.parking} covered` } : null,
+  property.facing ? { icon: 'compass' as const, label: 'Facing', value: property.facing } : null,
+  property.floor ? { icon: 'building' as const, label: 'Floor', value: property.floor } : null,
+].filter(Boolean);
+
+// Indicative acquisition costs. Telangana rates as commonly applied to a sale deed —
+// stated as indicative because the exact figure depends on the document and the property.
+const stampDuty = property.price * 0.04;
+const transferDuty = property.price * 0.015;
+const registration = property.price * 0.005;
+const totalCost = property.price + stampDuty + transferDuty + registration;
+
+const loanDefault = Math.round((property.price * 0.8) / 100000) * 100000;
+
+const enquiry = `Hi, I'm interested in the ${property.title} in ${locationName} (${formatPriceLong(property.price)}). Could you share more details?`;
+const visitMessage = `Hi, I'd like to schedule a site visit for the ${property.title} in ${locationName}.`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Residence',
+  name: property.title,
+  description: property.summary,
+  url: new URL(url(`/properties/${property.slug}`), Astro.site ?? 'http://localhost:4321').href,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: locationName,
+    addressRegion: 'Telangana',
+    addressCountry: 'IN',
+  },
+  ...(property.bhk ? { numberOfRooms: property.bhk } : {}),
+  floorSize: {
+    '@type': 'QuantitativeValue',
+    value: property.area,
+    unitText: areaUnit,
+  },
+};
+---
+
+<BaseLayout
+  title={`${property.title} in ${locationName}`}
+  description={property.summary}
+  jsonLd={jsonLd}
+>
+  <!-- Gallery -->
+  <section class="bg-ink">
+    <div class="shell-wide py-4">
+      <Breadcrumbs
+        tone="dark"
+        items={[{ label: 'Properties', href: '/properties' }, { label: property.title }]}
+      />
+    </div>
+    <div class="shell-wide pb-5">
+      <div class="grid gap-2 lg:grid-cols-[2fr_1fr] lg:grid-rows-[30rem]">
+        <div class="relative overflow-hidden rounded-card bg-ink-deep lg:h-full">
+          {
+            property.images.map((key, i) => (
+              <div class="aspect-[16/10] w-full lg:aspect-auto lg:h-full" data-gallery-slide={i} hidden={i !== 0}>
+                <Img
+                  image={key}
+                  widths={[640, 900, 1280]}
+                  sizes="(min-width: 1024px) 60rem, 100vw"
+                  class="h-full w-full object-cover"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  fetchpriority={i === 0 ? 'high' : undefined}
+                />
+              </div>
+            ))
+          }
+          <p
+            class="ui absolute bottom-3 left-3 rounded-md bg-ink/80 px-2 py-1 text-[0.72rem] font-medium text-white/90"
+          >
+            {SAMPLE_DATA_NOTICE}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 lg:h-full lg:auto-rows-fr lg:grid-cols-1">
+          {
+            property.images.map((key, i) => (
+              <button
+                type="button"
+                class="aspect-[16/10] overflow-hidden rounded-card border-2 border-transparent lg:aspect-auto lg:h-full transition-[border-color,opacity] data-[active=true]:border-gold hover:opacity-90"
+                data-gallery-thumb={i}
+                data-active={i === 0}
+                aria-label={`Show image ${i + 1} of ${property.images.length}`}
+              >
+                <Img
+                  image={key}
+                  widths={[240, 400]}
+                  sizes="14rem"
+                  class="h-full w-full object-cover"
+                />
+              </button>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="shell-wide py-8 lg:py-12">
+    <div class="grid gap-10 lg:grid-cols-[1fr_21rem] lg:gap-12">
+      <div class="min-w-0">
+        <div class="flex flex-wrap items-center gap-1.5">
+          {property.verified && <span class="pill pill-verified"><Icon name="check" size={13} />Verified</span>}
+          <span class="pill pill-quiet">{statusLabels[property.status]}</span>
+          <span class="pill pill-quiet">{propertyTypeLabels[property.type]}</span>
+        </div>
+
+        <h1 class="mt-3 text-display-2">{property.title}</h1>
+        <p class="ui mt-2 flex items-center gap-1.5 text-[1rem] text-ink-muted">
+          <Icon name="pin" size={17} />
+          {locationName}, Hyderabad
+        </p>
+
+        <p class="ui mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span class="text-[2rem] font-bold leading-none tracking-[-0.035em]">
+            {isRentOnly && property.rent ? formatRent(property.rent) : formatPriceLong(property.price)}
+          </span>
+          {
+            !isRentOnly && property.rent && (
+              <span class="text-[0.95rem] font-medium text-ink-muted">
+                or {formatRent(property.rent)} on rent
+              </span>
+            )
+          }
+          <span class="text-[0.9rem] text-ink-subtle">
+            · {formatRupees(property.price / property.area)} per {areaUnit}
+          </span>
+        </p>
+
+        <!-- Key details -->
+        <dl class="ui mt-7 grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-3">
+          {
+            keyDetails.map((d) => (
+              <div class="bg-bg p-4">
+                <dt class="flex items-center gap-1.5 text-[0.8rem] text-ink-subtle">
+                  <Icon name={d!.icon} size={15} />
+                  {d!.label}
+                </dt>
+                <dd class="mt-1 text-[1.02rem] font-bold">{d!.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <section class="mt-10">
+          <h2 class="text-display-3">Overview</h2>
+          <p class="measure mt-3 text-[1.02rem] leading-relaxed">{property.summary}</p>
+          {
+            project && (
+              <p class="mt-3 text-[0.95rem] text-ink-muted">
+                Part of{' '}
+                <a href={url(`/projects/${project.slug}`)} class="font-semibold text-gold-ink underline underline-offset-4">
+                  {project.name}
+                </a>
+                .
+              </p>
+            )
+          }
+          <p class="ui mt-4 text-[0.85rem] text-ink-subtle">
+            Listed {formatDate(new Date(property.postedOn))}
+          </p>
+        </section>
+
+        <section class="mt-10">
+          <h2 class="text-display-3">What stands out</h2>
+          <ul class="mt-4 grid gap-x-10 sm:grid-cols-2">
+            {
+              property.highlights.map((h) => (
+                <li class="flex gap-2.5 border-t border-line py-3 text-[0.98rem] leading-relaxed">
+                  <Icon name="check" size={17} class="mt-1 shrink-0 text-gold-ink" />
+                  {h}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        {
+          property.amenities && property.amenities.length > 0 && (
+            <section class="mt-10">
+              <h2 class="text-display-3">Amenities</h2>
+              <ul class="ui mt-4 flex flex-wrap gap-1.5">
+                {property.amenities.map((a) => (
+                  <li class="rounded-lg border border-line bg-surface px-3 py-1.5 text-[0.88rem] font-medium">
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        <section class="mt-10">
+          <h2 class="text-display-3">Floor plan</h2>
+          <div class="mt-4 rounded-panel border border-dashed border-line-strong bg-surface p-6">
+            <p class="measure text-[0.98rem] leading-relaxed text-ink-muted">
+              We share the floor plan and the unit-specific cost sheet directly rather than
+              publishing them — the drawings differ between towers and blocks, and we would rather
+              send you the one that actually applies to this unit.
+            </p>
+            <div class="mt-4">
+              <WhatsAppButton
+                size="sm"
+                label="Request the floor plan"
+                message={`Hi, could you send me the floor plan for the ${property.title} in ${locationName}?`}
+              />
+            </div>
+          </div>
+        </section>
+
+        {
+          location && (
+            <section class="mt-10">
+              <h2 class="text-display-3">The location</h2>
+              <p class="measure mt-3 text-[1.02rem] leading-relaxed">{location.about[0]}</p>
+              <ul class="ui mt-5 grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-2">
+                {location.connectivity.map((c) => (
+                  <li class="bg-bg p-4">
+                    <p class="text-[0.95rem] font-bold">{c.label}</p>
+                    <p class="mt-0.5 text-[0.88rem] text-ink-muted">{c.detail}</p>
+                  </li>
+                ))}
+              </ul>
+              <a href={url(`/locations/${location.slug}`)} class="link-arrow mt-5">
+                More about {location.name}
+                <Icon name="arrow-right" size={16} />
+              </a>
+            </section>
+          )
+        }
+
+        {
+          property.nearby && property.nearby.length > 0 && (
+            <section class="mt-10">
+              <h2 class="text-display-3">What is nearby</h2>
+              <ul class="ui mt-4 grid gap-x-10 sm:grid-cols-2">
+                {property.nearby.map((n) => (
+                  <li class="flex items-baseline justify-between gap-4 border-t border-line py-3 text-[0.95rem]">
+                    <span class="font-semibold">{n.label}</span>
+                    <span class="text-ink-muted">{n.distance}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        <section class="mt-10">
+          <h2 class="text-display-3">What it actually costs</h2>
+          <p class="measure mt-3 text-[0.98rem] leading-relaxed text-ink-muted">
+            The quoted price is not the amount that leaves your account. These are the indicative
+            statutory costs on top of it — the exact figures depend on the document, the property and
+            the current rates, so treat them as a planning estimate rather than a quotation.
+          </p>
+          <div class="scroll-x mt-5 rounded-panel border border-line">
+            <table class="ui w-full min-w-[26rem] text-left text-[0.95rem]">
+              <tbody>
+                <tr class="border-b border-line">
+                  <th scope="row" class="p-4 font-semibold">Property price</th>
+                  <td class="p-4 text-right">{formatRupees(property.price)}</td>
+                </tr>
+                <tr class="border-b border-line">
+                  <th scope="row" class="p-4 font-normal text-ink-muted">Stamp duty (4%)</th>
+                  <td class="p-4 text-right text-ink-muted">{formatRupees(stampDuty)}</td>
+                </tr>
+                <tr class="border-b border-line">
+                  <th scope="row" class="p-4 font-normal text-ink-muted">Transfer duty (1.5%)</th>
+                  <td class="p-4 text-right text-ink-muted">{formatRupees(transferDuty)}</td>
+                </tr>
+                <tr class="border-b border-line">
+                  <th scope="row" class="p-4 font-normal text-ink-muted">Registration (0.5%)</th>
+                  <td class="p-4 text-right text-ink-muted">{formatRupees(registration)}</td>
+                </tr>
+                <tr class="bg-surface">
+                  <th scope="row" class="p-4 font-bold">Indicative total</th>
+                  <td class="p-4 text-right font-bold">{formatRupees(totalCost)}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-[0.85rem] text-ink-subtle">
+            Excludes brokerage, GST where applicable on under-construction property, corpus and
+            maintenance advance, and interiors.
+          </p>
+        </section>
+
+        <section class="mt-10">
+          <EmiCalculator
+            principal={loanDefault}
+            heading="What the EMI would look like"
+            compact
+          />
+          <p class="mt-3 text-[0.85rem] text-ink-subtle">
+            Pre-filled at 80% of the quoted price — adjust the numbers to match your own loan.
+          </p>
+        </section>
+      </div>
+
+      <!-- Sticky enquiry card -->
+      <aside class="lg:sticky lg:top-24 lg:self-start">
+        <div class="rounded-panel border border-line bg-surface p-5 shadow-lift">
+          <h2 class="text-[1.15rem]">Interested in this property?</h2>
+          <p class="mt-2 text-[0.92rem] leading-relaxed text-ink-muted">
+            Message us and you will get an answer from a consultant who knows this listing — not an
+            automated reply.
+          </p>
+
+          <div class="mt-5 space-y-2">
+            <WhatsAppButton fullWidth label="WhatsApp about this property" message={enquiry} />
+            <WhatsAppButton
+              fullWidth
+              variant="outline"
+              label="Schedule a site visit"
+              message={visitMessage}
+            />
+            {
+              tel && (
+                <a href={tel} class="btn btn-ghost w-full">
+                  <Icon name="phone" size={17} />
+                  Call us
+                </a>
+              )
+            }
+          </div>
+
+          <div class="mt-5 border-t border-line pt-4">
+            <p class="ui text-[0.8rem] font-semibold text-ink-muted">Not sure yet?</p>
+            <button type="button" class="link-arrow mt-1.5 text-[0.92rem]" data-assistant-open>
+              Compare with other options
+              <Icon name="arrow-right" size={15} />
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-4 flex items-center gap-2.5 rounded-panel border border-line p-4">
+          <Img
+            image={property.images[0]!}
+            widths={[120]}
+            sizes="3.5rem"
+            alt={hero.credit.alt}
+            class="h-14 w-14 rounded-lg object-cover"
+          />
+          <p class="text-[0.82rem] leading-relaxed text-ink-subtle">
+            Sample listing. Verify all documents and figures independently before deciding.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-14 border-t border-line pt-10">
+      <SectionHead
+        title="Similar properties"
+        intro="Closest matches in the same area, or the same kind of property elsewhere in the city."
+        linkHref="/properties"
+        linkLabel="All properties"
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {similar.map((p) => <PropertyCard property={p} />)}
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Gallery: swap which slide is visible. Every image is in the HTML already.
+    for (const thumb of document.querySelectorAll<HTMLButtonElement>('[data-gallery-thumb]')) {
+      thumb.addEventListener('click', () => {
+        const index = thumb.dataset.galleryThumb;
+        document.querySelectorAll<HTMLElement>('[data-gallery-slide]').forEach((slide) => {
+          slide.hidden = slide.dataset.gallerySlide !== index;
+        });
+        document.querySelectorAll<HTMLElement>('[data-gallery-thumb]').forEach((t) => {
+          t.dataset.active = String(t.dataset.galleryThumb === index);
+        });
+      });
+    }
+  </script>
+</BaseLayout>
