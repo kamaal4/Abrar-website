@@ -3,14 +3,14 @@ import Icon from './Icon.astro';
 import { getAllProperties } from '../data/properties';
 import { getLocationName } from '../data/locations';
 import { getImage } from '../data/images';
-import { formatPrice, formatArea } from '../utils/format';
+import { formatPriceOrAsk, formatArea, AREA_ON_REQUEST } from '../utils/format';
 import { url } from '../utils/url';
 import { getWhatsAppLink } from '../utils/whatsapp';
 import type { AssistantProperty } from '../scripts/assistant-flow';
 
 /**
  * Demo assistant. The conversation is scripted (see src/scripts/assistant-flow.ts) and
- * the matching runs against the same sample data the rest of the site uses. It is
+ * the matching runs against the same listing data the rest of the site uses. It is
  * labelled as a demo in the UI because pretending otherwise would be dishonest.
  */
 const payload: AssistantProperty[] = getAllProperties().map((p) => {
@@ -23,8 +23,11 @@ const payload: AssistantProperty[] = getAllProperties().map((p) => {
     type: p.type,
     bhk: p.bhk,
     price: p.price,
-    priceLabel: formatPrice(p.price),
-    area: `${formatArea(p.area)}`.replace('sq.ft', p.areaUnit === 'sqyd' ? 'sq.yd' : 'sq.ft'),
+    priceLabel: formatPriceOrAsk(p.price),
+    area:
+      p.area === undefined
+        ? AREA_ON_REQUEST
+        : formatArea(p.area).replace('sq.ft', p.areaUnit === 'sqyd' ? 'sq.yd' : 'sq.ft'),
     image: img.src.src,
     alt: img.credit.alt,
     listing: [...p.listing],

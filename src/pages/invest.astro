@@ -59,13 +59,6 @@ const options = [
     copy: 'Lower entry price in exchange for delivery risk and the rent you keep paying while you wait. The developer’s handover record is the variable that matters most.',
     href: '/properties?status=under-construction',
   },
-  {
-    icon: 'route' as const,
-    title: 'Rental properties',
-    horizon: 'Ongoing',
-    copy: 'Completed units in areas with real tenant demand — the western IT corridor above all. Occupancy and turnover matter more than headline yield.',
-    href: '/properties?listing=rent',
-  },
 ];
 
 const process = [
@@ -147,7 +140,7 @@ const process = [
     <div class="shell">
       <SectionHead
         title="Investment options"
-        intro="Five different instruments with genuinely different risk, liquidity and horizon. The right one depends on your answers, not on which is performing best."
+        intro="Four different instruments with genuinely different risk, liquidity and horizon. The right one depends on your answers, not on which is performing best."
         align="start"
       />
       <div class="mt-8 space-y-px overflow-hidden rounded-panel border border-line bg-line">
@@ -203,7 +196,7 @@ const process = [
     <div class="shell">
       <SectionHead
         title="Investment listings"
-        intro="Sample stock we would put in front of an investor, across all three horizons."
+        intro="Stock we would put in front of an investor, across all three horizons."
         linkHref="/properties?listing=invest"
         linkLabel="All investment listings"
       />
@@ -218,7 +211,7 @@ const process = [
       <h2 class="text-display-2 text-white">Talk to a property consultant</h2>
       <p class="mx-auto measure mt-4 text-[1.02rem] leading-relaxed text-white/90">
         Tell us your budget, your horizon and whether you are borrowing. We will tell you which of the
-        five options above your situation actually points to.
+        options above your situation actually points to.
       </p>
       <div class="mt-7 flex flex-wrap justify-center gap-2.5">
         <WhatsAppButton
@@ -226,6 +219,10 @@ const process = [
           label="WhatsApp a consultant"
           message="Hi, I'd like to discuss a property investment in Hyderabad. My budget and horizon are:"
         />
+        <a href={url('/investment-insights')} class="btn btn-outline-on-dark">
+          Investment insights
+          <Icon name="arrow-right" size={16} />
+        </a>
         <a href={url('/emi-calculator')} class="btn btn-outline-on-dark">
           <Icon name="calculator" size={17} />
           Work out the EMI

@@ -18,6 +18,18 @@ export function formatPriceLong(rupees: number): string {
   return `₹${rupees.toLocaleString('en-IN')}`;
 }
 
+export const PRICE_ON_REQUEST = 'Price on request';
+
+/** Short form, or the honest fallback when the developer publishes no price. */
+export function formatPriceOrAsk(rupees?: number): string {
+  return rupees === undefined ? PRICE_ON_REQUEST : formatPrice(rupees);
+}
+
+/** Long form, or the honest fallback. */
+export function formatPriceLongOrAsk(rupees?: number): string {
+  return rupees === undefined ? PRICE_ON_REQUEST : formatPriceLong(rupees);
+}
+
 /** Monthly rent reads better in thousands. */
 export function formatRent(rupees: number): string {
   return `₹${rupees.toLocaleString('en-IN')}/mo`;
@@ -26,6 +38,8 @@ export function formatRent(rupees: number): string {
 export function formatArea(sqft: number): string {
   return `${sqft.toLocaleString('en-IN')} sq.ft`;
 }
+
+export const AREA_ON_REQUEST = 'Area on request';
 
 export function formatRupees(rupees: number): string {
   return `₹${Math.round(rupees).toLocaleString('en-IN')}`;

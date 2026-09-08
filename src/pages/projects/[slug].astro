@@ -9,10 +9,10 @@ import PropertyCard from '../../components/PropertyCard.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import EmiCalculator from '../../components/EmiCalculator.astro';
-import { getAllProjects, getProjectBySlug, getSimilarProjects, PROJECT_DATA_NOTICE } from '../../data/projects';
+import { getAllProjects, getProjectBySlug, getSimilarProjects } from '../../data/projects';
 import { getLocationBySlug } from '../../data/locations';
 import { getPropertiesByLocation } from '../../data/properties';
-import { formatPriceLong } from '../../utils/format';
+import { formatPriceLongOrAsk } from '../../utils/format';
 import { statusLabels } from '../../types';
 import { url } from '../../utils/url';
 import { getTelLink } from '../../utils/whatsapp';
@@ -31,13 +31,19 @@ const nearbyListings = getPropertiesByLocation(project.location, 3);
 const tel = getTelLink();
 
 const facts = [
-  { label: 'Starting price', value: formatPriceLong(project.startingPrice) },
+  { label: 'Starting price', value: formatPriceLongOrAsk(project.startingPrice) },
   { label: 'Configurations', value: project.configurations.join(', ') },
   { label: 'Possession', value: project.possession },
   { label: 'Status', value: statusLabels[project.status] },
   { label: 'Scale', value: project.units },
   { label: 'Land area', value: project.landArea },
-];
+  project.unitsAvailable !== undefined
+    ? { label: 'Units available', value: `${project.unitsAvailable}` }
+    : null,
+  project.unitsPerFloor !== undefined
+    ? { label: 'Units per floor', value: `${project.unitsPerFloor}` }
+    : null,
+].filter(Boolean) as { label: string; value: string }[];
 
 const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} â€” pricing, availability and possession.`;
 ---
@@ -69,7 +75,11 @@ const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} â
         {locationName}, Hyderabad
       </p>
       <p class="ui mt-5 text-[1.6rem] font-bold tracking-[-0.03em] text-white">
-        From {formatPriceLong(project.startingPrice)}
+        {
+          project.startingPrice === undefined
+            ? 'Price on request'
+            : `From ${formatPriceLongOrAsk(project.startingPrice)}`
+        }
       </p>
     </div>
   </section>
@@ -91,7 +101,10 @@ const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} â
         <section class="mt-10">
           <h2 class="text-display-3">About the project</h2>
           <p class="measure mt-3 text-[1.02rem] leading-relaxed">{project.summary}</p>
-          <p class="mt-4 text-[0.85rem] text-ink-subtle">{PROJECT_DATA_NOTICE}</p>
+          <p class="mt-4 text-[0.85rem] text-ink-subtle">
+            Unit counts, built-up area, possession date and specification are as published by
+            {' '}{project.developer}. Prices are shared on request.
+          </p>
         </section>
 
         <section class="mt-10">
@@ -120,6 +133,43 @@ const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} â
             }
           </ul>
         </section>
+
+        {
+          project.specs && project.specs.length > 0 && (
+            <section class="mt-10">
+              <h2 class="text-display-3">Specification</h2>
+              <p class="mt-2 text-[0.85rem] text-ink-subtle">
+                Construction and finish specification as published by the developer.
+              </p>
+              <ul class="ui mt-4 flex flex-wrap gap-1.5">
+                {project.specs.map((sp) => (
+                  <li class="rounded-lg border border-line bg-surface px-3 py-1.5 text-[0.88rem] font-medium">
+                    {sp}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+
+        {
+          project.nearby && project.nearby.length > 0 && (
+            <section class="mt-10">
+              <h2 class="text-display-3">What is nearby</h2>
+              <p class="mt-2 text-[0.85rem] text-ink-subtle">
+                Distances as stated by the developer. Worth checking on a site visit.
+              </p>
+              <ul class="ui mt-5 grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-2">
+                {project.nearby.map((n) => (
+                  <li class="flex items-baseline justify-between gap-3 bg-bg p-4">
+                    <span class="text-[0.94rem] text-ink-muted">{n.label}</span>
+                    <span class="text-[0.95rem] font-bold">{n.distance}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
         {
           project.images.length > 1 && (
@@ -159,13 +209,17 @@ const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} â
           )
         }
 
-        <section class="mt-10">
-          <EmiCalculator
-            principal={Math.round((project.startingPrice * 0.8) / 100000) * 100000}
-            heading="EMI on the starting price"
-            compact
-          />
-        </section>
+        {
+          project.startingPrice !== undefined && (
+            <section class="mt-10">
+              <EmiCalculator
+                principal={Math.round((project.startingPrice * 0.8) / 100000) * 100000}
+                heading="EMI on the starting price"
+                compact
+              />
+            </section>
+          )
+        }
       </div>
 
       <aside class="lg:sticky lg:top-24 lg:self-start">

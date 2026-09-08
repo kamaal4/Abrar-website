@@ -73,8 +73,15 @@ if (form && grid) {
     if (f.bhk && d.bhk !== f.bhk) return false;
     if (f.location && d.location !== f.location) return false;
     if (f.status.length && !f.status.includes(d.status ?? '')) return false;
-    const price = Number(d.price ?? 0);
-    if (price < f.minPrice || price > f.maxPrice) return false;
+    // Listings with no published price stay visible until the visitor actually
+    // sets a budget — at which point we cannot honestly claim they fit it.
+    const hasBudget = f.minPrice > 0 || Number.isFinite(f.maxPrice);
+    if (d.noprice === 'true') {
+      if (hasBudget) return false;
+    } else {
+      const price = Number(d.price ?? 0);
+      if (price < f.minPrice || price > f.maxPrice) return false;
+    }
     if (f.q) {
       const haystack = `${d.title ?? ''} ${d.location ?? ''} ${d.type ?? ''} ${d.bhk ?? ''} bhk`;
       if (!f.q.split(/\s+/).every((term) => haystack.includes(term))) return false;
@@ -112,8 +119,8 @@ if (form && grid) {
       (el) =>
         (el.textContent =
           shown === cards.length
-            ? `${cards.length} sample listings`
-            : `${shown} of ${cards.length} sample listings`),
+            ? `${cards.length} listings`
+            : `${shown} of ${cards.length} listings`),
     );
     if (empty) empty.hidden = shown > 0;
     syncUrl(f);

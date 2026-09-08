@@ -1,0 +1,507 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Icon from '../components/Icon.astro';
+import HeroImage from '../components/HeroImage.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Faq from '../components/Faq.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteConfig } from '../config/site';
+import { url } from '../utils/url';
+
+/**
+ * One hub page rather than nine thin ones. Every comparison here ends in "which
+ * fits your goal" and never in "property wins" — same editorial line as
+ * /invest, which refuses to publish a projected return.
+ */
+
+const contents = [
+  { id: 'why-property', label: 'Why property in Hyderabad' },
+  { id: 'asset-classes', label: 'Property vs gold vs stocks' },
+  { id: 'vs-business', label: 'Property vs business' },
+  { id: 'vs-fd', label: 'Property vs bank FD' },
+  { id: 'flat-vs-plot', label: 'Flat vs plot' },
+  { id: 'residential-vs-commercial', label: 'Residential vs commercial' },
+  { id: 'what-makes-an-asset', label: 'What makes property an asset' },
+  { id: 'before-you-invest', label: 'Before you invest' },
+];
+
+const drivers = [
+  {
+    icon: 'building' as const,
+    title: 'A diversified employment base',
+    copy: 'Offices sit across HITEC City, Gachibowli, the Financial District, Nanakramguda and the eastern belt rather than one district. Housing demand does not rest on a single corridor holding up.',
+  },
+  {
+    icon: 'route' as const,
+    title: 'Infrastructure that got built',
+    copy: 'The Outer Ring Road and the operating metro lines are in the ground, not in a presentation. That is the difference between a location that is commutable and one that is promised to be.',
+  },
+  {
+    icon: 'layers' as const,
+    title: 'Options at most budgets',
+    copy: 'Flats, plots, farm land and commercial space all trade here, across a wide price band. A given budget usually has a viable location rather than being priced out of the city.',
+  },
+  {
+    icon: 'shield' as const,
+    title: 'A tangible, financeable asset',
+    copy: 'You can stand on it, use it, let it, and in most cases borrow against it. None of that guarantees a gain — it changes what kind of risk you are holding.',
+  },
+];
+
+// Deliberately no numbers in this table. Every cell is a structural property of
+// the asset class, not a return figure — nobody can honestly supply those.
+const assetRows = [
+  { factor: 'Physical asset you hold', property: 'Yes', gold: 'Yes', stocks: 'No' },
+  { factor: 'Income while you hold it', property: 'Rent, if let', gold: 'None', stocks: 'Dividends, if paid' },
+  { factor: 'Liquidity', property: 'Low to medium', gold: 'High', stocks: 'High' },
+  { factor: 'Typical entry capital', property: 'Medium to high', gold: 'Low', stocks: 'Low' },
+  { factor: 'Borrowing against it', property: 'Commonly available', gold: 'Limited', stocks: 'Limited' },
+  { factor: 'Ongoing management', property: 'Required', gold: 'Minimal', stocks: 'Minimal' },
+  { factor: 'Day-to-day price visibility', property: 'None — valued on sale', gold: 'Daily', stocks: 'Continuous' },
+  { factor: 'What drives the value', property: 'Location, title, local demand', gold: 'Global gold market', stocks: 'Company and market' },
+  { factor: 'Divisibility', property: 'Sell all or nothing', gold: 'Sell part', stocks: 'Sell part' },
+  { factor: 'Transaction cost and time', property: 'High, weeks to months', gold: 'Low, same day', stocks: 'Low, same day' },
+];
+
+const routes = [
+  {
+    goal: 'You want a physical asset that can also produce rent',
+    answer: 'Property',
+    href: '/properties?listing=buy',
+    label: 'Browse properties',
+  },
+  {
+    goal: 'You want something liquid to hold value against inflation',
+    answer: 'Gold',
+    href: '/investment-insights#asset-classes',
+    label: 'Read the comparison',
+  },
+  {
+    goal: 'You want market exposure you can sell in a day',
+    answer: 'Stocks',
+    href: '/investment-insights#asset-classes',
+    label: 'Read the comparison',
+  },
+];
+
+const pairs = [
+  {
+    id: 'vs-business',
+    title: 'Property vs starting a business',
+    intro:
+      'These are not really rivals — one is capital allocation, the other is a job you also fund. The comparison only matters because the same money can go to either.',
+    left: {
+      title: 'A business',
+      points: [
+        'Can produce far more than rent, and can also lose the capital outright',
+        'Needs your time continuously, not once at purchase',
+        'Carries operating risk: customers, staff, suppliers, regulation',
+        'No asset underneath if the trading stops',
+      ],
+    },
+    right: {
+      title: 'Property',
+      points: [
+        'Largely passive once acquired and let',
+        'Vacancy, maintenance and tenant risk, but bounded ones',
+        'An asset remains even when it produces nothing',
+        'Slow to exit, and no way to exit partially',
+      ],
+    },
+    verdict:
+      'If you have the time and appetite to run something, a business is the higher-variance use of the money. Property is what you buy when you want the capital to sit in an asset rather than in an operation.',
+  },
+  {
+    id: 'vs-fd',
+    title: 'Property vs a bank fixed deposit',
+    intro:
+      'The honest framing is liquidity and certainty against asset ownership — not "which returns more", because an FD tells you its return in advance and property cannot.',
+    left: {
+      title: 'Fixed deposit',
+      points: [
+        'A stated interest rate, known before you commit',
+        'Simple, and accessible at short notice on most terms',
+        'Interest is taxable, and inflation eats into the real return',
+        'No asset, no rent, no leverage',
+      ],
+    },
+    right: {
+      title: 'Property',
+      points: [
+        'No stated return; the outcome depends on location and timing',
+        'Potential rent, and potential appreciation — neither guaranteed',
+        'Stamp duty, registration, maintenance and tax on the way in and out',
+        'Slow to liquidate, especially in a weak market',
+      ],
+    },
+    verdict:
+      'Money you may need within a couple of years does not belong in property. An FD is the right home for a known short-term need; property is for capital you can genuinely leave alone.',
+  },
+  {
+    id: 'flat-vs-plot',
+    title: 'Flat vs plot',
+    intro:
+      'The most common question we get, and the one where the answer most depends on the buyer rather than the market.',
+    left: {
+      title: 'Flat',
+      points: [
+        'Can be let from the day you get possession',
+        'Usable immediately — you or a tenant can move in',
+        'The building depreciates even where the land does not',
+        'Maintenance charges, corpus, and a society to deal with',
+      ],
+    },
+    right: {
+      title: 'Plot',
+      points: [
+        'You own land, which does not depreciate',
+        'Almost no holding cost, and almost no income',
+        'Title and layout approval are the whole risk',
+        'Usually a longer horizon before a sale makes sense',
+      ],
+    },
+    verdict:
+      'A flat suits you if you need the asset to pay something while you hold it. A plot suits you if you can leave the money untouched for years and are willing to do proper legal diligence up front.',
+    link: { href: '/blog/plot-vs-apartment-which-is-better-for-investment', label: 'The longer version, with the arithmetic' },
+  },
+  {
+    id: 'residential-vs-commercial',
+    title: 'Residential vs commercial',
+    intro:
+      'Commercial rental yields are usually higher. That is not a free lunch — it is the price of a smaller tenant pool and longer voids.',
+    left: {
+      title: 'Residential',
+      points: [
+        'A large pool of potential tenants and buyers',
+        'Shorter void periods in most established areas',
+        'Lower ticket size, so easier to enter',
+        'Yields are generally modest',
+      ],
+    },
+    right: {
+      title: 'Commercial',
+      points: [
+        'Higher rental yield when tenanted',
+        'Longer leases, but far more painful vacancies',
+        'Value depends heavily on the specific location and footfall',
+        'Higher entry cost and more demanding diligence',
+      ],
+    },
+    verdict:
+      'Residential is the more forgiving asset to own badly. Commercial rewards someone who understands the specific micro-market and can absorb a vacant year.',
+  },
+];
+
+const assetQualities = [
+  { icon: 'shield' as const, title: 'Ownership', copy: 'A registered title in your name to something physical.' },
+  { icon: 'building' as const, title: 'Utility', copy: 'You can live in it, or run a business from it, instead of only holding it.' },
+  { icon: 'calendar' as const, title: 'Potential rent', copy: 'Income while you hold it — if you let it successfully, and not otherwise.' },
+  { icon: 'arrow-up-right' as const, title: 'Potential appreciation', copy: 'Value may rise over time. It depends on location and market, and it can fall.' },
+  { icon: 'calculator' as const, title: 'Financing', copy: 'Loans are commonly available against property, subject to eligibility and cost.' },
+  { icon: 'clock' as const, title: 'Longevity', copy: 'It outlasts you, and can be passed on.' },
+];
+
+const checklist = [
+  {
+    q: '1. Is the location right for what you actually want?',
+    a: 'A location that suits an end-user does not always suit an investor, and the reverse. Decide which you are before you look at anything, because it changes what a good buy looks like.',
+  },
+  {
+    q: '2. Is the title clear?',
+    a: 'Ask for the chain of title, the encumbrance certificate, and the current owner’s link documents. Pay a lawyer to read them. This is the single check that most often prevents a total loss.',
+  },
+  {
+    q: '3. Are the approvals in place?',
+    a: 'For a building: the sanctioned plan, the building permission, and the occupancy certificate on completion. For a plot: the approved layout, with your specific plot number on it. Confirm what stands matches what was permitted.',
+  },
+  {
+    q: '4. What is the RERA position?',
+    a: 'Where a project is required to be registered, confirm the registration and read what the developer declared — the promised completion date and the sanctioned plan are both on the record there.',
+  },
+  {
+    q: '5. Is the price reasonable for this specific micro-market?',
+    a: 'Not the area — the street. Compare against recent transactions in the same layout or an adjacent one, and be sceptical of a per-square-foot figure quoted without a comparable.',
+  },
+  {
+    q: '6. Is there real rental demand here?',
+    a: 'Ask what similar units in the same building actually let for, and how long they sat empty first. A rental yield calculated from an asking rent nobody paid is not a yield.',
+  },
+  {
+    q: '7. How would you exit?',
+    a: 'Who is the next buyer, and what would they be buying it for? An asset with no obvious next buyer is not an investment, however cheap the entry.',
+  },
+];
+---
+
+<BaseLayout
+  title="Investment Insights — understand the asset before you buy it"
+  description="Property against gold, stocks, a business and a fixed deposit. Flat against plot. Residential against commercial. What actually makes property an asset, and the seven checks to run before you commit."
+>
+  <!-- Hero -->
+  <section class="relative isolate overflow-hidden bg-ink">
+    <HeroImage
+      wide="hyd-financial-district-panorama"
+      narrow="gachibowli-skyview"
+      alt="The Hyderabad skyline at dusk"
+      class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.5]"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/85 via-ink/70 to-ink/90" aria-hidden="true"></div>
+
+    <div class="shell py-12 sm:py-16 lg:py-20">
+      <Breadcrumbs items={[{ label: 'Investment Insights' }]} tone="dark" />
+      <p class="ui mt-6 text-[0.9rem] font-semibold text-gold">Compare. Understand. Invest smarter.</p>
+      <h1 class="mt-3 max-w-3xl text-display-1 text-white">
+        Don’t just buy a property. Understand the asset.
+      </h1>
+      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.15rem]">
+        Property against every other place your money could sit — with the trade-offs stated plainly
+        and no projected returns, because nobody can honestly give you one.
+      </p>
+
+      <p class="ui mt-6 rounded-panel border border-white/20 bg-white/5 p-4 text-[0.9rem] leading-relaxed text-white/80">
+        <strong class="font-semibold text-white">This page is educational, not financial advice.</strong>
+        {' '}It describes how these assets differ in structure. It does not tell you what to buy, and
+        it contains no return forecast. Talk to a qualified adviser about your own position.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <nav class="border-b border-line bg-surface" aria-label="On this page">
+    <div class="shell py-4">
+      <ul class="ui flex flex-wrap gap-1.5">
+        {
+          contents.map((c) => (
+            <li>
+              <a
+                href={`#${c.id}`}
+                class="inline-block rounded-lg border border-line bg-bg px-2.5 py-1 text-[0.84rem] font-semibold transition-colors hover:border-ink hover:bg-surface"
+              >
+                {c.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Why property in Hyderabad -->
+  <section id="why-property" class="band scroll-mt-24">
+    <div class="shell">
+      <SectionHead
+        as="h2"
+        align="start"
+        title="Why Hyderabad property? Build an asset, not just a home."
+        intro="Four structural things are true about this city. None of them is a promise about price."
+      />
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {
+          drivers.map((d) => (
+            <div class="rounded-panel border border-line p-5">
+              <Icon name={d.icon} size={22} class="text-gold-ink" />
+              <h3 class="mt-3 text-[1.15rem]">{d.title}</h3>
+              <p class="mt-2 text-[0.96rem] leading-relaxed text-ink-muted">{d.copy}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="measure mt-8 rounded-panel border-l-4 border-gold bg-surface p-5 text-[0.98rem] leading-relaxed">
+        <strong>What we will not tell you:</strong> a percentage return, a doubling period, or which
+        area is about to take off. Property prices and rents rise and fall. What you get depends on
+        location, the specific property, market conditions, financing and how long you hold — and
+        anyone quoting you a number for all of that is guessing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Asset class comparison -->
+  <section id="asset-classes" class="band scroll-mt-24 border-t border-line bg-surface">
+    <div class="shell">
+      <SectionHead
+        as="h2"
+        align="start"
+        title="Which asset fits your financial goal?"
+        intro="Property, gold and stocks are not competing to be best. They behave differently, and the right one is the one whose behaviour matches what you need."
+      />
+
+      <div class="scroll-x mt-8 rounded-panel border border-line bg-bg">
+        <table class="w-full min-w-[44rem] text-left text-[0.94rem]">
+          <caption class="sr-only">
+            Structural comparison of real estate, gold and stocks
+          </caption>
+          <thead class="ui border-b border-line bg-surface text-[0.82rem] text-ink-muted">
+            <tr>
+              <th scope="col" class="p-3.5 font-semibold">Factor</th>
+              <th scope="col" class="p-3.5 font-semibold">Real estate</th>
+              <th scope="col" class="p-3.5 font-semibold">Gold</th>
+              <th scope="col" class="p-3.5 font-semibold">Stocks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              assetRows.map((r) => (
+                <tr class="border-b border-line last:border-0">
+                  <th scope="row" class="p-3.5 font-semibold">{r.factor}</th>
+                  <td class="p-3.5 text-ink-muted">{r.property}</td>
+                  <td class="p-3.5 text-ink-muted">{r.gold}</td>
+                  <td class="p-3.5 text-ink-muted">{r.stocks}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-3 text-[0.85rem] text-ink-subtle">
+        Structural differences only. Deliberately no return figures: past performance of any of the
+        three tells you nothing reliable about your holding period.
+      </p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {
+          routes.map((r) => (
+            <div class="flex flex-col rounded-panel border border-line bg-bg p-5">
+              <p class="text-[0.95rem] leading-relaxed text-ink-muted">{r.goal}</p>
+              <p class="ui mt-3 text-[1.3rem] font-bold tracking-[-0.02em]">→ {r.answer}</p>
+              <a href={url(r.href)} class="link-arrow mt-auto pt-4">
+                {r.label}
+                <Icon name="arrow-right" size={16} />
+              </a>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="measure mt-6 text-[0.95rem] leading-relaxed text-ink-muted">
+        A note on the two lines people most often get wrong: gold protects value and sells in a day,
+        but pays you nothing to hold it. Stocks give you market exposure and let you sell a part of
+        your position; property gives you a physical asset and makes you sell all of it or none.
+      </p>
+    </div>
+  </section>
+
+  <!-- Head-to-head sections -->
+  {
+    pairs.map((pair) => (
+      <section id={pair.id} class="band scroll-mt-24 border-t border-line">
+        <div class="shell">
+          <h2 class="text-display-2">{pair.title}</h2>
+          <p class="measure mt-3 text-[1.02rem] leading-relaxed text-ink-muted">{pair.intro}</p>
+
+          <div class="mt-7 grid gap-5 md:grid-cols-2">
+            {[pair.left, pair.right].map((side) => (
+              <div class="rounded-panel border border-line p-5">
+                <h3 class="text-[1.15rem]">{side.title}</h3>
+                <ul class="mt-3 space-y-2.5">
+                  {side.points.map((pt) => (
+                    <li class="flex gap-2.5 text-[0.96rem] leading-relaxed text-ink-muted">
+                      <Icon name="chevron-right" size={16} class="mt-1 shrink-0 text-gold-ink" />
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p class="measure mt-6 rounded-panel border-l-4 border-gold bg-surface p-5 text-[0.98rem] leading-relaxed">
+            <strong>Which fits your goal:</strong> {pair.verdict}
+          </p>
+
+          {pair.link && (
+            <a href={url(pair.link.href)} class="link-arrow mt-5">
+              {pair.link.label}
+              <Icon name="arrow-right" size={16} />
+            </a>
+          )}
+        </div>
+      </section>
+    ))
+  }
+
+  <!-- What makes property an asset -->
+  <section id="what-makes-an-asset" class="band scroll-mt-24 border-t border-line bg-surface">
+    <div class="shell">
+      <SectionHead
+        as="h2"
+        align="start"
+        title="What actually makes property an asset"
+        intro="Six things a property can give you. Only the first two are certain the day you buy — the rest are possibilities you are paying for."
+      />
+      <ol class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          assetQualities.map((q, i) => (
+            <li class="rounded-panel border border-line bg-bg p-5">
+              <p class="ui text-[0.8rem] font-bold text-gold-ink">{String(i + 1).padStart(2, '0')}</p>
+              <h3 class="mt-2 flex items-center gap-2 text-[1.08rem]">
+                <Icon name={q.icon} size={18} class="text-ink-subtle" />
+                {q.title}
+              </h3>
+              <p class="mt-2 text-[0.94rem] leading-relaxed text-ink-muted">{q.copy}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Checklist -->
+  <section id="before-you-invest" class="band scroll-mt-24 border-t border-line">
+    <div class="shell">
+      <div class="grid gap-10 lg:grid-cols-[1fr_18rem] lg:gap-14">
+        <div class="min-w-0">
+          <Faq items={checklist} title="Seven questions before you buy" />
+          <a href={url('/blog/things-to-check-before-buying-a-flat')} class="link-arrow mt-6">
+            The full flat-buying checklist
+            <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+
+        <aside class="lg:sticky lg:top-24 lg:self-start">
+          <div class="rounded-panel border border-line bg-surface p-5 shadow-lift">
+            <h2 class="text-[1.15rem]">Not sure which of these applies to you?</h2>
+            <p class="mt-2 text-[0.92rem] leading-relaxed text-ink-muted">
+              Tell the assistant your budget, the area you have in mind, your purpose and how long
+              you would hold. It shortlists from what we actually have and explains why.
+            </p>
+            <div class="mt-5 space-y-2">
+              <button type="button" data-assistant-open class="btn btn-primary w-full">
+                <Icon name="spark" size={17} />
+                Ask the property assistant
+              </button>
+              <WhatsAppButton
+                message="Hi, I read the Investment Insights page and I'd like help deciding what fits my goal."
+                label="Talk to a person"
+                variant="outline"
+                fullWidth
+              />
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="band border-t border-line bg-ink">
+    <div class="shell text-center">
+      <h2 class="text-display-2 text-white">Don’t just buy a property. Understand the asset.</h2>
+      <p class="measure mx-auto mt-4 text-[1.05rem] leading-relaxed text-white/85">
+        Explore what {siteConfig.developer} has built across Hyderabad, compare the options against
+        your own horizon, and ask us the awkward questions before you commit.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href={url('/properties')} class="btn btn-on-dark">Explore properties</a>
+        <a href={url('/projects')} class="btn btn-outline-on-dark">See the projects</a>
+        <WhatsAppButton
+          message="Hi, I'd like to understand my real estate options in Hyderabad."
+          label="WhatsApp us"
+          variant="on-dark"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

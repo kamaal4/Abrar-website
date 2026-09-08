@@ -21,7 +21,7 @@ export type Step = {
   /** Which answer the options on this step record. */
   key?: AnswerKey;
   options?: Option[];
-  /** Terminal steps show matching sample properties instead of options. */
+  /** Terminal steps show matching properties instead of options. */
   showResults?: boolean;
 };
 
@@ -94,7 +94,8 @@ export type AssistantProperty = {
   locationName: string;
   type: string;
   bhk?: number;
-  price: number;
+  /** Absent when the developer publishes no price. */
+  price?: number;
   priceLabel: string;
   area: string;
   image: string;
@@ -123,7 +124,8 @@ export function matchProperties(
       case 'investment':
         return p.listing.includes('invest');
       case 'under1cr':
-        return p.price <= 10_000_000;
+        // No published price cannot be claimed to be under a crore.
+        return p.price !== undefined && p.price <= 10_000_000;
       default:
         return true;
     }
@@ -131,6 +133,9 @@ export function matchProperties(
 
   const budgetMatch = (p: AssistantProperty) => {
     if (!budget || budget === 'any') return true;
+    // An explicit budget excludes listings with no published price rather than
+    // silently passing them off as a match.
+    if (p.price === undefined) return false;
     const [min, max] = budget.split('-').map(Number);
     return p.price >= (min ?? 0) && p.price <= (max ?? Infinity);
   };
@@ -159,7 +164,7 @@ export function resultMessage(
   answers: Answers,
   matches: AssistantProperty[],
 ): string {
-  if (!matches.length) return "I couldn't find a sample listing for that combination.";
+  if (!matches.length) return "I couldn't find a listing for that combination.";
   const exact = matchProperties(all, answers, 99);
   const strict = all.filter((p) => exact.includes(p));
   const loosened =
@@ -167,9 +172,9 @@ export function resultMessage(
       ? matches.every((m) => m.location === answers.location)
       : true;
   if (!loosened) {
-    return "Nothing in that exact area at that budget, so here are the closest sample listings elsewhere in the city:";
+    return "Nothing in that exact area at that budget, so here are the closest listings elsewhere in the city:";
   }
   return strict.length > matches.length
-    ? `Here are ${matches.length} of ${strict.length} sample listings that fit:`
-    : 'Here are the sample listings that fit:';
+    ? `Here are ${matches.length} of ${strict.length} listings that fit:`
+    : 'Here are the listings that fit:';
 }

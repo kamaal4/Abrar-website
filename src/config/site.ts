@@ -3,11 +3,11 @@
  * Replace the placeholder values here and the whole site follows.
  */
 export const siteConfig = {
-  name: 'Invest In Real Estate Hyderabad',
-  shortName: 'Invest In Real Estate',
-  tagline: 'Find. Invest. Grow.',
+  name: 'InvestForAssets',
+  shortName: 'InvestForAssets',
+  tagline: 'Your Property. Your Asset. Your Future.',
   description:
-    'Explore homes, plots, villas and real estate investment opportunities across Hyderabad.',
+    'Discover, compare and invest in residential, commercial and land assets across Hyderabad — with AI-powered property discovery and investment guidance.',
 
   /** Digits only, with country code. Used to build every wa.me link. */
   whatsapp: '918247378529',
@@ -26,19 +26,27 @@ export const siteConfig = {
     whatsapp: 'https://wa.me/918247378529',
   },
 
-  /** Shown in the footer and on every listing card. Delete once real stock is loaded. */
-  demoNotice: 'Sample listing — illustrative data, not a live offer.',
+  /** Developer whose stock this site lists. Shown on project and property pages. */
+  developer: 'Qmaks Builders & Developers',
+
+  /**
+   * Site-wide disclosure, shown in the footer. Real stock, but the developer
+   * publishes no prices and some gallery images are artist's renders rather
+   * than photographs — both facts belong on the page, not in a drawer.
+   */
+  disclosure:
+    'Project details, unit counts and areas are as published by the developer. Prices are shared on request. Some images are artist’s impressions, not photographs of the completed building. Verify all documents, approvals and figures independently before committing.',
 } as const;
 
 export type NavItem = { label: string; href: string };
 
 export const primaryNav: NavItem[] = [
   { label: 'Buy', href: '/properties?listing=buy' },
-  { label: 'Rent', href: '/properties?listing=rent' },
+  { label: 'Commercial', href: '/properties?type=commercial' },
   { label: 'Invest', href: '/invest' },
   { label: 'Projects', href: '/projects' },
   { label: 'Locations', href: '/locations' },
-  { label: 'Sell Property', href: '/sell-property' },
+  { label: 'Investment Insights', href: '/investment-insights' },
   { label: 'About', href: '/about' },
 ];
 
@@ -47,10 +55,11 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
     heading: 'Explore',
     items: [
       { label: 'Buy', href: '/properties?listing=buy' },
-      { label: 'Rent', href: '/properties?listing=rent' },
+      { label: 'Commercial', href: '/properties?type=commercial' },
       { label: 'Invest', href: '/invest' },
       { label: 'Projects', href: '/projects' },
       { label: 'Locations', href: '/locations' },
+      { label: 'Investment Insights', href: '/investment-insights' },
     ],
   },
   {

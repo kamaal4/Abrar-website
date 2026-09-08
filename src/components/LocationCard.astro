@@ -58,9 +58,15 @@ const href = url(`/locations/${location.slug}`);
     </p>
 
     <div class="ui mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.82rem] text-white/90">
-      <span>{count} sample {count === 1 ? 'listing' : 'listings'}</span>
-      <span class="text-white/40">·</span>
-      <span>from {formatPrice(location.startingPrice)}</span>
+      <span>{count} {count === 1 ? 'listing' : 'listings'}</span>
+      {
+        location.startingPrice !== undefined && (
+          <>
+            <span class="text-white/40">·</span>
+            <span>from {formatPrice(location.startingPrice)}</span>
+          </>
+        )
+      }
     </div>
 
     {

@@ -9,7 +9,7 @@ import ProjectCard from '../../components/ProjectCard.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
 import SectionHead from '../../components/SectionHead.astro';
 import Faq from '../../components/Faq.astro';
-import { getAllLocations, getLocationBySlug, LOCATION_DATA_NOTICE } from '../../data/locations';
+import { getAllLocations, getLocationBySlug } from '../../data/locations';
 import { getPropertiesByLocation } from '../../data/properties';
 import { getProjectsByLocation } from '../../data/projects';
 import { formatPriceLong } from '../../utils/format';
@@ -43,7 +43,7 @@ const faqLd =
 
 <BaseLayout
   title={`Properties in ${location.name}, Hyderabad`}
-  description={`${location.tagline}. Indicative price ranges, popular configurations, connectivity and sample listings in ${location.name}, Hyderabad.`}
+  description={`${location.tagline}. Price guidance, popular configurations, connectivity and available listings in ${location.name}, Hyderabad.`}
   jsonLd={faqLd}
 >
   <section class="relative isolate overflow-hidden bg-ink">
@@ -69,13 +69,17 @@ const faqLd =
 
       <dl class="ui mt-7 flex flex-wrap gap-x-8 gap-y-3 text-white">
         <div>
-          <dt class="text-[0.8rem] text-white/70">Sample listings</dt>
+          <dt class="text-[0.8rem] text-white/70">Listings</dt>
           <dd class="text-[1.2rem] font-bold">{listings.length}</dd>
         </div>
-        <div>
-          <dt class="text-[0.8rem] text-white/70">Indicative start</dt>
-          <dd class="text-[1.2rem] font-bold">{formatPriceLong(location.startingPrice)}</dd>
-        </div>
+        {
+          location.startingPrice !== undefined && (
+            <div>
+              <dt class="text-[0.8rem] text-white/70">Indicative start</dt>
+              <dd class="text-[1.2rem] font-bold">{formatPriceLong(location.startingPrice)}</dd>
+            </div>
+          )
+        }
         <div>
           <dt class="text-[0.8rem] text-white/70">Zone</dt>
           <dd class="text-[1.2rem] font-bold">{location.zone} Hyderabad</dd>
@@ -94,20 +98,25 @@ const faqLd =
           </div>
         </section>
 
-        <section class="mt-12">
-          <h2 class="text-display-3">Price ranges</h2>
-          <p class="mt-2 text-[0.85rem] text-ink-subtle">{LOCATION_DATA_NOTICE}</p>
-          <ul class="ui mt-5 divide-y divide-line rounded-panel border border-line">
-            {
-              location.priceRanges.map((r) => (
-                <li class="flex flex-wrap items-baseline justify-between gap-3 p-4">
-                  <span class="text-[0.98rem] font-semibold">{r.label}</span>
-                  <span class="text-[1.05rem] font-bold">{r.range}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+        {
+          location.priceRanges.length > 0 && (
+            <section class="mt-12">
+              <h2 class="text-display-3">Price ranges</h2>
+              <p class="mt-2 text-[0.85rem] text-ink-subtle">
+                Indicative ranges for the area, for orientation only — not a quotation for any
+                specific property.
+              </p>
+              <ul class="ui mt-5 divide-y divide-line rounded-panel border border-line">
+                {location.priceRanges.map((r) => (
+                  <li class="flex flex-wrap items-baseline justify-between gap-3 p-4">
+                    <span class="text-[0.98rem] font-semibold">{r.label}</span>
+                    <span class="text-[1.05rem] font-bold">{r.range}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
         <section class="mt-12">
           <h2 class="text-display-3">Popular configurations</h2>
@@ -138,22 +147,24 @@ const faqLd =
           </ul>
         </section>
 
-        <section class="mt-12">
-          <h2 class="text-display-3">Connectivity</h2>
-          <ul class="ui mt-5 grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-2">
-            {
-              location.connectivity.map((c) => (
-                <li class="bg-bg p-4">
-                  <p class="flex items-center gap-1.5 text-[0.95rem] font-bold">
-                    <Icon name="route" size={16} class="text-gold-ink" />
-                    {c.label}
-                  </p>
-                  <p class="mt-1 text-[0.9rem] text-ink-muted">{c.detail}</p>
-                </li>
-              ))
-            }
-          </ul>
-        </section>
+        {
+          location.connectivity.length > 0 && (
+            <section class="mt-12">
+              <h2 class="text-display-3">Connectivity</h2>
+              <ul class="ui mt-5 grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-2">
+                {location.connectivity.map((c) => (
+                  <li class="bg-bg p-4">
+                    <p class="flex items-center gap-1.5 text-[0.95rem] font-bold">
+                      <Icon name="route" size={16} class="text-gold-ink" />
+                      {c.label}
+                    </p>
+                    <p class="mt-1 text-[0.9rem] text-ink-muted">{c.detail}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
 
         <section class="mt-12">
           <h2 class="text-display-3">Nearby areas</h2>
@@ -223,7 +234,7 @@ const faqLd =
       listings.length > 0 && (
         <section class="mt-14 border-t border-line pt-10">
           <SectionHead
-            title={`Sample listings in ${location.name}`}
+            title={`Listings in ${location.name}`}
             linkHref={`/properties?location=${location.slug}`}
             linkLabel="Filter all listings"
           />

@@ -30,74 +30,127 @@ const categories = [
   {
     title: 'Buy a home',
     image: 'aparna-zenon-towers' as const,
-    copy: 'Apartments and villas across the city, from a first 2 BHK to a four-bedroom in a gated layout.',
+    copy: 'Apartments across Tolichowki, Alkapur, Shaikpet and the central belt — 2, 3 and 4 BHK in completed and under-construction buildings.',
     links: [
       { label: '2 BHK', href: '/properties?listing=buy&bhk=2' },
       { label: '3 BHK', href: '/properties?listing=buy&bhk=3' },
       { label: '4 BHK', href: '/properties?listing=buy&bhk=4' },
-      { label: 'Villas', href: '/properties?listing=buy&type=villa' },
+      { label: 'Ready to move', href: '/properties?status=ready-to-move' },
     ],
   },
   {
     title: 'Invest in land',
     image: 'telangana-farmland-2' as const,
-    copy: 'Plots, open land and farm land on the western corridor — lower holding cost, longer horizon.',
+    copy: 'Plotted layouts on the airport corridor and farm land west of the city — lower holding cost, longer horizon, heavier diligence.',
     links: [
       { label: 'Plots', href: '/properties?type=plot' },
-      { label: 'Open land', href: '/properties?type=open-land' },
       { label: 'Farm land', href: '/properties?type=farm-land' },
-      { label: 'How to evaluate land', href: '/blog/plot-vs-apartment-which-is-better-for-investment' },
+      { label: 'Flat vs plot', href: '/investment-insights#flat-vs-plot' },
+      { label: 'Land areas', href: '/locations' },
     ],
   },
   {
-    title: 'Explore projects',
-    image: 'tellapur-towers' as const,
-    copy: 'New launches, towers under construction and completed developments you can walk through today.',
+    title: 'Commercial space',
+    image: 'hyd-financial-district' as const,
+    copy: 'Shops, offices and mixed-use floors in Alkapur, Shaikpet and Mehdipatnam — higher yield when tenanted, longer voids when not.',
     links: [
-      { label: 'New launches', href: '/projects?status=new-launch' },
-      { label: 'Under construction', href: '/projects?status=under-construction' },
-      { label: 'Ready to move', href: '/projects?status=ready-to-move' },
-      { label: 'All projects', href: '/projects' },
+      { label: 'All commercial', href: '/properties?type=commercial' },
+      { label: 'Under construction', href: '/properties?type=commercial&status=under-construction' },
+      { label: 'Ready to move', href: '/properties?type=commercial&status=ready-to-move' },
+      { label: 'Residential vs commercial', href: '/investment-insights#residential-vs-commercial' },
     ],
   },
 ];
 
-const reasons = [
+/** Why property can be an asset at all. Language stays on "potential". */
+const assetReasons = [
+  {
+    icon: 'building' as const,
+    title: 'Residential property',
+    copy: '2, 3 and 4 BHK apartments you can live in or let. The most forgiving asset to own if you are new to this.',
+  },
+  {
+    icon: 'land' as const,
+    title: 'Land and plots',
+    copy: 'Approved layouts and farm land. No income while you hold it, and no depreciation either.',
+  },
+  {
+    icon: 'layers' as const,
+    title: 'Commercial property',
+    copy: 'Shops, offices and mixed-use floors. Potentially higher rent, and a smaller pool of tenants.',
+  },
+  {
+    icon: 'calendar' as const,
+    title: 'Rental income',
+    copy: 'Property can produce recurring income — if it is let successfully, in an area with real demand.',
+  },
+  {
+    icon: 'arrow-up-right' as const,
+    title: 'Potential appreciation',
+    copy: 'Value may rise over time. Historically many Hyderabad corridors have, but it depends on location and market and it can fall.',
+  },
   {
     icon: 'shield' as const,
-    title: 'Verified property information',
-    copy: 'Where a listing is marked verified, it means we have seen the documents and the property ourselves. Where we have not, we say so on the listing rather than leaving you to assume.',
+    title: 'A tangible asset',
+    copy: 'Physical ownership, registered in your name. You can stand on it, use it, and in most cases borrow against it.',
+  },
+];
+
+/** Condensed from /investment-insights. Structure only, never a return figure. */
+const assetRows = [
+  { factor: 'Physical asset', property: 'Yes', gold: 'Yes', stocks: 'No' },
+  { factor: 'Income while held', property: 'Rent, if let', gold: 'None', stocks: 'Dividends, if paid' },
+  { factor: 'Liquidity', property: 'Low to medium', gold: 'High', stocks: 'High' },
+  { factor: 'Entry capital', property: 'Medium to high', gold: 'Low', stocks: 'Low' },
+  { factor: 'Borrow against it', property: 'Commonly available', gold: 'Limited', stocks: 'Limited' },
+  { factor: 'Management needed', property: 'Yes', gold: 'Minimal', stocks: 'Minimal' },
+];
+
+const steps = [
+  { n: '01', title: 'Tell us your requirement', copy: 'Budget, area, purpose, configuration and how long you plan to hold.' },
+  { n: '02', title: 'We find the matches', copy: 'The assistant shortlists from what we actually have, rather than everything on the market.' },
+  { n: '03', title: 'Compare properties', copy: 'Side by side on the things that matter — possession, area, amenities and what is nearby.' },
+  { n: '04', title: 'Site visit', copy: 'We arrange it, come along where it helps, and tell you what to look at while you are there.' },
+  { n: '05', title: 'Due-diligence support', copy: 'Title, approvals, RERA position and the total acquisition cost — not just the quoted price.' },
+  { n: '06', title: 'Make your decision', copy: 'With the awkward questions already asked, and no pressure from us either way.' },
+];
+
+const reasons = [
+  {
+    icon: 'spark' as const,
+    title: 'AI-powered discovery',
+    copy: 'Describe your goal in plain language — budget, area, purpose, horizon — and get a shortlist with the reasoning shown, instead of scrolling a thousand listings.',
   },
   {
     icon: 'pin' as const,
     title: 'Local Hyderabad expertise',
-    copy: 'We work one city. That means we can tell you which stretch of a road floods, where water supply is actually reliable, and which layout has approvals in place.',
-  },
-  {
-    icon: 'compass' as const,
-    title: 'Investment guidance, not projections',
-    copy: 'We will help you match a property to your budget and horizon. We will not hand you an appreciation forecast, because nobody can honestly make one.',
-  },
-  {
-    icon: 'route' as const,
-    title: 'Site visit support',
-    copy: 'We arrange visits, come along where it helps, and tell you what to look at while you are there — including the things a brochure will not mention.',
+    copy: 'We work one city. That means we can tell you which stretch of road floods, where water supply is actually reliable, and which layout has approvals in place.',
   },
   {
     icon: 'layers' as const,
+    title: 'Real comparison',
+    copy: 'Possession status, unit counts, built-up area and what is within walking distance — laid out the same way for every project so you can compare like with like.',
+  },
+  {
+    icon: 'shield' as const,
     title: 'Transparent information',
-    copy: 'Carpet area alongside super built-up. Total cost including registration and stamp duty, not just the quoted price.',
+    copy: 'Where the developer publishes no price, we say "on request" rather than inventing one. Where an image is an artist\'s impression, we say that too.',
+  },
+  {
+    icon: 'compass' as const,
+    title: 'Guidance, not projections',
+    copy: 'We will help you match a property to your budget and horizon. We will not hand you an appreciation forecast, because nobody can honestly make one.',
   },
   {
     icon: 'whatsapp' as const,
-    title: 'Talk to a person',
-    copy: 'Every enquiry on this site goes to a consultant on WhatsApp, not into a form queue. You get an answer from someone who knows the property.',
+    title: 'WhatsApp support',
+    copy: 'Every enquiry goes to a person on WhatsApp, not into a form queue. You get an answer from someone who knows the property.',
   },
 ];
 ---
 
 <BaseLayout
-  title={`${siteConfig.name} — Find. Invest. Grow.`}
+  title={`${siteConfig.name} — ${siteConfig.tagline}`}
   description={siteConfig.description}
 >
   <!-- Hero: a real Hyderabad skyline carries the section; type sits over it. -->
@@ -117,32 +170,197 @@ const reasons = [
     <div class="shell pb-10 pt-14 sm:pb-14 sm:pt-20 lg:pb-20 lg:pt-28">
       <p class="ui enter text-[0.92rem] font-semibold text-gold">{siteConfig.tagline}</p>
       <h1 class="enter d-1 mt-3 max-w-3xl text-display-1 text-white">
-        Find the right property in Hyderabad
+        Invest in real estate in Hyderabad
       </h1>
       <p class="enter d-2 measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.18rem]">
-        Explore verified homes, plots, villas and investment opportunities across the city — with
-        straight answers about what each one is actually good for.
+        Discover, compare and invest in residential, commercial and land assets across the city —
+        with AI-powered property discovery and straight answers about what each one is good for.
       </p>
+
+      <ul class="ui enter d-2 mt-5 flex flex-wrap gap-x-3 gap-y-1 text-[0.82rem] font-semibold text-white/70">
+        {
+          [
+            'AI-powered discovery',
+            'Smart investment',
+            'Real comparison',
+            'Hyderabad only',
+          ].map((k, i) => (
+            <li class="flex items-center gap-3">
+              {i > 0 && <span class="text-white/30" aria-hidden="true">·</span>}
+              {k}
+            </li>
+          ))
+        }
+      </ul>
 
       <div class="enter d-3 mt-8 max-w-4xl">
         <SearchBar />
       </div>
 
-      <p class="enter d-4 mt-5 text-[0.95rem] text-white/80">
-        Not sure what to choose?{' '}
-        <button
-          type="button"
-          data-assistant-open
-          class="ui font-semibold text-gold underline decoration-gold/50 decoration-2 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
-        >
-          Ask our AI Property Assistant →
+      <div class="enter d-4 mt-6 flex flex-wrap items-center gap-2.5">
+        <a href={url('/properties')} class="btn btn-on-dark">Explore properties</a>
+        <a href={url('/invest')} class="btn btn-outline-on-dark">Find my investment</a>
+        <button type="button" data-assistant-open class="btn btn-outline-on-dark">
+          <Icon name="spark" size={17} />
+          Talk to AI
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why property is an asset at all. Six cards, "potential" language throughout. -->
+  <section class="band">
+    <div class="shell">
+      <SectionHead
+        title="Why invest in assets?"
+        intro="A property is not only a place to live. Held deliberately, it is a long-term asset — with the trade-offs that implies."
+        align="start"
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          assetReasons.map((r) => (
+            <div class="rounded-panel border border-line p-5">
+              <Icon name={r.icon} size={22} class="text-gold-ink" />
+              <h3 class="mt-3 text-[1.12rem]">{r.title}</h3>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">{r.copy}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="measure mt-6 text-[0.9rem] leading-relaxed text-ink-subtle">
+        Rental income and appreciation are possibilities, not guarantees. Both depend on the
+        location, the specific property and the market, and both can go the other way.
       </p>
     </div>
   </section>
 
+  <!-- Asset-class comparison. Condensed; the hub page carries the full version. -->
+  <section class="band border-t border-line bg-surface">
+    <div class="shell">
+      <SectionHead
+        title="Which asset fits your financial goal?"
+        intro="Real estate, gold and stocks are not competing to be best. They behave differently — pick the behaviour you need."
+        linkHref="/investment-insights#asset-classes"
+        linkLabel="Full comparison"
+      />
+
+      <div class="scroll-x mt-8 rounded-panel border border-line bg-bg">
+        <table class="w-full min-w-[40rem] text-left text-[0.94rem]">
+          <caption class="sr-only">How real estate, gold and stocks differ structurally</caption>
+          <thead class="ui border-b border-line bg-surface text-[0.82rem] text-ink-muted">
+            <tr>
+              <th scope="col" class="p-3.5 font-semibold">Factor</th>
+              <th scope="col" class="p-3.5 font-semibold">Real estate</th>
+              <th scope="col" class="p-3.5 font-semibold">Gold</th>
+              <th scope="col" class="p-3.5 font-semibold">Stocks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              assetRows.map((r) => (
+                <tr class="border-b border-line last:border-0">
+                  <th scope="row" class="p-3.5 font-semibold">{r.factor}</th>
+                  <td class="p-3.5 text-ink-muted">{r.property}</td>
+                  <td class="p-3.5 text-ink-muted">{r.gold}</td>
+                  <td class="p-3.5 text-ink-muted">{r.stocks}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-3 text-[0.85rem] text-ink-subtle">
+        Educational comparison, not financial advice — and deliberately no return figures, because
+        nobody can honestly supply them for your holding period.
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-2.5">
+        <a href={url('/properties')} class="btn btn-primary">Build wealth → Property</a>
+        <a href={url('/investment-insights#asset-classes')} class="btn btn-outline">
+          Compare gold and stocks
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI assistant pitch. The differentiator, so it gets its own fold. -->
+  <section class="band border-t border-line">
+    <div class="shell">
+      <div class="grid gap-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-14">
+        <div>
+          <p class="ui text-[0.85rem] font-bold text-gold-ink">AI investment assistant</p>
+          <h2 class="mt-2 text-display-2">Tell the assistant what you want to achieve</h2>
+          <p class="measure mt-4 text-[1.02rem] leading-relaxed text-ink-muted">
+            Not a keyword search. Describe the outcome you are after and it shortlists from what we
+            actually have — comparing budget, location, configuration, possession status,
+            connectivity and what is within walking distance.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2.5">
+            <button type="button" data-assistant-open class="btn btn-primary">
+              <Icon name="spark" size={17} />
+              Ask the assistant
+            </button>
+            <a href={url('/investment-insights')} class="btn btn-outline">
+              Investment insights
+              <Icon name="arrow-right" size={16} />
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-panel border border-line bg-surface p-5 shadow-lift sm:p-6">
+          <p class="ui text-[0.78rem] font-bold text-ink-subtle">For example</p>
+          <dl class="ui mt-3 divide-y divide-line text-[0.95rem]">
+            {
+              [
+                { k: 'Budget', v: '₹75 lakh' },
+                { k: 'Location', v: 'Tolichowki' },
+                { k: 'Purpose', v: 'Investment' },
+                { k: 'Property', v: '2 or 3 BHK' },
+                { k: 'Holding period', v: '5–10 years' },
+              ].map((row) => (
+                <div class="flex items-baseline justify-between gap-4 py-2.5">
+                  <dt class="text-ink-muted">{row.k}</dt>
+                  <dd class="font-bold">{row.v}</dd>
+                </div>
+              ))
+            }
+          </dl>
+          <p class="mt-4 border-t border-line pt-4 text-[0.88rem] leading-relaxed text-ink-subtle">
+            The assistant matches on the facts the developer publishes. Where no price is published
+            it says so instead of guessing — and a budget filter excludes those rather than
+            pretending they fit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="band border-t border-line bg-surface">
+    <div class="shell">
+      <SectionHead
+        title="How it works"
+        intro="Six steps, and you can stop at any of them."
+        align="start"
+      />
+      <ol class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          steps.map((st) => (
+            <li class="rounded-panel border border-line bg-bg p-5">
+              <p class="ui text-[0.8rem] font-bold text-gold-ink">{st.n}</p>
+              <h3 class="mt-2 text-[1.08rem]">{st.title}</h3>
+              <p class="mt-2 text-[0.94rem] leading-relaxed text-ink-muted">{st.copy}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
   <!-- Three ways in. Photographs, not icon tiles. -->
-  <section class="band">
+  <section class="band border-t border-line">
     <div class="shell">
       <div class="grid gap-8 md:grid-cols-3 md:gap-6">
         {
@@ -182,7 +400,7 @@ const reasons = [
     <div class="shell">
       <SectionHead
         title="Featured properties"
-        intro="A cross-section of what we are working on right now — apartments, villas and land, in different parts of the city."
+        intro="A cross-section of what is available right now — apartments, commercial floors and land, across the corridors we cover."
         linkHref="/properties"
         linkLabel="All properties"
       />
@@ -197,7 +415,7 @@ const reasons = [
     <div class="shell">
       <SectionHead
         title="Projects worth knowing about"
-        intro="Sample developments across the corridors buyers ask about most — with possession status stated up front."
+        intro={`Developments by ${siteConfig.developer}, grouped so you can see possession status before anything else.`}
         linkHref="/projects"
         linkLabel="All projects"
       />
@@ -211,7 +429,7 @@ const reasons = [
   <section class="band border-t border-line">
     <div class="shell">
       <SectionHead
-        title="Explore Hyderabad by location"
+        title="Explore Hyderabad's growth corridors"
         intro="Every corridor in this city solves a different problem. Here is what each one is genuinely good at."
         linkHref="/locations"
         linkLabel="All locations"
@@ -247,10 +465,10 @@ const reasons = [
         <div>
           <h2 class="text-display-2 text-white">Invest in Hyderabad with your eyes open</h2>
           <p class="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-white/90">
-            Infrastructure that got built rather than only announced, an employment base spread
-            across several corridors, and price points from ₹30 lakh plots to ₹5 crore towers. That
-            is a reasonable foundation — but every property still has to be underwritten on its own
-            facts, and we will do that with you rather than hand you a projection.
+            Infrastructure that got built rather than only announced, and an employment base spread
+            across several corridors. That is a reasonable foundation — but every property still has
+            to be underwritten on its own facts, and we will do that with you rather than hand you a
+            projection.
           </p>
 
           <div class="mt-7 flex flex-wrap gap-2.5">
@@ -259,8 +477,8 @@ const reasons = [
               label="Talk to a property consultant"
               message="Hi, I'd like to talk to a consultant about investing in Hyderabad property."
             />
-            <a href={url('/invest')} class="btn btn-outline-on-dark">
-              How we approach investment
+            <a href={url('/investment-insights')} class="btn btn-outline-on-dark">
+              Investment insights
               <Icon name="arrow-right" size={16} />
             </a>
           </div>
@@ -269,9 +487,9 @@ const reasons = [
         <ul class="grid gap-px overflow-hidden rounded-panel bg-white/25 sm:grid-cols-2">
           {
             [
-              { k: 'Residential', v: 'Apartments and villas with real rental demand' },
-              { k: 'Plots', v: 'Approved layouts on the western corridor' },
-              { k: 'Open land', v: 'Long-horizon parcels, diligence-heavy' },
+              { k: 'Residential', v: 'Apartments in areas with real rental demand' },
+              { k: 'Commercial', v: 'Shops, offices and mixed-use floors' },
+              { k: 'Plots and land', v: 'Long-horizon parcels, diligence-heavy' },
               { k: 'Under construction', v: 'Possession-timeline arbitrage' },
             ].map((item) => (
               <li class="bg-gold-deep p-5">
@@ -289,7 +507,7 @@ const reasons = [
   <section class="band">
     <div class="shell">
       <SectionHead
-        title="Why work with us"
+        title="Why choose us"
         intro="No claims we cannot stand behind. Here is what we actually do."
         align="start"
       />
@@ -313,7 +531,7 @@ const reasons = [
   <section class="band border-t border-line bg-surface">
     <div class="shell">
       <SectionHead
-        title="Reading before you buy"
+        title="Learn before you invest"
         intro="The questions people actually ask us, answered at length."
         linkHref="/blog"
         linkLabel="All articles"
@@ -345,6 +563,33 @@ const reasons = [
             </a>
           ))
         }
+      </div>
+      <a href={url('/investment-insights')} class="link-arrow mt-8">
+        Property vs gold, stocks, a business and an FD — the full comparison
+        <Icon name="arrow-right" size={16} />
+      </a>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="band border-t border-line bg-ink">
+    <div class="shell text-center">
+      <h2 class="text-display-2 text-white">Don’t just buy a property. Understand the asset.</h2>
+      <p class="measure mx-auto mt-4 text-[1.05rem] leading-relaxed text-white/85">
+        Explore what is available, compare the opportunities against your own horizon, and make a
+        more informed real-estate decision.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href={url('/properties')} class="btn btn-on-dark">Explore properties</a>
+        <button type="button" data-assistant-open class="btn btn-outline-on-dark">
+          <Icon name="spark" size={17} />
+          Ask AI
+        </button>
+        <WhatsAppButton
+          message="Hi, I'd like help finding the right property in Hyderabad."
+          label="WhatsApp us"
+          variant="outline-on-dark"
+        />
       </div>
     </div>
   </section>

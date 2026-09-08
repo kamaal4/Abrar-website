@@ -3,8 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import LocationCard from '../../components/LocationCard.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
-import { getAllLocations, LOCATION_DATA_NOTICE } from '../../data/locations';
-import { formatPrice } from '../../utils/format';
+import { getAllLocations } from '../../data/locations';
+import { formatPriceOrAsk } from '../../utils/format';
 import { propertyTypeLabels } from '../../types';
 import { url } from '../../utils/url';
 
@@ -44,7 +44,10 @@ const featured = locations.filter((l) => l.featured);
   <section class="band-tight border-t border-line">
     <div class="shell">
       <h2 class="text-display-3">Every location we cover</h2>
-      <p class="mt-2 text-[0.85rem] text-ink-subtle">{LOCATION_DATA_NOTICE}</p>
+      <p class="mt-2 text-[0.85rem] text-ink-subtle">
+        Price guidance and travel times are indicative, for orientation only. Areas we have not
+        priced ourselves show no figure rather than a guess.
+      </p>
 
       {
         zones.map((z) => (
@@ -75,7 +78,7 @@ const featured = locations.filter((l) => l.featured);
                       <td class="ui p-3.5 text-[0.86rem] text-ink-muted">
                         {l.popularTypes.map((t) => propertyTypeLabels[t]).join(', ')}
                       </td>
-                      <td class="ui p-3.5 text-right font-bold">{formatPrice(l.startingPrice)}</td>
+                      <td class="ui p-3.5 text-right font-bold">{formatPriceOrAsk(l.startingPrice)}</td>
                     </tr>
                   ))}
                 </tbody>

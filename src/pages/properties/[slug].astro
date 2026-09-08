@@ -8,11 +8,18 @@ import PropertyCard from '../../components/PropertyCard.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
 import EmiCalculator from '../../components/EmiCalculator.astro';
 import SectionHead from '../../components/SectionHead.astro';
-import { getAllProperties, getPropertyBySlug, getSimilarProperties, SAMPLE_DATA_NOTICE } from '../../data/properties';
+import { getAllProperties, getPropertyBySlug, getSimilarProperties } from '../../data/properties';
 import { getLocationBySlug } from '../../data/locations';
 import { getProjectBySlug } from '../../data/projects';
 import { getImage } from '../../data/images';
-import { formatPriceLong, formatRent, formatRupees, formatDate } from '../../utils/format';
+import {
+  formatPriceLong,
+  formatPriceLongOrAsk,
+  formatRent,
+  formatRupees,
+  formatDate,
+  AREA_ON_REQUEST,
+} from '../../utils/format';
 import { propertyTypeLabels, statusLabels } from '../../types';
 import { url } from '../../utils/url';
 import { getTelLink } from '../../utils/whatsapp';
@@ -35,7 +42,13 @@ const hero = getImage(property.images[0]!);
 
 const keyDetails = [
   property.bhk ? { icon: 'bed' as const, label: 'Configuration', value: `${property.bhk} BHK` } : null,
-  { icon: 'area' as const, label: 'Area', value: `${property.area.toLocaleString('en-IN')} ${areaUnit}` },
+  property.area !== undefined
+    ? {
+        icon: 'area' as const,
+        label: 'Area',
+        value: `${property.area.toLocaleString('en-IN')} ${areaUnit}`,
+      }
+    : { icon: 'area' as const, label: 'Area', value: AREA_ON_REQUEST },
   property.bathrooms ? { icon: 'bath' as const, label: 'Bathrooms', value: String(property.bathrooms) } : null,
   property.parking ? { icon: 'car' as const, label: 'Parking', value: `${property.parking} covered` } : null,
   property.facing ? { icon: 'compass' as const, label: 'Facing', value: property.facing } : null,
@@ -44,14 +57,23 @@ const keyDetails = [
 
 // Indicative acquisition costs. Telangana rates as commonly applied to a sale deed —
 // stated as indicative because the exact figure depends on the document and the property.
-const stampDuty = property.price * 0.04;
-const transferDuty = property.price * 0.015;
-const registration = property.price * 0.005;
-const totalCost = property.price + stampDuty + transferDuty + registration;
+// All of it is skipped when there is no published price: percentages of an unknown
+// number are not an estimate, they are a guess dressed up as one.
+const price = property.price;
+const costs =
+  price === undefined
+    ? null
+    : {
+        stampDuty: price * 0.04,
+        transferDuty: price * 0.015,
+        registration: price * 0.005,
+        total: price * 1.06,
+        loanDefault: Math.round((price * 0.8) / 100000) * 100000,
+      };
 
-const loanDefault = Math.round((property.price * 0.8) / 100000) * 100000;
-
-const enquiry = `Hi, I'm interested in the ${property.title} in ${locationName} (${formatPriceLong(property.price)}). Could you share more details?`;
+const enquiry = price === undefined
+  ? `Hi, I'm interested in the ${property.title} in ${locationName}. Could you share the price and more details?`
+  : `Hi, I'm interested in the ${property.title} in ${locationName} (${formatPriceLong(price)}). Could you share more details?`;
 const visitMessage = `Hi, I'd like to schedule a site visit for the ${property.title} in ${locationName}.`;
 
 const jsonLd = {
@@ -67,11 +89,15 @@ const jsonLd = {
     addressCountry: 'IN',
   },
   ...(property.bhk ? { numberOfRooms: property.bhk } : {}),
-  floorSize: {
-    '@type': 'QuantitativeValue',
-    value: property.area,
-    unitText: areaUnit,
-  },
+  ...(property.area === undefined
+    ? {}
+    : {
+        floorSize: {
+          '@type': 'QuantitativeValue',
+          value: property.area,
+          unitText: areaUnit,
+        },
+      }),
 };
 ---
 
@@ -108,7 +134,7 @@ const jsonLd = {
           <p
             class="ui absolute bottom-3 left-3 rounded-md bg-ink/80 px-2 py-1 text-[0.72rem] font-medium text-white/90"
           >
-            {SAMPLE_DATA_NOTICE}
+            Developer imagery — some views are artist's impressions
           </p>
         </div>
 
@@ -153,7 +179,7 @@ const jsonLd = {
 
         <p class="ui mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span class="text-[2rem] font-bold leading-none tracking-[-0.035em]">
-            {isRentOnly && property.rent ? formatRent(property.rent) : formatPriceLong(property.price)}
+            {isRentOnly && property.rent ? formatRent(property.rent) : formatPriceLongOrAsk(price)}
           </span>
           {
             !isRentOnly && property.rent && (
@@ -162,9 +188,13 @@ const jsonLd = {
               </span>
             )
           }
-          <span class="text-[0.9rem] text-ink-subtle">
-            · {formatRupees(property.price / property.area)} per {areaUnit}
-          </span>
+          {
+            price !== undefined && property.area !== undefined && (
+              <span class="text-[0.9rem] text-ink-subtle">
+                · {formatRupees(price / property.area)} per {areaUnit}
+              </span>
+            )
+          }
         </p>
 
         <!-- Key details -->
@@ -285,55 +315,80 @@ const jsonLd = {
           )
         }
 
-        <section class="mt-10">
-          <h2 class="text-display-3">What it actually costs</h2>
-          <p class="measure mt-3 text-[0.98rem] leading-relaxed text-ink-muted">
-            The quoted price is not the amount that leaves your account. These are the indicative
-            statutory costs on top of it — the exact figures depend on the document, the property and
-            the current rates, so treat them as a planning estimate rather than a quotation.
-          </p>
-          <div class="scroll-x mt-5 rounded-panel border border-line">
-            <table class="ui w-full min-w-[26rem] text-left text-[0.95rem]">
-              <tbody>
-                <tr class="border-b border-line">
-                  <th scope="row" class="p-4 font-semibold">Property price</th>
-                  <td class="p-4 text-right">{formatRupees(property.price)}</td>
-                </tr>
-                <tr class="border-b border-line">
-                  <th scope="row" class="p-4 font-normal text-ink-muted">Stamp duty (4%)</th>
-                  <td class="p-4 text-right text-ink-muted">{formatRupees(stampDuty)}</td>
-                </tr>
-                <tr class="border-b border-line">
-                  <th scope="row" class="p-4 font-normal text-ink-muted">Transfer duty (1.5%)</th>
-                  <td class="p-4 text-right text-ink-muted">{formatRupees(transferDuty)}</td>
-                </tr>
-                <tr class="border-b border-line">
-                  <th scope="row" class="p-4 font-normal text-ink-muted">Registration (0.5%)</th>
-                  <td class="p-4 text-right text-ink-muted">{formatRupees(registration)}</td>
-                </tr>
-                <tr class="bg-surface">
-                  <th scope="row" class="p-4 font-bold">Indicative total</th>
-                  <td class="p-4 text-right font-bold">{formatRupees(totalCost)}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="mt-3 text-[0.85rem] text-ink-subtle">
-            Excludes brokerage, GST where applicable on under-construction property, corpus and
-            maintenance advance, and interiors.
-          </p>
-        </section>
+        {
+          costs && (
+            <>
+          <section class="mt-10">
+            <h2 class="text-display-3">What it actually costs</h2>
+            <p class="measure mt-3 text-[0.98rem] leading-relaxed text-ink-muted">
+              The quoted price is not the amount that leaves your account. These are the indicative
+              statutory costs on top of it — the exact figures depend on the document, the property and
+              the current rates, so treat them as a planning estimate rather than a quotation.
+            </p>
+            <div class="scroll-x mt-5 rounded-panel border border-line">
+              <table class="ui w-full min-w-[26rem] text-left text-[0.95rem]">
+                <tbody>
+                  <tr class="border-b border-line">
+                    <th scope="row" class="p-4 font-semibold">Property price</th>
+                    <td class="p-4 text-right">{formatRupees(price!)}</td>
+                  </tr>
+                  <tr class="border-b border-line">
+                    <th scope="row" class="p-4 font-normal text-ink-muted">Stamp duty (4%)</th>
+                    <td class="p-4 text-right text-ink-muted">{formatRupees(costs!.stampDuty)}</td>
+                  </tr>
+                  <tr class="border-b border-line">
+                    <th scope="row" class="p-4 font-normal text-ink-muted">Transfer duty (1.5%)</th>
+                    <td class="p-4 text-right text-ink-muted">{formatRupees(costs!.transferDuty)}</td>
+                  </tr>
+                  <tr class="border-b border-line">
+                    <th scope="row" class="p-4 font-normal text-ink-muted">Registration (0.5%)</th>
+                    <td class="p-4 text-right text-ink-muted">{formatRupees(costs!.registration)}</td>
+                  </tr>
+                  <tr class="bg-surface">
+                    <th scope="row" class="p-4 font-bold">Indicative total</th>
+                    <td class="p-4 text-right font-bold">{formatRupees(costs!.total)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-3 text-[0.85rem] text-ink-subtle">
+              Excludes brokerage, GST where applicable on under-construction property, corpus and
+              maintenance advance, and interiors.
+            </p>
+          </section>
 
-        <section class="mt-10">
-          <EmiCalculator
-            principal={loanDefault}
-            heading="What the EMI would look like"
-            compact
-          />
-          <p class="mt-3 text-[0.85rem] text-ink-subtle">
-            Pre-filled at 80% of the quoted price — adjust the numbers to match your own loan.
-          </p>
-        </section>
+          <section class="mt-10">
+            <EmiCalculator
+              principal={costs!.loanDefault}
+              heading="What the EMI would look like"
+              compact
+            />
+            <p class="mt-3 text-[0.85rem] text-ink-subtle">
+              Pre-filled at 80% of the quoted price — adjust the numbers to match your own loan.
+            </p>
+          </section>
+            </>
+          )
+        }
+        {
+          !costs && (
+            <section class="mt-10">
+              <h2 class="text-display-3">What it actually costs</h2>
+              <p class="measure mt-3 text-[0.98rem] leading-relaxed text-ink-muted">
+                The developer shares the price for this one on request, so we cannot put a total
+                acquisition cost on the page yet. When you have the quoted figure, budget for stamp
+                duty at 4%, transfer duty at 1.5% and registration at 0.5% on top of it, plus
+                brokerage, GST where it applies on under-construction property, corpus and
+                maintenance advance, and interiors.
+              </p>
+              <p class="mt-4">
+                <a class="ui font-semibold text-gold underline decoration-gold/50 decoration-2 underline-offset-4 hover:text-ink" href={url('/emi-calculator')}>
+                  Work out an EMI on your own numbers →
+                </a>
+              </p>
+            </section>
+          )
+        }
       </div>
 
       <!-- Sticky enquiry card -->
@@ -381,7 +436,8 @@ const jsonLd = {
             class="h-14 w-14 rounded-lg object-cover"
           />
           <p class="text-[0.82rem] leading-relaxed text-ink-subtle">
-            Sample listing. Verify all documents and figures independently before deciding.
+            Details as published by the developer. Verify all documents and figures independently
+            before deciding.
           </p>
         </div>
       </aside>

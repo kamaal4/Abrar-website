@@ -2,7 +2,7 @@
 import Icon from './Icon.astro';
 import Img from './Img.astro';
 import { getLocationName } from '../data/locations';
-import { formatPrice } from '../utils/format';
+import { formatPriceOrAsk } from '../utils/format';
 import { statusLabels, type Project } from '../types';
 import { url } from '../utils/url';
 
@@ -38,7 +38,7 @@ const href = url(`/projects/${project.slug}`);
     <dl class="ui mt-3 grid grid-cols-2 gap-x-4 gap-y-2.5 border-t border-line pt-3 text-[0.84rem]">
       <div>
         <dt class="text-ink-subtle">Starting at</dt>
-        <dd class="font-bold text-ink">{formatPrice(project.startingPrice)}</dd>
+        <dd class="font-bold text-ink">{formatPriceOrAsk(project.startingPrice)}</dd>
       </div>
       <div>
         <dt class="text-ink-subtle">Configurations</dt>

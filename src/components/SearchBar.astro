@@ -8,7 +8,7 @@ import { url } from '../utils/url';
 type Props = {
   /** 'hero' sits on a photograph; 'inline' sits on white. */
   variant?: 'hero' | 'inline';
-  listing?: 'buy' | 'rent' | 'invest';
+  listing?: 'buy' | 'invest';
 };
 
 const { variant = 'hero', listing = 'buy' } = Astro.props;
@@ -28,7 +28,7 @@ const onHero = variant === 'hero';
   <fieldset class="flex flex-wrap gap-1.5">
     <legend class="sr-only">Looking for</legend>
     {
-      (['buy', 'rent', 'invest'] as const).map((value) => (
+      (['buy', 'invest'] as const).map((value) => (
         <label class="ui cursor-pointer">
           <input
             type="radio"
