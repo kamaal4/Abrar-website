@@ -44,6 +44,14 @@ unhurried, willing to say "not this one" or "nobody can tell you that". It names
 streets, real trade-offs and real risks. It never uses superlatives it cannot support, never
 projects returns, and never manufactures urgency.
 
+**The site argues for property — on structure, never on returns.** It is a business that sells
+real estate and it says so plainly: a bank will fund 80% of a flat and nothing else you can
+buy; you can live in it; the tax code favours it; you cannot panic-sell it. Every one of those
+is a mechanical fact about how the asset works. What the site will not do is claim property
+out-returns gold or equities, publish a projected return, or bury the counter-argument — the
+`Where gold and stocks genuinely win` section exists on purpose and sits *after* the case, not
+in a footnote. An argument that survives its own counter is the only kind this brand can make.
+
 Emotionally the site should evoke **confidence through candour** — the relief of being told
 the truth about a large, frightening purchase.
 
@@ -62,8 +70,10 @@ the photography is real Hyderabad rather than generic aspiration.
 
 ## Design Principles
 
-1. **Say what we do not know.** Unverified listings are labelled unverified. Sample data is
-   labelled sample data. Indicative figures are labelled indicative. Candour is the product.
+1. **Say what we do not know.** Unverified listings are labelled unverified. Where the
+   developer publishes no price, the page says "price on request" rather than inventing one.
+   Artist's impressions are labelled as such. Indicative figures are labelled indicative.
+   Candour is the product — and it is also what makes the argument for property believable.
 2. **The photograph is the argument.** Real images of Hyderabad and Telangana carry the local
    credibility that copy cannot claim for itself.
 3. **Every path ends in a conversation.** The site's job is to get someone informed enough to

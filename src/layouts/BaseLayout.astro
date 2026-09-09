@@ -63,6 +63,10 @@ const siteGraph = {
 };
 
 const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+/** Preloaded and linked from one place so the two can never drift apart. */
+const fontHref =
+  'https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300..800&family=Anek+Telugu:wght@500;700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap';
 ---
 
 <!doctype html>
@@ -98,9 +102,12 @@ const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300..800&family=Anek+Telugu:wght@500;700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap"
+      rel="preload"
+      as="style"
+      href={fontHref}
+      fetchpriority="high"
     />
+    <link rel="stylesheet" href={fontHref} />
 
     <script type="application/ld+json" set:html={JSON.stringify(siteGraph)} is:inline />
     {
@@ -116,6 +123,11 @@ const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       >Skip to content</a
     >
     <Header />
+    <div
+      class="read-progress sticky top-16 z-[--z-sticky] h-0.5 origin-left scale-x-0 bg-gold lg:top-20"
+      aria-hidden="true"
+    >
+    </div>
     <main id="main">
       <slot />
     </main>

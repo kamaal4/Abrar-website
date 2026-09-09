@@ -1,6 +1,6 @@
 # Design
 
-Visual system for **Invest In Real Estate Hyderabad**. Tokens live in
+Visual system for **InvestForAssets**. Tokens live in
 `src/styles/global.css` under `@theme`; this document explains the intent behind them.
 Strategic context is in `PRODUCT.md`.
 
@@ -121,13 +121,31 @@ CSS only, no library.
 
 - `--ease-out-quint` `cubic-bezier(0.23, 1, 0.32, 1)` and `--ease-out-quart`
   `cubic-bezier(0.25, 1, 0.5, 1)`. No bounce, no elastic.
-- **One orchestrated entrance**, on the hero only: tagline, headline, subhead, search panel,
-  assistant prompt, staggered 80ms apart. Nothing else animates on arrival.
+- **One orchestrated entrance** on arrival, on the hero only: tagline, headline, subhead,
+  search panel, CTA row, staggered 80ms apart, with the photograph settling from `scale(1.05)`
+  over 1.6s. Nothing else animates on page load.
+- **Scroll-driven reveals, rationed.** `animation-timeline: view()` — no JavaScript, no
+  library, no observer. Fade-and-rise on every section is the tell we avoid; these attach only
+  to moments that earn one:
+  - `.bar-grow` — the leverage bars. The signature moment: the argument drawing itself.
+  - `.reveal-stagger` — siblings in one grid or ruled list, offset so the group reads as a
+    group. Capped at six steps.
+  - `.reveal-rows` — comparison-table rows wiping in left to right.
+  - `.read-progress` — a 2px gold hairline under the header, driven by `scroll(root block)`.
+- **The bar track must not be `overflow: hidden`.** An `overflow` value makes the element a
+  scroll container, which is what `view()` resolves against, and the timeline goes inert.
 - Hover: card image scales 1.035 over 700ms, border darkens, gold underline wipes in on nav
-  links, arrows nudge 4px.
-- Entrance keyframes are declared **inside** `@media (prefers-reduced-motion: no-preference)`.
-  Where motion is unwelcome — or in any renderer that does not run animations — no rule
-  applies and the content is simply visible. The reveal enhances a working default.
+  links, arrows nudge 4px. `.card` responds to `:focus-within` as well as `:hover`, so keyboard
+  users get the same affordance. The button press is a 60ms transition — a 250ms press reads
+  as lag on release.
+- Disclosures animate open via `::details-content` + `interpolate-size: allow-keywords`,
+  behind `@supports`; where unsupported they simply snap.
+- Every keyframe and every reveal rule is declared **inside**
+  `@media (prefers-reduced-motion: no-preference)`. Where motion is unwelcome — or in any
+  renderer that does not run animations — no rule applies and the content is simply visible at
+  full opacity, bars at their natural width. The reveal enhances a working default; nothing is
+  ever gated on an animation that may not run. **Verify this on every change** by emulating
+  `prefers-reduced-motion: reduce` and confirming nothing is stuck invisible.
 - A `@media print` block disables all animation and transition.
 
 ## Imagery

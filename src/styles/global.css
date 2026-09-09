@@ -61,6 +61,9 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Lets `height: auto` participate in a transition, which is what makes the
+       FAQ disclosures open smoothly. Ignored where unsupported: they just snap. */
+    interpolate-size: allow-keywords;
   }
 
   body {
@@ -193,6 +196,8 @@
 
   .btn:active {
     transform: translateY(1px);
+    /* The press itself is instant; only the release eases. A 250ms press reads as lag. */
+    transition-duration: 0.06s;
   }
 
   .btn-primary {
@@ -311,7 +316,8 @@
       box-shadow 0.35s var(--ease-out-quart);
   }
 
-  .card:hover {
+  .card:hover,
+  .card:focus-within {
     border-color: var(--color-line-strong);
     box-shadow: var(--shadow-lift);
   }
@@ -503,6 +509,115 @@
   .d-3 { animation-delay: 0.26s; }
   .d-4 { animation-delay: 0.36s; }
   .d-5 { animation-delay: 0.46s; }
+
+  /* Disclosures grow instead of snapping. `::details-content` needs the
+     content-visibility transition to come along or the text pops in at the end. */
+  @supports selector(::details-content) {
+    details::details-content {
+      block-size: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        block-size 0.35s var(--ease-out-quart),
+        content-visibility 0.35s allow-discrete,
+        opacity 0.3s var(--ease-out-quart);
+    }
+
+    details[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+  }
+
+  /* The hero photograph settles rather than snapping into place. One extra beat
+     on the existing orchestration — not a loop, not a Ken Burns drift. */
+  .hero-settle {
+    animation: settle 1.6s var(--ease-out-quint) both;
+  }
+
+  /* -----------------------------------------------------------------------
+     Scroll-driven reveals.
+
+     `animation-timeline: view()` needs no JavaScript, so there is nothing to
+     hide and nothing to un-hide: outside this @supports block no rule applies
+     and the element is simply visible at its natural position. Same invariant
+     the hero entrance relies on — the reveal enhances a working default rather
+     than gating content on it.
+
+     Used sparingly and deliberately. Fade-and-rise on every scrolled section is
+     the tell; these attach to specific moments that earn one.
+  ----------------------------------------------------------------------- */
+  @supports (animation-timeline: view()) {
+    /* Siblings in one grid or list, offset so the group reads as a group.
+       Capped at six steps: past that the last item waits longer than it is worth. */
+    .reveal-stagger > * {
+      animation: rise 0.7s var(--ease-out-quint) both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 26%;
+    }
+
+    .reveal-stagger > *:nth-child(2) { animation-range: entry 5% cover 30%; }
+    .reveal-stagger > *:nth-child(3) { animation-range: entry 5% cover 34%; }
+    .reveal-stagger > *:nth-child(4) { animation-range: entry 5% cover 38%; }
+    .reveal-stagger > *:nth-child(5) { animation-range: entry 5% cover 42%; }
+    .reveal-stagger > *:nth-child(n + 6) { animation-range: entry 5% cover 46%; }
+
+    /* Table rows wipe in left to right, reusing the keyframe the hero never used. */
+    .reveal-rows > * {
+      animation: wipe-in 0.75s var(--ease-out-quart) both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 28%;
+    }
+
+    .reveal-rows > *:nth-child(2) { animation-range: entry 10% cover 31%; }
+    .reveal-rows > *:nth-child(3) { animation-range: entry 10% cover 34%; }
+    .reveal-rows > *:nth-child(4) { animation-range: entry 10% cover 37%; }
+    .reveal-rows > *:nth-child(5) { animation-range: entry 10% cover 40%; }
+    .reveal-rows > *:nth-child(n + 6) { animation-range: entry 10% cover 43%; }
+
+    /* The leverage bars: the argument animating. Each grows to the width its own
+       --w declares, so the short one lands first and the gap between them is the
+       thing you notice. */
+    .bar-grow {
+      animation: bar 0.9s var(--ease-out-quint) both;
+      animation-timeline: view();
+      animation-range: entry 25% cover 45%;
+    }
+
+    /* Reading progress on long pages. */
+    .read-progress {
+      animation: progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+@keyframes settle {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* Bars grow to their own target width, declared per element as --w. */
+@keyframes bar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--w, 100%);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @media print {

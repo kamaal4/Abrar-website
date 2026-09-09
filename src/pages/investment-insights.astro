@@ -16,14 +16,110 @@ import { url } from '../utils/url';
  */
 
 const contents = [
-  { id: 'why-property', label: 'Why property in Hyderabad' },
+  { id: 'the-case', label: 'The case for property' },
+  { id: 'why-property', label: 'Why Hyderabad' },
   { id: 'asset-classes', label: 'Property vs gold vs stocks' },
+  { id: 'where-they-win', label: 'Where gold and stocks win' },
   { id: 'vs-business', label: 'Property vs business' },
   { id: 'vs-fd', label: 'Property vs bank FD' },
   { id: 'flat-vs-plot', label: 'Flat vs plot' },
   { id: 'residential-vs-commercial', label: 'Residential vs commercial' },
   { id: 'what-makes-an-asset', label: 'What makes property an asset' },
   { id: 'before-you-invest', label: 'Before you invest' },
+];
+
+/**
+ * The case for property, argued on structure rather than on returns.
+ *
+ * Every claim here is a mechanical fact about how the asset works — what a bank
+ * will lend against, what the Income Tax Act allows, what you can physically do
+ * with it. None of it is a forecast, and none of it claims property out-returns
+ * anything, because that is not a claim anyone can honestly make.
+ */
+const theCase = [
+  {
+    icon: 'calculator' as const,
+    claim: 'A bank will fund most of it. Nobody funds your gold.',
+    mechanism:
+      'Home loans routinely run to 80% of the property value at long tenures. No lender advances 80% against gold or an equity portfolio at anything like that rate. It means your money is working on the whole asset, not only on the part you paid for — and that cuts both ways, which is why the loan has to be one you can service through a bad year.',
+  },
+  {
+    icon: 'building' as const,
+    claim: 'You can live in it. That is a return no statement shows.',
+    mechanism:
+      'A flat you occupy ends your rent. Gold in a locker and units in a fund do not house your family, and the rent you keep paying while you hold them is a real cost that never appears in a performance chart.',
+  },
+  {
+    icon: 'calendar' as const,
+    claim: 'Two ways to be paid, not one.',
+    mechanism:
+      'Let it and it produces rent while you hold it; sell it and the sale is a separate outcome. Gold pays nothing until you sell. Whether the rent is worth having depends entirely on the area and the building — which is the part we can actually help you judge.',
+  },
+  {
+    icon: 'shield' as const,
+    claim: 'The tax code is written in its favour.',
+    mechanism:
+      'Interest on a home loan is deductible under Section 24(b), principal counts under 80C, and long-term gains on property have their own treatment. Limits and rules change — check the current position with your accountant — but the structural intent has been consistent for decades.',
+  },
+  {
+    icon: 'clock' as const,
+    claim: 'You cannot panic-sell it at two in the morning.',
+    mechanism:
+      'Illiquidity is usually filed as a drawback. Behaviourally it is often the opposite: the investors who lose most in a crash are the ones who could sell instantly and did. Property makes that impossible, and an EMI keeps getting paid in months when a SIP quietly gets cancelled.',
+  },
+  {
+    icon: 'pin' as const,
+    claim: 'You can actually inspect this one.',
+    mechanism:
+      'You can walk the approach road at 9am, read the title, check the water, ask the neighbours what floods. No amount of diligence gives you that edge on a listed company. Local knowledge is worth something here in a way it is worth nothing on an index.',
+  },
+];
+
+/**
+ * Leverage, shown as what the money *controls* — never as what it returns.
+ * The figures are the arithmetic of a standard 80% loan, not a projection.
+ */
+const leverage = {
+  own: 1_500_000,
+  controls: 7_500_000,
+  rows: [
+    {
+      label: '₹15 lakh into gold or an index fund',
+      controls: '₹15 lakh of asset',
+      width: '20%',
+      tone: 'quiet' as const,
+    },
+    {
+      label: '₹15 lakh as the deposit on a ₹75 lakh flat',
+      controls: '₹75 lakh of asset',
+      width: '100%',
+      tone: 'gold' as const,
+    },
+  ],
+};
+
+/** Said plainly, and placed after the case rather than buried. */
+const otherAssetsWin = [
+  {
+    title: 'Gold',
+    points: [
+      'Sells in a day, at a published price, anywhere in the country',
+      'Divisible — you can sell a third of it and keep the rest',
+      'No maintenance, no tenants, no society, no paperwork after purchase',
+      'Entry at almost any amount, including a few thousand rupees',
+    ],
+    when: 'When you need the money to stay reachable, or you are hedging rather than building.',
+  },
+  {
+    title: 'Stocks and funds',
+    points: [
+      'Start from ₹500 a month and stop whenever you like',
+      'Genuinely diversified — hundreds of companies, several sectors',
+      'No stamp duty, no registration, no brokerage on the scale property carries',
+      'Historically strong over long holding periods, with the volatility that comes with it',
+    ],
+    when: 'When the horizon is long, the amount is small to begin with, or you want no involvement at all.',
+  },
 ];
 
 const drivers = [
@@ -62,27 +158,6 @@ const assetRows = [
   { factor: 'What drives the value', property: 'Location, title, local demand', gold: 'Global gold market', stocks: 'Company and market' },
   { factor: 'Divisibility', property: 'Sell all or nothing', gold: 'Sell part', stocks: 'Sell part' },
   { factor: 'Transaction cost and time', property: 'High, weeks to months', gold: 'Low, same day', stocks: 'Low, same day' },
-];
-
-const routes = [
-  {
-    goal: 'You want a physical asset that can also produce rent',
-    answer: 'Property',
-    href: '/properties?listing=buy',
-    label: 'Browse properties',
-  },
-  {
-    goal: 'You want something liquid to hold value against inflation',
-    answer: 'Gold',
-    href: '/investment-insights#asset-classes',
-    label: 'Read the comparison',
-  },
-  {
-    goal: 'You want market exposure you can sell in a day',
-    answer: 'Stocks',
-    href: '/investment-insights#asset-classes',
-    label: 'Read the comparison',
-  },
 ];
 
 const pairs = [
@@ -260,9 +335,10 @@ const checklist = [
       </p>
 
       <p class="ui mt-6 rounded-panel border border-white/20 bg-white/5 p-4 text-[0.9rem] leading-relaxed text-white/80">
-        <strong class="font-semibold text-white">This page is educational, not financial advice.</strong>
-        {' '}It describes how these assets differ in structure. It does not tell you what to buy, and
-        it contains no return forecast. Talk to a qualified adviser about your own position.
+        <strong class="font-semibold text-white">We argue for property here — on structure, never on returns.</strong>
+        {' '}Everything below is a fact about how the asset works, not a forecast of what it will do.
+        This is not financial advice and it contains no projected return. Talk to a qualified adviser
+        about your own position.
       </p>
     </div>
   </section>
@@ -287,6 +363,79 @@ const checklist = [
     </div>
   </nav>
 
+  <!-- The case. A ruled list, not cards: this is an argument, not a spec sheet. -->
+  <section id="the-case" class="band scroll-mt-24">
+    <div class="shell">
+      <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div class="lg:sticky lg:top-28 lg:self-start">
+          <h2 class="text-display-2">Why property, when a mutual fund is one tap away?</h2>
+          <p class="measure mt-4 text-[1.05rem] leading-relaxed text-ink-muted">
+            Six things a flat can do that a demat account cannot. Not one of them is a claim about
+            returns — they are all facts about how the asset is built, what a bank will lend
+            against it, and what the tax code says.
+          </p>
+        </div>
+
+        <ul class="reveal-stagger">
+          {
+            theCase.map((c) => (
+              <li class="border-t border-line py-6 first:border-t-0 first:pt-0">
+                <h3 class="ui flex items-baseline gap-3 text-[1.12rem] font-bold leading-snug">
+                  <Icon name={c.icon} size={19} class="shrink-0 translate-y-0.5 text-gold-ink" />
+                  {c.claim}
+                </h3>
+                <p class="mt-2.5 pl-[1.9rem] text-[0.97rem] leading-relaxed text-ink-muted">
+                  {c.mechanism}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leverage. The signature moment: the argument, drawn. -->
+  <section class="band-tight border-y border-line bg-surface">
+    <div class="shell">
+      <h2 class="text-display-3">The part that has no equivalent anywhere else</h2>
+      <p class="measure mt-3 text-[1rem] leading-relaxed text-ink-muted">
+        Put ₹15 lakh into gold and you own ₹15 lakh of gold. Put the same ₹15 lakh down on a
+        ₹75 lakh flat and a bank funds the rest — you are now responsible for, and exposed to,
+        five times the asset.
+      </p>
+
+      <div class="mt-8 space-y-6">
+        {
+          leverage.rows.map((row) => (
+            <div>
+              <div class="ui flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <span class="text-[0.95rem] font-semibold">{row.label}</span>
+                <span class="text-[1.05rem] font-bold tracking-[-0.02em]">{row.controls}</span>
+              </div>
+              <!-- No overflow-hidden on the track: it would become the nearest scroll
+                       container and leave `animation-timeline: view()` inert. The bar is
+                       rounded on its own, so nothing needs clipping. -->
+                  <div class="mt-2 h-3 w-full rounded-full bg-line">
+                <div
+                  class={`bar-grow h-full rounded-full ${row.tone === 'gold' ? 'bg-gold' : 'bg-ink-subtle'}`}
+                  style={`--w: ${row.width}; width: ${row.width}`}
+                />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="measure mt-6 text-[0.88rem] leading-relaxed text-ink-subtle">
+        <strong class="font-semibold text-ink-muted">Read this carefully:</strong> the bars show what
+        your money <em>controls</em>, not what it earns. Leverage multiplies the outcome in both
+        directions — a fall costs you five times as much too, and the EMI arrives every month
+        regardless. It is an advantage only if the loan is one you can service through a bad year.
+      </p>
+    </div>
+  </section>
+
   <!-- Why property in Hyderabad -->
   <section id="why-property" class="band scroll-mt-24">
     <div class="shell">
@@ -296,19 +445,21 @@ const checklist = [
         title="Why Hyderabad property? Build an asset, not just a home."
         intro="Four structural things are true about this city. None of them is a promise about price."
       />
-      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      <ul class="reveal-stagger mt-8 grid gap-x-12 sm:grid-cols-2">
         {
           drivers.map((d) => (
-            <div class="rounded-panel border border-line p-5">
-              <Icon name={d.icon} size={22} class="text-gold-ink" />
-              <h3 class="mt-3 text-[1.15rem]">{d.title}</h3>
+            <li class="border-t border-line py-5">
+              <h3 class="ui flex items-center gap-2.5 text-[1.08rem] font-bold">
+                <Icon name={d.icon} size={19} class="shrink-0 text-gold-ink" />
+                {d.title}
+              </h3>
               <p class="mt-2 text-[0.96rem] leading-relaxed text-ink-muted">{d.copy}</p>
-            </div>
+            </li>
           ))
         }
-      </div>
+      </ul>
 
-      <p class="measure mt-8 rounded-panel border-l-4 border-gold bg-surface p-5 text-[0.98rem] leading-relaxed">
+      <p class="measure eyebrow-rule mt-8 text-[0.98rem] leading-relaxed">
         <strong>What we will not tell you:</strong> a percentage return, a doubling period, or which
         area is about to take off. Property prices and rents rise and fall. What you get depends on
         location, the specific property, market conditions, financing and how long you hold — and
@@ -323,8 +474,8 @@ const checklist = [
       <SectionHead
         as="h2"
         align="start"
-        title="Which asset fits your financial goal?"
-        intro="Property, gold and stocks are not competing to be best. They behave differently, and the right one is the one whose behaviour matches what you need."
+        title="The same comparison, without the argument"
+        intro="Here is the structure on its own, so you can check the case above against it. Property, gold and stocks behave differently; these are the differences that do not depend on anybody's forecast."
       />
 
       <div class="scroll-x mt-8 rounded-panel border border-line bg-bg">
@@ -340,7 +491,7 @@ const checklist = [
               <th scope="col" class="p-3.5 font-semibold">Stocks</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="reveal-rows">
             {
               assetRows.map((r) => (
                 <tr class="border-b border-line last:border-0">
@@ -360,25 +511,49 @@ const checklist = [
         three tells you nothing reliable about your holding period.
       </p>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <p class="measure mt-6 text-[0.95rem] leading-relaxed text-ink-muted">
+        The two lines people most often get wrong: gold protects value and sells in a day, but pays
+        you nothing to hold it. Stocks give you market exposure and let you sell part of a position;
+        property gives you a physical asset and makes you sell all of it or none.
+      </p>
+    </div>
+  </section>
+
+  <!-- The counter-case. Placed after the argument on purpose, not buried. -->
+  <section id="where-they-win" class="band scroll-mt-24 border-t border-line">
+    <div class="shell">
+      <h2 class="text-display-2">Where gold and stocks genuinely win</h2>
+      <p class="measure mt-3 text-[1.02rem] leading-relaxed text-ink-muted">
+        Any case worth making survives its own counter-argument. There are buyers we send away from
+        property, and these are the reasons.
+      </p>
+
+      <div class="mt-8 grid gap-8 md:grid-cols-2 md:gap-12">
         {
-          routes.map((r) => (
-            <div class="flex flex-col rounded-panel border border-line bg-bg p-5">
-              <p class="text-[0.95rem] leading-relaxed text-ink-muted">{r.goal}</p>
-              <p class="ui mt-3 text-[1.3rem] font-bold tracking-[-0.02em]">→ {r.answer}</p>
-              <a href={url(r.href)} class="link-arrow mt-auto pt-4">
-                {r.label}
-                <Icon name="arrow-right" size={16} />
-              </a>
+          otherAssetsWin.map((a) => (
+            <div>
+              <h3 class="eyebrow-rule ui text-[1.15rem] font-bold">{a.title}</h3>
+              <ul class="mt-4 space-y-2.5">
+                {a.points.map((pt) => (
+                  <li class="flex gap-2.5 text-[0.96rem] leading-relaxed text-ink-muted">
+                    <Icon name="check" size={16} class="mt-1 shrink-0 text-ink-subtle" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="mt-4 text-[0.95rem] leading-relaxed">
+                <strong class="font-semibold">Choose it when:</strong> {a.when}
+              </p>
             </div>
           ))
         }
       </div>
 
-      <p class="measure mt-6 text-[0.95rem] leading-relaxed text-ink-muted">
-        A note on the two lines people most often get wrong: gold protects value and sells in a day,
-        but pays you nothing to hold it. Stocks give you market exposure and let you sell a part of
-        your position; property gives you a physical asset and makes you sell all of it or none.
+      <p class="measure mt-8 rounded-panel bg-surface p-5 text-[0.98rem] leading-relaxed">
+        The honest summary: if you need the money reachable within a couple of years, or you are
+        starting with a few lakh, property is the wrong instrument and we will tell you so. The case
+        above holds for someone buying a home to live in, or committing capital they can genuinely
+        leave alone for years.
       </p>
     </div>
   </section>
@@ -407,7 +582,7 @@ const checklist = [
             ))}
           </div>
 
-          <p class="measure mt-6 rounded-panel border-l-4 border-gold bg-surface p-5 text-[0.98rem] leading-relaxed">
+          <p class="measure eyebrow-rule mt-6 text-[0.98rem] leading-relaxed">
             <strong>Which fits your goal:</strong> {pair.verdict}
           </p>
 
@@ -431,20 +606,19 @@ const checklist = [
         title="What actually makes property an asset"
         intro="Six things a property can give you. Only the first two are certain the day you buy — the rest are possibilities you are paying for."
       />
-      <ol class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul class="reveal-stagger mt-8 grid gap-x-12 md:grid-cols-2">
         {
-          assetQualities.map((q, i) => (
-            <li class="rounded-panel border border-line bg-bg p-5">
-              <p class="ui text-[0.8rem] font-bold text-gold-ink">{String(i + 1).padStart(2, '0')}</p>
-              <h3 class="mt-2 flex items-center gap-2 text-[1.08rem]">
-                <Icon name={q.icon} size={18} class="text-ink-subtle" />
+          assetQualities.map((q) => (
+            <li class="border-t border-line py-5">
+              <h3 class="ui flex items-center gap-2.5 text-[1.05rem] font-bold">
+                <Icon name={q.icon} size={19} class="shrink-0 text-gold-ink" />
                 {q.title}
               </h3>
-              <p class="mt-2 text-[0.94rem] leading-relaxed text-ink-muted">{q.copy}</p>
+              <p class="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">{q.copy}</p>
             </li>
           ))
         }
-      </ol>
+      </ul>
     </div>
   </section>
 
