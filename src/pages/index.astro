@@ -29,7 +29,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 const categories = [
   {
     title: 'Buy a home',
-    image: 'qmaks-serene-heights-2' as const,
+    image: 'serene-heights-2' as const,
     copy: 'Apartments across Tolichowki, Alkapur, Shaikpet and the central belt — 2, 3 and 4 BHK in completed and under-construction buildings.',
     links: [
       { label: '2 BHK', href: '/properties?listing=buy&bhk=2' },
@@ -40,7 +40,7 @@ const categories = [
   },
   {
     title: 'Invest in land',
-    image: 'qmaks-future-city-1' as const,
+    image: 'future-city-1' as const,
     copy: 'Plotted layouts on the airport corridor and farm land west of the city — lower holding cost, longer horizon, heavier diligence.',
     links: [
       { label: 'Plots', href: '/properties?type=plot' },
@@ -51,7 +51,7 @@ const categories = [
   },
   {
     title: 'Commercial space',
-    image: 'qmaks-galaxy-1' as const,
+    image: 'galaxy-1' as const,
     copy: 'Shops, offices and mixed-use floors in Alkapur, Shaikpet and Mehdipatnam — higher yield when tenanted, longer voids when not.',
     links: [
       { label: 'All commercial', href: '/properties?type=commercial' },
@@ -406,7 +406,7 @@ const reasons = [
     <div class="shell">
       <SectionHead
         title="Projects worth knowing about"
-        intro={`Developments by ${siteConfig.developer}, grouped so you can see possession status before anything else.`}
+        intro="Developments across Hyderabad, grouped so you can see possession status before anything else."
         linkHref="/projects"
         linkLabel="All projects"
       />

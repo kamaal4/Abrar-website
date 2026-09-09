@@ -69,7 +69,6 @@ export type Property = {
 export type Project = {
   slug: string;
   name: string;
-  developer: string;
   location: string;
   /** Optional for the same reason as Property.price — none are published. */
   startingPrice?: number;

@@ -26,9 +26,6 @@ export const siteConfig = {
     whatsapp: 'https://wa.me/918247378529',
   },
 
-  /** Developer whose stock this site lists. Shown on project and property pages. */
-  developer: 'Qmaks Builders & Developers',
-
   /**
    * Site-wide disclosure, shown in the footer. Real stock, but the developer
    * publishes no prices and some gallery images are artist's renders rather

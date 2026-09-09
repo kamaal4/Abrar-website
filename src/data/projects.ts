@@ -1,10 +1,9 @@
 import type { Project } from '../types';
 
 /**
- * Every development published by Qmaks Builders & Developers, as listed on
- * qmaks.com. Generated from the developer's own project pages, so the facts
- * here are theirs: unit counts, built-up areas, possession dates and
- * amenities are reproduced as published.
+ * Every development we list, from the partner developer whose stock this site
+ * carries. The facts here are the developer's own: unit counts, built-up areas,
+ * possession dates, amenities and specification are reproduced as published.
  *
  * Two things the developer does not publish, and which are therefore absent
  * rather than estimated: prices (`startingPrice`) and per-flat areas. Ask for
@@ -15,9 +14,8 @@ import type { Project } from '../types';
  */
 export const projects: Project[] = [
   {
-    slug: 'qmaks-aasheen',
-    name: 'Qmaks Aasheen',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'aasheen',
+    name: 'Aasheen',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -28,10 +26,10 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '15,000+ sq.ft',
     images: [
-      'qmaks-aasheen-1',
-      'qmaks-aasheen-2',
-      'qmaks-aasheen-3',
-      'qmaks-aasheen-4',
+      'aasheen-1',
+      'aasheen-2',
+      'aasheen-3',
+      'aasheen-4',
     ],
     summary: 'Built strong. Built to last. Built for you. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 7 units, 15,000+ sq.ft built-up.',
     highlights: [
@@ -65,12 +63,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-aasheen',
   },
   {
-    slug: 'qmaks-al-kareem',
-    name: 'Qmaks Al Kareem',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'al-kareem',
+    name: 'Al Kareem',
     location: 'mohammedi-lines',
     locality: 'Al Kareem Colony, Md Lines',
     configurations: [
@@ -81,7 +77,7 @@ export const projects: Project[] = [
     units: '4 units',
     landArea: '4,500+ sq.ft',
     images: [
-      'qmaks-al-kareem-1',
+      'al-kareem-1',
     ],
     summary: 'The bitterness of poor quality remains long after the sweetness of low price is forgotten.',
     highlights: [
@@ -115,12 +111,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-kareem',
   },
   {
-    slug: 'qmaks-al-qasr',
-    name: 'Qmaks Al Qasr',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'al-qasr',
+    name: 'Al Qasr',
     location: 'tolichowki',
     locality: 'Surya Nagar Colony, Tolichowki',
     configurations: [
@@ -131,10 +125,10 @@ export const projects: Project[] = [
     units: '28 units',
     landArea: '49,000+ sq.ft',
     images: [
-      'qmaks-al-qasr-1',
-      'qmaks-al-qasr-2',
-      'qmaks-al-qasr-3',
-      'qmaks-al-qasr-4',
+      'al-qasr-1',
+      'al-qasr-2',
+      'al-qasr-3',
+      'al-qasr-4',
     ],
     summary: 'A premium residential tower offering modern amenities and luxurious living spaces in a prime location. Experience the perfect blend of comfort, style, and convenience with world-class infrastructure and contemporary design.',
     highlights: [
@@ -174,13 +168,11 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 16,
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-qasr',
     featured: true,
   },
   {
-    slug: 'qmaks-al-quadeer',
-    name: 'Qmaks Al Quadeer',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'al-quadeer',
+    name: 'Al Quadeer',
     location: 'alkapur',
     locality: 'Alkapur',
     configurations: [
@@ -192,12 +184,12 @@ export const projects: Project[] = [
     units: '22 units',
     landArea: '47,000+ sq.ft',
     images: [
-      'qmaks-al-quadeer-1',
-      'qmaks-al-quadeer-2',
-      'qmaks-al-quadeer-3',
-      'qmaks-al-quadeer-4',
+      'al-quadeer-1',
+      'al-quadeer-2',
+      'al-quadeer-3',
+      'al-quadeer-4',
     ],
-    summary: 'Live Grand, Live QMAKS. 3 BHK & 4 BHK in Alkapur, Hyderabad — 22 units, 47,000+ sq.ft built-up.',
+    summary: 'Al Quadeer — 3 BHK & 4 BHK in Alkapur, Hyderabad. 22 units, 47,000+ sq.ft built-up.',
     highlights: [
       '3 BHK & 4 BHK configuration',
       '6 of 22 units still available',
@@ -233,12 +225,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 6,
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-quadeer',
   },
   {
-    slug: 'qmaks-amer',
-    name: 'Qmaks Amer',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'amer',
+    name: 'Amer',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -249,10 +239,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '36,000+ sq.ft',
     images: [
-      'qmaks-amer-1',
-      'qmaks-amer-2',
-      'qmaks-amer-3',
-      'qmaks-amer-4',
+      'amer-1',
+      'amer-2',
+      'amer-3',
+      'amer-4',
     ],
     summary: 'Your dream. Our blueprint. One perfect result. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 13 units, 36,000+ sq.ft built-up.',
     highlights: [
@@ -292,12 +282,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 2,
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-amer',
   },
   {
-    slug: 'qmaks-ashiyana',
-    name: 'Qmaks Ashiyana',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'ashiyana',
+    name: 'Ashiyana',
     location: 'tolichowki',
     locality: 'Anurag Colony, Tolichowki',
     configurations: [
@@ -308,7 +296,7 @@ export const projects: Project[] = [
     units: '14 units',
     landArea: '27,000+ sq.ft',
     images: [
-      'qmaks-ashiyana-1',
+      'ashiyana-1',
     ],
     summary: '3 BHK in Anurag Colony, Tolichowki, Hyderabad — 14 units, 27,000+ sq.ft built-up.',
     highlights: [
@@ -344,12 +332,10 @@ export const projects: Project[] = [
     category: 'Budget Friendly',
     unitsAvailable: 6,
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-ashiyana',
   },
   {
-    slug: 'qmaks-crystal-avenue',
-    name: 'Qmaks Crystal Avenue',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'crystal-avenue',
+    name: 'Crystal Avenue',
     location: 'malakpet',
     locality: 'Akbar Bagh, Malakpet',
     configurations: [
@@ -360,12 +346,12 @@ export const projects: Project[] = [
     units: '22 units',
     landArea: '40,000+ sq.ft',
     images: [
-      'qmaks-crystal-avenue-1',
-      'qmaks-crystal-avenue-2',
-      'qmaks-crystal-avenue-3',
-      'qmaks-crystal-avenue-4',
+      'crystal-avenue-1',
+      'crystal-avenue-2',
+      'crystal-avenue-3',
+      'crystal-avenue-4',
     ],
-    summary: 'Looking for a home that upgrades your lifestyle and secures your wealth? Welcome to QMAKS CRYSTAL — The ultimate address for modern living and smart financial growth.',
+    summary: 'Crystal Avenue — modern living in Akbar Bagh, Malakpet, for buyers weighing lifestyle against long-term value.',
     highlights: [
       '3 BHK configuration',
       '13 of 22 units still available',
@@ -403,12 +389,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 13,
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-crystal-avenue',
   },
   {
-    slug: 'qmaks-hashim-residency',
-    name: 'Qmaks Hashim Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'hashim-residency',
+    name: 'Hashim Residency',
     location: 'tolichowki',
     locality: 'Gulshan Colony, Tolichowki',
     configurations: [
@@ -419,12 +403,12 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '25,000+ sq.ft',
     images: [
-      'qmaks-hashim-residency-1',
-      'qmaks-hashim-residency-2',
-      'qmaks-hashim-residency-3',
-      'qmaks-hashim-residency-4',
+      'hashim-residency-1',
+      'hashim-residency-2',
+      'hashim-residency-3',
+      'hashim-residency-4',
     ],
-    summary: 'From first homes to forever homes, QMAKS builds spaces where life flourishes. 3 BHK in Gulshan Colony, Tolichowki, Hyderabad — 13 units, 25,000+ sq.ft built-up.',
+    summary: 'Hashim Residency — 3 BHK in Gulshan Colony, Tolichowki, Hyderabad. 13 units, 25,000+ sq.ft built-up.',
     highlights: [
       '3 BHK configuration',
       '3 of 13 units still available',
@@ -462,12 +446,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 3,
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-hashim-residency',
   },
   {
-    slug: 'qmaks-jtr-enclave',
-    name: 'Qmaks JTR Enclave',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'jtr-enclave',
+    name: 'JTR Enclave',
     location: 'alkapur',
     locality: 'Diamond Hills Colony, Alkapur',
     configurations: [
@@ -478,10 +460,10 @@ export const projects: Project[] = [
     units: '19 units',
     landArea: '29,000+ sq.ft',
     images: [
-      'qmaks-jtr-enclave-1',
-      'qmaks-jtr-enclave-2',
+      'jtr-enclave-1',
+      'jtr-enclave-2',
     ],
-    summary: 'Beautiful Living. Smart Investing. QMAKS JTR ENCLAVE – Premium 3 BHK homes with a secure future in mind.',
+    summary: 'Beautiful living, smart investing. JTR Enclave – premium 3 BHK homes with a secure future in mind.',
     highlights: [
       '3 BHK configuration',
       '4 of 19 units still available',
@@ -519,12 +501,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 4,
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-jtr-enclave',
   },
   {
-    slug: 'qmaks-khizra',
-    name: 'Qmaks Khizra',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'khizra',
+    name: 'Khizra',
     location: 'mehdipatnam',
     locality: 'Mehdipatnam',
     configurations: [
@@ -536,9 +516,9 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '14,000+ sq.ft',
     images: [
-      'qmaks-khizra-1',
-      'qmaks-khizra-2',
-      'qmaks-khizra-3',
+      'khizra-1',
+      'khizra-2',
+      'khizra-3',
     ],
     summary: 'Your comfort zone. Ever lasting happiness. 2 BHK & 4 BHK in Mehdipatnam, Hyderabad — 7 units, 14,000+ sq.ft built-up.',
     highlights: [
@@ -574,12 +554,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsAvailable: 6,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-khizra',
   },
   {
-    slug: 'qmaks-mohammed-ali',
-    name: 'Qmaks Mohammed Ali',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'mohammed-ali',
+    name: 'Mohammed Ali',
     location: 'alkapur',
     locality: 'Alkapur',
     configurations: [
@@ -591,12 +569,12 @@ export const projects: Project[] = [
     units: '20 units',
     landArea: '36,000+ sq.ft',
     images: [
-      'qmaks-mohammed-ali-1',
-      'qmaks-mohammed-ali-2',
-      'qmaks-mohammed-ali-3',
-      'qmaks-mohammed-ali-4',
+      'mohammed-ali-1',
+      'mohammed-ali-2',
+      'mohammed-ali-3',
+      'mohammed-ali-4',
     ],
-    summary: 'The best time to buy a home was ten years ago. The second-best time is today. Presenting QMAKS Mohammed Ali Residency – a home built with your hard work, designed for your family\'s comfort, peace, and future.',
+    summary: 'Mohammed Ali Residency — 3 BHK homes in Alkapur, designed around family comfort.',
     highlights: [
       '3 BHK & 4 BHK configuration',
       '3 of 20 units still available',
@@ -634,12 +612,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 3,
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-mohammed-ali',
   },
   {
-    slug: 'qmaks-mujeeb-atrium',
-    name: 'Qmaks Mujeeb Atrium',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'mujeeb-atrium',
+    name: 'Mujeeb Atrium',
     location: 'alkapur',
     locality: 'Alkapur',
     configurations: [
@@ -651,10 +627,10 @@ export const projects: Project[] = [
     units: '26 units',
     landArea: '61,000+ sq.ft',
     images: [
-      'qmaks-mujeeb-atrium-1',
-      'qmaks-mujeeb-atrium-2',
+      'mujeeb-atrium-1',
+      'mujeeb-atrium-2',
     ],
-    summary: 'QMAKS Mujeeb Atrium offers premier, expertly crafted 3 & 4 BHK luxury residences in one of Hyderabad\'s most sought-after neighbourhoods, perfectly tailored for discerning individuals.',
+    summary: 'Mujeeb Atrium — 3 & 4 BHK residences in Alkapur, one of the city\'s more sought-after neighbourhoods.',
     highlights: [
       '3 BHK & 4 BHK configuration',
       '4 of 26 units still available',
@@ -693,12 +669,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 4,
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-mujeeb-atrium',
   },
   {
-    slug: 'qmaks-neknampur',
-    name: 'Qmaks Neknampur',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'neknampur',
+    name: 'Neknampur',
     location: 'neknampur',
     locality: 'Neknampur',
     configurations: [
@@ -709,10 +683,10 @@ export const projects: Project[] = [
     units: '10 units',
     landArea: '25,000+ sq.ft',
     images: [
-      'qmaks-neknampur-1',
-      'qmaks-neknampur-2',
-      'qmaks-neknampur-3',
-      'qmaks-neknampur-4',
+      'neknampur-1',
+      'neknampur-2',
+      'neknampur-3',
+      'neknampur-4',
     ],
     summary: 'A goal without a plan is just a wish—and we planned every detail. 3 BHK in Neknampur, Hyderabad — 10 units, 25,000+ sq.ft built-up.',
     highlights: [
@@ -738,12 +712,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-neknampur',
   },
   {
-    slug: 'qmaks-noor-khan-bazar',
-    name: 'Qmaks Noor Khan Bazar',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'noor-khan-bazar',
+    name: 'Noor Khan Bazar',
     location: 'noor-khan-bazar',
     locality: 'Noor Khan Bazar',
     configurations: [
@@ -755,10 +727,10 @@ export const projects: Project[] = [
     units: '6 units',
     landArea: '25,000+ sq.ft',
     images: [
-      'qmaks-noor-khan-bazar-1',
-      'qmaks-noor-khan-bazar-2',
-      'qmaks-noor-khan-bazar-3',
-      'qmaks-noor-khan-bazar-4',
+      'noor-khan-bazar-1',
+      'noor-khan-bazar-2',
+      'noor-khan-bazar-3',
+      'noor-khan-bazar-4',
     ],
     summary: 'Good buildings come from good people, and all problems are solved by good design. 3 BHK & 4 BHK in Noor Khan Bazar, Hyderabad — 6 units, 25,000+ sq.ft built-up.',
     highlights: [
@@ -792,12 +764,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-noor-khan-bazar',
   },
   {
-    slug: 'qmaks-parkview',
-    name: 'Qmaks Parkview',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'parkview',
+    name: 'Parkview',
     location: 'alkapur',
     locality: 'Alkapur',
     configurations: [
@@ -808,11 +778,11 @@ export const projects: Project[] = [
     units: '21 units',
     landArea: '37,000+ sq.ft',
     images: [
-      'qmaks-parkview-1',
-      'qmaks-parkview-2',
-      'qmaks-parkview-3',
+      'parkview-1',
+      'parkview-2',
+      'parkview-3',
     ],
-    summary: 'QMAKS PARK VIEW – a perfect address for the life you\'ve worked hard to achieve. 3 BHK in Alkapur, Hyderabad — 21 units, 37,000+ sq.ft built-up.',
+    summary: 'Parkview — 3 BHK in Alkapur, Hyderabad. 21 units, 37,000+ sq.ft built-up.',
     highlights: [
       '3 BHK configuration',
       '13 of 21 units still available',
@@ -850,12 +820,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 13,
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-parkview',
   },
   {
-    slug: 'qmaks-siraj',
-    name: 'Qmaks Siraj',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'siraj',
+    name: 'Siraj',
     location: 'tolichowki',
     locality: 'Paramount Colony, Tolichowki',
     configurations: [
@@ -866,10 +834,10 @@ export const projects: Project[] = [
     units: '16 units',
     landArea: '33,000+ sq.ft',
     images: [
-      'qmaks-siraj-1',
-      'qmaks-siraj-2',
-      'qmaks-siraj-3',
-      'qmaks-siraj-4',
+      'siraj-1',
+      'siraj-2',
+      'siraj-3',
+      'siraj-4',
     ],
     summary: 'A destination of peace and luxury. 3 BHK in Paramount Colony, Tolichowki, Hyderabad — 16 units, 33,000+ sq.ft built-up.',
     highlights: [
@@ -907,12 +875,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 11,
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-siraj',
   },
   {
-    slug: 'qmaks-umaiza',
-    name: 'Qmaks Umaiza',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'umaiza',
+    name: 'Umaiza',
     location: 'shaikpet',
     locality: 'Aziz Bagh Colony, Shaikpet',
     configurations: [
@@ -924,11 +890,11 @@ export const projects: Project[] = [
     units: '80 units',
     landArea: '139,000+ sq.ft',
     images: [
-      'qmaks-umaiza-1',
-      'qmaks-umaiza-2',
-      'qmaks-umaiza-3',
+      'umaiza-1',
+      'umaiza-2',
+      'umaiza-3',
     ],
-    summary: 'Experience the perfect blend of luxury, connectivity, and future-ready living with QMAKS UMAIZA.',
+    summary: 'Umaiza — luxury, connectivity and future-ready living in Aziz Bagh Colony, Shaikpet.',
     highlights: [
       '2 BHK & 3 BHK configuration',
       '15 of 80 units still available',
@@ -964,13 +930,11 @@ export const projects: Project[] = [
     category: 'Prestige',
     unitsAvailable: 15,
     unitsPerFloor: 10,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-umaiza',
     featured: true,
   },
   {
-    slug: 'qmaks-zam-zam',
-    name: 'Qmaks Zam Zam',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'zam-zam',
+    name: 'Zam Zam',
     location: 'tolichowki',
     locality: 'Arvind Nagar Colony, Tolichowki',
     configurations: [
@@ -981,10 +945,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '17,000+ sq.ft',
     images: [
-      'qmaks-zam-zam-1',
-      'qmaks-zam-zam-2',
+      'zam-zam-1',
+      'zam-zam-2',
     ],
-    summary: 'Live Grand. Live Qmaks. 3 BHK in Arvind Nagar Colony, Tolichowki, Hyderabad — 13 units, 17,000+ sq.ft built-up.',
+    summary: '3 BHK in Arvind Nagar Colony, Tolichowki, Hyderabad — 13 units, 17,000+ sq.ft built-up.',
     highlights: [
       '3 BHK configuration',
       '4 of 13 units still available',
@@ -1018,12 +982,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 4,
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/ongoing/qmaks-zam-zam',
   },
   {
-    slug: 'qmaks-baba-atrium',
-    name: 'Qmaks Baba Atrium',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'baba-atrium',
+    name: 'Baba Atrium',
     location: 'shaikpet',
     locality: 'Shaikpet',
     configurations: [
@@ -1034,12 +996,12 @@ export const projects: Project[] = [
     units: '12 units',
     landArea: '61,000+ sq.ft',
     images: [
-      'qmaks-baba-atrium-1',
-      'qmaks-baba-atrium-2',
-      'qmaks-baba-atrium-3',
-      'qmaks-baba-atrium-4',
+      'baba-atrium-1',
+      'baba-atrium-2',
+      'baba-atrium-3',
+      'baba-atrium-4',
     ],
-    summary: 'QMAKS BABA ATRIUM – Turning aspirations into addresses across Hyderabad. 3 BHK in Shaikpet, Hyderabad — 12 units, 61,000+ sq.ft built-up.',
+    summary: 'Baba Atrium — 3 BHK in Shaikpet, Hyderabad. 12 units, 61,000+ sq.ft built-up.',
     highlights: [
       '3 BHK configuration',
       '3 of 12 units still available',
@@ -1077,12 +1039,10 @@ export const projects: Project[] = [
     category: 'Prestige',
     unitsAvailable: 3,
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/commercial/ongoing/qmaks-baba-atrium',
   },
   {
-    slug: 'qmaks-galaxy',
-    name: 'Qmaks Galaxy',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'galaxy',
+    name: 'Galaxy',
     location: 'tolichowki',
     locality: 'Paramount Colony, Tolichowki',
     configurations: [
@@ -1095,9 +1055,9 @@ export const projects: Project[] = [
     units: '35 units',
     landArea: '59,000+ sq.ft',
     images: [
-      'qmaks-galaxy-1',
-      'qmaks-galaxy-2',
-      'qmaks-galaxy-3',
+      'galaxy-1',
+      'galaxy-2',
+      'galaxy-3',
     ],
     summary: 'A DESTINATION OF YOUR TRUST, PEACE & COMFORT. 2 BHK & 3 BHK & 4 BHK in Paramount Colony, Tolichowki, Hyderabad — 35 units, 59,000+ sq.ft built-up.',
     highlights: [
@@ -1135,12 +1095,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 33,
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/commercial/ongoing/qmaks-galaxy',
   },
   {
-    slug: 'qmaks-imperial',
-    name: 'Qmaks Imperial',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'imperial',
+    name: 'Imperial',
     location: 'mehdipatnam',
     locality: 'Humayun Nagar, Mehdipatnam',
     configurations: [
@@ -1152,10 +1110,10 @@ export const projects: Project[] = [
     units: '39 units',
     landArea: '70,000+ sq.ft',
     images: [
-      'qmaks-imperial-1',
-      'qmaks-imperial-2',
+      'imperial-1',
+      'imperial-2',
     ],
-    summary: 'QMAKS Builder & Developers presents an exclusive community of 50+ modern, thoughtfully designed homes in Humayun Nagar, Mehdipatnam, Hyderabad. Perfectly blending style and comfort, this well-connected project offers seamless access to schools, healthcare, shopping, and transit hubs.',
+    summary: 'A community of modern homes in Humayun Nagar, Mehdipatnam, Hyderabad, with access to schools, healthcare, shopping and transit hubs.',
     highlights: [
       '3 BHK & 4 BHK configuration',
       '11 of 39 units still available',
@@ -1191,12 +1149,10 @@ export const projects: Project[] = [
     category: 'Premium',
     unitsAvailable: 11,
     unitsPerFloor: 5,
-    sourceUrl: 'https://qmaks.com/projects/commercial/ongoing/qmaks-imperial',
   },
   {
-    slug: 'qmaks-quadri-plaza',
-    name: 'Qmaks Quadri Plaza',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'quadri-plaza',
+    name: 'Quadri Plaza',
     location: 'shaikpet',
     locality: 'Satya Colony, Shaikpet',
     configurations: [
@@ -1207,10 +1163,10 @@ export const projects: Project[] = [
     units: '11 units',
     landArea: '39,000+ sq.ft',
     images: [
-      'qmaks-quadri-plaza-1',
-      'qmaks-quadri-plaza-2',
-      'qmaks-quadri-plaza-3',
-      'qmaks-quadri-plaza-4',
+      'quadri-plaza-1',
+      'quadri-plaza-2',
+      'quadri-plaza-3',
+      'quadri-plaza-4',
     ],
     summary: 'The bitterness of poor quality remains long after the sweetness of low price is forgotten.',
     highlights: [
@@ -1251,12 +1207,10 @@ export const projects: Project[] = [
     category: 'Prestige',
     unitsAvailable: 2,
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/commercial/ongoing/qmaks-quadri-plaza',
   },
   {
-    slug: 'qmaks-rf-arcade',
-    name: 'Qmaks RF Arcade',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'rf-arcade',
+    name: 'RF Arcade',
     location: 'alkapur',
     locality: 'Alkapur',
     configurations: [
@@ -1267,10 +1221,10 @@ export const projects: Project[] = [
     units: '52 units',
     landArea: '135,000+ sq.ft',
     images: [
-      'qmaks-rf-arcade-1',
-      'qmaks-rf-arcade-2',
+      'rf-arcade-1',
+      'rf-arcade-2',
     ],
-    summary: 'Where Expansive Dreams Find Their Perfect Address! Rising with striking architecture and uncompromising craftsmanship, QMAKS RF Arcade offers ultra-premium 3 BHK residences in one of Hyderabad\'s most coveted neighbourhoods.',
+    summary: 'RF Arcade — commercial floors in Alkapur, 135,000+ sq.ft across 52 units.',
     highlights: [
       '3 BHK configuration',
       '12 of 52 units still available',
@@ -1312,13 +1266,11 @@ export const projects: Project[] = [
     category: 'Premium Project',
     unitsAvailable: 12,
     unitsPerFloor: 8,
-    sourceUrl: 'https://qmaks.com/projects/commercial/ongoing/qmaks-rf-arcade',
     featured: true,
   },
   {
-    slug: 'qmaks-crown-enclave',
-    name: 'Qmaks Crown Enclave',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'crown-enclave',
+    name: 'Crown Enclave',
     location: 'attapur',
     locality: 'Attapur',
     configurations: [
@@ -1329,9 +1281,9 @@ export const projects: Project[] = [
     units: '35 units',
     landArea: '1,000+ sq.yd',
     images: [
-      'qmaks-crown-enclave-1',
-      'qmaks-crown-enclave-2',
-      'qmaks-crown-enclave-3',
+      'crown-enclave-1',
+      'crown-enclave-2',
+      'crown-enclave-3',
     ],
     summary: 'Homes that stand the test of time. 3 BHK in Attapur, Hyderabad — 35 units, 1,000+ sq.yd built-up.',
     highlights: [
@@ -1360,12 +1312,10 @@ export const projects: Project[] = [
     category: 'Premium Project',
     unitsAvailable: 50,
     unitsPerFloor: 6,
-    sourceUrl: 'https://qmaks.com/projects/commercial/upcoming/qmaks-crown-enclave',
   },
   {
-    slug: 'qmaks-akbar-enclave',
-    name: 'Qmaks Akbar Enclave',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'akbar-enclave',
+    name: 'Akbar Enclave',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -1377,10 +1327,10 @@ export const projects: Project[] = [
     units: '22 units',
     landArea: '19,000+ sq.ft',
     images: [
-      'qmaks-akbar-enclave-1',
-      'qmaks-akbar-enclave-2',
-      'qmaks-akbar-enclave-3',
-      'qmaks-akbar-enclave-4',
+      'akbar-enclave-1',
+      'akbar-enclave-2',
+      'akbar-enclave-3',
+      'akbar-enclave-4',
     ],
     summary: 'Quality you can see. Craftsmanship you can feel. 2 BHK & 3 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 22 units, 19,000+ sq.ft built-up.',
     highlights: [
@@ -1416,12 +1366,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-akbar-enclave',
   },
   {
-    slug: 'qmaks-ameena-fasi-manzil',
-    name: 'Qmaks Ameena Fasi Manzil',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'ameena-fasi-manzil',
+    name: 'Ameena Fasi Manzil',
     location: 'vijay-nagar',
     locality: 'Vijay Nagar Colony',
     configurations: [
@@ -1432,10 +1380,10 @@ export const projects: Project[] = [
     units: '11 units',
     landArea: '15,000+ sq.ft',
     images: [
-      'qmaks-ameena-fasi-manzil-1',
-      'qmaks-ameena-fasi-manzil-2',
-      'qmaks-ameena-fasi-manzil-3',
-      'qmaks-ameena-fasi-manzil-4',
+      'ameena-fasi-manzil-1',
+      'ameena-fasi-manzil-2',
+      'ameena-fasi-manzil-3',
+      'ameena-fasi-manzil-4',
     ],
     summary: 'In every beam we place, in every wall we raise, exists the potential for something amazing.',
     highlights: [
@@ -1469,12 +1417,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-ameena-fasi-manzil',
   },
   {
-    slug: 'qmaks-avenue',
-    name: 'Qmaks Avenue',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'avenue',
+    name: 'Avenue',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -1485,10 +1431,10 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '13,000+ sq.ft',
     images: [
-      'qmaks-avenue-1',
-      'qmaks-avenue-2',
-      'qmaks-avenue-3',
-      'qmaks-avenue-4',
+      'avenue-1',
+      'avenue-2',
+      'avenue-3',
+      'avenue-4',
     ],
     summary: 'We build. You shine. 3 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 7 units, 13,000+ sq.ft built-up.',
     highlights: [
@@ -1524,12 +1470,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-avenue',
   },
   {
-    slug: 'qmaks-ayesha-enclave',
-    name: 'Qmaks Ayesha Enclave',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'ayesha-enclave',
+    name: 'Ayesha Enclave',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -1540,8 +1484,8 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '16,000+ sq.ft',
     images: [
-      'qmaks-ayesha-enclave-1',
-      'qmaks-ayesha-enclave-2',
+      'ayesha-enclave-1',
+      'ayesha-enclave-2',
     ],
     summary: 'We construct your plan, your future. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 7 units, 16,000+ sq.ft built-up.',
     highlights: [
@@ -1577,12 +1521,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-ayesha-enclave',
   },
   {
-    slug: 'qmaks-ayzal-residency',
-    name: 'Qmaks Ayzal Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'ayzal-residency',
+    name: 'Ayzal Residency',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -1593,10 +1535,10 @@ export const projects: Project[] = [
     units: '30 units',
     landArea: '57,000+ sq.ft',
     images: [
-      'qmaks-ayzal-residency-1',
-      'qmaks-ayzal-residency-2',
-      'qmaks-ayzal-residency-3',
-      'qmaks-ayzal-residency-4',
+      'ayzal-residency-1',
+      'ayzal-residency-2',
+      'ayzal-residency-3',
+      'ayzal-residency-4',
     ],
     summary: 'We build. You shine. 3 BHK in Sa Colony, Tolichowki, Hyderabad — 30 units, 57,000+ sq.ft built-up.',
     highlights: [
@@ -1633,12 +1575,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-ayzal-residency',
   },
   {
-    slug: 'qmaks-bait-ul-aman',
-    name: 'Qmaks Bait Ul Aman',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'bait-ul-aman',
+    name: 'Bait Ul Aman',
     location: 'mohammedi-lines',
     locality: 'Al Kareem Colony, Md Lines',
     configurations: [
@@ -1649,10 +1589,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '21,000+ sq.ft',
     images: [
-      'qmaks-bait-ul-aman-1',
-      'qmaks-bait-ul-aman-2',
-      'qmaks-bait-ul-aman-3',
-      'qmaks-bait-ul-aman-4',
+      'bait-ul-aman-1',
+      'bait-ul-aman-2',
+      'bait-ul-aman-3',
+      'bait-ul-aman-4',
     ],
     summary: 'Brick by brick, stone by stone, every great thing was built by those who believed they could.',
     highlights: [
@@ -1687,12 +1627,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-bait-ul-aman',
   },
   {
-    slug: 'qmaks-darul-aman',
-    name: 'Qmaks Darul Aman',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'darul-aman',
+    name: 'Darul Aman',
     location: 'alkapur',
     locality: 'Alkapur',
     configurations: [
@@ -1703,12 +1641,12 @@ export const projects: Project[] = [
     units: '26 units',
     landArea: '49,000+ sq.ft',
     images: [
-      'qmaks-darul-aman-1',
-      'qmaks-darul-aman-2',
-      'qmaks-darul-aman-3',
-      'qmaks-darul-aman-4',
+      'darul-aman-1',
+      'darul-aman-2',
+      'darul-aman-3',
+      'darul-aman-4',
     ],
-    summary: 'TURN YOUR DREAM INTO AN ADDRESS - QMAKS DARUL AMAN - THE ULTIMATE GATEWAY OF EXCELLENCE. 3 BHK in Alkapur, Hyderabad — 26 units, 49,000+ sq.ft built-up.',
+    summary: 'Darul Aman — 3 BHK in Alkapur, Hyderabad. 26 units, 49,000+ sq.ft built-up.',
     highlights: [
       '3 BHK configuration',
       '4 units per floor',
@@ -1742,12 +1680,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-darul-aman',
   },
   {
-    slug: 'qmaks-darul-khair',
-    name: 'Qmaks Darul Khair',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'darul-khair',
+    name: 'Darul Khair',
     location: 'tolichowki',
     locality: 'Surya Nagar Colony, Tolichowki',
     configurations: [
@@ -1758,10 +1694,10 @@ export const projects: Project[] = [
     units: '26 units',
     landArea: '47,000+ sq.ft',
     images: [
-      'qmaks-darul-khair-1',
-      'qmaks-darul-khair-2',
-      'qmaks-darul-khair-3',
-      'qmaks-darul-khair-4',
+      'darul-khair-1',
+      'darul-khair-2',
+      'darul-khair-3',
+      'darul-khair-4',
     ],
     summary: 'Your home should tell the story of who you are, and be a collection of what you love. 3 BHK in Surya Nagar Colony, Tolichowki, Hyderabad — 26 units, 47,000+ sq.ft built-up.',
     highlights: [
@@ -1798,12 +1734,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-darul-khair',
   },
   {
-    slug: 'qmaks-delight-suites',
-    name: 'Qmaks Delight Suites',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'delight-suites',
+    name: 'Delight Suites',
     location: 'tolichowki',
     locality: 'Paramount Colony, Tolichowki',
     configurations: [
@@ -1815,10 +1749,10 @@ export const projects: Project[] = [
     units: '28 units',
     landArea: '51,000+ sq.ft',
     images: [
-      'qmaks-delight-suites-1',
-      'qmaks-delight-suites-2',
-      'qmaks-delight-suites-3',
-      'qmaks-delight-suites-4',
+      'delight-suites-1',
+      'delight-suites-2',
+      'delight-suites-3',
+      'delight-suites-4',
     ],
     summary: 'Some people look for beautiful places, while others make the places beautiful. 3 BHK & 4 BHK in Paramount Colony, Tolichowki, Hyderabad — 28 units, 51,000+ sq.ft built-up.',
     highlights: [
@@ -1854,12 +1788,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-delight-suites',
   },
   {
-    slug: 'qmaks-diamond-residency',
-    name: 'Qmaks Diamond Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'diamond-residency',
+    name: 'Diamond Residency',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -1870,10 +1802,10 @@ export const projects: Project[] = [
     units: '45 units',
     landArea: '90,000+ sq.ft',
     images: [
-      'qmaks-diamond-residency-1',
-      'qmaks-diamond-residency-2',
-      'qmaks-diamond-residency-3',
-      'qmaks-diamond-residency-4',
+      'diamond-residency-1',
+      'diamond-residency-2',
+      'diamond-residency-3',
+      'diamond-residency-4',
     ],
     summary: 'Safe hands. Strong walls. Smart construction. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 45 units, 90,000+ sq.ft built-up.',
     highlights: [
@@ -1910,12 +1842,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 6,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-diamond-residency',
   },
   {
-    slug: 'qmaks-farm-house',
-    name: 'Qmaks Farm House',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'farm-house',
+    name: 'Farm House',
     location: 'chevella',
     locality: 'Damergidda, Chevella',
     configurations: [
@@ -1954,12 +1884,10 @@ export const projects: Project[] = [
     ],
     kind: 'residential',
     category: 'Luxurious',
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-farm-house',
   },
   {
-    slug: 'qmaks-future-city',
-    name: 'Qmaks Future City',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'future-city',
+    name: 'Future City',
     location: 'shamshabad',
     locality: 'Ramanujapur, Shamshabad',
     configurations: [
@@ -1970,10 +1898,10 @@ export const projects: Project[] = [
     units: '35 plots',
     landArea: '8+ acres',
     images: [
-      'qmaks-future-city-1',
-      'qmaks-future-city-2',
-      'qmaks-future-city-3',
-      'qmaks-future-city-4',
+      'future-city-1',
+      'future-city-2',
+      'future-city-3',
+      'future-city-4',
     ],
     summary: 'WHERE INVESTMENT MEETS SERENITY. 35 plots in Ramanujapur, Shamshabad, Hyderabad — 35 plots, 8+ acres built-up.',
     highlights: [
@@ -2011,13 +1939,11 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'High Returns',
     unitsAvailable: 29,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-future-city',
     featured: true,
   },
   {
-    slug: 'qmaks-haniya-residency',
-    name: 'Qmaks Haniya Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'haniya-residency',
+    name: 'Haniya Residency',
     location: 'mohammedi-lines',
     locality: 'Al Kareem Colony, Md Lines',
     configurations: [
@@ -2028,10 +1954,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '21,000+ sq.ft',
     images: [
-      'qmaks-haniya-residency-1',
-      'qmaks-haniya-residency-2',
-      'qmaks-haniya-residency-3',
-      'qmaks-haniya-residency-4',
+      'haniya-residency-1',
+      'haniya-residency-2',
+      'haniya-residency-3',
+      'haniya-residency-4',
     ],
     summary: 'Where simplicity meets serenity. 3 BHK in Al Kareem Colony, Md Lines, Hyderabad — 13 units, 21,000+ sq.ft built-up.',
     highlights: [
@@ -2068,12 +1994,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-haniya-residency',
   },
   {
-    slug: 'qmaks-haseeb-residency',
-    name: 'Qmaks Haseeb Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'haseeb-residency',
+    name: 'Haseeb Residency',
     location: 'alkapur',
     locality: 'Diamond Hills Colony, Alkapur',
     configurations: [
@@ -2085,12 +2009,12 @@ export const projects: Project[] = [
     units: '20 units',
     landArea: '31,000+ sq.ft',
     images: [
-      'qmaks-haseeb-residency-1',
-      'qmaks-haseeb-residency-2',
-      'qmaks-haseeb-residency-3',
-      'qmaks-haseeb-residency-4',
+      'haseeb-residency-1',
+      'haseeb-residency-2',
+      'haseeb-residency-3',
+      'haseeb-residency-4',
     ],
-    summary: 'Presenting QMAKS HASEEB - where your hard work turns into a home filled with love, peace, and lasting memories.',
+    summary: 'Haseeb Residency — 2 to 3 BHK homes in Diamond Hills Colony, Alkapur.',
     highlights: [
       '2 BHK & 3 BHK configuration',
       '4 units per floor',
@@ -2126,12 +2050,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-haseeb-residency',
   },
   {
-    slug: 'qmaks-iftekhar',
-    name: 'Qmaks Iftekhar',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'iftekhar',
+    name: 'Iftekhar',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -2142,10 +2064,10 @@ export const projects: Project[] = [
     units: '9 units',
     landArea: '15,000+ sq.ft',
     images: [
-      'qmaks-iftekhar-1',
-      'qmaks-iftekhar-2',
-      'qmaks-iftekhar-3',
-      'qmaks-iftekhar-4',
+      'iftekhar-1',
+      'iftekhar-2',
+      'iftekhar-3',
+      'iftekhar-4',
     ],
     summary: 'We don\'t just build structures - we build trust. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 9 units, 15,000+ sq.ft built-up.',
     highlights: [
@@ -2179,12 +2101,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-iftekhar',
   },
   {
-    slug: 'qmaks-imam',
-    name: 'Qmaks Imam',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'imam',
+    name: 'Imam',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -2195,10 +2115,10 @@ export const projects: Project[] = [
     units: '8 units',
     landArea: '19,000+ sq.ft',
     images: [
-      'qmaks-imam-1',
-      'qmaks-imam-2',
-      'qmaks-imam-3',
-      'qmaks-imam-4',
+      'imam-1',
+      'imam-2',
+      'imam-3',
+      'imam-4',
     ],
     summary: 'We build. Your trust. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 8 units, 19,000+ sq.ft built-up.',
     highlights: [
@@ -2235,12 +2155,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-imam',
   },
   {
-    slug: 'qmaks-iqbal-residency',
-    name: 'Qmaks Iqbal Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'iqbal-residency',
+    name: 'Iqbal Residency',
     location: 'janachaitanya',
     locality: 'Janachaitaniya',
     configurations: [
@@ -2251,12 +2169,12 @@ export const projects: Project[] = [
     units: '19 units',
     landArea: '29,000+ sq.ft',
     images: [
-      'qmaks-iqbal-residency-1',
-      'qmaks-iqbal-residency-2',
-      'qmaks-iqbal-residency-3',
-      'qmaks-iqbal-residency-4',
+      'iqbal-residency-1',
+      'iqbal-residency-2',
+      'iqbal-residency-3',
+      'iqbal-residency-4',
     ],
-    summary: 'Choosing a QMAKS IQBAL - 4 BHK flat ensures a blend of luxury, convenience, and financial growth. These homes feature premium interiors, high-quality finishes, and 100% bank-approved titles for a hassle-free purchase. The apartments are located in high-growth neighbourhoods across Hyderabad, promising strong property appreciation and assured rental returns.',
+    summary: 'A 4 BHK flat at Iqbal Residency, with premium interiors, high-quality finishes and bank-approved titles.',
     highlights: [
       '4 BHK configuration',
       '5 of 19 units still available',
@@ -2293,12 +2211,10 @@ export const projects: Project[] = [
     kind: 'residential',
     unitsAvailable: 5,
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-iqbal-residency',
   },
   {
-    slug: 'qmaks-ishaq-residency',
-    name: 'Qmaks Ishaq Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'ishaq-residency',
+    name: 'Ishaq Residency',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -2309,10 +2225,10 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '15,000+ sq.ft',
     images: [
-      'qmaks-ishaq-residency-1',
-      'qmaks-ishaq-residency-2',
-      'qmaks-ishaq-residency-3',
-      'qmaks-ishaq-residency-4',
+      'ishaq-residency-1',
+      'ishaq-residency-2',
+      'ishaq-residency-3',
+      'ishaq-residency-4',
     ],
     summary: 'Your dream. Our blueprint. One perfect result. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 7 units, 15,000+ sq.ft built-up.',
     highlights: [
@@ -2348,12 +2264,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-ishaq-residency',
   },
   {
-    slug: 'qmaks-javeed',
-    name: 'Qmaks Javeed',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'javeed',
+    name: 'Javeed',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -2364,10 +2278,10 @@ export const projects: Project[] = [
     units: '8 units',
     landArea: '13,000+ sq.ft',
     images: [
-      'qmaks-javeed-1',
-      'qmaks-javeed-2',
-      'qmaks-javeed-3',
-      'qmaks-javeed-4',
+      'javeed-1',
+      'javeed-2',
+      'javeed-3',
+      'javeed-4',
     ],
     summary: 'Quality is never an accident; it is always the result of intelligent effort. 3 BHK in Sa Colony, Tolichowki, Hyderabad — 8 units, 13,000+ sq.ft built-up.',
     highlights: [
@@ -2404,12 +2318,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-javeed',
   },
   {
-    slug: 'qmaks-masood',
-    name: 'Qmaks Masood',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'masood',
+    name: 'Masood',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -2420,8 +2332,8 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '17,000+ sq.ft',
     images: [
-      'qmaks-masood-1',
-      'qmaks-masood-2',
+      'masood-1',
+      'masood-2',
     ],
     summary: 'Every brick counts. Every deadline matters. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 7 units, 17,000+ sq.ft built-up.',
     highlights: [
@@ -2458,12 +2370,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-masood',
   },
   {
-    slug: 'qmaks-mia-khan-residency',
-    name: 'Qmaks Mia Khan Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'mia-khan-residency',
+    name: 'Mia Khan Residency',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -2474,10 +2384,10 @@ export const projects: Project[] = [
     units: '11 units',
     landArea: '19,000+ sq.ft',
     images: [
-      'qmaks-mia-khan-residency-1',
-      'qmaks-mia-khan-residency-2',
-      'qmaks-mia-khan-residency-3',
-      'qmaks-mia-khan-residency-4',
+      'mia-khan-residency-1',
+      'mia-khan-residency-2',
+      'mia-khan-residency-3',
+      'mia-khan-residency-4',
     ],
     summary: 'From foundation to finish — we handle it all. 3 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 11 units, 19,000+ sq.ft built-up.',
     highlights: [
@@ -2513,12 +2423,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-mia-khan-residency',
   },
   {
-    slug: 'qmaks-mk-tower',
-    name: 'Qmaks MK Tower',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'mk-tower',
+    name: 'MK Tower',
     location: 'narsingi',
     locality: 'Narsingi',
     configurations: [
@@ -2530,10 +2438,10 @@ export const projects: Project[] = [
     units: '38 units',
     landArea: '59,000+ sq.ft',
     images: [
-      'qmaks-mk-tower-1',
-      'qmaks-mk-tower-2',
-      'qmaks-mk-tower-3',
-      'qmaks-mk-tower-4',
+      'mk-tower-1',
+      'mk-tower-2',
+      'mk-tower-3',
+      'mk-tower-4',
     ],
     summary: 'Your dream home is the launchpad for your family\'s biggest goals. 2 BHK & 3 BHK in Narsingi, Hyderabad — 38 units, 59,000+ sq.ft built-up.',
     highlights: [
@@ -2571,12 +2479,10 @@ export const projects: Project[] = [
     category: 'Budget Friendly',
     unitsAvailable: 3,
     unitsPerFloor: 6,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-mk-tower',
   },
   {
-    slug: 'qmaks-moosa-enclave',
-    name: 'Qmaks Moosa Enclave',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'moosa-enclave',
+    name: 'Moosa Enclave',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -2587,10 +2493,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '27,000+ sq.ft',
     images: [
-      'qmaks-moosa-enclave-1',
-      'qmaks-moosa-enclave-2',
-      'qmaks-moosa-enclave-3',
-      'qmaks-moosa-enclave-4',
+      'moosa-enclave-1',
+      'moosa-enclave-2',
+      'moosa-enclave-3',
+      'moosa-enclave-4',
     ],
     summary: 'Building spaces that stand the test of time. 3 BHK in Sa Colony, Tolichowki, Hyderabad — 13 units, 27,000+ sq.ft built-up.',
     highlights: [
@@ -2627,12 +2533,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-moosa-enclave',
   },
   {
-    slug: 'qmaks-msn-encalve',
-    name: 'Qmaks MSN Encalve',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'msn-encalve',
+    name: 'MSN Encalve',
     location: 'alkapur',
     locality: 'Diamond Hills Colony, Alkapur',
     configurations: [
@@ -2644,12 +2548,12 @@ export const projects: Project[] = [
     units: '19 units',
     landArea: '27,000+ sq.ft',
     images: [
-      'qmaks-msn-encalve-1',
-      'qmaks-msn-encalve-2',
-      'qmaks-msn-encalve-3',
-      'qmaks-msn-encalve-4',
+      'msn-encalve-1',
+      'msn-encalve-2',
+      'msn-encalve-3',
+      'msn-encalve-4',
     ],
-    summary: 'Live Beautifully. Invest Wisely. QMAKS MSN ENCLAVE – Luxurious 3 BHK homes designed for comfort, security, and a future-ready lifestyle.',
+    summary: 'MSN Enclave – 3 BHK homes designed for comfort, security and a future-ready lifestyle.',
     highlights: [
       '2 BHK & 3 BHK configuration',
       '3 units per floor',
@@ -2685,12 +2589,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 3,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-msn-encalve',
   },
   {
-    slug: 'qmaks-nashika-avenue',
-    name: 'Qmaks Nashika Avenue',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'nashika-avenue',
+    name: 'Nashika Avenue',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -2701,10 +2603,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '23,000+ sq.ft',
     images: [
-      'qmaks-nashika-avenue-1',
-      'qmaks-nashika-avenue-2',
-      'qmaks-nashika-avenue-3',
-      'qmaks-nashika-avenue-4',
+      'nashika-avenue-1',
+      'nashika-avenue-2',
+      'nashika-avenue-3',
+      'nashika-avenue-4',
     ],
     summary: 'One Flat, endless possibilities. 3 BHK in Sa Colony, Tolichowki, Hyderabad — 13 units, 23,000+ sq.ft built-up.',
     highlights: [
@@ -2740,12 +2642,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-nashika-avenue',
   },
   {
-    slug: 'qmaks-nawaz',
-    name: 'Qmaks Nawaz',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'nawaz',
+    name: 'Nawaz',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -2756,10 +2656,10 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '7,500+ sq.ft',
     images: [
-      'qmaks-nawaz-1',
-      'qmaks-nawaz-2',
-      'qmaks-nawaz-3',
-      'qmaks-nawaz-4',
+      'nawaz-1',
+      'nawaz-2',
+      'nawaz-3',
+      'nawaz-4',
     ],
     summary: 'You can dream, create, design and build the most wonderful place in the world. 2 BHK in Sa Colony, Tolichowki, Hyderabad — 7 units, 7,500+ sq.ft built-up.',
     highlights: [
@@ -2796,12 +2696,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-nawaz',
   },
   {
-    slug: 'qmaks-orchid-tower',
-    name: 'Qmaks Orchid Tower',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'orchid-tower',
+    name: 'Orchid Tower',
     location: 'tolichowki',
     locality: 'Paramount Colony, Tolichowki',
     configurations: [
@@ -2812,10 +2710,10 @@ export const projects: Project[] = [
     units: '15 units',
     landArea: '25,000+ sq.ft',
     images: [
-      'qmaks-orchid-tower-1',
-      'qmaks-orchid-tower-2',
-      'qmaks-orchid-tower-3',
-      'qmaks-orchid-tower-4',
+      'orchid-tower-1',
+      'orchid-tower-2',
+      'orchid-tower-3',
+      'orchid-tower-4',
     ],
     summary: 'Architecting the Extraordinary. 3 BHK in Paramount Colony, Tolichowki, Hyderabad — 15 units, 25,000+ sq.ft built-up.',
     highlights: [
@@ -2851,12 +2749,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-orchid-tower',
   },
   {
-    slug: 'qmaks-pearls',
-    name: 'Qmaks Pearls',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'pearls',
+    name: 'Pearls',
     location: 'alkapur',
     locality: 'Diamond Hills Colony, Alkapur',
     configurations: [
@@ -2867,10 +2763,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '21,600+ sq.ft',
     images: [
-      'qmaks-pearls-1',
-      'qmaks-pearls-2',
+      'pearls-1',
+      'pearls-2',
     ],
-    summary: 'QMAKS PEARLS – your dream home, built for comfort, peace, and a brighter tomorrow. 3 BHK in Diamond Hills Colony, Alkapur, Hyderabad — 13 units, 21,600+ sq.ft built-up.',
+    summary: 'Pearls — 3 BHK in Diamond Hills Colony, Alkapur, Hyderabad. 13 units, 21,600+ sq.ft built-up.',
     highlights: [
       '3 BHK configuration',
       '2 units per floor',
@@ -2906,12 +2802,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-pearls',
   },
   {
-    slug: 'qmaks-sajid',
-    name: 'Qmaks Sajid',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'sajid',
+    name: 'Sajid',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -2922,10 +2816,10 @@ export const projects: Project[] = [
     units: '8 units',
     landArea: '17,000+ sq.ft',
     images: [
-      'qmaks-sajid-1',
-      'qmaks-sajid-2',
-      'qmaks-sajid-3',
-      'qmaks-sajid-4',
+      'sajid-1',
+      'sajid-2',
+      'sajid-3',
+      'sajid-4',
     ],
     summary: 'Don\'t just plan your future - build it. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 8 units, 17,000+ sq.ft built-up.',
     highlights: [
@@ -2962,12 +2856,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-sajid',
   },
   {
-    slug: 'qmaks-serene-heights',
-    name: 'Qmaks Serene Heights',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'serene-heights',
+    name: 'Serene Heights',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -2979,10 +2871,10 @@ export const projects: Project[] = [
     units: '53 units',
     landArea: '160,000+ sq.ft',
     images: [
-      'qmaks-serene-heights-1',
-      'qmaks-serene-heights-2',
-      'qmaks-serene-heights-3',
-      'qmaks-serene-heights-4',
+      'serene-heights-1',
+      'serene-heights-2',
+      'serene-heights-3',
+      'serene-heights-4',
     ],
     summary: 'Great construction doesn\'t cost more - it pays more. 3 BHK & 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 53 units, 160,000+ sq.ft built-up.',
     highlights: [
@@ -3019,13 +2911,11 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Prestige',
     unitsPerFloor: 7,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-serene-heights',
     featured: true,
   },
   {
-    slug: 'qmaks-shareef-enclave',
-    name: 'Qmaks Shareef Enclave',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'shareef-enclave',
+    name: 'Shareef Enclave',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -3037,10 +2927,10 @@ export const projects: Project[] = [
     units: '19 units',
     landArea: '70,000+ sq.ft',
     images: [
-      'qmaks-shareef-enclave-1',
-      'qmaks-shareef-enclave-2',
-      'qmaks-shareef-enclave-3',
-      'qmaks-shareef-enclave-4',
+      'shareef-enclave-1',
+      'shareef-enclave-2',
+      'shareef-enclave-3',
+      'shareef-enclave-4',
     ],
     summary: 'We build. You shine. 4 BHK & 5 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 19 units, 70,000+ sq.ft built-up.',
     highlights: [
@@ -3076,12 +2966,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium',
     unitsPerFloor: 7,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-shareef-enclave',
   },
   {
-    slug: 'qmaks-silver-residency',
-    name: 'Qmaks Silver Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'silver-residency',
+    name: 'Silver Residency',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -3092,10 +2980,10 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '15,000+ sq.ft',
     images: [
-      'qmaks-silver-residency-1',
-      'qmaks-silver-residency-2',
-      'qmaks-silver-residency-3',
-      'qmaks-silver-residency-4',
+      'silver-residency-1',
+      'silver-residency-2',
+      'silver-residency-3',
+      'silver-residency-4',
     ],
     summary: 'Quality you can see. Craftsmanship you can feel. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 7 units, 15,000+ sq.ft built-up.',
     highlights: [
@@ -3131,12 +3019,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Premium Project',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-silver-residency',
   },
   {
-    slug: 'qmaks-zia-enclave',
-    name: 'Qmaks Zia Enclave',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'zia-enclave',
+    name: 'Zia Enclave',
     location: 'tolichowki',
     locality: 'Brindavan Colony, Tolichowki',
     configurations: [
@@ -3147,10 +3033,10 @@ export const projects: Project[] = [
     units: '7 units',
     landArea: '11,900+ sq.ft',
     images: [
-      'qmaks-zia-enclave-1',
-      'qmaks-zia-enclave-2',
-      'qmaks-zia-enclave-3',
-      'qmaks-zia-enclave-4',
+      'zia-enclave-1',
+      'zia-enclave-2',
+      'zia-enclave-3',
+      'zia-enclave-4',
     ],
     summary: 'Where every square foot adds value to your future. 3 BHK in Brindavan Colony, Tolichowki, Hyderabad — 7 units, 11,900+ sq.ft built-up.',
     highlights: [
@@ -3188,12 +3074,10 @@ export const projects: Project[] = [
     kind: 'residential',
     category: 'Budget Friendly',
     unitsPerFloor: 1,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/qmaks-zia-enclave',
   },
   {
-    slug: 'qmaks-sapphire',
-    name: 'Qmaks Sapphire',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'sapphire',
+    name: 'Sapphire',
     location: 'tolichowki',
     locality: 'Golden Sands Colony, Tolichowki',
     configurations: [
@@ -3204,10 +3088,10 @@ export const projects: Project[] = [
     units: '33 units',
     landArea: '72,000+ sq.ft',
     images: [
-      'qmaks-sapphire-1',
-      'qmaks-sapphire-2',
-      'qmaks-sapphire-3',
-      'qmaks-sapphire-4',
+      'sapphire-1',
+      'sapphire-2',
+      'sapphire-3',
+      'sapphire-4',
     ],
     summary: 'From foundation to finish - we handle it all. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 33 units, 72,000+ sq.ft built-up.',
     highlights: [
@@ -3246,12 +3130,10 @@ export const projects: Project[] = [
     category: 'Premium Project',
     unitsAvailable: 2,
     unitsPerFloor: 4,
-    sourceUrl: 'https://qmaks.com/projects/residential/completed/QMAKS%20SAPPHIRE',
   },
   {
-    slug: 'qmaks-fatima-residency',
-    name: 'Qmaks Fatima Residency',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'fatima-residency',
+    name: 'Fatima Residency',
     location: 'tolichowki',
     locality: 'Gulshan Colony, Tolichowki',
     configurations: [
@@ -3262,11 +3144,11 @@ export const projects: Project[] = [
     units: '14 units',
     landArea: '29,000+ sq.ft',
     images: [
-      'qmaks-fatima-residency-1',
-      'qmaks-fatima-residency-2',
-      'qmaks-fatima-residency-3',
+      'fatima-residency-1',
+      'fatima-residency-2',
+      'fatima-residency-3',
     ],
-    summary: 'Modern Living, Perfect Location: QMAKS FATIMA RESIDENCY, The Ultimate Gateway of Luxury. 3 BHK in Gulshan Colony, Tolichowki, Hyderabad — 14 units, 29,000+ sq.ft built-up.',
+    summary: 'Fatima Residency — 3 BHK in Gulshan Colony, Tolichowki, Hyderabad. 14 units, 29,000+ sq.ft built-up.',
     highlights: [
       '3 BHK configuration',
       '2 units per floor',
@@ -3302,12 +3184,10 @@ export const projects: Project[] = [
     kind: 'commercial',
     category: 'PREMIUM PROJECT',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/commercial/completed/qmaks-fatima-residency',
   },
   {
-    slug: 'qmaks-platina',
-    name: 'Qmaks Platina',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'platina',
+    name: 'Platina',
     location: 'alkapur',
     locality: 'Alkapur',
     configurations: [
@@ -3318,10 +3198,10 @@ export const projects: Project[] = [
     units: '42 units',
     landArea: '110,000+ sq.ft',
     images: [
-      'qmaks-platina-1',
-      'qmaks-platina-2',
-      'qmaks-platina-3',
-      'qmaks-platina-4',
+      'platina-1',
+      'platina-2',
+      'platina-3',
+      'platina-4',
     ],
     summary: 'Built for your family today, designed to grow your portfolio tomorrow. This GHMC-approved mixed-use development features spacious residences and commercial spaces with excellent connectivity.',
     highlights: [
@@ -3362,13 +3242,11 @@ export const projects: Project[] = [
     category: 'Premium Project',
     unitsAvailable: 11,
     unitsPerFloor: 6,
-    sourceUrl: 'https://qmaks.com/projects/commercial/completed/qmaks-platina',
     featured: true,
   },
   {
-    slug: 'qmaks-shezu-paradise',
-    name: 'Qmaks Shezu Paradise',
-    developer: 'Qmaks Builders & Developers',
+    slug: 'shezu-paradise',
+    name: 'Shezu Paradise',
     location: 'tolichowki',
     locality: 'Sa Colony, Tolichowki',
     configurations: [
@@ -3379,10 +3257,10 @@ export const projects: Project[] = [
     units: '13 units',
     landArea: '33,000+ sq.ft',
     images: [
-      'qmaks-shezu-paradise-1',
-      'qmaks-shezu-paradise-2',
-      'qmaks-shezu-paradise-3',
-      'qmaks-shezu-paradise-4',
+      'shezu-paradise-1',
+      'shezu-paradise-2',
+      'shezu-paradise-3',
+      'shezu-paradise-4',
     ],
     summary: 'Don\'t just plan your future - build it. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 13 units, 33,000+ sq.ft built-up.',
     highlights: [
@@ -3418,7 +3296,6 @@ export const projects: Project[] = [
     kind: 'commercial',
     category: 'PREMIUM PROJECT',
     unitsPerFloor: 2,
-    sourceUrl: 'https://qmaks.com/projects/commercial/completed/qmaks-shezu-paradise',
   },
 ];
 

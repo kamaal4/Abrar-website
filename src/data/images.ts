@@ -302,1068 +302,857 @@ const credits = {
 
 
 
-  // --- Qmaks project galleries -------------------------------------------
-  // Supplied by the developer on qmaks.com. Some are artist's impressions
-  // rather than photographs of the completed building; the site says so.
-  'qmaks-aasheen-1': {
-    alt: 'Qmaks Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-aasheen',
-  },
-  'qmaks-aasheen-2': {
-    alt: 'Qmaks Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-aasheen',
-  },
-  'qmaks-aasheen-3': {
-    alt: 'Qmaks Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-aasheen',
-  },
-  'qmaks-aasheen-4': {
-    alt: 'Qmaks Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-aasheen',
-  },
-  'qmaks-al-kareem-1': {
-    alt: 'Qmaks Al Kareem, an under-construction development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-kareem',
-  },
-  'qmaks-al-qasr-1': {
-    alt: 'Qmaks Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-qasr',
-  },
-  'qmaks-al-qasr-2': {
-    alt: 'Qmaks Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-qasr',
-  },
-  'qmaks-al-qasr-3': {
-    alt: 'Qmaks Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-qasr',
-  },
-  'qmaks-al-qasr-4': {
-    alt: 'Qmaks Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-qasr',
-  },
-  'qmaks-al-quadeer-1': {
-    alt: 'Qmaks Al Quadeer, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-quadeer',
-  },
-  'qmaks-al-quadeer-2': {
-    alt: 'Qmaks Al Quadeer, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-quadeer',
-  },
-  'qmaks-al-quadeer-3': {
-    alt: 'Qmaks Al Quadeer, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-quadeer',
-  },
-  'qmaks-al-quadeer-4': {
-    alt: 'Qmaks Al Quadeer, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-al-quadeer',
-  },
-  'qmaks-amer-1': {
-    alt: 'Qmaks Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-amer',
-  },
-  'qmaks-amer-2': {
-    alt: 'Qmaks Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-amer',
-  },
-  'qmaks-amer-3': {
-    alt: 'Qmaks Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-amer',
-  },
-  'qmaks-amer-4': {
-    alt: 'Qmaks Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-amer',
-  },
-  'qmaks-ashiyana-1': {
-    alt: 'Qmaks Ashiyana, an under-construction development in Anurag Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-ashiyana',
-  },
-  'qmaks-crystal-avenue-1': {
-    alt: 'Qmaks Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-crystal-avenue',
-  },
-  'qmaks-crystal-avenue-2': {
-    alt: 'Qmaks Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-crystal-avenue',
-  },
-  'qmaks-crystal-avenue-3': {
-    alt: 'Qmaks Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-crystal-avenue',
-  },
-  'qmaks-crystal-avenue-4': {
-    alt: 'Qmaks Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-crystal-avenue',
-  },
-  'qmaks-hashim-residency-1': {
-    alt: 'Qmaks Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-hashim-residency',
-  },
-  'qmaks-hashim-residency-2': {
-    alt: 'Qmaks Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-hashim-residency',
-  },
-  'qmaks-hashim-residency-3': {
-    alt: 'Qmaks Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-hashim-residency',
-  },
-  'qmaks-hashim-residency-4': {
-    alt: 'Qmaks Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-hashim-residency',
-  },
-  'qmaks-jtr-enclave-1': {
-    alt: 'Qmaks JTR Enclave, an under-construction development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-jtr-enclave',
-  },
-  'qmaks-jtr-enclave-2': {
-    alt: 'Qmaks JTR Enclave, an under-construction development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-jtr-enclave',
-  },
-  'qmaks-khizra-1': {
-    alt: 'Qmaks Khizra, an under-construction development in Mehdipatnam, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-khizra',
-  },
-  'qmaks-khizra-2': {
-    alt: 'Qmaks Khizra, an under-construction development in Mehdipatnam, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-khizra',
-  },
-  'qmaks-khizra-3': {
-    alt: 'Qmaks Khizra, an under-construction development in Mehdipatnam, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-khizra',
-  },
-  'qmaks-mohammed-ali-1': {
-    alt: 'Qmaks Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-mohammed-ali',
-  },
-  'qmaks-mohammed-ali-2': {
-    alt: 'Qmaks Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-mohammed-ali',
-  },
-  'qmaks-mohammed-ali-3': {
-    alt: 'Qmaks Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-mohammed-ali',
-  },
-  'qmaks-mohammed-ali-4': {
-    alt: 'Qmaks Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-mohammed-ali',
-  },
-  'qmaks-mujeeb-atrium-1': {
-    alt: 'Qmaks Mujeeb Atrium, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-mujeeb-atrium',
-  },
-  'qmaks-mujeeb-atrium-2': {
-    alt: 'Qmaks Mujeeb Atrium, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-mujeeb-atrium',
-  },
-  'qmaks-neknampur-1': {
-    alt: 'Qmaks Neknampur, an under-construction development in Neknampur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-neknampur',
-  },
-  'qmaks-neknampur-2': {
-    alt: 'Qmaks Neknampur, an under-construction development in Neknampur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-neknampur',
-  },
-  'qmaks-neknampur-3': {
-    alt: 'Qmaks Neknampur, an under-construction development in Neknampur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-neknampur',
-  },
-  'qmaks-neknampur-4': {
-    alt: 'Qmaks Neknampur, an under-construction development in Neknampur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-neknampur',
-  },
-  'qmaks-noor-khan-bazar-1': {
-    alt: 'Qmaks Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-noor-khan-bazar',
-  },
-  'qmaks-noor-khan-bazar-2': {
-    alt: 'Qmaks Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-noor-khan-bazar',
-  },
-  'qmaks-noor-khan-bazar-3': {
-    alt: 'Qmaks Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-noor-khan-bazar',
-  },
-  'qmaks-noor-khan-bazar-4': {
-    alt: 'Qmaks Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-noor-khan-bazar',
-  },
-  'qmaks-parkview-1': {
-    alt: 'Qmaks Parkview, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-parkview',
-  },
-  'qmaks-parkview-2': {
-    alt: 'Qmaks Parkview, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-parkview',
-  },
-  'qmaks-parkview-3': {
-    alt: 'Qmaks Parkview, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-parkview',
-  },
-  'qmaks-siraj-1': {
-    alt: 'Qmaks Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-siraj',
-  },
-  'qmaks-siraj-2': {
-    alt: 'Qmaks Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-siraj',
-  },
-  'qmaks-siraj-3': {
-    alt: 'Qmaks Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-siraj',
-  },
-  'qmaks-siraj-4': {
-    alt: 'Qmaks Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-siraj',
-  },
-  'qmaks-umaiza-1': {
-    alt: 'Qmaks Umaiza, an under-construction development in Aziz Bagh Colony, Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-umaiza',
-  },
-  'qmaks-umaiza-2': {
-    alt: 'Qmaks Umaiza, an under-construction development in Aziz Bagh Colony, Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-umaiza',
-  },
-  'qmaks-umaiza-3': {
-    alt: 'Qmaks Umaiza, an under-construction development in Aziz Bagh Colony, Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-umaiza',
-  },
-  'qmaks-zam-zam-1': {
-    alt: 'Qmaks Zam Zam, an under-construction development in Arvind Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-zam-zam',
-  },
-  'qmaks-zam-zam-2': {
-    alt: 'Qmaks Zam Zam, an under-construction development in Arvind Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/ongoing/qmaks-zam-zam',
-  },
-  'qmaks-baba-atrium-1': {
-    alt: 'Qmaks Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-baba-atrium',
-  },
-  'qmaks-baba-atrium-2': {
-    alt: 'Qmaks Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-baba-atrium',
-  },
-  'qmaks-baba-atrium-3': {
-    alt: 'Qmaks Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-baba-atrium',
-  },
-  'qmaks-baba-atrium-4': {
-    alt: 'Qmaks Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-baba-atrium',
-  },
-  'qmaks-galaxy-1': {
-    alt: 'Qmaks Galaxy, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-galaxy',
-  },
-  'qmaks-galaxy-2': {
-    alt: 'Qmaks Galaxy, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-galaxy',
-  },
-  'qmaks-galaxy-3': {
-    alt: 'Qmaks Galaxy, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-galaxy',
-  },
-  'qmaks-imperial-1': {
-    alt: 'Qmaks Imperial, an under-construction development in Humayun Nagar, Mehdipatnam, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-imperial',
-  },
-  'qmaks-imperial-2': {
-    alt: 'Qmaks Imperial, an under-construction development in Humayun Nagar, Mehdipatnam, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-imperial',
-  },
-  'qmaks-quadri-plaza-1': {
-    alt: 'Qmaks Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-quadri-plaza',
-  },
-  'qmaks-quadri-plaza-2': {
-    alt: 'Qmaks Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-quadri-plaza',
-  },
-  'qmaks-quadri-plaza-3': {
-    alt: 'Qmaks Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-quadri-plaza',
-  },
-  'qmaks-quadri-plaza-4': {
-    alt: 'Qmaks Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-quadri-plaza',
-  },
-  'qmaks-rf-arcade-1': {
-    alt: 'Qmaks RF Arcade, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-rf-arcade',
-  },
-  'qmaks-rf-arcade-2': {
-    alt: 'Qmaks RF Arcade, an under-construction development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/ongoing/qmaks-rf-arcade',
-  },
-  'qmaks-crown-enclave-1': {
-    alt: 'Qmaks Crown Enclave, a newly launched development in Attapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/upcoming/qmaks-crown-enclave',
-  },
-  'qmaks-crown-enclave-2': {
-    alt: 'Qmaks Crown Enclave, a newly launched development in Attapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/upcoming/qmaks-crown-enclave',
-  },
-  'qmaks-crown-enclave-3': {
-    alt: 'Qmaks Crown Enclave, a newly launched development in Attapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/upcoming/qmaks-crown-enclave',
-  },
-  'qmaks-akbar-enclave-1': {
-    alt: 'Qmaks Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-akbar-enclave',
-  },
-  'qmaks-akbar-enclave-2': {
-    alt: 'Qmaks Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-akbar-enclave',
-  },
-  'qmaks-akbar-enclave-3': {
-    alt: 'Qmaks Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-akbar-enclave',
-  },
-  'qmaks-akbar-enclave-4': {
-    alt: 'Qmaks Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-akbar-enclave',
-  },
-  'qmaks-ameena-fasi-manzil-1': {
-    alt: 'Qmaks Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ameena-fasi-manzil',
-  },
-  'qmaks-ameena-fasi-manzil-2': {
-    alt: 'Qmaks Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ameena-fasi-manzil',
-  },
-  'qmaks-ameena-fasi-manzil-3': {
-    alt: 'Qmaks Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ameena-fasi-manzil',
-  },
-  'qmaks-ameena-fasi-manzil-4': {
-    alt: 'Qmaks Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ameena-fasi-manzil',
-  },
-  'qmaks-avenue-1': {
-    alt: 'Qmaks Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-avenue',
-  },
-  'qmaks-avenue-2': {
-    alt: 'Qmaks Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-avenue',
-  },
-  'qmaks-avenue-3': {
-    alt: 'Qmaks Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-avenue',
-  },
-  'qmaks-avenue-4': {
-    alt: 'Qmaks Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-avenue',
-  },
-  'qmaks-ayesha-enclave-1': {
-    alt: 'Qmaks Ayesha Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ayesha-enclave',
-  },
-  'qmaks-ayesha-enclave-2': {
-    alt: 'Qmaks Ayesha Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ayesha-enclave',
-  },
-  'qmaks-ayzal-residency-1': {
-    alt: 'Qmaks Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ayzal-residency',
-  },
-  'qmaks-ayzal-residency-2': {
-    alt: 'Qmaks Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ayzal-residency',
-  },
-  'qmaks-ayzal-residency-3': {
-    alt: 'Qmaks Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ayzal-residency',
-  },
-  'qmaks-ayzal-residency-4': {
-    alt: 'Qmaks Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ayzal-residency',
-  },
-  'qmaks-bait-ul-aman-1': {
-    alt: 'Qmaks Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-bait-ul-aman',
-  },
-  'qmaks-bait-ul-aman-2': {
-    alt: 'Qmaks Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-bait-ul-aman',
-  },
-  'qmaks-bait-ul-aman-3': {
-    alt: 'Qmaks Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-bait-ul-aman',
-  },
-  'qmaks-bait-ul-aman-4': {
-    alt: 'Qmaks Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-bait-ul-aman',
-  },
-  'qmaks-darul-aman-1': {
-    alt: 'Qmaks Darul Aman, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-aman',
-  },
-  'qmaks-darul-aman-2': {
-    alt: 'Qmaks Darul Aman, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-aman',
-  },
-  'qmaks-darul-aman-3': {
-    alt: 'Qmaks Darul Aman, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-aman',
-  },
-  'qmaks-darul-aman-4': {
-    alt: 'Qmaks Darul Aman, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-aman',
-  },
-  'qmaks-darul-khair-1': {
-    alt: 'Qmaks Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-khair',
-  },
-  'qmaks-darul-khair-2': {
-    alt: 'Qmaks Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-khair',
-  },
-  'qmaks-darul-khair-3': {
-    alt: 'Qmaks Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-khair',
-  },
-  'qmaks-darul-khair-4': {
-    alt: 'Qmaks Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-darul-khair',
-  },
-  'qmaks-delight-suites-1': {
-    alt: 'Qmaks Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-delight-suites',
-  },
-  'qmaks-delight-suites-2': {
-    alt: 'Qmaks Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-delight-suites',
-  },
-  'qmaks-delight-suites-3': {
-    alt: 'Qmaks Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-delight-suites',
-  },
-  'qmaks-delight-suites-4': {
-    alt: 'Qmaks Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-delight-suites',
-  },
-  'qmaks-diamond-residency-1': {
-    alt: 'Qmaks Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-diamond-residency',
-  },
-  'qmaks-diamond-residency-2': {
-    alt: 'Qmaks Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-diamond-residency',
-  },
-  'qmaks-diamond-residency-3': {
-    alt: 'Qmaks Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-diamond-residency',
-  },
-  'qmaks-diamond-residency-4': {
-    alt: 'Qmaks Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-diamond-residency',
-  },
-  'qmaks-future-city-1': {
-    alt: 'Qmaks Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-future-city',
-  },
-  'qmaks-future-city-2': {
-    alt: 'Qmaks Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-future-city',
-  },
-  'qmaks-future-city-3': {
-    alt: 'Qmaks Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-future-city',
-  },
-  'qmaks-future-city-4': {
-    alt: 'Qmaks Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-future-city',
-  },
-  'qmaks-haniya-residency-1': {
-    alt: 'Qmaks Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haniya-residency',
-  },
-  'qmaks-haniya-residency-2': {
-    alt: 'Qmaks Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haniya-residency',
-  },
-  'qmaks-haniya-residency-3': {
-    alt: 'Qmaks Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haniya-residency',
-  },
-  'qmaks-haniya-residency-4': {
-    alt: 'Qmaks Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haniya-residency',
-  },
-  'qmaks-haseeb-residency-1': {
-    alt: 'Qmaks Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haseeb-residency',
-  },
-  'qmaks-haseeb-residency-2': {
-    alt: 'Qmaks Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haseeb-residency',
-  },
-  'qmaks-haseeb-residency-3': {
-    alt: 'Qmaks Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haseeb-residency',
-  },
-  'qmaks-haseeb-residency-4': {
-    alt: 'Qmaks Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-haseeb-residency',
-  },
-  'qmaks-iftekhar-1': {
-    alt: 'Qmaks Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iftekhar',
-  },
-  'qmaks-iftekhar-2': {
-    alt: 'Qmaks Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iftekhar',
-  },
-  'qmaks-iftekhar-3': {
-    alt: 'Qmaks Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iftekhar',
-  },
-  'qmaks-iftekhar-4': {
-    alt: 'Qmaks Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iftekhar',
-  },
-  'qmaks-imam-1': {
-    alt: 'Qmaks Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-imam',
-  },
-  'qmaks-imam-2': {
-    alt: 'Qmaks Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-imam',
-  },
-  'qmaks-imam-3': {
-    alt: 'Qmaks Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-imam',
-  },
-  'qmaks-imam-4': {
-    alt: 'Qmaks Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-imam',
-  },
-  'qmaks-iqbal-residency-1': {
-    alt: 'Qmaks Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iqbal-residency',
-  },
-  'qmaks-iqbal-residency-2': {
-    alt: 'Qmaks Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iqbal-residency',
-  },
-  'qmaks-iqbal-residency-3': {
-    alt: 'Qmaks Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iqbal-residency',
-  },
-  'qmaks-iqbal-residency-4': {
-    alt: 'Qmaks Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-iqbal-residency',
-  },
-  'qmaks-ishaq-residency-1': {
-    alt: 'Qmaks Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ishaq-residency',
-  },
-  'qmaks-ishaq-residency-2': {
-    alt: 'Qmaks Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ishaq-residency',
-  },
-  'qmaks-ishaq-residency-3': {
-    alt: 'Qmaks Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ishaq-residency',
-  },
-  'qmaks-ishaq-residency-4': {
-    alt: 'Qmaks Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-ishaq-residency',
-  },
-  'qmaks-javeed-1': {
-    alt: 'Qmaks Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-javeed',
-  },
-  'qmaks-javeed-2': {
-    alt: 'Qmaks Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-javeed',
-  },
-  'qmaks-javeed-3': {
-    alt: 'Qmaks Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-javeed',
-  },
-  'qmaks-javeed-4': {
-    alt: 'Qmaks Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-javeed',
-  },
-  'qmaks-masood-1': {
-    alt: 'Qmaks Masood, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-masood',
-  },
-  'qmaks-masood-2': {
-    alt: 'Qmaks Masood, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-masood',
-  },
-  'qmaks-mia-khan-residency-1': {
-    alt: 'Qmaks Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mia-khan-residency',
-  },
-  'qmaks-mia-khan-residency-2': {
-    alt: 'Qmaks Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mia-khan-residency',
-  },
-  'qmaks-mia-khan-residency-3': {
-    alt: 'Qmaks Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mia-khan-residency',
-  },
-  'qmaks-mia-khan-residency-4': {
-    alt: 'Qmaks Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mia-khan-residency',
-  },
-  'qmaks-mk-tower-1': {
-    alt: 'Qmaks MK Tower, a completed development in Narsingi, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mk-tower',
-  },
-  'qmaks-mk-tower-2': {
-    alt: 'Qmaks MK Tower, a completed development in Narsingi, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mk-tower',
-  },
-  'qmaks-mk-tower-3': {
-    alt: 'Qmaks MK Tower, a completed development in Narsingi, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mk-tower',
-  },
-  'qmaks-mk-tower-4': {
-    alt: 'Qmaks MK Tower, a completed development in Narsingi, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-mk-tower',
-  },
-  'qmaks-moosa-enclave-1': {
-    alt: 'Qmaks Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-moosa-enclave',
-  },
-  'qmaks-moosa-enclave-2': {
-    alt: 'Qmaks Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-moosa-enclave',
-  },
-  'qmaks-moosa-enclave-3': {
-    alt: 'Qmaks Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-moosa-enclave',
-  },
-  'qmaks-moosa-enclave-4': {
-    alt: 'Qmaks Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-moosa-enclave',
-  },
-  'qmaks-msn-encalve-1': {
-    alt: 'Qmaks MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-msn-encalve',
-  },
-  'qmaks-msn-encalve-2': {
-    alt: 'Qmaks MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-msn-encalve',
-  },
-  'qmaks-msn-encalve-3': {
-    alt: 'Qmaks MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-msn-encalve',
-  },
-  'qmaks-msn-encalve-4': {
-    alt: 'Qmaks MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-msn-encalve',
-  },
-  'qmaks-nashika-avenue-1': {
-    alt: 'Qmaks Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nashika-avenue',
-  },
-  'qmaks-nashika-avenue-2': {
-    alt: 'Qmaks Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nashika-avenue',
-  },
-  'qmaks-nashika-avenue-3': {
-    alt: 'Qmaks Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nashika-avenue',
-  },
-  'qmaks-nashika-avenue-4': {
-    alt: 'Qmaks Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nashika-avenue',
-  },
-  'qmaks-nawaz-1': {
-    alt: 'Qmaks Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nawaz',
-  },
-  'qmaks-nawaz-2': {
-    alt: 'Qmaks Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nawaz',
-  },
-  'qmaks-nawaz-3': {
-    alt: 'Qmaks Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nawaz',
-  },
-  'qmaks-nawaz-4': {
-    alt: 'Qmaks Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-nawaz',
-  },
-  'qmaks-orchid-tower-1': {
-    alt: 'Qmaks Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-orchid-tower',
-  },
-  'qmaks-orchid-tower-2': {
-    alt: 'Qmaks Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-orchid-tower',
-  },
-  'qmaks-orchid-tower-3': {
-    alt: 'Qmaks Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-orchid-tower',
-  },
-  'qmaks-orchid-tower-4': {
-    alt: 'Qmaks Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-orchid-tower',
-  },
-  'qmaks-pearls-1': {
-    alt: 'Qmaks Pearls, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-pearls',
-  },
-  'qmaks-pearls-2': {
-    alt: 'Qmaks Pearls, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-pearls',
-  },
-  'qmaks-sajid-1': {
-    alt: 'Qmaks Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-sajid',
-  },
-  'qmaks-sajid-2': {
-    alt: 'Qmaks Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-sajid',
-  },
-  'qmaks-sajid-3': {
-    alt: 'Qmaks Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-sajid',
-  },
-  'qmaks-sajid-4': {
-    alt: 'Qmaks Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-sajid',
-  },
-  'qmaks-serene-heights-1': {
-    alt: 'Qmaks Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-serene-heights',
-  },
-  'qmaks-serene-heights-2': {
-    alt: 'Qmaks Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-serene-heights',
-  },
-  'qmaks-serene-heights-3': {
-    alt: 'Qmaks Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-serene-heights',
-  },
-  'qmaks-serene-heights-4': {
-    alt: 'Qmaks Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-serene-heights',
-  },
-  'qmaks-shareef-enclave-1': {
-    alt: 'Qmaks Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-shareef-enclave',
-  },
-  'qmaks-shareef-enclave-2': {
-    alt: 'Qmaks Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-shareef-enclave',
-  },
-  'qmaks-shareef-enclave-3': {
-    alt: 'Qmaks Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-shareef-enclave',
-  },
-  'qmaks-shareef-enclave-4': {
-    alt: 'Qmaks Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-shareef-enclave',
-  },
-  'qmaks-silver-residency-1': {
-    alt: 'Qmaks Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-silver-residency',
-  },
-  'qmaks-silver-residency-2': {
-    alt: 'Qmaks Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-silver-residency',
-  },
-  'qmaks-silver-residency-3': {
-    alt: 'Qmaks Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-silver-residency',
-  },
-  'qmaks-silver-residency-4': {
-    alt: 'Qmaks Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-silver-residency',
-  },
-  'qmaks-zia-enclave-1': {
-    alt: 'Qmaks Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-zia-enclave',
-  },
-  'qmaks-zia-enclave-2': {
-    alt: 'Qmaks Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-zia-enclave',
-  },
-  'qmaks-zia-enclave-3': {
-    alt: 'Qmaks Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-zia-enclave',
-  },
-  'qmaks-zia-enclave-4': {
-    alt: 'Qmaks Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/qmaks-zia-enclave',
-  },
-  'qmaks-sapphire-1': {
-    alt: 'Qmaks Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/QMAKS%20SAPPHIRE',
-  },
-  'qmaks-sapphire-2': {
-    alt: 'Qmaks Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/QMAKS%20SAPPHIRE',
-  },
-  'qmaks-sapphire-3': {
-    alt: 'Qmaks Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/QMAKS%20SAPPHIRE',
-  },
-  'qmaks-sapphire-4': {
-    alt: 'Qmaks Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/residential/completed/QMAKS%20SAPPHIRE',
-  },
-  'qmaks-fatima-residency-1': {
-    alt: 'Qmaks Fatima Residency, a completed development in Gulshan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-fatima-residency',
-  },
-  'qmaks-fatima-residency-2': {
-    alt: 'Qmaks Fatima Residency, a completed development in Gulshan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-fatima-residency',
-  },
-  'qmaks-fatima-residency-3': {
-    alt: 'Qmaks Fatima Residency, a completed development in Gulshan Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-fatima-residency',
-  },
-  'qmaks-platina-1': {
-    alt: 'Qmaks Platina, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-platina',
-  },
-  'qmaks-platina-2': {
-    alt: 'Qmaks Platina, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-platina',
-  },
-  'qmaks-platina-3': {
-    alt: 'Qmaks Platina, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-platina',
-  },
-  'qmaks-platina-4': {
-    alt: 'Qmaks Platina, a completed development in Alkapur, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-platina',
-  },
-  'qmaks-shezu-paradise-1': {
-    alt: 'Qmaks Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-shezu-paradise',
-  },
-  'qmaks-shezu-paradise-2': {
-    alt: 'Qmaks Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-shezu-paradise',
-  },
-  'qmaks-shezu-paradise-3': {
-    alt: 'Qmaks Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-shezu-paradise',
-  },
-  'qmaks-shezu-paradise-4': {
-    alt: 'Qmaks Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
-    sourceName: 'Qmaks Builders & Developers',
-    source: 'https://qmaks.com/projects/commercial/completed/qmaks-shezu-paradise',
+  // --- Partner project galleries -----------------------------------------
+  // Supplied by the developer whose stock we list. Some are artist's
+  // impressions rather than photographs of the completed building; the site
+  // says so on the gallery.
+  'aasheen-1': {
+    alt: 'Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'aasheen-2': {
+    alt: 'Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'aasheen-3': {
+    alt: 'Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'aasheen-4': {
+    alt: 'Aasheen, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-kareem-1': {
+    alt: 'Al Kareem, an under-construction development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-qasr-1': {
+    alt: 'Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-qasr-2': {
+    alt: 'Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-qasr-3': {
+    alt: 'Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-qasr-4': {
+    alt: 'Al Qasr, an under-construction development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-quadeer-1': {
+    alt: 'Al Quadeer, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-quadeer-2': {
+    alt: 'Al Quadeer, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-quadeer-3': {
+    alt: 'Al Quadeer, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'al-quadeer-4': {
+    alt: 'Al Quadeer, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'amer-1': {
+    alt: 'Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'amer-2': {
+    alt: 'Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'amer-3': {
+    alt: 'Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'amer-4': {
+    alt: 'Amer, an under-construction development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ashiyana-1': {
+    alt: 'Ashiyana, an under-construction development in Anurag Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'crystal-avenue-1': {
+    alt: 'Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'crystal-avenue-2': {
+    alt: 'Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'crystal-avenue-3': {
+    alt: 'Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'crystal-avenue-4': {
+    alt: 'Crystal Avenue, an under-construction development in Akbar Bagh, Malakpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'hashim-residency-1': {
+    alt: 'Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'hashim-residency-2': {
+    alt: 'Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'hashim-residency-3': {
+    alt: 'Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'hashim-residency-4': {
+    alt: 'Hashim Residency, an under-construction development in Gulshan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'jtr-enclave-1': {
+    alt: 'JTR Enclave, an under-construction development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'jtr-enclave-2': {
+    alt: 'JTR Enclave, an under-construction development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'khizra-1': {
+    alt: 'Khizra, an under-construction development in Mehdipatnam, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'khizra-2': {
+    alt: 'Khizra, an under-construction development in Mehdipatnam, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'khizra-3': {
+    alt: 'Khizra, an under-construction development in Mehdipatnam, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mohammed-ali-1': {
+    alt: 'Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mohammed-ali-2': {
+    alt: 'Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mohammed-ali-3': {
+    alt: 'Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mohammed-ali-4': {
+    alt: 'Mohammed Ali, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mujeeb-atrium-1': {
+    alt: 'Mujeeb Atrium, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mujeeb-atrium-2': {
+    alt: 'Mujeeb Atrium, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'neknampur-1': {
+    alt: 'Neknampur, an under-construction development in Neknampur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'neknampur-2': {
+    alt: 'Neknampur, an under-construction development in Neknampur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'neknampur-3': {
+    alt: 'Neknampur, an under-construction development in Neknampur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'neknampur-4': {
+    alt: 'Neknampur, an under-construction development in Neknampur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'noor-khan-bazar-1': {
+    alt: 'Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'noor-khan-bazar-2': {
+    alt: 'Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'noor-khan-bazar-3': {
+    alt: 'Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'noor-khan-bazar-4': {
+    alt: 'Noor Khan Bazar, an under-construction development in Noor Khan Bazar, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'parkview-1': {
+    alt: 'Parkview, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'parkview-2': {
+    alt: 'Parkview, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'parkview-3': {
+    alt: 'Parkview, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'siraj-1': {
+    alt: 'Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'siraj-2': {
+    alt: 'Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'siraj-3': {
+    alt: 'Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'siraj-4': {
+    alt: 'Siraj, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'umaiza-1': {
+    alt: 'Umaiza, an under-construction development in Aziz Bagh Colony, Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'umaiza-2': {
+    alt: 'Umaiza, an under-construction development in Aziz Bagh Colony, Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'umaiza-3': {
+    alt: 'Umaiza, an under-construction development in Aziz Bagh Colony, Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'zam-zam-1': {
+    alt: 'Zam Zam, an under-construction development in Arvind Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'zam-zam-2': {
+    alt: 'Zam Zam, an under-construction development in Arvind Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'baba-atrium-1': {
+    alt: 'Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'baba-atrium-2': {
+    alt: 'Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'baba-atrium-3': {
+    alt: 'Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'baba-atrium-4': {
+    alt: 'Baba Atrium, an under-construction development in Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'galaxy-1': {
+    alt: 'Galaxy, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'galaxy-2': {
+    alt: 'Galaxy, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'galaxy-3': {
+    alt: 'Galaxy, an under-construction development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'imperial-1': {
+    alt: 'Imperial, an under-construction development in Humayun Nagar, Mehdipatnam, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'imperial-2': {
+    alt: 'Imperial, an under-construction development in Humayun Nagar, Mehdipatnam, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'quadri-plaza-1': {
+    alt: 'Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'quadri-plaza-2': {
+    alt: 'Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'quadri-plaza-3': {
+    alt: 'Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'quadri-plaza-4': {
+    alt: 'Quadri Plaza, an under-construction development in Satya Colony, Shaikpet, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'rf-arcade-1': {
+    alt: 'RF Arcade, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'rf-arcade-2': {
+    alt: 'RF Arcade, an under-construction development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'crown-enclave-1': {
+    alt: 'Crown Enclave, a newly launched development in Attapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'crown-enclave-2': {
+    alt: 'Crown Enclave, a newly launched development in Attapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'crown-enclave-3': {
+    alt: 'Crown Enclave, a newly launched development in Attapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'akbar-enclave-1': {
+    alt: 'Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'akbar-enclave-2': {
+    alt: 'Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'akbar-enclave-3': {
+    alt: 'Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'akbar-enclave-4': {
+    alt: 'Akbar Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ameena-fasi-manzil-1': {
+    alt: 'Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ameena-fasi-manzil-2': {
+    alt: 'Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ameena-fasi-manzil-3': {
+    alt: 'Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ameena-fasi-manzil-4': {
+    alt: 'Ameena Fasi Manzil, a completed development in Vijay Nagar Colony, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'avenue-1': {
+    alt: 'Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'avenue-2': {
+    alt: 'Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'avenue-3': {
+    alt: 'Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'avenue-4': {
+    alt: 'Avenue, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ayesha-enclave-1': {
+    alt: 'Ayesha Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ayesha-enclave-2': {
+    alt: 'Ayesha Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ayzal-residency-1': {
+    alt: 'Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ayzal-residency-2': {
+    alt: 'Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ayzal-residency-3': {
+    alt: 'Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ayzal-residency-4': {
+    alt: 'Ayzal Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'bait-ul-aman-1': {
+    alt: 'Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'bait-ul-aman-2': {
+    alt: 'Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'bait-ul-aman-3': {
+    alt: 'Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'bait-ul-aman-4': {
+    alt: 'Bait Ul Aman, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-aman-1': {
+    alt: 'Darul Aman, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-aman-2': {
+    alt: 'Darul Aman, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-aman-3': {
+    alt: 'Darul Aman, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-aman-4': {
+    alt: 'Darul Aman, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-khair-1': {
+    alt: 'Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-khair-2': {
+    alt: 'Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-khair-3': {
+    alt: 'Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'darul-khair-4': {
+    alt: 'Darul Khair, a completed development in Surya Nagar Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'delight-suites-1': {
+    alt: 'Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'delight-suites-2': {
+    alt: 'Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'delight-suites-3': {
+    alt: 'Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'delight-suites-4': {
+    alt: 'Delight Suites, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'diamond-residency-1': {
+    alt: 'Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'diamond-residency-2': {
+    alt: 'Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'diamond-residency-3': {
+    alt: 'Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'diamond-residency-4': {
+    alt: 'Diamond Residency, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'future-city-1': {
+    alt: 'Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'future-city-2': {
+    alt: 'Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'future-city-3': {
+    alt: 'Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'future-city-4': {
+    alt: 'Future City, a completed development in Ramanujapur, Shamshabad, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haniya-residency-1': {
+    alt: 'Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haniya-residency-2': {
+    alt: 'Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haniya-residency-3': {
+    alt: 'Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haniya-residency-4': {
+    alt: 'Haniya Residency, a completed development in Al Kareem Colony, Md Lines, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haseeb-residency-1': {
+    alt: 'Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haseeb-residency-2': {
+    alt: 'Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haseeb-residency-3': {
+    alt: 'Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'haseeb-residency-4': {
+    alt: 'Haseeb Residency, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iftekhar-1': {
+    alt: 'Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iftekhar-2': {
+    alt: 'Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iftekhar-3': {
+    alt: 'Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iftekhar-4': {
+    alt: 'Iftekhar, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'imam-1': {
+    alt: 'Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'imam-2': {
+    alt: 'Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'imam-3': {
+    alt: 'Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'imam-4': {
+    alt: 'Imam, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iqbal-residency-1': {
+    alt: 'Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iqbal-residency-2': {
+    alt: 'Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iqbal-residency-3': {
+    alt: 'Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'iqbal-residency-4': {
+    alt: 'Iqbal Residency, a completed development in Janachaitaniya, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ishaq-residency-1': {
+    alt: 'Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ishaq-residency-2': {
+    alt: 'Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ishaq-residency-3': {
+    alt: 'Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'ishaq-residency-4': {
+    alt: 'Ishaq Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'javeed-1': {
+    alt: 'Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'javeed-2': {
+    alt: 'Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'javeed-3': {
+    alt: 'Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'javeed-4': {
+    alt: 'Javeed, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'masood-1': {
+    alt: 'Masood, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'masood-2': {
+    alt: 'Masood, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mia-khan-residency-1': {
+    alt: 'Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mia-khan-residency-2': {
+    alt: 'Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mia-khan-residency-3': {
+    alt: 'Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mia-khan-residency-4': {
+    alt: 'Mia Khan Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mk-tower-1': {
+    alt: 'MK Tower, a completed development in Narsingi, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mk-tower-2': {
+    alt: 'MK Tower, a completed development in Narsingi, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mk-tower-3': {
+    alt: 'MK Tower, a completed development in Narsingi, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'mk-tower-4': {
+    alt: 'MK Tower, a completed development in Narsingi, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'moosa-enclave-1': {
+    alt: 'Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'moosa-enclave-2': {
+    alt: 'Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'moosa-enclave-3': {
+    alt: 'Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'moosa-enclave-4': {
+    alt: 'Moosa Enclave, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'msn-encalve-1': {
+    alt: 'MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'msn-encalve-2': {
+    alt: 'MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'msn-encalve-3': {
+    alt: 'MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'msn-encalve-4': {
+    alt: 'MSN Encalve, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nashika-avenue-1': {
+    alt: 'Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nashika-avenue-2': {
+    alt: 'Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nashika-avenue-3': {
+    alt: 'Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nashika-avenue-4': {
+    alt: 'Nashika Avenue, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nawaz-1': {
+    alt: 'Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nawaz-2': {
+    alt: 'Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nawaz-3': {
+    alt: 'Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'nawaz-4': {
+    alt: 'Nawaz, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'orchid-tower-1': {
+    alt: 'Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'orchid-tower-2': {
+    alt: 'Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'orchid-tower-3': {
+    alt: 'Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'orchid-tower-4': {
+    alt: 'Orchid Tower, a completed development in Paramount Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'pearls-1': {
+    alt: 'Pearls, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'pearls-2': {
+    alt: 'Pearls, a completed development in Diamond Hills Colony, Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sajid-1': {
+    alt: 'Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sajid-2': {
+    alt: 'Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sajid-3': {
+    alt: 'Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sajid-4': {
+    alt: 'Sajid, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'serene-heights-1': {
+    alt: 'Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'serene-heights-2': {
+    alt: 'Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'serene-heights-3': {
+    alt: 'Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'serene-heights-4': {
+    alt: 'Serene Heights, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shareef-enclave-1': {
+    alt: 'Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shareef-enclave-2': {
+    alt: 'Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shareef-enclave-3': {
+    alt: 'Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shareef-enclave-4': {
+    alt: 'Shareef Enclave, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'silver-residency-1': {
+    alt: 'Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'silver-residency-2': {
+    alt: 'Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'silver-residency-3': {
+    alt: 'Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'silver-residency-4': {
+    alt: 'Silver Residency, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'zia-enclave-1': {
+    alt: 'Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'zia-enclave-2': {
+    alt: 'Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'zia-enclave-3': {
+    alt: 'Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'zia-enclave-4': {
+    alt: 'Zia Enclave, a completed development in Brindavan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sapphire-1': {
+    alt: 'Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sapphire-2': {
+    alt: 'Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sapphire-3': {
+    alt: 'Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'sapphire-4': {
+    alt: 'Sapphire, a completed development in Golden Sands Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'fatima-residency-1': {
+    alt: 'Fatima Residency, a completed development in Gulshan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'fatima-residency-2': {
+    alt: 'Fatima Residency, a completed development in Gulshan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'fatima-residency-3': {
+    alt: 'Fatima Residency, a completed development in Gulshan Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'platina-1': {
+    alt: 'Platina, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'platina-2': {
+    alt: 'Platina, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'platina-3': {
+    alt: 'Platina, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'platina-4': {
+    alt: 'Platina, a completed development in Alkapur, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shezu-paradise-1': {
+    alt: 'Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shezu-paradise-2': {
+    alt: 'Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shezu-paradise-3': {
+    alt: 'Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
+  },
+  'shezu-paradise-4': {
+    alt: 'Shezu Paradise, a completed development in Sa Colony, Tolichowki, Hyderabad',
+    sourceName: 'Partner developer',
   },
 } as const satisfies Record<string, ImageCredit>;
 

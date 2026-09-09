@@ -407,7 +407,7 @@ export const locations: Location[] = [
       },
     ],
   },
-  // --- Areas where Qmaks builds -------------------------------------------
+  // --- Areas where our listed stock is ------------------------------------
   // Written for orientation. These records deliberately carry no startingPrice
   // and no priceRanges: we have not priced these areas ourselves, and the
   // developer publishes nothing, so the page shows less rather than guessing.
