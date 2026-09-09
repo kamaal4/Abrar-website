@@ -17,7 +17,7 @@ const socials = [
     <div class="grid gap-10 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
       <div>
         <p class="ui text-[1.15rem] font-bold leading-tight tracking-[-0.03em]">
-          InvestFor<span class="text-gold-ink">Assets</span><br />
+          InvestFor<span class="text-clay-ink">Assets</span><br />
           <span class="text-[0.9rem] font-semibold text-ink-muted">Hyderabad</span>
         </p>
         <p class="ui mt-2 text-[0.95rem] font-medium text-ink-muted">{siteConfig.tagline}</p>
@@ -34,7 +34,7 @@ const socials = [
                   href={s.href}
                   target="_blank"
                   rel="noopener"
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-line bg-bg text-ink transition-colors hover:border-ink hover:text-gold-ink"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-line bg-bg text-ink transition-colors hover:border-ink hover:text-clay-ink"
                   aria-label={s.label}
                 >
                   <Icon name={s.name} size={18} />
@@ -54,7 +54,7 @@ const socials = [
                 <li>
                   <a
                     href={url(item.href)}
-                    class="text-[0.92rem] text-ink-muted transition-colors hover:text-gold-ink"
+                    class="text-[0.92rem] text-ink-muted transition-colors hover:text-clay-ink"
                   >
                     {item.label}
                   </a>
@@ -71,7 +71,7 @@ const socials = [
         {siteConfig.phone && (
           <p>
             <span class="ui font-semibold text-ink">Phone</span>{' '}
-            <a href={`tel:${siteConfig.phone.replace(/[^\d+]/g, '')}`} class="hover:text-gold-ink"
+            <a href={`tel:${siteConfig.phone.replace(/[^\d+]/g, '')}`} class="hover:text-clay-ink"
               >{siteConfig.phone}</a
             >
           </p>
@@ -79,7 +79,7 @@ const socials = [
         {siteConfig.email && (
           <p>
             <span class="ui font-semibold text-ink">Email</span>{' '}
-            <a href={`mailto:${siteConfig.email}`} class="hover:text-gold-ink">{siteConfig.email}</a>
+            <a href={`mailto:${siteConfig.email}`} class="hover:text-clay-ink">{siteConfig.email}</a>
           </p>
         )}
         <p>

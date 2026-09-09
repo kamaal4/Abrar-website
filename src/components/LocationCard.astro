@@ -33,7 +33,7 @@ const href = url(`/locations/${location.slug}`);
   <div
     class:list={[
       'absolute inset-0 -z-10 bg-gradient-to-t',
-      feature ? 'from-ink/88 via-ink/45 to-ink/5' : 'from-ink/92 via-ink/62 to-ink/20',
+      feature ? 'from-ink/90 via-ink/52 to-ink/12' : 'from-ink/94 via-ink/70 to-ink/32',
     ]}
     aria-hidden="true"
   >
@@ -62,7 +62,7 @@ const href = url(`/locations/${location.slug}`);
       {
         location.startingPrice !== undefined && (
           <>
-            <span class="text-white/40">·</span>
+            <span class="text-white/70" aria-hidden="true">·</span>
             <span>from {formatPrice(location.startingPrice)}</span>
           </>
         )
@@ -81,7 +81,7 @@ const href = url(`/locations/${location.slug}`);
       )
     }
 
-    <span class="ui mt-4 inline-flex items-center gap-1.5 text-[0.86rem] font-semibold text-gold">
+    <span class="ui mt-4 inline-flex items-center gap-1.5 text-[0.86rem] font-semibold text-clay-light">
       Explore Location
       <Icon name="arrow-right" size={15} class="transition-transform duration-300 group-hover:translate-x-1" />
     </span>

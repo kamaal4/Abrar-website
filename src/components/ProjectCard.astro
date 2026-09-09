@@ -25,7 +25,7 @@ const href = url(`/projects/${project.slug}`);
   <div class="flex flex-1 flex-col p-4">
     <div class="flex items-start justify-between gap-3">
       <h3 class="text-[1.1rem] font-bold leading-snug">
-        <a href={href} class="hover:text-gold-ink">{project.name}</a>
+        <a href={href} class="hover:text-clay-ink">{project.name}</a>
       </h3>
       <span class="pill pill-quiet shrink-0">{statusLabels[project.status]}</span>
     </div>
@@ -36,10 +36,22 @@ const href = url(`/projects/${project.slug}`);
     </p>
 
     <dl class="ui mt-3 grid grid-cols-2 gap-x-4 gap-y-2.5 border-t border-line pt-3 text-[0.84rem]">
-      <div>
-        <dt class="text-ink-subtle">Starting at</dt>
-        <dd class="font-bold text-ink">{formatPriceOrAsk(project.startingPrice)}</dd>
-      </div>
+      {/* With no published price this cell would read "Starting at — Price on
+          request", which spends the most prominent slot on a non-answer. Show the
+          colony instead, which is real information, until prices arrive. */}
+      {
+        project.startingPrice === undefined ? (
+          <div>
+            <dt class="text-ink-subtle">Locality</dt>
+            <dd class="font-semibold text-ink">{project.locality ?? locationName}</dd>
+          </div>
+        ) : (
+          <div>
+            <dt class="text-ink-subtle">Starting at</dt>
+            <dd class="font-bold text-clay-ink">{formatPriceOrAsk(project.startingPrice)}</dd>
+          </div>
+        )
+      }
       <div>
         <dt class="text-ink-subtle">Configurations</dt>
         <dd class="font-semibold text-ink">{project.configurations.join(', ')}</dd>
@@ -54,6 +66,8 @@ const href = url(`/projects/${project.slug}`);
       </div>
     </dl>
 
-    <a href={href} class="btn btn-outline btn-sm mt-4">View Project</a>
+    <div class="mt-auto pt-4">
+      <a href={href} class="btn btn-outline btn-sm w-full">View Project</a>
+    </div>
   </div>
 </article>

@@ -6,52 +6,78 @@ Strategic context is in `PRODUCT.md`.
 
 ## Theme
 
-**Light, pure white.** The scene: someone on a phone in Hyderabad daylight, mid-conversation,
+**Light, warm near-white.** The scene: someone on a phone in Hyderabad daylight, mid-conversation,
 comparing two flats. Dark mode would fight the ambient light and make photographs of the city
-harder to read. The surface is literal `#ffffff` — not cream, not sand, not a warm-tinted
-near-white. Warmth in this brand comes from the accent and the photography, never from the
-background.
+harder to read.
 
-**Colour strategy: restrained, with one committed moment.** Gold occupies roughly 10–15% of
-any given page — buttons, verified pills, rules, link underlines — and then takes over
-completely for a single drenched fold (the investment band on the homepage, the closing CTA on
-`/invest` and `/about`). One loud moment reads as deliberate; gold everywhere would read as
-gilding.
+The ground is `oklch(0.99 0.003 40)` — a whisper of the brand's own hue in white. Two rules
+protect it:
+
+- **It is not cream.** The band at OKLCH L 0.84–0.97 with warm-yellow chroma reads as
+  cream / sand / paper / parchment whatever you call it, and that is the saturated default of
+  the moment. Do not lower the ground's lightness into that band.
+- **Its chroma tilts toward clay (hue 40), not toward generic warmth (hue 60–80).** Tinting a
+  neutral toward the brand's own hue is deliberate; tinting it warm-by-default is the reflex.
+
+No token is named `paper`, `sand`, `cream` or `ivory`.
+
+**Colour strategy: Committed.** Clay carries roughly 30% of a page — buttons, verified pills,
+rules, link underlines, section numerals, accent headings — and then takes the whole surface for
+a single drenched fold (the investment band on the homepage, the closing CTA on `/invest` and
+`/about`).
+
+This replaced a Restrained strategy built on a muted brass gold. Two things were wrong with it:
+Restrained is the *product* default and this is a brand surface, so a greyscale page with one
+timid accent read as invisible; and the gold was 2.9:1 on white, so it could never carry text
+and the accent had nowhere to go. Feedback said the site was unappealing, and it was right.
 
 ## Colour
 
-All values are OKLCH. Neutrals are **chroma 0** — deliberately untinted, so the gold is the
-only hue on the page.
+All values are OKLCH. Neutrals carry a trace of chroma toward the clay hue rather than sitting
+at chroma 0 — enough to belong to the palette, not enough to read as tinted.
 
 | Token | OKLCH | Hex | Role |
 | --- | --- | --- | --- |
-| `--color-bg` | `oklch(1 0 0)` | `#ffffff` | Page surface |
-| `--color-surface` | `oklch(0.975 0 0)` | `#f7f7f7` | Alternating bands, inset panels |
-| `--color-ink` | `oklch(0.16 0 0)` | `#0d0d0d` | Body and headings |
-| `--color-ink-deep` | `oklch(0.1 0 0)` | `#030303` | Gallery backdrop |
-| `--color-ink-muted` | `oklch(0.42 0 0)` | `#4d4d4d` | Secondary prose |
-| `--color-ink-subtle` | `oklch(0.52 0 0)` | `#696969` | Meta, captions, placeholders |
-| `--color-line` | `oklch(0.9 0 0)` | `#dedede` | Hairlines, card borders |
-| `--color-line-strong` | `oklch(0.82 0 0)` | `#c4c4c4` | Input borders, chips |
-| `--color-gold` | `oklch(0.68 0.11 78)` | `#bd8f41` | Accent **surfaces** only |
-| `--color-gold-ink` | `oklch(0.44 0.09 78)` | `#6d4b04` | Gold **text** on white |
-| `--color-gold-deep` | `oklch(0.54 0.105 78)` | `#906615` | Drenched fold, button hover |
-| `--color-gold-wash` | `oklch(0.965 0.018 80)` | `#faf2e6` | Highlighted card ground |
+| `--color-bg` | `oklch(0.99 0.003 40)` | `#fefbfa` | Page ground |
+| `--color-surface` | `oklch(0.966 0.009 40)` | `#faf2ef` | Alternating bands |
+| `--color-surface-deep` | `oklch(0.94 0.014 40)` | `#f4e8e4` | Inset panels — the elevation layer |
+| `--color-ink` | `oklch(0.175 0.012 40)` | `#150f0d` | Body and headings |
+| `--color-ink-deep` | `oklch(0.115 0.01 40)` | `#080403` | Gallery backdrop |
+| `--color-ink-muted` | `oklch(0.43 0.014 40)` | `#574d4a` | Secondary prose |
+| `--color-ink-subtle` | `oklch(0.53 0.014 40)` | `#736966` | Meta, captions, placeholders |
+| `--color-line` | `oklch(0.895 0.008 40)` | `#e1dbd8` | Hairlines, card borders |
+| `--color-line-strong` | `oklch(0.81 0.012 40)` | `#c8bebb` | Input borders, chips |
+| `--color-clay` | `oklch(0.56 0.15 34)` | `#bc4c33` | The accent — surfaces **and** text on light |
+| `--color-clay-ink` | `oklch(0.47 0.145 34)` | `#9b321a` | Accent text wanting more weight; focus ring |
+| `--color-clay-deep` | `oklch(0.405 0.13 34)` | `#80240f` | Drenched fold, button hover |
+| `--color-clay-light` | `oklch(0.72 0.13 45)` | `#e7885d` | Accent type **on dark** grounds |
+| `--color-clay-wash` | `oklch(0.955 0.022 40)` | `#feece5` | Highlighted panel ground |
 
 ### Contrast (measured, WCAG 2.1 AA)
 
-| Pair | Ratio |
-| --- | --- |
-| ink on white | 19.4:1 |
-| ink-muted on white | 8.5:1 |
-| ink-subtle on white | 5.5:1 |
-| gold-ink on white | 7.9:1 |
-| ink on gold (primary button) | 6.7:1 |
-| white on gold-deep (drenched fold) | 5.1:1 |
+| Pair | Ratio | |
+| --- | --- | --- |
+| ink on bg | 18.45:1 | |
+| ink-muted on bg | 7.92:1 | body prose |
+| ink-subtle on bg | 5.15:1 | meta, placeholders |
+| ink on surface | 17.18:1 | |
+| clay-ink on bg | 7.11:1 | |
+| **white on clay** | **4.84:1** | primary button |
+| white on clay-deep | 9.31:1 | drenched fold |
+| clay-light on ink | 7.33:1 | hero eyebrow, dark folds |
+| clay-light on hero scrim | 6.36:1 | |
+| ink on clay | 3.81:1 | **large text only — never body copy** |
 
-**The rule that matters:** `--color-gold` is 2.9:1 on white and must never carry text. Gold
-type uses `--color-gold-ink`; the primary button is a gold *surface* with ink text, which is
-both more legible and more confident than white-on-gold.
+**The rules that matter:**
+
+1. **Clay takes a white label at 4.84:1.** That is what lets the accent hold 30% of the page
+   instead of 10%, and it is why the primary button is clay-with-white rather than the old
+   surface-with-ink workaround.
+2. **Never put ink on clay below 18.66px bold / 24px regular.** It is 3.81:1.
+3. **On any dark ground use `clay-light`, not `clay`.** Clay is 3.81:1 on ink and fails.
+4. Verify by measurement, not by eye. There is a canvas-based contrast audit that walks the
+   rendered DOM and resolves Tailwind's `oklab()` output; run it over every page after a palette
+   change. Text over photography is excluded from it and has to be checked visually.
 
 ## Typography
 
@@ -87,7 +113,9 @@ Display max is 5rem, under the 6rem ceiling. Letter-spacing floor is `-0.035em`.
 
 - `.shell` — 78rem max, fluid `clamp(1.15rem, 4vw, 2.5rem)` inline padding.
 - `.shell-wide` — 92rem, for listing grids and the property detail two-column layout.
-- `.band` — `clamp(3.25rem, 7vw, 6.5rem)` block padding. `.band-tight` for closers.
+- `.band` — `clamp(2.75rem, 5.5vw, 5rem)` block padding. `.band-tight` for closers. The
+  earlier 6.5rem ceiling left short sections floating in dead space, which read as unfinished
+  rather than airy.
 - Rhythm is varied on purpose: tight groupings inside a section, generous separation between.
 - Cards are used where they are genuinely the right affordance (property, project and blog
   listings) and avoided elsewhere. Trust points are a **ruled list**, investment options are a
@@ -103,7 +131,7 @@ Display max is 5rem, under the 6rem ceiling. Letter-spacing floor is `-0.035em`.
 | Component | Notes |
 | --- | --- |
 | `Header` | White, hairline border, shadow appears only after scroll. Bilingual wordmark. |
-| `PropertyCard` | 4:3 image, verified + status pills, price-first hierarchy, spec row, dual CTA. Carries `data-*` for client-side filtering. |
+| `PropertyCard` | 4:3 image, verified + status pills, **title-first** hierarchy, spec row, price line, dual CTA pinned with `mt-auto` so a row of cards bottom-aligns. Carries `data-*` for client-side filtering. Price is deliberately *not* the lead: with no published prices, price-first made "Price on request" the loudest thing on 74 cards. |
 | `ProjectCard` | 16:10 image, possession status pill, four-fact `<dl>`. |
 | `LocationCard` | Full-bleed photo with gradient scrim; `feature` variant doubles the size and adds type chips. |
 | `SearchBar` | Plain `GET` form to `/properties`; works with JavaScript disabled. |
@@ -131,10 +159,10 @@ CSS only, no library.
   - `.reveal-stagger` — siblings in one grid or ruled list, offset so the group reads as a
     group. Capped at six steps.
   - `.reveal-rows` — comparison-table rows wiping in left to right.
-  - `.read-progress` — a 2px gold hairline under the header, driven by `scroll(root block)`.
+  - `.read-progress` — a 2px clay hairline under the header, driven by `scroll(root block)`.
 - **The bar track must not be `overflow: hidden`.** An `overflow` value makes the element a
   scroll container, which is what `view()` resolves against, and the timeline goes inert.
-- Hover: card image scales 1.035 over 700ms, border darkens, gold underline wipes in on nav
+- Hover: card image scales 1.035 over 700ms, border darkens, clay underline wipes in on nav
   links, arrows nudge 4px. `.card` responds to `:focus-within` as well as `:hover`, so keyboard
   users get the same affordance. The button press is a 60ms transition — a 250ms press reads
   as lag on release.

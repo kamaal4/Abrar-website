@@ -29,7 +29,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 const categories = [
   {
     title: 'Buy a home',
-    image: 'aparna-zenon-towers' as const,
+    image: 'qmaks-serene-heights-2' as const,
     copy: 'Apartments across Tolichowki, Alkapur, Shaikpet and the central belt — 2, 3 and 4 BHK in completed and under-construction buildings.',
     links: [
       { label: '2 BHK', href: '/properties?listing=buy&bhk=2' },
@@ -40,7 +40,7 @@ const categories = [
   },
   {
     title: 'Invest in land',
-    image: 'telangana-farmland-2' as const,
+    image: 'qmaks-future-city-1' as const,
     copy: 'Plotted layouts on the airport corridor and farm land west of the city — lower holding cost, longer horizon, heavier diligence.',
     links: [
       { label: 'Plots', href: '/properties?type=plot' },
@@ -51,7 +51,7 @@ const categories = [
   },
   {
     title: 'Commercial space',
-    image: 'hyd-financial-district' as const,
+    image: 'qmaks-galaxy-1' as const,
     copy: 'Shops, offices and mixed-use floors in Alkapur, Shaikpet and Mehdipatnam — higher yield when tenanted, longer voids when not.',
     links: [
       { label: 'All commercial', href: '/properties?type=commercial' },
@@ -97,7 +97,7 @@ const assetReasons = [
 /** Leverage, shown as what the money controls — never as what it returns. */
 const leverageRows = [
   { label: '₹15 lakh into gold or an index fund', controls: '₹15 L', width: '20%', tone: 'quiet' as const },
-  { label: '₹15 lakh down on a ₹75 lakh flat', controls: '₹75 L', width: '100%', tone: 'gold' as const },
+  { label: '₹15 lakh down on a ₹75 lakh flat', controls: '₹75 L', width: '100%', tone: 'clay' as const },
 ];
 
 const steps = [
@@ -144,7 +144,7 @@ const reasons = [
 ---
 
 <BaseLayout
-  title={`${siteConfig.name} — ${siteConfig.tagline}`}
+  title={`${siteConfig.name} — Real estate investment in Hyderabad`}
   description={siteConfig.description}
 >
   <!-- Hero: a real Hyderabad skyline carries the section; type sits over it. -->
@@ -153,25 +153,25 @@ const reasons = [
       wide="hyd-financial-district-panorama"
       narrow="gachibowli-skyview"
       alt="Towers of the Hyderabad Financial District at dusk"
-      class="hero-settle absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.82] sm:opacity-[0.78]"
+      class="hero-settle absolute inset-0 -z-10 h-full w-full object-cover"
     />
     <div
-      class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/78 via-ink/50 to-ink/82"
+      class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/72 via-ink/46 to-ink/80"
       aria-hidden="true"
     >
     </div>
 
     <div class="shell pb-10 pt-14 sm:pb-14 sm:pt-20 lg:pb-20 lg:pt-28">
-      <p class="ui enter text-[0.92rem] font-semibold text-gold">{siteConfig.tagline}</p>
+      <p class="ui enter text-[0.92rem] font-semibold text-clay-light">{siteConfig.tagline}</p>
       <h1 class="enter d-1 mt-3 max-w-3xl text-display-1 text-white">
-        Invest in real estate in Hyderabad
+        Invest for assets,<br class="hidden sm:block" /> not just addresses.
       </h1>
       <p class="enter d-2 measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.18rem]">
-        Discover, compare and invest in residential, commercial and land assets across the city —
-        with AI-powered property discovery and straight answers about what each one is good for.
+        Residential, commercial and land across Hyderabad — with AI-powered discovery, real
+        comparison, and straight answers about what each one is actually good for.
       </p>
 
-      <ul class="ui enter d-2 mt-5 flex flex-wrap gap-x-3 gap-y-1 text-[0.82rem] font-semibold text-white/70">
+      <ul class="ui enter d-2 mt-5 flex flex-wrap gap-x-3 gap-y-1 text-[0.82rem] font-semibold text-white/90">
         {
           [
             'AI-powered discovery',
@@ -180,7 +180,7 @@ const reasons = [
             'Hyderabad only',
           ].map((k, i) => (
             <li class="flex items-center gap-3">
-              {i > 0 && <span class="text-white/30" aria-hidden="true">·</span>}
+              {i > 0 && <span class="text-white/60" aria-hidden="true">·</span>}
               {k}
             </li>
           ))
@@ -258,7 +258,7 @@ const reasons = [
                        rounded on its own, so nothing needs clipping. -->
                   <div class="mt-2 h-3 w-full rounded-full bg-line">
                   <div
-                    class={`bar-grow h-full rounded-full ${row.tone === 'gold' ? 'bg-gold' : 'bg-ink-subtle'}`}
+                    class={`bar-grow h-full rounded-full ${row.tone === 'clay' ? 'bg-clay' : 'bg-ink-subtle'}`}
                     style={`--w: ${row.width}; width: ${row.width}`}
                   />
                 </div>
@@ -281,7 +281,7 @@ const reasons = [
     <div class="shell">
       <div class="grid gap-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-14">
         <div>
-          <p class="ui text-[0.85rem] font-bold text-gold-ink">AI investment assistant</p>
+          <p class="ui text-[0.85rem] font-bold text-clay-ink">AI investment assistant</p>
           <h2 class="mt-2 text-display-2">Tell the assistant what you want to achieve</h2>
           <p class="measure mt-4 text-[1.02rem] leading-relaxed text-ink-muted">
             Not a keyword search. Describe the outcome you are after and it shortlists from what we
@@ -340,7 +340,7 @@ const reasons = [
         {
           steps.map((st) => (
             <li class="border-t-2 border-ink pt-4 pb-6">
-              <p class="ui text-[0.78rem] font-bold text-gold-ink">{st.n}</p>
+              <p class="ui text-[0.78rem] font-bold text-clay-ink">{st.n}</p>
               <h3 class="mt-1.5 text-[1.05rem]">{st.title}</h3>
               <p class="mt-2 text-[0.94rem] leading-relaxed text-ink-muted">{st.copy}</p>
             </li>
@@ -450,7 +450,7 @@ const reasons = [
   </section>
 
   <!-- The one drenched fold on the site. -->
-  <section class="bg-gold-deep text-white">
+  <section class="bg-clay-deep text-white">
     <div class="shell band">
       <div class="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-16">
         <div>
@@ -483,7 +483,7 @@ const reasons = [
               { k: 'Plots and land', v: 'Long-horizon parcels, diligence-heavy' },
               { k: 'Under construction', v: 'Possession-timeline arbitrage' },
             ].map((item) => (
-              <li class="bg-gold-deep p-5">
+              <li class="bg-clay-deep p-5">
                 <p class="ui text-[0.95rem] font-bold text-white">{item.k}</p>
                 <p class="mt-1 text-[0.9rem] leading-relaxed text-white/85">{item.v}</p>
               </li>
@@ -507,7 +507,7 @@ const reasons = [
           reasons.map((r) => (
             <li class="border-t border-line py-5">
               <h3 class="ui flex items-center gap-2.5 text-[1.05rem] font-bold">
-                <Icon name={r.icon} size={19} class="shrink-0 text-gold-ink" />
+                <Icon name={r.icon} size={19} class="shrink-0 text-clay-ink" />
                 {r.title}
               </h3>
               <p class="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">{r.copy}</p>
@@ -540,8 +540,8 @@ const reasons = [
                 />
               </span>
               <span class="flex flex-1 flex-col p-4">
-                <span class="ui text-[0.78rem] font-semibold text-gold-ink">{post.data.category}</span>
-                <span class="mt-1.5 text-[1.02rem] font-bold leading-snug group-hover:text-gold-ink" style="font-family: var(--font-display)">
+                <span class="ui text-[0.78rem] font-semibold text-clay-ink">{post.data.category}</span>
+                <span class="mt-1.5 text-[1.02rem] font-bold leading-snug group-hover:text-clay-ink" style="font-family: var(--font-display)">
                   {post.data.title}
                 </span>
                 <span class="mt-2 flex-1 text-[0.92rem] leading-relaxed text-ink-muted">

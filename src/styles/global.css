@@ -1,30 +1,51 @@
 @import 'tailwindcss';
 
 /* ---------------------------------------------------------------------------
-   InvestForAssets — design tokens.
-   Pure-white canvas, chroma-0 neutrals, one warm gold that carries the brand.
-   Every text/background pair below was checked against WCAG 2.1 AA:
-     ink        on white      19.4:1
-     ink-muted  on white       8.5:1
-     ink-subtle on white       5.5:1   (small meta text only)
-     gold-ink   on white       7.9:1   (gold as TEXT never uses --color-gold)
-     ink        on gold        6.7:1   (primary button: gold surface, ink label)
-     white      on gold-deep   5.1:1   (the drenched fold)
+   InvestForAssets — design tokens. "Deccan clay."
+
+   A near-white ground with a whisper of the brand's own hue, deep warm ink, and
+   a saturated terracotta that carries roughly a third of the page. Colour
+   strategy is COMMITTED, not restrained: clay appears on buttons, rules, links,
+   pills, headings and one drenched fold, because a greyscale page with a single
+   timid accent is invisible.
+
+   The ground is deliberately L 0.99 with chroma tilted toward the clay hue (40)
+   rather than toward generic warmth (60-80). The band at L 0.84-0.97 with warm
+   yellow chroma reads as cream / sand / parchment — the saturated default of the
+   moment — and this palette stays out of it. Do not lower the ground's lightness
+   or rotate its hue toward yellow.
+
+   Every text/background pair below is measured, WCAG 2.1 AA:
+     ink        on bg          18.45:1
+     ink-muted  on bg           7.92:1  (body prose)
+     ink-subtle on bg           5.15:1  (meta, placeholders)
+     ink        on surface     17.18:1
+     clay-ink   on bg           7.11:1
+     white      on clay         4.84:1  (primary button: clay surface, WHITE label)
+     white      on clay-deep    9.31:1  (the drenched fold)
+     clay-light on ink          7.33:1  (accent on dark grounds)
+     ink        on clay         3.81:1  <- LARGE TEXT ONLY. Never body copy.
 --------------------------------------------------------------------------- */
 @theme {
-  --color-bg: oklch(1 0 0);
-  --color-surface: oklch(0.975 0 0);
-  --color-ink: oklch(0.16 0 0);
-  --color-ink-deep: oklch(0.1 0 0);
-  --color-ink-muted: oklch(0.42 0 0);
-  --color-ink-subtle: oklch(0.52 0 0);
-  --color-line: oklch(0.9 0 0);
-  --color-line-strong: oklch(0.82 0 0);
+  --color-bg: oklch(0.99 0.003 40);
+  --color-surface: oklch(0.966 0.009 40);
+  /* The elevation layer: inset panels sit *in* the page instead of being outlined on it. */
+  --color-surface-deep: oklch(0.94 0.014 40);
+  --color-ink: oklch(0.175 0.012 40);
+  --color-ink-deep: oklch(0.115 0.01 40);
+  --color-ink-muted: oklch(0.43 0.014 40);
+  --color-ink-subtle: oklch(0.53 0.014 40);
+  --color-line: oklch(0.895 0.008 40);
+  --color-line-strong: oklch(0.81 0.012 40);
 
-  --color-gold: oklch(0.68 0.11 78);
-  --color-gold-ink: oklch(0.44 0.09 78);
-  --color-gold-deep: oklch(0.54 0.105 78);
-  --color-gold-wash: oklch(0.965 0.018 80);
+  /* Unlike the brass gold this replaces, clay takes a white label at 4.84:1 —
+     which is what lets the accent carry a third of the page, not a tenth. */
+  --color-clay: oklch(0.56 0.15 34);
+  --color-clay-ink: oklch(0.47 0.145 34);
+  --color-clay-deep: oklch(0.405 0.13 34);
+  /* For accent type over ink and over the hero scrim, where clay itself is too dark. */
+  --color-clay-light: oklch(0.72 0.13 45);
+  --color-clay-wash: oklch(0.955 0.022 40);
 
   --font-display: 'Anek Latin', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Literata', Georgia, 'Times New Roman', serif;
@@ -115,14 +136,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold-ink);
+    outline: 2px solid var(--color-clay-ink);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   ::selection {
-    background: var(--color-gold);
-    color: var(--color-ink);
+    background: var(--color-clay);
+    color: #fff;
   }
 
   dialog::backdrop {
@@ -155,7 +176,7 @@
 
   /* Section rhythm: tight inside, generous between. */
   .band {
-    padding-block: clamp(3.25rem, 7vw, 6.5rem);
+    padding-block: clamp(2.75rem, 5.5vw, 5rem);
   }
 
   .band-tight {
@@ -201,12 +222,12 @@
   }
 
   .btn-primary {
-    background: var(--color-gold);
-    color: var(--color-ink);
+    background: var(--color-clay);
+    color: #fff;
   }
 
   .btn-primary:hover {
-    background: var(--color-gold-deep);
+    background: var(--color-clay-deep);
     color: #fff;
   }
 
@@ -216,7 +237,7 @@
   }
 
   .btn-solid:hover {
-    background: var(--color-gold-deep);
+    background: var(--color-clay-deep);
   }
 
   .btn-outline {
@@ -237,7 +258,7 @@
   }
 
   .btn-ghost:hover {
-    color: var(--color-gold-ink);
+    color: var(--color-clay-ink);
   }
 
   .btn-on-dark {
@@ -246,7 +267,8 @@
   }
 
   .btn-on-dark:hover {
-    background: var(--color-gold);
+    background: var(--color-clay);
+    color: #fff;
   }
 
   .btn-outline-on-dark {
@@ -277,7 +299,7 @@
     bottom: -3px;
     height: 2px;
     width: 100%;
-    background: var(--color-gold);
+    background: var(--color-clay);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s var(--ease-out-quint);
@@ -294,7 +316,7 @@
     gap: 0.45rem;
     font-family: var(--font-display);
     font-weight: 600;
-    color: var(--color-gold-ink);
+    color: var(--color-clay-ink);
   }
 
   .link-arrow svg {
@@ -351,8 +373,8 @@
   }
 
   .pill-verified {
-    background: var(--color-gold);
-    color: var(--color-ink);
+    background: var(--color-clay);
+    color: #fff;
   }
 
   .pill-quiet {
@@ -432,7 +454,7 @@
   }
 
   .prose-body a {
-    color: var(--color-gold-ink);
+    color: var(--color-clay-ink);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
