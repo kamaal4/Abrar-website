@@ -62,7 +62,7 @@ const enquiry = `Hi, I'm interested in the ${p.title} in ${locationName}. Could 
 
     <button
       type="button"
-      class="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/40 bg-ink/55 text-white transition-colors hover:bg-ink data-[saved=true]:bg-clay data-[saved=true]:text-ink"
+      class="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-line-strong bg-surface-deep/70 text-ink backdrop-blur transition-colors hover:border-beam data-[saved=true]:bg-beam data-[saved=true]:text-on-beam"
       data-favourite={p.slug}
       aria-pressed="false"
       aria-label={`Save ${p.title}`}
@@ -75,7 +75,7 @@ const enquiry = `Hi, I'm interested in the ${p.title} in ${locationName}. Could 
     <!-- The title leads. The developer publishes no prices, so a price-first
          hierarchy made "Price on request" the loudest thing on 74 cards. -->
     <h3 class="text-[1.08rem] font-bold leading-snug">
-      <a href={href} class="hover:text-clay-ink">{p.title}</a>
+      <a href={href} class="hover:text-beam-ink">{p.title}</a>
     </h3>
 
     <p class="ui mt-1.5 flex items-center gap-1 text-[0.86rem] text-ink-muted">
@@ -87,7 +87,7 @@ const enquiry = `Hi, I'm interested in the ${p.title} in ${locationName}. Could 
 
     {
       specs.length > 0 && (
-        <ul class="ui mt-3 flex flex-wrap gap-x-3.5 gap-y-1.5 text-[0.82rem] text-ink-muted">
+        <ul class="mono-data mt-3 flex flex-wrap gap-x-3.5 gap-y-1.5 text-[0.8rem] text-ink-muted">
           {specs.map((s) => (
             <li class="flex items-center gap-1.5">
               <Icon name={s!.icon} size={15} class="text-ink-subtle" />
@@ -105,7 +105,7 @@ const enquiry = `Hi, I'm interested in the ${p.title} in ${locationName}. Could 
         p.price === undefined && !(isRentOnly && p.rent) ? (
           <span class="text-[0.92rem] font-semibold text-ink-muted">Price on request</span>
         ) : (
-          <span class="text-[1.3rem] font-bold leading-none tracking-[-0.03em] text-clay-ink">
+          <span class="mono-data text-[1.24rem] font-bold leading-none text-beam-ink">
             {isRentOnly && p.rent ? formatRent(p.rent) : formatPriceOrAsk(p.price)}
           </span>
         )

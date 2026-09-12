@@ -92,7 +92,7 @@ const leverage = {
       label: '₹15 lakh as the deposit on a ₹75 lakh flat',
       controls: '₹75 lakh of asset',
       width: '100%',
-      tone: 'clay' as const,
+      tone: 'beam' as const,
     },
   ],
 };
@@ -313,28 +313,28 @@ const checklist = [
   description="Property against gold, stocks, a business and a fixed deposit. Flat against plot. Residential against commercial. What actually makes property an asset, and the seven checks to run before you commit."
 >
   <!-- Hero -->
-  <section class="relative isolate overflow-hidden bg-ink">
+  <section class="relative isolate overflow-hidden bg-surface-deep">
     <HeroImage
       wide="hyd-financial-district-panorama"
       narrow="gachibowli-skyview"
       alt="The Hyderabad skyline at dusk"
       class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.5]"
     />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-ink/85 via-ink/70 to-ink/90" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-bg/85 via-bg/70 to-bg/90" aria-hidden="true"></div>
 
     <div class="shell py-12 sm:py-16 lg:py-20">
       <Breadcrumbs items={[{ label: 'Investment Insights' }]} tone="dark" />
-      <p class="ui mt-6 text-[0.9rem] font-semibold text-clay-light">Compare. Understand. Invest smarter.</p>
-      <h1 class="mt-3 max-w-3xl text-display-1 text-white">
+      <p class="ui mt-6 text-[0.9rem] font-semibold text-beam-ink">Compare. Understand. Invest smarter.</p>
+      <h1 class="mt-3 max-w-3xl text-display-1 text-ink">
         Don’t just buy a property. Understand the asset.
       </h1>
-      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.15rem]">
+      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-ink/85 sm:text-[1.15rem]">
         Property against every other place your money could sit — with the trade-offs stated plainly
         and no projected returns, because nobody can honestly give you one.
       </p>
 
-      <p class="ui mt-6 rounded-panel border border-white/20 bg-white/5 p-4 text-[0.9rem] leading-relaxed text-white/80">
-        <strong class="font-semibold text-white">We argue for property here — on structure, never on returns.</strong>
+      <p class="ui mt-6 rounded-panel border border-line bg-surface p-4 text-[0.9rem] leading-relaxed text-ink/80">
+        <strong class="font-semibold text-ink">We argue for property here — on structure, never on returns.</strong>
         {' '}Everything below is a fact about how the asset works, not a forecast of what it will do.
         This is not financial advice and it contains no projected return. Talk to a qualified adviser
         about your own position.
@@ -351,7 +351,7 @@ const checklist = [
             <li>
               <a
                 href={`#${c.id}`}
-                class="inline-block rounded-lg border border-line bg-bg px-2.5 py-1 text-[0.84rem] font-semibold transition-colors hover:border-ink hover:bg-surface"
+                class="inline-block rounded-lg border border-line bg-bg px-2.5 py-1 text-[0.84rem] font-semibold transition-colors hover:border-beam hover:bg-surface"
               >
                 {c.label}
               </a>
@@ -380,7 +380,7 @@ const checklist = [
             theCase.map((c) => (
               <li class="border-t border-line py-6 first:border-t-0 first:pt-0">
                 <h3 class="ui flex items-baseline gap-3 text-[1.12rem] font-bold leading-snug">
-                  <Icon name={c.icon} size={19} class="shrink-0 translate-y-0.5 text-clay-ink" />
+                  <Icon name={c.icon} size={19} class="shrink-0 translate-y-0.5 text-beam-ink" />
                   {c.claim}
                 </h3>
                 <p class="mt-2.5 pl-[1.9rem] text-[0.97rem] leading-relaxed text-ink-muted">
@@ -395,7 +395,7 @@ const checklist = [
   </section>
 
   <!-- Leverage. The signature moment: the argument, drawn. -->
-  <section class="band-tight border-y border-line bg-surface">
+  <section class="band-tight border-y border-line bg-surface-deep">
     <div class="shell">
       <h2 class="text-display-3">The part that has no equivalent anywhere else</h2>
       <p class="measure mt-3 text-[1rem] leading-relaxed text-ink-muted">
@@ -415,9 +415,9 @@ const checklist = [
               <!-- No overflow-hidden on the track: it would become the nearest scroll
                        container and leave `animation-timeline: view()` inert. The bar is
                        rounded on its own, so nothing needs clipping. -->
-                  <div class="mt-2 h-3 w-full rounded-full bg-line">
+                  <div class="mt-2 h-3 w-full rounded-full bg-surface-deep">
                 <div
-                  class={`bar-grow h-full rounded-full ${row.tone === 'clay' ? 'bg-clay' : 'bg-ink-subtle'}`}
+                  class={`bar-grow h-full rounded-full ${row.tone === 'beam' ? 'bg-beam' : 'bg-ink-subtle'}`}
                   style={`--w: ${row.width}; width: ${row.width}`}
                 />
               </div>
@@ -449,7 +449,7 @@ const checklist = [
           drivers.map((d) => (
             <li class="border-t border-line py-5">
               <h3 class="ui flex items-center gap-2.5 text-[1.08rem] font-bold">
-                <Icon name={d.icon} size={19} class="shrink-0 text-clay-ink" />
+                <Icon name={d.icon} size={19} class="shrink-0 text-beam-ink" />
                 {d.title}
               </h3>
               <p class="mt-2 text-[0.96rem] leading-relaxed text-ink-muted">{d.copy}</p>
@@ -468,7 +468,7 @@ const checklist = [
   </section>
 
   <!-- Asset class comparison -->
-  <section id="asset-classes" class="band scroll-mt-24 border-t border-line bg-surface">
+  <section id="asset-classes" class="band scroll-mt-24 border-t border-line bg-surface-deep">
     <div class="shell">
       <SectionHead
         as="h2"
@@ -572,7 +572,7 @@ const checklist = [
                 <ul class="mt-3 space-y-2.5">
                   {side.points.map((pt) => (
                     <li class="flex gap-2.5 text-[0.96rem] leading-relaxed text-ink-muted">
-                      <Icon name="chevron-right" size={16} class="mt-1 shrink-0 text-clay-ink" />
+                      <Icon name="chevron-right" size={16} class="mt-1 shrink-0 text-beam-ink" />
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -597,7 +597,7 @@ const checklist = [
   }
 
   <!-- What makes property an asset -->
-  <section id="what-makes-an-asset" class="band scroll-mt-24 border-t border-line bg-surface">
+  <section id="what-makes-an-asset" class="band scroll-mt-24 border-t border-line bg-surface-deep">
     <div class="shell">
       <SectionHead
         as="h2"
@@ -610,7 +610,7 @@ const checklist = [
           assetQualities.map((q) => (
             <li class="border-t border-line py-5">
               <h3 class="ui flex items-center gap-2.5 text-[1.05rem] font-bold">
-                <Icon name={q.icon} size={19} class="shrink-0 text-clay-ink" />
+                <Icon name={q.icon} size={19} class="shrink-0 text-beam-ink" />
                 {q.title}
               </h3>
               <p class="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">{q.copy}</p>
@@ -659,10 +659,10 @@ const checklist = [
   </section>
 
   <!-- Closing CTA -->
-  <section class="band border-t border-line bg-ink">
+  <section class="band border-t border-line bg-surface-deep">
     <div class="shell text-center">
-      <h2 class="text-display-2 text-white">Don’t just buy a property. Understand the asset.</h2>
-      <p class="measure mx-auto mt-4 text-[1.05rem] leading-relaxed text-white/85">
+      <h2 class="text-display-2 text-ink">Don’t just buy a property. Understand the asset.</h2>
+      <p class="measure mx-auto mt-4 text-[1.05rem] leading-relaxed text-ink/85">
         Explore what has been built across Hyderabad, compare the options against
         your own horizon, and ask us the awkward questions before you commit.
       </p>

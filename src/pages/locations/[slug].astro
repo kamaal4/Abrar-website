@@ -46,7 +46,7 @@ const faqLd =
   description={`${location.tagline}. Price guidance, popular configurations, connectivity and available listings in ${location.name}, Hyderabad.`}
   jsonLd={faqLd}
 >
-  <section class="relative isolate overflow-hidden bg-ink">
+  <section class="relative isolate overflow-hidden bg-surface-deep">
     <Img
       image={location.image}
       widths={[900, 1280, 1440]}
@@ -55,33 +55,33 @@ const faqLd =
       fetchpriority="high"
       class="absolute inset-0 -z-10 h-full w-full object-cover opacity-70"
     />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/90 via-ink/50 to-ink/60" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-bg/90 via-bg/50 to-bg/60" aria-hidden="true"></div>
 
     <div class="shell py-8 sm:py-12 lg:py-16">
       <Breadcrumbs
         tone="dark"
         items={[{ label: 'Locations', href: '/locations' }, { label: location.name }]}
       />
-      <h1 class="mt-4 text-display-2 text-white">
+      <h1 class="mt-4 text-display-2 text-ink">
         Properties in {location.name}, Hyderabad
       </h1>
-      <p class="measure mt-3 text-[1.08rem] leading-relaxed text-white/85">{location.tagline}</p>
+      <p class="measure mt-3 text-[1.08rem] leading-relaxed text-ink/85">{location.tagline}</p>
 
-      <dl class="ui mt-7 flex flex-wrap gap-x-8 gap-y-3 text-white">
+      <dl class="ui mt-7 flex flex-wrap gap-x-8 gap-y-3 text-ink">
         <div>
-          <dt class="text-[0.8rem] text-white/70">Listings</dt>
+          <dt class="text-[0.8rem] text-ink/70">Listings</dt>
           <dd class="text-[1.2rem] font-bold">{listings.length}</dd>
         </div>
         {
           location.startingPrice !== undefined && (
             <div>
-              <dt class="text-[0.8rem] text-white/70">Indicative start</dt>
+              <dt class="text-[0.8rem] text-ink/70">Indicative start</dt>
               <dd class="text-[1.2rem] font-bold">{formatPriceLong(location.startingPrice)}</dd>
             </div>
           )
         }
         <div>
-          <dt class="text-[0.8rem] text-white/70">Zone</dt>
+          <dt class="text-[0.8rem] text-ink/70">Zone</dt>
           <dd class="text-[1.2rem] font-bold">{location.zone} Hyderabad</dd>
         </div>
       </dl>
@@ -137,7 +137,7 @@ const faqLd =
                 <li>
                   <a
                     href={url(`/properties?type=${t}&location=${location.slug}`)}
-                    class="inline-block rounded-lg border border-line-strong px-3 py-1.5 text-[0.88rem] font-semibold transition-colors hover:border-ink hover:bg-surface"
+                    class="inline-block rounded-lg border border-line-strong px-3 py-1.5 text-[0.88rem] font-semibold transition-colors hover:border-beam hover:bg-surface"
                   >
                     {propertyTypeLabels[t]}
                   </a>
@@ -155,7 +155,7 @@ const faqLd =
                 {location.connectivity.map((c) => (
                   <li class="bg-bg p-4">
                     <p class="flex items-center gap-1.5 text-[0.95rem] font-bold">
-                      <Icon name="route" size={16} class="text-clay-ink" />
+                      <Icon name="route" size={16} class="text-beam-ink" />
                       {c.label}
                     </p>
                     <p class="mt-1 text-[0.9rem] text-ink-muted">{c.detail}</p>
@@ -216,7 +216,7 @@ const faqLd =
                   <li>
                     <a
                       href={url(`/locations/${o.slug}`)}
-                      class="ui flex items-center justify-between gap-2 text-[0.92rem] font-semibold hover:text-clay-ink"
+                      class="ui flex items-center justify-between gap-2 text-[0.92rem] font-semibold hover:text-beam-ink"
                     >
                       {o.name}
                       <Icon name="chevron-right" size={14} class="text-ink-subtle" />

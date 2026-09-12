@@ -18,13 +18,13 @@ const all: Crumb[] = [{ label: 'Home', href: '/' }, ...items];
               href={url(c.href)}
               class:list={[
                 'transition-colors',
-                tone === 'dark' ? 'text-white/70 hover:text-white' : 'text-ink-subtle hover:text-ink',
+                tone === 'dark' ? 'text-ink/70 hover:text-ink' : 'text-ink-subtle hover:text-ink',
               ]}
             >
               {c.label}
             </a>
           ) : (
-            <span class:list={[tone === 'dark' ? 'text-white' : 'text-ink', 'font-semibold']}>
+            <span class:list={[tone === 'dark' ? 'text-ink' : 'text-ink', 'font-semibold']}>
               {c.label}
             </span>
           )}
@@ -32,7 +32,7 @@ const all: Crumb[] = [{ label: 'Home', href: '/' }, ...items];
             <Icon
               name="chevron-right"
               size={12}
-              class={tone === 'dark' ? 'text-white/70' : 'text-ink-subtle'}
+              class={tone === 'dark' ? 'text-ink/70' : 'text-ink-subtle'}
             />
           )}
         </li>

@@ -1,171 +1,188 @@
 # Design
 
-Visual system for **InvestForAssets**. Tokens live in
-`src/styles/global.css` under `@theme`; this document explains the intent behind them.
-Strategic context is in `PRODUCT.md`.
+Visual system for **InvestForAssets**. Tokens live in `src/styles/global.css` under `@theme`;
+this document explains the intent behind them. Strategic context is in `PRODUCT.md`.
 
 ## Theme
 
-**Light, warm near-white.** The scene: someone on a phone in Hyderabad daylight, mid-conversation,
-comparing two flats. Dark mode would fight the ambient light and make photographs of the city
-harder to read.
+**Dark. Cool near-black.** This reverses the earlier light system, and the reason is the
+content: the product is photographs of buildings at dusk in a city that markets itself on
+skyline. On a near-white ground those photographs are stamps on a page; on near-black they
+are the light source, and the page reads as an instrument rather than a brochure.
 
-The ground is `oklch(0.99 0.003 40)` — a whisper of the brand's own hue in white. Two rules
-protect it:
+The earlier system argued against dark on daylight-legibility grounds — someone on a phone in
+Hyderabad sun. That argument is answered by contrast, not by lightness: body prose runs at
+10.5:1 and the dimmest meta text at 6.1:1, both well past AA, and both higher than the light
+system's equivalents were. A dark page with genuinely high contrast survives sunlight; a dark
+page with grey-on-grey does not, which is the failure this palette is built to avoid.
 
-- **It is not cream.** The band at OKLCH L 0.84–0.97 with warm-yellow chroma reads as
-  cream / sand / paper / parchment whatever you call it, and that is the saturated default of
-  the moment. Do not lower the ground's lightness into that band.
-- **Its chroma tilts toward clay (hue 40), not toward generic warmth (hue 60–80).** Tinting a
-  neutral toward the brand's own hue is deliberate; tinting it warm-by-default is the reflex.
+The ground is `oklch(0.155 0.012 255)`. Two rules protect it:
 
-No token is named `paper`, `sand`, `cream` or `ivory`.
+- **It is not warm.** Chroma tilts toward hue 255 (blue). A near-black tinted warm reads as
+  sepia and pulls the whole page toward "cosy", which is the opposite of the brief.
+- **It is not `#000`.** Pure black destroys the elevation system: a lifted panel needs
+  something to be lifted from, and a well needs something to sink below.
 
-**Colour strategy: Committed.** Clay carries roughly 30% of a page — buttons, verified pills,
-rules, link underlines, section numerals, accent headings — and then takes the whole surface for
-a single drenched fold (the investment band on the homepage, the closing CTA on `/invest` and
-`/about`).
+**Elevation on dark is light, not shadow.** Panels carry a 1px inner highlight along the top
+edge, as if lit from above. A black drop shadow on a black ground is invisible and only costs
+paint time. `--shadow-lift` and `--shadow-panel` are therefore mostly ring, not blur; the one
+real bloom is `--shadow-glow`, which is accent-coloured.
 
-This replaced a Restrained strategy built on a muted brass gold. Two things were wrong with it:
-Restrained is the *product* default and this is a brand surface, so a greyscale page with one
-timid accent read as invisible; and the gold was 2.9:1 on white, so it could never carry text
-and the accent had nowhere to go. Feedback said the site was unappealing, and it was right.
+**Colour strategy: Committed, single accent.** One electric azure carries every interactive
+surface — buttons, focus rings, active states, links, rules, bar fills, the reading-progress
+hairline. There is no second accent. Warmth on the page comes from the photography, which is
+amber and concrete, and the azure exists to be maximally separated from it.
 
 ## Colour
 
-All values are OKLCH. Neutrals carry a trace of chroma toward the clay hue rather than sitting
-at chroma 0 — enough to belong to the palette, not enough to read as tinted.
+All values are OKLCH. Neutrals carry a trace of chroma toward the ground's blue rather than
+sitting at chroma 0.
 
-| Token | OKLCH | Hex | Role |
-| --- | --- | --- | --- |
-| `--color-bg` | `oklch(0.99 0.003 40)` | `#fefbfa` | Page ground |
-| `--color-surface` | `oklch(0.966 0.009 40)` | `#faf2ef` | Alternating bands |
-| `--color-surface-deep` | `oklch(0.94 0.014 40)` | `#f4e8e4` | Inset panels — the elevation layer |
-| `--color-ink` | `oklch(0.175 0.012 40)` | `#150f0d` | Body and headings |
-| `--color-ink-deep` | `oklch(0.115 0.01 40)` | `#080403` | Gallery backdrop |
-| `--color-ink-muted` | `oklch(0.43 0.014 40)` | `#574d4a` | Secondary prose |
-| `--color-ink-subtle` | `oklch(0.53 0.014 40)` | `#736966` | Meta, captions, placeholders |
-| `--color-line` | `oklch(0.895 0.008 40)` | `#e1dbd8` | Hairlines, card borders |
-| `--color-line-strong` | `oklch(0.81 0.012 40)` | `#c8bebb` | Input borders, chips |
-| `--color-clay` | `oklch(0.56 0.15 34)` | `#bc4c33` | The accent — surfaces **and** text on light |
-| `--color-clay-ink` | `oklch(0.47 0.145 34)` | `#9b321a` | Accent text wanting more weight; focus ring |
-| `--color-clay-deep` | `oklch(0.405 0.13 34)` | `#80240f` | Drenched fold, button hover |
-| `--color-clay-light` | `oklch(0.72 0.13 45)` | `#e7885d` | Accent type **on dark** grounds |
-| `--color-clay-wash` | `oklch(0.955 0.022 40)` | `#feece5` | Highlighted panel ground |
+| Token | OKLCH | Role |
+| --- | --- | --- |
+| `--color-bg` | `oklch(0.155 0.012 255)` | Page ground |
+| `--color-surface` | `oklch(0.205 0.014 255)` | Cards and panels — **lifted above** `bg` |
+| `--color-surface-deep` | `oklch(0.105 0.01 255)` | Wells: alternating bands, inputs, bar tracks, footer |
+| `--color-ink-deep` | `oklch(0.085 0.008 255)` | The one ground below a well — gallery frames |
+| `--color-ink` | `oklch(0.97 0.004 255)` | Headings and emphasis |
+| `--color-ink-muted` | `oklch(0.8 0.008 255)` | Body prose |
+| `--color-ink-subtle` | `oklch(0.65 0.01 255)` | Meta, captions, mono labels, placeholders |
+| `--color-line` | `oklch(1 0 0 / 0.11)` | Hairlines, card borders |
+| `--color-line-strong` | `oklch(1 0 0 / 0.24)` | Input borders, chips, outline buttons |
+| `--color-beam` | `oklch(0.8 0.15 220)` | The accent as a **surface** |
+| `--color-beam-ink` | `oklch(0.865 0.13 215)` | The accent as **text** on dark |
+| `--color-beam-deep` | `oklch(0.62 0.16 228)` | Pressed and deep accent states |
+| `--color-beam-wash` | `oklch(0.8 0.15 220 / 0.12)` | Tinted panel ground, hover fills, glows |
+| `--color-on-beam` | `oklch(0.13 0.02 240)` | Label colour **on** the accent |
 
-### Contrast (measured, WCAG 2.1 AA)
+`ink` means *foreground*, not black. Naming it for its role rather than its value is what let
+the whole re-skin invert by changing values instead of ~780 call sites.
+
+**Hairlines are alpha, not solid.** They have to read over the ground, over a lifted card,
+over a well and over a photograph without a variant for each.
+
+### Contrast (measured in-browser, WCAG 2.1)
 
 | Pair | Ratio | |
 | --- | --- | --- |
-| ink on bg | 18.45:1 | |
-| ink-muted on bg | 7.92:1 | body prose |
-| ink-subtle on bg | 5.15:1 | meta, placeholders |
-| ink on surface | 17.18:1 | |
-| clay-ink on bg | 7.11:1 | |
-| **white on clay** | **4.84:1** | primary button |
-| white on clay-deep | 9.31:1 | drenched fold |
-| clay-light on ink | 7.33:1 | hero eyebrow, dark folds |
-| clay-light on hero scrim | 6.36:1 | |
-| ink on clay | 3.81:1 | **large text only — never body copy** |
+| ink on bg | 17.93:1 | headings |
+| ink-muted on bg | 10.48:1 | body prose |
+| ink-subtle on bg | 6.08:1 | meta, labels, placeholders |
+| beam-ink on bg | 13.40:1 | accent text and links |
+| beam on bg | 10.97:1 | accent as a surface or rule |
+| **on-beam on beam** | **11.27:1** | primary button |
+| ink on surface | 16.33:1 | card headings |
+| ink-muted on surface | 9.55:1 | card prose |
+| ink-subtle on surface | 5.54:1 | the dimmest pair on the site |
+| ink-muted on surface-deep | 10.98:1 | |
 
 **The rules that matter:**
 
-1. **Clay takes a white label at 4.84:1.** That is what lets the accent hold 30% of the page
-   instead of 10%, and it is why the primary button is clay-with-white rather than the old
-   surface-with-ink workaround.
-2. **Never put ink on clay below 18.66px bold / 24px regular.** It is 3.81:1.
-3. **On any dark ground use `clay-light`, not `clay`.** Clay is 3.81:1 on ink and fails.
-4. Verify by measurement, not by eye. There is a canvas-based contrast audit that walks the
-   rendered DOM and resolves Tailwind's `oklab()` output; run it over every page after a palette
-   change. Text over photography is excluded from it and has to be checked visually.
+1. **Nothing white ever sits on the accent.** White on `beam` is about 2.1:1. Anything on the
+   accent takes `--color-on-beam`, which is 11.27:1. Dark-on-bright is the only way an accent
+   this luminous works, and it is why `#fff` appears nowhere in the stylesheet.
+2. **`ink-subtle` on `surface` at 5.54:1 is the floor.** It clears AA for normal text with
+   room, but it is the dimmest pair that exists — do not introduce anything below it.
+3. **Do not lower `beam`'s lightness to "tone it down".** Below roughly L 0.72 it stops taking
+   a dark label cleanly and the whole accent system inverts. Tone it down with *less area*,
+   not less luminance.
+4. Verify by measurement, not by eye. The canvas-based audit rasterises each token through a
+   1×1 canvas (`getComputedStyle` returns OKLCH verbatim in Chromium, so parsing the string is
+   not enough) and computes real sRGB ratios. Run it over every page after a palette change.
+   Text over photography is excluded and has to be checked visually.
 
 ## Typography
 
-Two families on a contrast axis, inverting the usual editorial pairing — sans display over
-serif body.
+Three families on a technical axis. The previous system paired a sans display with a serif
+body; the serif was the single strongest "editorial, not engineered" signal on the page.
 
 | Token | Family | Use |
 | --- | --- | --- |
-| `--font-display` | **Anek Latin** (Ek Type) | Headings, buttons, nav, labels, numerals |
-| `--font-body` | **Literata** | Body prose, article text |
+| `--font-display` | **Space Grotesk** | Headings, buttons, nav, UI labels |
+| `--font-body` | **Inter** | Body prose, article text |
+| `--font-mono` | **JetBrains Mono** | Data: spec rows, prices, section indices, table headers |
 | `--font-telugu` | **Anek Telugu** | The `హైదరాబాద్` half of the wordmark |
 
-Anek is by Ek Type, an Indian foundry, and ships a Telugu companion — which is why the
-wordmark can be bilingual without a mismatched fallback. It is tall, tightly spaced and
-architectural. Literata keeps long-form articles readable and stops the page reading as a
-dashboard.
+Anek Telugu is the only survivor of the previous pairing, kept because it is what lets the
+wordmark be bilingual without a mismatched fallback.
+
+**The mono voice is for data, not decoration.** `.mono-label` (uppercase, tracked, subtle) goes
+on things that are *read as instruments*: spec keys, section indices, field labels, tile
+categories. `.mono-data` (tabular figures) goes on the figures themselves. Both are banned as
+a generic kicker above every heading — see Bans.
+
+Everything numeric carries `font-variant-numeric: tabular-nums` at the base layer. Figures
+line up in columns or they are not data.
 
 ### Scale
 
-Fluid `clamp()`, ratio ≥ 1.25.
+Fluid `clamp()`, ratio ≥ 1.25, unchanged from the previous system.
 
 | Token | Range | Line height |
 | --- | --- | --- |
 | `--text-display-1` | `clamp(2.5rem, 6.2vw, 5rem)` | 1.02 |
 | `--text-display-2` | `clamp(1.95rem, 4.2vw, 3.25rem)` | 1.06 |
 | `--text-display-3` | `clamp(1.45rem, 2.4vw, 2.1rem)` | 1.15 |
-| Body | `1rem` / `1.0625rem` in prose | 1.65 / 1.75 |
+| Body | `1rem` / `1.0625rem` in prose | 1.65 / 1.7 |
 
-Display max is 5rem, under the 6rem ceiling. Letter-spacing floor is `-0.035em`. `h1–h3` use
-`text-wrap: balance`; prose uses `text-wrap: pretty`. Measure is capped at `68ch`.
+Letter-spacing is `-0.025em` on headings, `-0.03em` on `h1`. `h1–h3` use `text-wrap: balance`;
+prose uses `text-wrap: pretty`. Measure is capped at `68ch`.
 
 ## Layout
 
 - `.shell` — 78rem max, fluid `clamp(1.15rem, 4vw, 2.5rem)` inline padding.
 - `.shell-wide` — 92rem, for listing grids and the property detail two-column layout.
-- `.band` — `clamp(2.75rem, 5.5vw, 5rem)` block padding. `.band-tight` for closers. The
-  earlier 6.5rem ceiling left short sections floating in dead space, which read as unfinished
-  rather than airy.
-- Rhythm is varied on purpose: tight groupings inside a section, generous separation between.
+- `.band` — `clamp(2.75rem, 5.5vw, 5rem)` block padding. `.band-tight` for closers.
+- **Band rhythm is by depth, not by alternating tints.** Sections sit on `bg` and are
+  separated by hairline seams, `.beam-rule` and `.techgrid` texture; the ones that need to
+  recede drop to `surface-deep`. Cards are `surface`, so a card band must never itself be
+  `surface` — the card would vanish into it.
 - Cards are used where they are genuinely the right affordance (property, project and blog
-  listings) and avoided elsewhere. Trust points are a **ruled list**, investment options are a
-  **ruled row list**, locations are an **asymmetric grid** with one large tile. No nested cards.
+  listings) and avoided elsewhere. Trust points are a ruled list, investment options a ruled
+  row list, locations an asymmetric grid with one large tile. No nested cards.
 - Breakpoint-free grids: `repeat(auto-fit, minmax(280px, 1fr))` and `sm:grid-cols-2
   lg:grid-cols-3`.
 - Radii: `--radius-card` 1.25rem, `--radius-panel` 1.5rem, buttons 0.7rem.
 - Z-index is a named scale — `--z-sticky`, `--z-bottom-bar`, `--z-drawer-backdrop`,
   `--z-drawer`, `--z-modal`. No bare numbers.
 
-## Components
+## The effect vocabulary
 
-| Component | Notes |
+Everything here is CSS the browser already ships. No animation library, no WebGL, no canvas.
+
+| Class | What it is |
 | --- | --- |
-| `Header` | White, hairline border, shadow appears only after scroll. Bilingual wordmark. |
-| `PropertyCard` | 4:3 image, verified + status pills, **title-first** hierarchy, spec row, price line, dual CTA pinned with `mt-auto` so a row of cards bottom-aligns. Carries `data-*` for client-side filtering. Price is deliberately *not* the lead: with no published prices, price-first made "Price on request" the loudest thing on 74 cards. |
-| `ProjectCard` | 16:10 image, possession status pill, four-fact `<dl>`. |
-| `LocationCard` | Full-bleed photo with gradient scrim; `feature` variant doubles the size and adds type chips. |
-| `SearchBar` | Plain `GET` form to `/properties`; works with JavaScript disabled. |
-| `PropertyFilters` | One instance only — moved into a `<dialog>` on mobile and back on close. |
-| `AIPropertyAssistant` | Bottom sheet on mobile, centred dialog above `sm`. Labelled a demo. |
-| `EmiCalculator` | Server-rendered first, live on input, CSS-only composition bar. |
-| `WhatsAppButton` | Seven variants; the only place a WhatsApp CTA is expressed. |
-| `MobileActionBar` | Fixed WhatsApp / Call / Enquire, `md:hidden`, with a spacer so it never covers the footer. |
-| `HeroImage` | Art direction via `<picture>` — a panorama on desktop, a tower on phones. |
-| `Img` | Wraps `astro:assets`, resolves alt text and credits from the image registry. |
+| `.glass` | Translucent `surface` + `backdrop-filter: blur(20px) saturate(1.4)` + inner top highlight. Header, hero search panel, mobile bar, dialogs. Behind `@supports`, with an opaque fallback. |
+| `.aurora` | Three large radial blooms in azure and indigo at 10–16% alpha, drifting on a 44s alternating keyframe. The page's ambient light. Used twice: the hero and the closing fold. |
+| `.techgrid` | 64px hairline grid at 4.5% white, radially masked so it never reaches an edge. A grid that runs to the bleed reads as wallpaper; one that fades reads as an instrument. Two bands only. |
+| `.hud-frame` | Two corner brackets in azure instead of a full border. Frames the leverage fold. |
+| `.beam-rule` | A 1px rule bright in the middle and gone at both ends. Seams and the hero horizon. |
+| `.mono-label` / `.mono-data` | The instrument voice on data. |
+| `.ticker` / `.ticker-track` | A seamless marquee: two identical copies, translated exactly `-50%`. The second copy is `aria-hidden`, and every figure in it appears as real text elsewhere. |
+| `.glow-text` | A soft azure text-shadow. The hero eyebrow only. Not gradient text — that ban stands. |
 
 ## Motion
 
-CSS only, no library.
+CSS only, no library. The discipline from the previous system is unchanged and is the part
+most likely to be broken by a careless addition.
 
 - `--ease-out-quint` `cubic-bezier(0.23, 1, 0.32, 1)` and `--ease-out-quart`
   `cubic-bezier(0.25, 1, 0.5, 1)`. No bounce, no elastic.
-- **One orchestrated entrance** on arrival, on the hero only: tagline, headline, subhead,
-  search panel, CTA row, staggered 80ms apart, with the photograph settling from `scale(1.05)`
-  over 1.6s. Nothing else animates on page load.
+- **One orchestrated entrance** on arrival, on the hero only: eyebrow, headline, subhead,
+  horizon rule, search panel and CTA row staggered 80ms apart, with the photograph settling
+  from `scale(1.05)` over 1.6s.
 - **Scroll-driven reveals, rationed.** `animation-timeline: view()` — no JavaScript, no
-  library, no observer. Fade-and-rise on every section is the tell we avoid; these attach only
-  to moments that earn one:
-  - `.bar-grow` — the leverage bars. The signature moment: the argument drawing itself.
-  - `.reveal-stagger` — siblings in one grid or ruled list, offset so the group reads as a
-    group. Capped at six steps.
-  - `.reveal-rows` — comparison-table rows wiping in left to right.
-  - `.read-progress` — a 2px clay hairline under the header, driven by `scroll(root block)`.
+  observer. `.bar-grow` (the leverage bars, the signature moment), `.reveal-stagger` (capped
+  at six steps), `.reveal-rows` (comparison-table rows), `.read-progress`.
 - **The bar track must not be `overflow: hidden`.** An `overflow` value makes the element a
   scroll container, which is what `view()` resolves against, and the timeline goes inert.
-- Hover: card image scales 1.035 over 700ms, border darkens, clay underline wipes in on nav
-  links, arrows nudge 4px. `.card` responds to `:focus-within` as well as `:hover`, so keyboard
-  users get the same affordance. The button press is a 60ms transition — a 250ms press reads
-  as lag on release.
+- **Ambient motion is slow enough not to be caught.** The aurora drifts 3% over 44s; the
+  ticker takes 46s for one pass and pauses on hover. Anything faster becomes a distraction on
+  a page people read for minutes.
+- Hover: card image scales 1.035 over 700ms, a diagonal light sweeps the photograph, the
+  border lifts to azure with a glow, arrows nudge 4px, nav links wipe an azure underline.
+  `.card` responds to `:focus-within` as well as `:hover`. The button press is 60ms — a 250ms
+  press reads as lag on release.
 - Disclosures animate open via `::details-content` + `interpolate-size: allow-keywords`,
   behind `@supports`; where unsupported they simply snap.
 - Every keyframe and every reveal rule is declared **inside**
@@ -173,16 +190,23 @@ CSS only, no library.
   renderer that does not run animations — no rule applies and the content is simply visible at
   full opacity, bars at their natural width. The reveal enhances a working default; nothing is
   ever gated on an animation that may not run. **Verify this on every change** by emulating
-  `prefers-reduced-motion: reduce` and confirming nothing is stuck invisible.
+  `prefers-reduced-motion: reduce` and confirming nothing is stuck invisible. The one rule
+  that needs an explicit `reduce` override is `.ticker-track`, because the blanket
+  duration-collapse would otherwise park it on its second copy.
 - A `@media print` block disables all animation and transition.
 
 ## Imagery
 
-Photography is the local credibility. 37 of 42 images are real photographs of Hyderabad and
-Telangana from Wikimedia Commons — the Financial District skyline, Kokapet lake, Tellapur
-towers under construction, the Outer Ring Road at night, Telangana farmland — each credited
-with author and licence on `/credits`. The remaining five are stock interiors and modern
-villas, used to illustrate a type rather than a specific property.
+Photography is both the local credibility and, on this palette, the page's light. Real
+photographs of Hyderabad and Telangana from Wikimedia Commons — the Financial District skyline,
+Kokapet lake, Tellapur towers under construction, the Outer Ring Road at night, Telangana
+farmland — each credited with author and licence on `/credits`, alongside developer-published
+project imagery.
+
+The hero photograph carries `contrast(1.12) saturate(1.08)` so it holds up against the ground
+rather than sinking into it, under a two-part scrim: a vertical fade for legibility at any
+crop, and (desktop only) a horizontal panel behind the type. On phones the horizontal panel is
+dropped — at that width it would cover the whole photograph.
 
 Alt text is written as description in the brand voice ("Kokapet Lake with new residential
 towers on the far bank"), never as a label.
@@ -192,8 +216,16 @@ All images run through `astro:assets`: WebP, responsive `srcset`, explicit dimen
 
 ## Bans
 
-Enforced across the codebase: no gradient text, no side-stripe borders, no decorative
-glassmorphism, no identical icon-card grids, no hero-metric template, no tiny uppercase
-tracked eyebrow above every section, no `01/02/03` scaffolding except the one genuine
-sequence (the seven-step investment process), no cream or beige body background, no fabricated
-ratings or reviews.
+Enforced across the codebase: no gradient text, no side-stripe borders, no identical icon-card
+grids, no hero-metric template, no `01/02/03` scaffolding except the genuine sequences (the
+six-step process, the seven-step investment process), no fabricated ratings or reviews, no
+white text on the accent, no second accent colour, no light-mode variant.
+
+Two bans from the previous system changed rather than vanished:
+
+- **Glassmorphism** was banned outright as decoration. It is now a named component with two
+  jobs — chrome that floats over content, and dialogs — and is banned everywhere else. Glass
+  on a static panel is still decoration.
+- **The tiny uppercase tracked eyebrow above every section** is still banned. `.mono-label`
+  exists for *data* — spec keys, field labels, section indices, tile categories. A mono label
+  used as a kicker above a heading is the banned thing wearing a different font.

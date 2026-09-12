@@ -1,0 +1,215 @@
+---
+/**
+ * The growth-corridor radar. A schematic, not a map: every locality we cover is
+ * plotted in the compass sector its `zone` actually names, so the picture is
+ * directionally true and says something real — the stock is overwhelmingly west.
+ * It is not to scale and does not claim to be; nothing here is a coordinate.
+ *
+ * The SVG is decorative (aria-hidden). Every name and number in it also appears
+ * as text in the legend beside it, which is what assistive tech and a reader
+ * with images off actually get.
+ */
+import { getAllLocations, getFeaturedLocations } from '../data/locations';
+import { url } from '../utils/url';
+
+const all = getAllLocations();
+const featured = getFeaturedLocations().slice(0, 6);
+const featuredSlugs = new Set(featured.map((l) => l.slug));
+
+type Zone = (typeof all)[number]['zone'];
+
+/** Compass bearing per zone, in SVG degrees (0 = east, 90 = south). */
+const BEARING: Record<Zone, number> = {
+  North: 270,
+  East: 0,
+  South: 90,
+  West: 180,
+  Central: 0,
+};
+
+const CX = 300;
+const CY = 300;
+const RINGS = [110, 170, 228];
+
+const byZone = new Map<Zone, typeof all>();
+for (const l of all) {
+  byZone.set(l.zone, [...(byZone.get(l.zone) ?? []), l]);
+}
+
+const nodes = [...byZone.entries()].flatMap(([zone, group]) =>
+  group.map((l, i) => {
+    const spread = Math.min(76 / Math.max(group.length, 1), 15);
+    const angle = BEARING[zone] + (i - (group.length - 1) / 2) * spread;
+    const radius = zone === 'Central' ? 52 + (i % 2) * 26 : RINGS[i % RINGS.length]!;
+    const rad = (angle * Math.PI) / 180;
+    return {
+      slug: l.slug,
+      name: l.name,
+      zone,
+      featured: featuredSlugs.has(l.slug),
+      x: CX + Math.cos(rad) * radius,
+      y: CY + Math.sin(rad) * radius,
+    };
+  })
+);
+
+/** Node index in the legend, so a dot on the radar maps to a name beside it. */
+const legendIndex = new Map(featured.map((l, i) => [l.slug, i + 1]));
+
+const zoneCounts = (['West', 'Central', 'South', 'North', 'East'] as Zone[])
+  .map((z) => ({ zone: z, count: byZone.get(z)?.length ?? 0 }))
+  .filter((z) => z.count > 0);
+---
+
+<div class="hud-frame grid gap-6 rounded-panel border border-line bg-surface-deep p-5 sm:p-7 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+  <div class="relative">
+    <svg
+      viewBox="0 0 600 600"
+      class="radar w-full"
+      role="presentation"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <radialGradient id="radar-core" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="var(--color-beam)" stop-opacity="0.28"></stop>
+          <stop offset="100%" stop-color="var(--color-beam)" stop-opacity="0"></stop>
+        </radialGradient>
+      </defs>
+
+      <circle cx={CX} cy={CY} r="250" fill="url(#radar-core)"></circle>
+
+      {
+        RINGS.map((r) => (
+          <circle
+            cx={CX}
+            cy={CY}
+            r={r}
+            fill="none"
+            stroke="var(--color-line-strong)"
+            stroke-width="1"
+            opacity="0.45"
+          />
+        ))
+      }
+
+      <!-- Crosshair and the 45° ticks: an instrument reticle, not decoration. -->
+      <line x1={CX} y1="50" x2={CX} y2="550" stroke="var(--color-line)" stroke-width="1"></line>
+      <line x1="50" y1={CY} x2="550" y2={CY} stroke="var(--color-line)" stroke-width="1"></line>
+      {
+        [45, 135, 225, 315].map((a) => {
+          const rad = (a * Math.PI) / 180;
+          return (
+            <line
+              x1={CX + Math.cos(rad) * 236}
+              y1={CY + Math.sin(rad) * 236}
+              x2={CX + Math.cos(rad) * 252}
+              y2={CY + Math.sin(rad) * 252}
+              stroke="var(--color-line-strong)"
+              stroke-width="1"
+            />
+          );
+        })
+      }
+
+      <!-- Every locality: a dim node in its own sector. -->
+      {
+        nodes
+          .filter((n) => !n.featured)
+          .map((n) => (
+            <circle cx={n.x} cy={n.y} r="3.5" fill="var(--color-ink-subtle)" opacity="0.55" />
+          ))
+      }
+
+      <!-- The six with area guides: lit, ringed, numbered against the legend. -->
+      {
+        nodes
+          .filter((n) => n.featured)
+          .map((n) => (
+            <g class="radar-node">
+              <circle cx={n.x} cy={n.y} r="15" fill="var(--color-beam)" opacity="0.14" />
+              <circle
+                cx={n.x}
+                cy={n.y}
+                r="8"
+                fill="none"
+                stroke="var(--color-beam)"
+                stroke-width="1.25"
+              />
+              <circle cx={n.x} cy={n.y} r="3.5" fill="var(--color-beam)" />
+              <text
+                x={n.x + 14}
+                y={n.y - 11}
+                fill="var(--color-beam-ink)"
+                font-family="var(--font-mono)"
+                font-size="13"
+                letter-spacing="0.06em"
+              >
+                {String(legendIndex.get(n.slug)).padStart(2, '0')}
+              </text>
+            </g>
+          ))
+      }
+
+      <circle cx={CX} cy={CY} r="4" fill="var(--color-ink)"></circle>
+
+      {
+        [
+          { t: 'N', x: CX, y: 44, anchor: 'middle' },
+          { t: 'S', x: CX, y: 566, anchor: 'middle' },
+          { t: 'E', x: 566, y: CY + 5, anchor: 'end' },
+          { t: 'W', x: 34, y: CY + 5, anchor: 'start' },
+        ].map((m) => (
+          <text
+            x={m.x}
+            y={m.y}
+            text-anchor={m.anchor}
+            fill="var(--color-ink-subtle)"
+            font-family="var(--font-mono)"
+            font-size="14"
+            letter-spacing="0.14em"
+          >
+            {m.t}
+          </text>
+        ))
+      }
+    </svg>
+  </div>
+
+  <div>
+    <p class="mono-label text-beam-ink">Coverage by sector</p>
+    <dl class="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-3 lg:grid-cols-2">
+      {
+        zoneCounts.map((z) => (
+          <div class="flex items-baseline justify-between gap-3 border-b border-line pb-1.5">
+            <dt class="text-[0.9rem] text-ink-muted">{z.zone}</dt>
+            <dd class="mono-data text-ink">{String(z.count).padStart(2, '0')}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p class="mono-label mt-7 text-beam-ink">Area guides</p>
+    <ol class="mt-3 space-y-1.5">
+      {
+        featured.map((l, i) => (
+          <li>
+            <a
+              href={url(`/locations/${l.slug}`)}
+              class="group flex items-baseline gap-3 rounded-lg px-1.5 py-1 transition-colors hover:bg-surface"
+            >
+              <span class="mono-data text-beam-ink">{String(i + 1).padStart(2, '0')}</span>
+              <span class="font-medium text-ink group-hover:text-beam-ink">{l.name}</span>
+              <span class="ml-auto text-[0.82rem] text-ink-subtle">{l.zone}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="mt-6 text-[0.82rem] leading-relaxed text-ink-subtle">
+      Schematic. Each locality sits in the compass sector it belongs to, not at a surveyed
+      position — direction is accurate, distance is not.
+    </p>
+  </div>
+</div>

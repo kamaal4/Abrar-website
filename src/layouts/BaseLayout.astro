@@ -66,7 +66,7 @@ const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
 /** Preloaded and linked from one place so the two can never drift apart. */
 const fontHref =
-  'https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300..800&family=Anek+Telugu:wght@500;700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap';
+  'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500&family=Anek+Telugu:wght@500;700&display=swap';
 ---
 
 <!doctype html>
@@ -78,7 +78,7 @@ const fontHref =
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#0a0c11" />
 
     <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
     <link rel="alternate icon" href={url('/favicon.ico')} sizes="any" />
@@ -119,12 +119,12 @@ const fontHref =
   <body class={bodyClass}>
     <a
       href="#main"
-      class="ui sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+      class="ui sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-beam focus:px-4 focus:py-2 focus:text-on-beam"
       >Skip to content</a
     >
     <Header />
     <div
-      class="read-progress sticky top-16 z-[--z-sticky] h-0.5 origin-left scale-x-0 bg-clay lg:top-20"
+      class="read-progress sticky top-16 z-[--z-sticky] h-0.5 origin-left scale-x-0 bg-beam shadow-[0_0_12px_var(--color-beam)] lg:top-20"
       aria-hidden="true"
     >
     </div>

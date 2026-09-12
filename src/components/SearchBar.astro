@@ -22,7 +22,7 @@ const onHero = variant === 'hero';
   action={url('/properties')}
   class:list={[
     'rounded-panel border p-3 sm:p-4',
-    onHero ? 'border-white/25 bg-bg shadow-panel' : 'border-line bg-bg',
+    onHero ? 'glass border-line shadow-panel' : 'border-line bg-surface',
   ]}
 >
   <fieldset class="flex flex-wrap gap-1.5">
@@ -37,7 +37,7 @@ const onHero = variant === 'hero';
             checked={value === listing}
             class="peer sr-only"
           />
-          <span class="block rounded-lg border border-line-strong px-3.5 py-1.5 text-[0.86rem] font-semibold capitalize transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-clay-ink hover:bg-surface">
+          <span class="block rounded-lg border border-line-strong px-3.5 py-1.5 text-[0.86rem] font-semibold capitalize transition-colors peer-checked:border-beam peer-checked:bg-beam peer-checked:text-on-beam peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-beam-ink hover:bg-surface">
             {value}
           </span>
         </label>

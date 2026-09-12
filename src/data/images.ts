@@ -18,6 +18,21 @@ export type ImageCredit = {
 const files = import.meta.glob<{ default: ImageMetadata }>('../assets/*.webp', { eager: true });
 
 const credits = {
+  /* Generated imagery, not photographs. Registered with that stated plainly so
+     the credits page carries it — the site says elsewhere that some images are
+     impressions rather than photographs, and these are the same kind of claim. */
+  'hyd-dusk-skyline-render': {
+    alt: 'A dense financial-district skyline at dusk, towers lit, an elevated metro line and traffic below',
+    author: 'Generated with Google Stitch',
+    license: 'AI-generated illustration — not a photograph',
+    sourceName: 'Google Stitch',
+  },
+  'hyd-dusk-tower-render': {
+    alt: 'A tall residential tower at dusk with lit balconies, landscaped podium and palms',
+    author: 'Generated with Google Stitch',
+    license: 'AI-generated illustration — not a photograph',
+    sourceName: 'Google Stitch',
+  },
   'hyd-financial-district-panorama': {
     alt: 'Financial District towers along the Hyderabad skyline at dusk',
     author: 'iMahesh',

@@ -76,7 +76,7 @@ const process = [
   title="Invest in Hyderabad real estate"
   description="How to approach property investment in Hyderabad — what the city genuinely offers, the options available at each horizon, and a process for deciding."
 >
-  <section class="relative isolate overflow-hidden bg-ink">
+  <section class="relative isolate overflow-hidden bg-surface-deep">
     <Img
       image="orr-night"
       widths={[900, 1280, 1440]}
@@ -85,14 +85,14 @@ const process = [
       fetchpriority="high"
       class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.6]"
     />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/92 via-ink/60 to-ink/70" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-bg/92 via-bg/60 to-bg/70" aria-hidden="true"></div>
 
     <div class="shell py-10 sm:py-16 lg:py-24">
       <Breadcrumbs tone="dark" items={[{ label: 'Invest' }]} />
-      <h1 class="mt-4 max-w-3xl text-display-1 text-white">
+      <h1 class="mt-4 max-w-3xl text-display-1 text-ink">
         Invest in Hyderabad real estate with confidence
       </h1>
-      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.15rem]">
+      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-ink/85 sm:text-[1.15rem]">
         Confidence here means understanding what you are buying and what could go wrong with it — not
         being handed a return projection. Below is how we actually work through an investment
         decision with people.
@@ -136,7 +136,7 @@ const process = [
     </div>
   </section>
 
-  <section class="band border-t border-line bg-surface" id="options">
+  <section class="band border-t border-line bg-surface-deep" id="options">
     <div class="shell">
       <SectionHead
         title="Investment options"
@@ -149,7 +149,7 @@ const process = [
             <div class="grid gap-3 bg-bg p-5 sm:grid-cols-[1fr_2fr_auto] sm:items-center sm:gap-6">
               <div>
                 <h3 class="ui flex items-center gap-2 text-[1.08rem] font-bold">
-                  <Icon name={o.icon} size={19} class="shrink-0 text-clay-ink" />
+                  <Icon name={o.icon} size={19} class="shrink-0 text-beam-ink" />
                   {o.title}
                 </h3>
                 <p class="ui mt-1 text-[0.82rem] text-ink-subtle">Typical horizon · {o.horizon}</p>
@@ -178,7 +178,7 @@ const process = [
         {
           process.map((step, i) => (
             <li class="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-line py-5">
-              <span class="ui text-[1.4rem] font-bold leading-none tracking-[-0.03em] text-clay-ink">
+              <span class="ui text-[1.4rem] font-bold leading-none tracking-[-0.03em] text-beam-ink">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
@@ -192,7 +192,7 @@ const process = [
     </div>
   </section>
 
-  <section class="band border-t border-line bg-surface">
+  <section class="band border-t border-line bg-surface-deep">
     <div class="shell">
       <SectionHead
         title="Investment listings"
@@ -206,10 +206,10 @@ const process = [
     </div>
   </section>
 
-  <section class="bg-clay-deep text-white">
+  <section class="techgrid relative isolate overflow-hidden bg-surface text-ink">
     <div class="shell band-tight text-center">
-      <h2 class="text-display-2 text-white">Talk to a property consultant</h2>
-      <p class="mx-auto measure mt-4 text-[1.02rem] leading-relaxed text-white/90">
+      <h2 class="text-display-2 text-ink">Talk to a property consultant</h2>
+      <p class="mx-auto measure mt-4 text-[1.02rem] leading-relaxed text-ink/90">
         Tell us your budget, your horizon and whether you are borrowing. We will tell you which of the
         options above your situation actually points to.
       </p>

@@ -42,7 +42,7 @@ const bhkChoices = [1, 2, 3, 4];
               checked={i === 0}
               class="peer sr-only"
             />
-            <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-clay-ink hover:bg-surface">
+            <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-beam peer-checked:bg-beam peer-checked:text-on-beam peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-beam-ink hover:bg-surface">
               {o.label}
             </span>
           </label>
@@ -64,7 +64,7 @@ const bhkChoices = [1, 2, 3, 4];
     <div class="flex flex-wrap gap-1.5">
       <label class="ui cursor-pointer">
         <input type="radio" name="bhk" value="" checked class="peer sr-only" />
-        <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white hover:bg-surface"
+        <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-beam peer-checked:bg-beam peer-checked:text-on-beam hover:bg-surface"
           >Any</span
         >
       </label>
@@ -72,7 +72,7 @@ const bhkChoices = [1, 2, 3, 4];
         bhkChoices.map((n) => (
           <label class="ui cursor-pointer">
             <input type="radio" name="bhk" value={String(n)} class="peer sr-only" />
-            <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white hover:bg-surface">
+            <span class="block rounded-lg border border-line-strong px-3 py-1.5 text-[0.85rem] font-semibold transition-colors peer-checked:border-beam peer-checked:bg-beam peer-checked:text-on-beam hover:bg-surface">
               {n} BHK
             </span>
           </label>
@@ -110,7 +110,7 @@ const bhkChoices = [1, 2, 3, 4];
               type="checkbox"
               name="status"
               value={value}
-              class="h-4 w-4 shrink-0 accent-[oklch(0.54_0.105_78)]"
+              class="h-4 w-4 shrink-0 accent-beam"
             />
             {label}
           </label>

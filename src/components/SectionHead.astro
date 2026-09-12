@@ -11,6 +11,10 @@ type Props = {
   as?: 'h1' | 'h2';
   align?: 'start' | 'between';
   tone?: 'light' | 'dark';
+  /** Two-digit section number. Renders the instrument-panel eyebrow above the title. */
+  index?: string;
+  /** Label beside the index. Defaults to the title, upper-cased by the stylesheet. */
+  eyebrow?: string;
 };
 
 const {
@@ -21,6 +25,8 @@ const {
   as = 'h2',
   align = 'between',
   tone = 'light',
+  index,
+  eyebrow,
 } = Astro.props as Props;
 const Tag = as;
 ---
@@ -32,10 +38,19 @@ const Tag = as;
   ]}
 >
   <div class="max-w-2xl">
+    {
+      index && (
+        <p class="mono-label mb-2.5 flex items-center gap-2.5 text-beam-ink">
+          <span>{index}</span>
+          <span class="h-px w-6 bg-beam/50" aria-hidden="true" />
+          <span class="text-ink-subtle">{eyebrow ?? title}</span>
+        </p>
+      )
+    }
     <Tag
       class:list={[
         'text-display-3',
-        tone === 'dark' ? 'text-white' : '',
+        tone === 'dark' ? 'text-ink' : '',
       ]}
     >
       {title}
@@ -45,7 +60,7 @@ const Tag = as;
         <p
           class:list={[
             'measure mt-2.5 text-[1.02rem] leading-relaxed',
-            tone === 'dark' ? 'text-white/85' : 'text-ink-muted',
+            tone === 'dark' ? 'text-ink/85' : 'text-ink-muted',
           ]}
         >
           {intro}
@@ -57,7 +72,7 @@ const Tag = as;
     linkHref && (
       <a
         href={url(linkHref)}
-        class:list={['link-arrow shrink-0', tone === 'dark' ? 'text-clay-light' : '']}
+        class:list={['link-arrow shrink-0', tone === 'dark' ? 'text-beam-ink' : '']}
       >
         {linkLabel}
         <Icon name="arrow-right" size={16} />

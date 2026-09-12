@@ -42,7 +42,7 @@ const whatsappHref = getWhatsAppLink(
 
 <dialog
   id="assistant"
-  class="m-0 mt-auto w-full max-w-none rounded-t-[1.5rem] bg-bg p-0 text-ink sm:m-auto sm:w-[min(34rem,92vw)] sm:rounded-panel"
+  class="glass m-0 mt-auto w-full max-w-none rounded-t-[1.5rem] p-0 text-ink sm:m-auto sm:w-[min(34rem,92vw)] sm:rounded-panel"
   style="z-index: var(--z-modal)"
   aria-labelledby="assistant-title"
 >
@@ -118,7 +118,7 @@ const whatsappHref = getWhatsAppLink(
       el.className =
         from === 'bot'
           ? 'max-w-[85%] rounded-2xl rounded-tl-md border border-line bg-surface px-3.5 py-2.5 text-[0.92rem] leading-relaxed'
-          : 'max-w-[85%] rounded-2xl rounded-tr-md bg-ink px-3.5 py-2.5 text-[0.92rem] font-medium text-white';
+          : 'max-w-[85%] rounded-2xl rounded-tr-md bg-beam px-3.5 py-2.5 text-[0.92rem] font-medium text-on-beam';
       if (from === 'user') el.style.fontFamily = 'var(--font-display)';
       el.textContent = text;
       row.appendChild(el);
@@ -171,7 +171,7 @@ const whatsappHref = getWhatsAppLink(
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className =
-          'ui rounded-lg border border-line-strong px-3 py-1.5 text-[0.88rem] font-semibold transition-colors hover:border-ink hover:bg-surface';
+          'ui rounded-lg border border-line-strong px-3 py-1.5 text-[0.88rem] font-semibold transition-colors hover:border-beam hover:bg-surface';
         btn.textContent = option.label;
         btn.addEventListener('click', () => choose(step.key, option));
         optionsBar.appendChild(btn);

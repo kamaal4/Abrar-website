@@ -55,7 +55,7 @@ const jsonLd = {
     <header class="border-b border-line bg-surface">
       <div class="shell py-8 sm:py-10">
         <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }, { label: post.data.title }]} />
-        <p class="ui mt-4 text-[0.85rem] font-semibold text-clay-ink">{post.data.category}</p>
+        <p class="ui mt-4 text-[0.85rem] font-semibold text-beam-ink">{post.data.category}</p>
         <h1 class="mt-2 max-w-3xl text-display-2">{post.data.title}</h1>
         <p class="measure mt-4 text-[1.05rem] leading-relaxed text-ink-muted">
           {post.data.description}
@@ -124,7 +124,7 @@ const jsonLd = {
 
   {
     related.length > 0 && (
-      <section class="band-tight border-t border-line bg-surface">
+      <section class="band-tight border-t border-line bg-surface-deep">
         <div class="shell">
           <SectionHead title="Related reading" linkHref="/blog" linkLabel="All articles" />
           <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -139,9 +139,9 @@ const jsonLd = {
                   />
                 </span>
                 <span class="flex flex-1 flex-col p-4">
-                  <span class="ui text-[0.78rem] font-semibold text-clay-ink">{p.data.category}</span>
+                  <span class="ui text-[0.78rem] font-semibold text-beam-ink">{p.data.category}</span>
                   <span
-                    class="mt-1.5 text-[1rem] font-bold leading-snug group-hover:text-clay-ink"
+                    class="mt-1.5 text-[1rem] font-bold leading-snug group-hover:text-beam-ink"
                     style="font-family: var(--font-display)"
                   >
                     {p.data.title}

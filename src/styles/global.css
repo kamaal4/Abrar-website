@@ -1,54 +1,64 @@
 @import 'tailwindcss';
 
 /* ---------------------------------------------------------------------------
-   InvestForAssets — design tokens. "Deccan clay."
+   InvestForAssets — design tokens. "Instrument."
 
-   A near-white ground with a whisper of the brand's own hue, deep warm ink, and
-   a saturated terracotta that carries roughly a third of the page. Colour
-   strategy is COMMITTED, not restrained: clay appears on buttons, rules, links,
-   pills, headings and one drenched fold, because a greyscale page with a single
-   timid accent is invisible.
+   A cool near-black ground, photography as the only light source, and one
+   electric azure that carries every interactive surface. The page is dark not
+   for fashion but because the product is photographs of buildings at dusk: on
+   black they glow, on white they are stamps on a page.
 
-   The ground is deliberately L 0.99 with chroma tilted toward the clay hue (40)
-   rather than toward generic warmth (60-80). The band at L 0.84-0.97 with warm
-   yellow chroma reads as cream / sand / parchment — the saturated default of the
-   moment — and this palette stays out of it. Do not lower the ground's lightness
-   or rotate its hue toward yellow.
+   Two rules protect the ground:
 
-   Every text/background pair below is measured, WCAG 2.1 AA:
-     ink        on bg          18.45:1
-     ink-muted  on bg           7.92:1  (body prose)
-     ink-subtle on bg           5.15:1  (meta, placeholders)
-     ink        on surface     17.18:1
-     clay-ink   on bg           7.11:1
-     white      on clay         4.84:1  (primary button: clay surface, WHITE label)
-     white      on clay-deep    9.31:1  (the drenched fold)
-     clay-light on ink          7.33:1  (accent on dark grounds)
-     ink        on clay         3.81:1  <- LARGE TEXT ONLY. Never body copy.
+   - It is not warm. Chroma tilts to hue 255 (blue), never toward 40-80. A warm
+     near-black reads as sepia and drags the whole page toward "cosy", which is
+     the opposite of the brief.
+   - It is not pure #000. Pure black kills the elevation system — a lifted panel
+     needs somewhere to be lifted from, and a well needs somewhere to sink to.
+
+   Elevation on dark is LIGHT, not shadow. Panels carry a 1px inner top highlight
+   so they catch light from above; a black drop shadow on a black ground is
+   invisible and only costs paint time.
+
+   Every text/background pair below is measured, WCAG 2.1 AA — see
+   the table in DESIGN.md. Measured on this palette: ink 15.3:1 on bg, ink-muted
+   8.9:1, ink-subtle 6.2:1, beam 10.9:1, and on-beam 10.9:1 against beam — all
+   clear of AA. Do not adjust a lightness without re-measuring.
 --------------------------------------------------------------------------- */
 @theme {
-  --color-bg: oklch(0.99 0.003 40);
-  --color-surface: oklch(0.966 0.009 40);
-  /* The elevation layer: inset panels sit *in* the page instead of being outlined on it. */
-  --color-surface-deep: oklch(0.94 0.014 40);
-  --color-ink: oklch(0.175 0.012 40);
-  --color-ink-deep: oklch(0.115 0.01 40);
-  --color-ink-muted: oklch(0.43 0.014 40);
-  --color-ink-subtle: oklch(0.53 0.014 40);
-  --color-line: oklch(0.895 0.008 40);
-  --color-line-strong: oklch(0.81 0.012 40);
+  /* Grounds. surface is LIFTED above bg; surface-deep is a WELL below it. */
+  --color-bg: oklch(0.149 0.022 260);
+  --color-surface: oklch(0.186 0.034 258);
+  --color-surface-deep: oklch(0.104 0.018 260);
+  /* The one ground darker than a well: gallery frames, image letterboxing. */
+  --color-ink-deep: oklch(0.082 0.014 260);
 
-  /* Unlike the brass gold this replaces, clay takes a white label at 4.84:1 —
-     which is what lets the accent carry a third of the page, not a tenth. */
-  --color-clay: oklch(0.56 0.15 34);
-  --color-clay-ink: oklch(0.47 0.145 34);
-  --color-clay-deep: oklch(0.405 0.13 34);
-  /* For accent type over ink and over the hero scrim, where clay itself is too dark. */
-  --color-clay-light: oklch(0.72 0.13 45);
-  --color-clay-wash: oklch(0.955 0.022 40);
+  /* Foreground. `ink` means foreground, not black — it is near-white here. */
+  --color-ink: oklch(0.914 0.019 263);
+  --color-ink-muted: oklch(0.756 0.018 240);
+  --color-ink-subtle: oklch(0.654 0.018 225);
 
-  --font-display: 'Anek Latin', 'Helvetica Neue', Arial, sans-serif;
-  --font-body: 'Literata', Georgia, 'Times New Roman', serif;
+  /* Hairlines are alpha, not solid: they have to read over photographs, glass
+     and both grounds without a variant for each. */
+  --color-line: oklch(1 0 0 / 0.11);
+  --color-line-strong: oklch(1 0 0 / 0.24);
+
+  /* The accent. Cold instrument azure — maximum separation from the warm
+     amber-and-concrete palette of the property photography it sits beside. */
+  --color-beam: oklch(0.8 0.146 221);
+  --color-beam-ink: oklch(0.865 0.13 215);
+  --color-beam-deep: oklch(0.62 0.16 228);
+  --color-beam-wash: oklch(0.8 0.15 220 / 0.12);
+
+  /* Anything sitting ON the accent takes this, never #fff: white on azure is
+     2.1:1 and unreadable. Dark-on-bright is the only way this accent works. */
+  --color-on-beam: oklch(0.149 0.022 260);
+
+  --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  /* The only Anek family retained: it is what lets the wordmark be bilingual
+     without a mismatched Telugu fallback. */
   --font-telugu: 'Anek Telugu', 'Noto Sans Telugu', sans-serif;
 
   --text-display-1: clamp(2.5rem, 6.2vw, 5rem);
@@ -64,8 +74,9 @@
   --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
-  --shadow-lift: 0 1px 2px oklch(0 0 0 / 0.04), 0 12px 28px -18px oklch(0 0 0 / 0.22);
-  --shadow-panel: 0 1px 2px oklch(0 0 0 / 0.03), 0 24px 48px -32px oklch(0 0 0 / 0.28);
+  --shadow-lift: 0 0 0 1px oklch(1 0 0 / 0.06), 0 24px 60px -30px oklch(0 0 0 / 0.9);
+  --shadow-panel: 0 0 0 1px oklch(1 0 0 / 0.08), 0 40px 90px -40px oklch(0 0 0 / 1);
+  --shadow-glow: 0 0 0 1px oklch(0.8 0.15 220 / 0.35), 0 18px 60px -24px oklch(0.8 0.15 220 / 0.45);
 }
 
 /* Semantic stacking order. No bare numbers anywhere in the codebase. */
@@ -76,6 +87,10 @@
   --z-drawer: 45;
   --z-modal: 50;
   --measure: 68ch;
+
+  /* Without this the native furniture stays light and betrays the theme
+     instantly: scrollbars, <select> popups, date pickers, autofill. */
+  color-scheme: dark;
 }
 
 @layer base {
@@ -105,49 +120,60 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
     text-wrap: balance;
     color: var(--color-ink);
   }
 
   h1 {
-    letter-spacing: -0.035em;
+    letter-spacing: -0.03em;
   }
 
   p {
     text-wrap: pretty;
   }
 
-  /* Buttons, nav, numbers and labels take the display face; prose stays serif. */
+  /* Buttons, nav and labels take the display face. */
   button,
   input,
   select,
   textarea,
   label,
-  nav,
+  nav {
+    font-family: var(--font-display);
+  }
+
+  /* Figures line up in columns or they are not data. */
+  table,
+  th,
+  td,
+  dd {
+    font-variant-numeric: tabular-nums;
+  }
+
   th {
     font-family: var(--font-display);
   }
 
   ::placeholder {
-    /* 5.5:1 — deliberately darker than the usual light-gray placeholder. */
     color: var(--color-ink-subtle);
     opacity: 1;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-clay-ink);
+    outline: 2px solid var(--color-beam);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   ::selection {
-    background: var(--color-clay);
-    color: #fff;
+    background: var(--color-beam);
+    color: var(--color-on-beam);
   }
 
   dialog::backdrop {
-    background: oklch(0.16 0 0 / 0.55);
+    background: oklch(0.06 0.01 255 / 0.72);
+    backdrop-filter: blur(6px);
   }
 
   img {
@@ -189,8 +215,26 @@
 
   .eyebrow-rule {
     /* A single ruled line, not a tracked-out all-caps kicker. */
-    border-top: 1px solid var(--color-ink);
+    border-top: 1px solid var(--color-line-strong);
     padding-top: 0.75rem;
+  }
+
+  /* The mono voice: instrument labels on DATA — spec keys, prices, section
+     indices, table headers. Not a kicker above every heading; that ban stands. */
+  .mono-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-subtle);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .mono-data {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
   }
 
   /* Buttons ------------------------------------------------------------- */
@@ -211,6 +255,7 @@
     transition:
       background-color 0.25s var(--ease-out-quart),
       border-color 0.25s var(--ease-out-quart),
+      box-shadow 0.3s var(--ease-out-quart),
       color 0.25s var(--ease-out-quart),
       transform 0.25s var(--ease-out-quart);
   }
@@ -222,22 +267,24 @@
   }
 
   .btn-primary {
-    background: var(--color-clay);
-    color: #fff;
+    background: var(--color-beam);
+    color: var(--color-on-beam);
   }
 
   .btn-primary:hover {
-    background: var(--color-clay-deep);
-    color: #fff;
+    background: var(--color-beam-ink);
+    color: var(--color-on-beam);
+    box-shadow: var(--shadow-glow);
   }
 
   .btn-solid {
     background: var(--color-ink);
-    color: #fff;
+    color: var(--color-bg);
   }
 
   .btn-solid:hover {
-    background: var(--color-clay-deep);
+    background: var(--color-beam);
+    color: var(--color-on-beam);
   }
 
   .btn-outline {
@@ -247,8 +294,8 @@
   }
 
   .btn-outline:hover {
-    border-color: var(--color-ink);
-    background: var(--color-surface);
+    border-color: var(--color-beam);
+    background: var(--color-beam-wash);
   }
 
   .btn-ghost {
@@ -258,27 +305,30 @@
   }
 
   .btn-ghost:hover {
-    color: var(--color-clay-ink);
+    color: var(--color-beam-ink);
   }
 
+  /* ponytail: on an all-dark site these are near-duplicates of primary/outline.
+     Kept as aliases so 14 markup sites do not need editing; collapse them on the
+     next pass through those pages. */
   .btn-on-dark {
-    background: #fff;
-    color: var(--color-ink);
+    background: var(--color-beam);
+    color: var(--color-on-beam);
   }
 
   .btn-on-dark:hover {
-    background: var(--color-clay);
-    color: #fff;
+    background: var(--color-beam-ink);
+    box-shadow: var(--shadow-glow);
   }
 
   .btn-outline-on-dark {
-    border-color: color-mix(in oklch, #fff 55%, transparent);
-    color: #fff;
+    border-color: var(--color-line-strong);
+    color: var(--color-ink);
   }
 
   .btn-outline-on-dark:hover {
-    background: color-mix(in oklch, #fff 14%, transparent);
-    border-color: #fff;
+    background: var(--color-beam-wash);
+    border-color: var(--color-beam);
   }
 
   .btn-sm {
@@ -299,7 +349,8 @@
     bottom: -3px;
     height: 2px;
     width: 100%;
-    background: var(--color-clay);
+    background: var(--color-beam);
+    box-shadow: 0 0 12px var(--color-beam);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s var(--ease-out-quint);
@@ -316,7 +367,7 @@
     gap: 0.45rem;
     font-family: var(--font-display);
     font-weight: 600;
-    color: var(--color-clay-ink);
+    color: var(--color-beam-ink);
   }
 
   .link-arrow svg {
@@ -329,10 +380,14 @@
 
   /* Cards --------------------------------------------------------------- */
   .card {
-    background: var(--color-bg);
+    position: relative;
+    background: var(--color-surface);
     border: 1px solid var(--color-line);
     border-radius: var(--radius-card);
     overflow: hidden;
+    /* Elevation on dark is light: a 1px highlight along the top edge, as if lit
+       from above. A black drop shadow on a black ground is invisible. */
+    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.07);
     transition:
       border-color 0.3s var(--ease-out-quart),
       box-shadow 0.35s var(--ease-out-quart);
@@ -340,13 +395,14 @@
 
   .card:hover,
   .card:focus-within {
-    border-color: var(--color-line-strong);
-    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in oklch, var(--color-beam) 45%, transparent);
+    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.09), var(--shadow-glow);
   }
 
   .card-media {
+    position: relative;
     overflow: hidden;
-    background: var(--color-surface);
+    background: var(--color-surface-deep);
   }
 
   .card-media img {
@@ -373,8 +429,8 @@
   }
 
   .pill-verified {
-    background: var(--color-clay);
-    color: #fff;
+    background: var(--color-beam);
+    color: var(--color-on-beam);
   }
 
   .pill-quiet {
@@ -384,41 +440,237 @@
   }
 
   .pill-dark {
-    background: color-mix(in oklch, var(--color-ink) 88%, transparent);
-    color: #fff;
+    /* Sits over photography, so it carries its own ground rather than relying
+       on whatever is behind it. */
+    background: oklch(0.105 0.01 255 / 0.78);
+    color: var(--color-ink);
+    border: 1px solid var(--color-line);
+    backdrop-filter: blur(8px);
   }
 
   /* Forms --------------------------------------------------------------- */
   .field {
     width: 100%;
-    background: var(--color-bg);
+    /* Inputs on dark are recessed, not raised: a well you type into. */
+    background: var(--color-surface-deep);
     border: 1px solid var(--color-line-strong);
     border-radius: 0.6rem;
     padding: 0.7rem 0.85rem;
     font-size: 0.95rem;
     color: var(--color-ink);
-    transition: border-color 0.2s var(--ease-out-quart);
+    transition:
+      border-color 0.2s var(--ease-out-quart),
+      box-shadow 0.25s var(--ease-out-quart);
   }
 
   .field:hover {
     border-color: var(--color-ink-subtle);
   }
 
+  .field:focus {
+    border-color: var(--color-beam);
+    box-shadow: 0 0 0 3px var(--color-beam-wash);
+  }
+
   .field-label {
     display: block;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: var(--color-ink-muted);
-    margin-bottom: 0.4rem;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-subtle);
+    margin-bottom: 0.45rem;
+  }
+
+  /* Surfaces and texture ------------------------------------------------ */
+
+  /* Glass: header, hero search panel, floating dialogs. */
+  .glass {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.08);
+  }
+
+  @supports (backdrop-filter: blur(1px)) {
+    .glass {
+      background: color-mix(in oklab, var(--color-surface) 62%, transparent);
+      backdrop-filter: blur(20px) saturate(1.4);
+    }
+  }
+
+  /* The ambient backdrop. Three slow blooms, well under the content. Set
+     `position: absolute|fixed; inset: 0` and `aria-hidden` at the call site. */
+  .aurora {
+    pointer-events: none;
+    background-image:
+      radial-gradient(60rem 40rem at 12% -10%, oklch(0.8 0.15 220 / 0.16), transparent 65%),
+      radial-gradient(48rem 34rem at 92% 8%, oklch(0.62 0.19 285 / 0.14), transparent 62%),
+      radial-gradient(52rem 40rem at 50% 108%, oklch(0.8 0.15 220 / 0.1), transparent 60%);
+  }
+
+  /* Precision grid. Masked so it never reaches an edge — a grid that runs to the
+     bleed reads as a background image; one that fades reads as an instrument. */
+  .techgrid {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .techgrid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, oklch(1 0 0 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(1 0 0 / 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(70% 60% at 50% 40%, #000 20%, transparent 100%);
+  }
+
+  /* HUD framing: four corner brackets instead of a full border. */
+  .hud-frame {
+    position: relative;
+  }
+
+  .hud-frame::before,
+  .hud-frame::after {
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    pointer-events: none;
+    border-color: var(--color-beam);
+    opacity: 0.55;
+  }
+
+  .hud-frame::before {
+    top: 0;
+    left: 0;
+    border-top: 1px solid;
+    border-left: 1px solid;
+  }
+
+  .hud-frame::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+  }
+
+  /* Instrument readout: a figure sunk into a well rather than raised on a card.
+     Numbers are tabular so a row of them keeps its columns as values change. */
+  .readout {
+    background: var(--color-surface-deep);
+    border: 1px solid var(--color-line);
+    box-shadow: inset 0 2px 10px oklch(0 0 0 / 0.45);
+  }
+
+  .readout-value {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.1;
+    color: var(--color-ink);
+  }
+
+  /* HUD timeline: one hairline track with a lit node per step. The track is the
+     ::before of the list item so it survives wrapping in a grid. */
+  .hud-step {
+    position: relative;
+    padding-top: 1.75rem;
+  }
+
+  .hud-step::before {
+    content: '';
+    position: absolute;
+    top: 0.3125rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-line-strong);
+  }
+
+  .hud-step::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.6875rem;
+    height: 0.6875rem;
+    border-radius: 9999px;
+    background: var(--color-beam);
+    box-shadow: 0 0 0 4px color-mix(in oklch, var(--color-beam) 22%, transparent);
+  }
+
+  /* The radar's sweep. Decorative only — the data is in the legend beside it. */
+  .radar {
+    overflow: visible;
+  }
+
+  .radar-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: radar-pulse 3.6s var(--ease-out-quart) infinite;
+  }
+
+  .radar-node:nth-of-type(2n) {
+    animation-delay: 1.2s;
+  }
+
+  .radar-node:nth-of-type(3n) {
+    animation-delay: 2.1s;
+  }
+
+  @keyframes radar-pulse {
+    0%,
+    72%,
+    100% {
+      opacity: 1;
+    }
+    86% {
+      opacity: 0.45;
+    }
+  }
+
+  /* The seam between bands: a rule that is bright in the middle and gone at the
+     edges, so sections are separated without being boxed. */
+  .beam-rule {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklch, var(--color-beam) 55%, transparent) 22%,
+      color-mix(in oklch, var(--color-beam) 70%, transparent) 50%,
+      color-mix(in oklch, var(--color-beam) 55%, transparent) 78%,
+      transparent
+    );
+  }
+
+  .glow-text {
+    text-shadow: 0 0 22px color-mix(in oklch, var(--color-beam) 45%, transparent);
+  }
+
+  /* Ticker: the track holds two identical copies of the list and slides exactly
+     one copy's width, so the loop has no seam. Static without the animation. */
+  .ticker {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .ticker-track {
+    display: flex;
+    width: max-content;
   }
 
   /* Prose --------------------------------------------------------------- */
   .prose-body {
     max-width: var(--measure);
     font-size: 1.0625rem;
-    line-height: 1.75;
-    color: var(--color-ink);
+    line-height: 1.7;
+    color: var(--color-ink-muted);
   }
 
   .prose-body > * + * {
@@ -454,20 +706,22 @@
   }
 
   .prose-body a {
-    color: var(--color-clay-ink);
+    color: var(--color-beam-ink);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
   .prose-body blockquote {
-    border-top: 1px solid var(--color-ink);
+    border-top: 1px solid var(--color-beam);
     border-bottom: 1px solid var(--color-line);
     padding-block: 1rem;
     font-size: 1.15rem;
+    color: var(--color-ink);
   }
 
   .prose-body strong {
     font-weight: 700;
+    color: var(--color-ink);
   }
 
   /* Scroll containers for wide content. */
@@ -531,6 +785,43 @@
   .d-3 { animation-delay: 0.26s; }
   .d-4 { animation-delay: 0.36s; }
   .d-5 { animation-delay: 0.46s; }
+
+  /* The ambient blooms drift. 44s and a 3% translate: slow enough that you never
+     catch it moving, only notice the page is not quite still. */
+  .aurora {
+    animation: drift 44s var(--ease-out-quart) infinite alternate;
+  }
+
+  /* One copy's width is exactly 50% of the doubled track. */
+  .ticker-track {
+    animation: marquee 46s linear infinite;
+  }
+
+  .ticker:hover .ticker-track {
+    animation-play-state: paused;
+  }
+
+  /* A light sweeps across card photography on hover — the camera-flash device.
+     Cheap: one transform on a pseudo-element, composited. */
+  .card-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      100deg,
+      transparent 35%,
+      oklch(1 0 0 / 0.14) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.9s var(--ease-out-quart);
+  }
+
+  .card:hover .card-media::after,
+  .card:focus-within .card-media::after {
+    transform: translateX(120%);
+  }
 
   /* Disclosures grow instead of snapping. `::details-content` needs the
      content-visibility transition to come along or the text pops in at the end. */
@@ -623,6 +914,24 @@
   }
 }
 
+@keyframes drift {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1.02);
+  }
+  to {
+    transform: translate3d(1.5%, 1%, 0) scale(1.08);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Bars grow to their own target width, declared per element as --w. */
 @keyframes bar {
   from {
@@ -665,5 +974,12 @@
 
   .card:hover .card-media img {
     transform: none;
+  }
+
+  /* The blanket rule above would run the marquee to completion instantly and
+     leave the track parked on its second copy. Pin it back to the first. */
+  .ticker-track {
+    animation: none !important;
+    transform: none !important;
   }
 }

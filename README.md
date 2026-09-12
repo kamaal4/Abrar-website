@@ -1,4 +1,4 @@
-# Invest In Real Estate Hyderabad
+# InvestForAssets
 
 A static marketing and listings site for a Hyderabad real-estate consultancy. Built with
 Astro, TypeScript and Tailwind CSS. No backend, no database, no CMS — it builds to plain
@@ -35,8 +35,8 @@ Everything contact- and brand-related lives in **`src/config/site.ts`**.
 
 ```ts
 export const siteConfig = {
-  name: 'Invest In Real Estate Hyderabad',
-  tagline: 'Find. Invest. Grow.',
+  name: 'InvestForAssets',
+  tagline: 'Your Property. Your Asset. Your Future.',
   whatsapp: '918247378529',   // digits only, with country code
   phone: '+91 82473 78529',   // shown next to Call buttons; empty hides them
   email: '',                  // empty shows "not published yet" on /contact
@@ -96,10 +96,12 @@ rather than rendering a broken `mailto:`.
 | Social share image | `public/og-default.jpg` (1200×630) |
 | Navigation | `primaryNav` and `footerNav` in `src/config/site.ts` |
 
-Colours are OKLCH and were checked against WCAG 2.1 AA; the measured ratios are recorded
-in a comment at the top of `global.css`. If you change them, re-check contrast —
-particularly `--color-gold`, which is a **surface** colour. Gold text uses
-`--color-gold-ink`.
+Colours are OKLCH and were measured against WCAG 2.1 AA; the ratios are recorded in a
+comment at the top of `global.css` and in `DESIGN.md`. If you change them, re-measure —
+particularly `--color-beam`, which is a **surface** colour whose label is
+`--color-on-beam`. Accent *text* uses `--color-beam-ink`. Nothing white ever sits on the
+accent. **Read `DESIGN.md` before touching colour, type or motion**: it records decisions
+(the dark ground, the single accent, the rationed motion) that are easy to undo by accident.
 
 ---
 
@@ -287,9 +289,9 @@ On mobile the single filter form is moved into a `<dialog>` and back, so there i
 duplicated form to keep in sync.
 
 **Property assistant** (`src/scripts/assistant-flow.ts`) — a scripted state machine,
-labelled in the UI as a demo. It matches against the same sample data as the rest of the
-site. To make it real, replace `getNextStep()` with a call to an API returning the same
-shape; the UI does not need to change.
+labelled in the UI as a demo. It matches against the same data as the rest of the site. To
+make it real, replace `getNextStep()` with a call to an API returning the same shape; the
+UI does not need to change.
 
 **EMI calculator** (`src/utils/emi.ts`) — a pure function, unit tested, shared by
 `/emi-calculator` and the widget on every listing page. Server-rendered first so the numbers
@@ -299,22 +301,20 @@ Favourites use `localStorage` inside `try`/`catch`, so blocked storage cannot br
 
 ---
 
-## Replacing the sample data with a backend
+## Replacing the data layer with a backend
 
-The listings currently shipped are illustrative sample content, and the site says so — in
-the footer, on `/about`, on `/terms`, and on every listing card.
+The listings shipped here are real published stock; what the developer does not publish —
+prices, chiefly — the site says is on request rather than inventing a figure. The site-wide
+disclosure lives in `siteConfig.disclosure` and renders in the footer.
 
-When real inventory arrives, the seam is the accessor functions. Pages only ever call
-`getAllProperties()`, `getPropertyBySlug()`, `getFeaturedProperties()` and friends, so a
-data source change means rewriting those function bodies to fetch, and nothing else.
+When inventory moves to a system rather than a file, the seam is the accessor functions.
+Pages only ever call `getAllProperties()`, `getPropertyBySlug()`, `getFeaturedProperties()`
+and friends, so a data source change means rewriting those function bodies to fetch, and
+nothing else.
 
 For a static build, fetch at build time inside `getStaticPaths` and the page frontmatter —
 the site stays fully static and keeps deploying to Pages. If you later need runtime data,
 switch Astro to a hybrid or server output and swap the same accessors for runtime fetches.
-
-Then remove the sample-data notices: `SAMPLE_DATA_NOTICE` in `properties.ts`,
-`PROJECT_DATA_NOTICE` in `projects.ts`, `LOCATION_DATA_NOTICE` in `locations.ts`, and the
-disclaimer paragraph at the bottom of `src/components/Footer.astro`.
 
 ---
 

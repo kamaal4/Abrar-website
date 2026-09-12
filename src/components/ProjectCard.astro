@@ -25,7 +25,7 @@ const href = url(`/projects/${project.slug}`);
   <div class="flex flex-1 flex-col p-4">
     <div class="flex items-start justify-between gap-3">
       <h3 class="text-[1.1rem] font-bold leading-snug">
-        <a href={href} class="hover:text-clay-ink">{project.name}</a>
+        <a href={href} class="hover:text-beam-ink">{project.name}</a>
       </h3>
       <span class="pill pill-quiet shrink-0">{statusLabels[project.status]}</span>
     </div>
@@ -42,27 +42,27 @@ const href = url(`/projects/${project.slug}`);
       {
         project.startingPrice === undefined ? (
           <div>
-            <dt class="text-ink-subtle">Locality</dt>
-            <dd class="font-semibold text-ink">{project.locality ?? locationName}</dd>
+            <dt class="mono-label">Locality</dt>
+            <dd class="mt-1 font-semibold text-ink">{project.locality ?? locationName}</dd>
           </div>
         ) : (
           <div>
-            <dt class="text-ink-subtle">Starting at</dt>
-            <dd class="font-bold text-clay-ink">{formatPriceOrAsk(project.startingPrice)}</dd>
+            <dt class="mono-label">Starting at</dt>
+            <dd class="mono-data mt-1 font-bold text-beam-ink">{formatPriceOrAsk(project.startingPrice)}</dd>
           </div>
         )
       }
       <div>
-        <dt class="text-ink-subtle">Configurations</dt>
-        <dd class="font-semibold text-ink">{project.configurations.join(', ')}</dd>
+        <dt class="mono-label">Configurations</dt>
+        <dd class="mt-1 font-semibold text-ink">{project.configurations.join(', ')}</dd>
       </div>
       <div>
-        <dt class="text-ink-subtle">Possession</dt>
-        <dd class="font-semibold text-ink">{project.possession}</dd>
+        <dt class="mono-label">Possession</dt>
+        <dd class="mt-1 font-semibold text-ink">{project.possession}</dd>
       </div>
       <div>
-        <dt class="text-ink-subtle">Scale</dt>
-        <dd class="font-semibold text-ink">{project.units}</dd>
+        <dt class="mono-label">Scale</dt>
+        <dd class="mt-1 font-semibold text-ink">{project.units}</dd>
       </div>
     </dl>
 

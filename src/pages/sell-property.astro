@@ -50,7 +50,7 @@ const howItWorks = [
   title="Sell your property in Hyderabad"
   description="Want to sell a flat, villa, plot or land in Hyderabad? Send us the details on WhatsApp and we will come back with a realistic view of the market."
 >
-  <section class="relative isolate overflow-hidden bg-ink">
+  <section class="relative isolate overflow-hidden bg-surface-deep">
     <Img
       image="manikonda-sprawl"
       widths={[900, 1280, 1440]}
@@ -59,12 +59,12 @@ const howItWorks = [
       fetchpriority="high"
       class="absolute inset-0 -z-10 h-full w-full object-cover opacity-[0.55]"
     />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/92 via-ink/65 to-ink/70" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-bg/92 via-bg/65 to-bg/70" aria-hidden="true"></div>
 
     <div class="shell py-10 sm:py-16 lg:py-20">
       <Breadcrumbs tone="dark" items={[{ label: 'Sell Property' }]} />
-      <h1 class="mt-4 max-w-3xl text-display-1 text-white">Want to sell your property?</h1>
-      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-white/85 sm:text-[1.15rem]">
+      <h1 class="mt-4 max-w-3xl text-display-1 text-ink">Want to sell your property?</h1>
+      <p class="measure mt-5 text-[1.08rem] leading-relaxed text-ink/85 sm:text-[1.15rem]">
         Connect with buyers across Hyderabad. Send us the details on WhatsApp and we will come back
         with what comparable properties are actually transacting at — including when that is below
         what you were hoping for.
@@ -88,7 +88,7 @@ const howItWorks = [
             {
               canHelpWith.map((item) => (
                 <li class="flex items-center gap-2.5 bg-bg p-4 text-[0.96rem] font-semibold">
-                  <Icon name={item.icon} size={18} class="shrink-0 text-clay-ink" />
+                  <Icon name={item.icon} size={18} class="shrink-0 text-beam-ink" />
                   {item.label}
                 </li>
               ))
@@ -100,7 +100,7 @@ const howItWorks = [
             {
               howItWorks.map((step, i) => (
                 <li class="grid grid-cols-[2.25rem_1fr] gap-4 border-t border-line py-5">
-                  <span class="ui text-[1.3rem] font-bold leading-none tracking-[-0.03em] text-clay-ink">
+                  <span class="ui text-[1.3rem] font-bold leading-none tracking-[-0.03em] text-beam-ink">
                     {i + 1}
                   </span>
                   <div>
@@ -124,7 +124,7 @@ const howItWorks = [
               {
                 whatToSend.map((item) => (
                   <li class="flex gap-2.5 text-[0.92rem] leading-relaxed">
-                    <Icon name="check" size={16} class="mt-1 shrink-0 text-clay-ink" />
+                    <Icon name="check" size={16} class="mt-1 shrink-0 text-beam-ink" />
                     {item}
                   </li>
                 ))

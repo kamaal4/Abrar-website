@@ -69,19 +69,19 @@ const quickAsks = [
             <div
               class:list={[
                 'flex flex-col rounded-panel border p-6',
-                c.primary ? 'border-clay bg-clay-wash' : 'border-line',
+                c.primary ? 'border-beam bg-beam-wash' : 'border-line',
               ]}
             >
               <span
                 class:list={[
                   'inline-flex h-11 w-11 items-center justify-center rounded-xl',
-                  c.primary ? 'bg-clay text-ink' : 'bg-surface text-ink',
+                  c.primary ? 'bg-beam text-ink' : 'bg-surface text-ink',
                 ]}
               >
                 <Icon name={c.icon} size={22} />
               </span>
               <h2 class="mt-4 text-[1.25rem]">{c.title}</h2>
-              <p class="ui mt-1 text-[0.85rem] font-semibold text-clay-ink">{c.line}</p>
+              <p class="ui mt-1 text-[0.85rem] font-semibold text-beam-ink">{c.line}</p>
               <p class="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-muted">{c.copy}</p>
               <a
                 href={c.href}
@@ -111,10 +111,10 @@ const quickAsks = [
                     href={getWhatsAppLink(q.message)}
                     target="_blank"
                     rel="noopener"
-                    class="ui flex items-center justify-between gap-3 rounded-xl border border-line px-4 py-3.5 text-[0.98rem] font-semibold transition-colors hover:border-ink hover:bg-surface"
+                    class="ui flex items-center justify-between gap-3 rounded-xl border border-line px-4 py-3.5 text-[0.98rem] font-semibold transition-colors hover:border-beam hover:bg-surface"
                   >
                     {q.label}
-                    <Icon name="whatsapp" size={18} class="shrink-0 text-clay-ink" />
+                    <Icon name="whatsapp" size={18} class="shrink-0 text-beam-ink" />
                   </a>
                 </li>
               ))
@@ -133,7 +133,7 @@ const quickAsks = [
                     Phone
                   </dt>
                   <dd class="font-bold">
-                    <a href={tel ?? '#'} class="hover:text-clay-ink">{siteConfig.phone}</a>
+                    <a href={tel ?? '#'} class="hover:text-beam-ink">{siteConfig.phone}</a>
                   </dd>
                 </div>
               )
@@ -146,7 +146,7 @@ const quickAsks = [
               <dd class:list={[siteConfig.email ? 'font-bold' : 'text-[0.9rem] text-ink-subtle']}>
                 {
                   siteConfig.email ? (
-                    <a href={`mailto:${siteConfig.email}`} class="hover:text-clay-ink">
+                    <a href={`mailto:${siteConfig.email}`} class="hover:text-beam-ink">
                       {siteConfig.email}
                     </a>
                   ) : (

@@ -33,16 +33,16 @@ const href = url(`/locations/${location.slug}`);
   <div
     class:list={[
       'absolute inset-0 -z-10 bg-gradient-to-t',
-      feature ? 'from-ink/90 via-ink/52 to-ink/12' : 'from-ink/94 via-ink/70 to-ink/32',
+      feature ? 'from-bg/90 via-bg/52 to-bg/12' : 'from-bg/94 via-bg/70 to-bg/32',
     ]}
     aria-hidden="true"
   >
   </div>
 
-  <div class="p-4 text-white sm:p-5">
+  <div class="p-4 text-ink sm:p-5">
     <h3
       class:list={[
-        'font-bold tracking-[-0.03em] text-white',
+        'font-bold tracking-[-0.03em] text-ink',
         feature ? 'text-[1.9rem] sm:text-[2.4rem]' : 'text-[1.3rem]',
       ]}
     >
@@ -50,19 +50,19 @@ const href = url(`/locations/${location.slug}`);
     </h3>
     <p
       class:list={[
-        'mt-1 text-white/85',
+        'mt-1 text-ink/85',
         feature ? 'max-w-md text-[0.98rem]' : 'text-[0.86rem] line-clamp-2',
       ]}
     >
       {location.tagline}
     </p>
 
-    <div class="ui mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.82rem] text-white/90">
+    <div class="ui mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.82rem] text-ink/90">
       <span>{count} {count === 1 ? 'listing' : 'listings'}</span>
       {
         location.startingPrice !== undefined && (
           <>
-            <span class="text-white/70" aria-hidden="true">·</span>
+            <span class="text-ink/70" aria-hidden="true">·</span>
             <span>from {formatPrice(location.startingPrice)}</span>
           </>
         )
@@ -73,7 +73,7 @@ const href = url(`/locations/${location.slug}`);
       feature && (
         <ul class="ui mt-3 flex flex-wrap gap-1.5">
           {location.popularTypes.slice(0, 4).map((t) => (
-            <li class="rounded-md border border-white/30 px-2 py-0.5 text-[0.75rem] font-semibold">
+            <li class="rounded-md border border-line-strong/30 px-2 py-0.5 text-[0.75rem] font-semibold">
               {propertyTypeLabels[t]}
             </li>
           ))}
@@ -81,7 +81,7 @@ const href = url(`/locations/${location.slug}`);
       )
     }
 
-    <span class="ui mt-4 inline-flex items-center gap-1.5 text-[0.86rem] font-semibold text-clay-light">
+    <span class="ui mt-4 inline-flex items-center gap-1.5 text-[0.86rem] font-semibold text-beam-ink">
       Explore Location
       <Icon name="arrow-right" size={15} class="transition-transform duration-300 group-hover:translate-x-1" />
     </span>
