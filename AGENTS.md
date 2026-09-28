@@ -21,7 +21,7 @@ Node ≥ 22.12. CI (`.github/workflows/deploy.yml`) runs test → check → buil
 
 Static Astro + TypeScript + Tailwind v4. No backend, no CMS, no runtime data — it builds to plain HTML.
 
-- **Data is code.** All inventory lives in typed arrays in `src/data/` (`properties.ts`, `projects.ts`, `locations.ts`, `images.ts`). Pages never touch the arrays — they call accessor functions (`getAllProperties()`, `getPropertyBySlug()`, …). Those accessors are the seam where a real backend would land. Cross-references are typed, so a bad `location` slug or unknown image key fails the build.
+- **Data is code.** All inventory lives in typed arrays in `src/data/` (`properties.ts`, `projects.ts`, `locations.ts`, `images.ts`). Pages never touch the arrays — they call accessor functions (`getAllProperties()`, `getPropertyBySlug()`, …). Those accessors are the seam where a real backend would land. Image keys are typed (`ImageKey`), so an unknown key fails `npm run check`. `location` is a plain string, though: a typo builds fine and shows up as a raw slug label. `src/data/data.test.ts` is the only thing that catches it, so run `npm test` after editing data.
 - **`src/config/site.ts` is the single source of truth** for brand, contact, social and navigation. Empty values are handled gracefully (no email → `/contact` says so; no phone → Call buttons disappear).
 - **Every WhatsApp link** comes from `getWhatsAppLink()` in `src/utils/whatsapp.ts` — the conversion goal is a WhatsApp enquiry. Never hardcode a `wa.me` URL.
 - **Every internal link** goes through `url()` in `src/utils/url.ts`, which applies the base path. `SITE_URL` and `BASE_PATH` env vars (read in `astro.config.mjs`) are the only deployment config — a project Pages URL and a custom domain both work unchanged.
@@ -35,7 +35,7 @@ Only three things use client-side JS (`src/scripts/`): property filters (all car
 
 `DESIGN.md` documents the intent behind the tokens in the `@theme` block of `src/styles/global.css`; `PRODUCT.md` holds the audience and positioning. Read both before changing colour, type or copy — they encode decisions (the dark "Instrument" ground, the single azure `beam` accent, no invented ratings or review counts) that are easy to undo by accident. Three rules the comment at the top of `global.css` spells out: the ground is cool (hue 255, never warm) and never pure black; elevation is light (a 1px top highlight), not shadow; anything sitting on `beam` takes `--color-on-beam`, never white.
 
-Colours are OKLCH and measured to WCAG AA, ratios recorded in `DESIGN.md` — re-check by hand if you change a lightness (the `scripts/contrast-audit` the CSS comment cites does not exist in the repo).
+Colours are OKLCH and measured to WCAG AA, ratios recorded in `DESIGN.md` — there's no audit script, so if you change a lightness, re-measure it by hand and update the table.
 
 `@layer components` in `global.css` is a real class vocabulary — `.shell`, `.band`, `.card`, `.btn-*`, `.mono-label`, `.glass`, `.link-wipe`. Reuse it; a new one-off component style is nearly always a duplicate of something already there.
 
