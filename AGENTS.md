@@ -15,7 +15,7 @@ npm run check      # astro check — TS + template diagnostics
 node --test src/utils/emi.test.ts   # a single test file
 ```
 
-Node ≥ 22.12. CI (`.github/workflows/deploy.yml`) runs test → check → build → GitHub Pages on every push to `main`.
+Node ≥ 22.12. Deploys to Cloudflare Workers (Git-connected; builds automatically on push to `main`). Local: `npm run build` → `dist/`, then `wrangler deploy`.
 
 ## Architecture
 
@@ -33,7 +33,7 @@ Only three things use client-side JS (`src/scripts/`): property filters (all car
 
 ## Design
 
-`DESIGN.md` documents the intent behind the tokens in the `@theme` block of `src/styles/global.css`; `PRODUCT.md` holds the audience and positioning. Read both before changing colour, type or copy — they encode decisions (the dark "Instrument" ground, the single azure `beam` accent, no invented ratings or review counts) that are easy to undo by accident. Three rules the comment at the top of `global.css` spells out: the ground is cool (hue 255, never warm) and never pure black; elevation is light (a 1px top highlight), not shadow; anything sitting on `beam` takes `--color-on-beam`, never white.
+`DESIGN.md` documents the intent behind the tokens in the `@theme` block of `src/styles/global.css`; `PRODUCT.md` holds the audience and positioning. Read both before changing colour, type or copy — they encode decisions (the dark "Instrument" ground, the single azure `beam` accent, no invented ratings or review counts) that are easy to undo by accident. Three rules the comment at the top of `global.css` spells out: the ground is cool (hue 260, never warm) and never pure black; elevation is light (a 1px top highlight), not shadow; anything sitting on `beam` takes `--color-on-beam`, never white.
 
 Colours are OKLCH and measured to WCAG AA, ratios recorded in `DESIGN.md` — there's no audit script, so if you change a lightness, re-measure it by hand and update the table.
 
