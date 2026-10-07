@@ -51,6 +51,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
             <span class="card-media block aspect-[16/9] lg:aspect-auto lg:h-full">
               <Img
                 image={asImageKey(lead.data.heroImage)}
+                alt={lead.data.title}
                 widths={[640, 900, 1280]}
                 sizes="(min-width: 1024px) 44rem, 92vw"
                 loading="eager"
@@ -87,6 +88,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
               <span class="card-media block aspect-[16/9]">
                 <Img
                   image={asImageKey(post.data.heroImage)}
+                  alt={post.data.title}
                   widths={[400, 640, 800]}
                   sizes="(min-width: 1024px) 24rem, 92vw"
                   class="h-full w-full object-cover"

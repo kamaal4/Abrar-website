@@ -1,7 +1,7 @@
-// AUTO-COMPOSED image registry. Every file in src/assets/ is registered here with the
-// alt text and attribution it must be shown with. Components never import assets directly;
-// they take an ImageKey and call getImage(), so swapping the whole image set later is a
-// change to this file alone.
+// Image registry. Components never import assets directly; they take an ImageKey and call
+// getImage(). The original images are registered below with the alt text and attribution they
+// must be shown with. Photos uploaded through /admin need no entry: callers pass the listing's
+// title as the alt fallback, and they never appear on /credits.
 import type { ImageMetadata } from 'astro';
 
 export type ImageCredit = {
@@ -15,7 +15,7 @@ export type ImageCredit = {
   sourceName: string;
 };
 
-const files = import.meta.glob<{ default: ImageMetadata }>('../assets/*.webp', { eager: true });
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/**/*.{webp,png,jpg,jpeg}', { eager: true });
 
 const credits = {
   /* Generated imagery, not photographs. Registered with that stated plainly so
@@ -1171,29 +1171,32 @@ const credits = {
   },
 } as const satisfies Record<string, ImageCredit>;
 
-export type ImageKey = keyof typeof credits;
+/**
+ * An image reference: a legacy bare key (`aasheen-1`, meaning src/assets/aasheen-1.webp)
+ * or the path the /admin editor stores (`/src/assets/aasheen-1.webp`).
+ */
+export type ImageKey = string;
 
-export const imageKeys = Object.keys(credits) as ImageKey[];
+const registry: Record<string, ImageCredit> = credits;
 
-export function getImage(key: ImageKey): { src: ImageMetadata; credit: ImageCredit } {
-  const mod = files[`../assets/${key}.webp`];
-  if (!mod) throw new Error(`Missing image asset for key "${key}" (expected src/assets/${key}.webp)`);
-  return { src: mod.default, credit: credits[key] };
+export const imageKeys = Object.keys(credits);
+
+/** `credit` is undefined for editor uploads, which aren't in the registry. */
+export function getImage(ref: ImageKey): { src: ImageMetadata; credit: ImageCredit | undefined } {
+  const rel = ref.replace(/^\/?src\/assets\//, '');
+  const file = /\.\w+$/.test(rel) ? rel : `${rel}.webp`;
+  const mod = files[`../assets/${file}`];
+  if (!mod) throw new Error(`Missing image "${ref}" (expected src/assets/${file})`);
+  return { src: mod.default, credit: registry[file.replace(/\.\w+$/, '')] };
 }
 
 /** Only the images whose licence actually requires a credit line. */
-export function attributedImages(): Array<{ key: ImageKey } & ImageCredit> {
-  const all: Array<{ key: ImageKey } & ImageCredit> = imageKeys.map((key) => ({
-    key,
-    ...(credits[key] as ImageCredit),
-  }));
-  return all.filter((c) => Boolean(c.author));
+export function attributedImages(): Array<{ key: string } & ImageCredit> {
+  return imageKeys.map((key) => ({ key, ...registry[key] })).filter((c) => Boolean(c.author));
 }
 
-/** Validates a string from frontmatter/content into an ImageKey at build time. */
+/** Fails the build on a reference to a file that isn't in src/assets/. */
 export function asImageKey(value: string): ImageKey {
-  if (!(value in credits)) {
-    throw new Error(`Unknown image key "${value}". Add the asset to src/assets/ and register it in src/data/images.ts.`);
-  }
-  return value as ImageKey;
+  getImage(value);
+  return value;
 }

@@ -55,6 +55,7 @@ const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} â
   <section class="relative isolate overflow-hidden bg-surface-deep">
     <Img
       image={project.images[0]!}
+      alt={project.name}
       widths={[900, 1280, 1440]}
       sizes="100vw"
       loading="eager"
@@ -179,6 +180,7 @@ const enquiry = `Hi, I'd like details about ${project.name} in ${locationName} â
                 {project.images.slice(1).map((key) => (
                   <Img
                     image={key}
+                    alt={project.name}
                     widths={[400, 640, 900]}
                     sizes="(min-width: 640px) 28rem, 92vw"
                     class="aspect-[16/10] w-full rounded-card object-cover"

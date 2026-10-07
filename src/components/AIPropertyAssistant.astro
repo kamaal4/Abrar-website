@@ -29,7 +29,7 @@ const payload: AssistantProperty[] = getAllProperties().map((p) => {
         ? AREA_ON_REQUEST
         : formatArea(p.area).replace('sq.ft', p.areaUnit === 'sqyd' ? 'sq.yd' : 'sq.ft'),
     image: img.src.src,
-    alt: img.credit.alt,
+    alt: img.credit?.alt ?? p.title,
     listing: [...p.listing],
     href: url(`/properties/${p.slug}`),
   };

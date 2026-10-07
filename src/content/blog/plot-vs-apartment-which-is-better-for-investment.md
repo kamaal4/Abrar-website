@@ -3,7 +3,7 @@ title: 'Plot vs Apartment: Which Is Better for Investment?'
 description: 'They are different assets with different risks, horizons and holding costs. Comparing them on appreciation alone is how people get this wrong.'
 date: 2026-08-04
 category: 'Investment'
-heroImage: 'telangana-farmland'
+heroImage: '/src/assets/telangana-farmland.webp'
 readingTime: 7
 ---
 

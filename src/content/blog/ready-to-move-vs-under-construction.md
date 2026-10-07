@@ -3,7 +3,7 @@ title: 'Ready-to-Move vs Under-Construction Property'
 description: 'One arithmetic step settles most of this decision, and it is the step most shortlists skip.'
 date: 2026-07-15
 category: 'Buying'
-heroImage: 'tellapur-towers-2'
+heroImage: '/src/assets/tellapur-towers-2.webp'
 readingTime: 6
 ---
 

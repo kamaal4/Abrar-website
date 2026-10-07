@@ -16,6 +16,7 @@ const href = url(`/projects/${project.slug}`);
   <a href={href} class="card-media block aspect-[16/10]" tabindex="-1" aria-hidden="true">
     <Img
       image={project.images[0]!}
+      alt={project.name}
       widths={[400, 640, 900]}
       sizes="(min-width: 1024px) 28rem, (min-width: 640px) 45vw, 90vw"
       class="h-full w-full object-cover"

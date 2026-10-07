@@ -4,7 +4,7 @@ import { getImage, type ImageKey } from '../data/images';
 
 type Props = {
   image: ImageKey;
-  /** Override the registry alt text when the context needs something more specific. */
+  /** Fallback when the image has no registry alt text (photos uploaded through /admin). */
   alt?: string;
   widths?: number[];
   sizes?: string;
@@ -34,7 +34,7 @@ const { src, credit } = getImage(image);
 
 <Image
   src={src}
-  alt={alt ?? credit.alt}
+  alt={credit?.alt ?? alt ?? ''}
   widths={widths}
   quality={quality}
   sizes={sizes}

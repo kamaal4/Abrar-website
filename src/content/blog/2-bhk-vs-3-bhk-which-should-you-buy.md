@@ -3,7 +3,7 @@ title: '2 BHK vs 3 BHK: Which Should You Buy?'
 description: 'The decision is rarely about the extra room. It is about resale liquidity, monthly outgo and how long you plan to stay.'
 date: 2026-08-18
 category: 'Buying'
-heroImage: 'interior-living-plants'
+heroImage: '/src/assets/interior-living-plants.webp'
 readingTime: 6
 ---
 

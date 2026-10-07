@@ -74,12 +74,14 @@ const jsonLd = {
     <figure class="shell mt-8">
       <Img
         image={heroKey}
+        alt={post.data.title}
         widths={[640, 900, 1280]}
         sizes="(min-width: 1024px) 72rem, 100vw"
         loading="eager"
         fetchpriority="high"
         class="aspect-[16/9] w-full rounded-panel object-cover"
       />
+      {heroCredit && (
       <figcaption class="mt-2.5 text-[0.8rem] text-ink-subtle">
         {heroCredit.alt}
         {
@@ -93,6 +95,7 @@ const jsonLd = {
           )
         }
       </figcaption>
+      )}
     </figure>
 
     <div class="shell py-10 lg:py-14">
@@ -133,6 +136,7 @@ const jsonLd = {
                 <span class="card-media block aspect-[16/9]">
                   <Img
                     image={asImageKey(p.data.heroImage)}
+                    alt={p.data.title}
                     widths={[400, 640]}
                     sizes="(min-width: 1024px) 24rem, 92vw"
                     class="h-full w-full object-cover"

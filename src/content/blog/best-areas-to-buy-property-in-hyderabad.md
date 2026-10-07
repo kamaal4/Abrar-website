@@ -3,7 +3,7 @@ title: 'Best Areas to Buy Property in Hyderabad'
 description: 'A practical walk through the corridors buyers actually shortlist in Hyderabad, and what each one is genuinely good at.'
 date: 2026-08-24
 category: 'Locations'
-heroImage: 'hyd-financial-district-panorama'
+heroImage: '/src/assets/hyd-financial-district-panorama.webp'
 readingTime: 7
 ---
 

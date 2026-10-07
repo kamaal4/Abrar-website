@@ -48,6 +48,7 @@ const enquiry = `Hi, I'm interested in the ${p.title} in ${locationName}. Could 
     <a href={href} class="card-media block aspect-[4/3]" tabindex="-1" aria-hidden="true">
       <Img
         image={p.images[0]!}
+        alt={p.title}
         widths={[400, 640, 800]}
         sizes="(min-width: 1024px) 24rem, (min-width: 640px) 45vw, 90vw"
         class="h-full w-full object-cover"

@@ -1,6 +1,22 @@
+import settings from './settings.json';
+
+/** Contact details and the disclosure, edited by Abrar through /admin (src/config/settings.json). */
+type Settings = {
+  /** Digits only, with country code. Used to build every wa.me link. */
+  whatsapp: string;
+  /** Displayed as-is next to the call button. Empty hides it. */
+  phone?: string;
+  email?: string;
+  instagram?: string;
+  facebook?: string;
+  /** Site-wide disclosure, shown in the footer. */
+  disclosure: string;
+};
+const contact: Settings = settings;
+
 /**
  * Single source of truth for everything contact-, brand- and navigation-related.
- * Replace the placeholder values here and the whole site follows.
+ * Brand and navigation live here in code; contact details come from settings.json.
  */
 export const siteConfig = {
   name: 'InvestForAssets',
@@ -9,31 +25,20 @@ export const siteConfig = {
   description:
     'Discover, compare and invest in residential, commercial and land assets across Hyderabad — with AI-powered property discovery and investment guidance.',
 
-  /** Digits only, with country code. Used to build every wa.me link. */
-  whatsapp: '918247378529',
-  /** Displayed as-is next to the call button. Leave empty to hide it. */
-  phone: '+91 82473 78529',
-  /** Leave empty until a business address is confirmed. */
-  email: '',
+  whatsapp: contact.whatsapp,
+  phone: contact.phone ?? '',
+  email: contact.email ?? '',
   city: 'Hyderabad',
   state: 'Telangana',
-  /** Leave empty to hide the street-address line. */
-  address: '',
 
   social: {
-    instagram: 'https://www.instagram.com/invest4assets',
-    facebook: 'https://www.facebook.com/share/1C5UFY1qM4/',
-    whatsapp: 'https://wa.me/918247378529',
+    instagram: contact.instagram ?? '',
+    facebook: contact.facebook ?? '',
+    whatsapp: `https://wa.me/${contact.whatsapp}`,
   },
 
-  /**
-   * Site-wide disclosure, shown in the footer. Real stock, but the developer
-   * publishes no prices and some gallery images are artist's renders rather
-   * than photographs — both facts belong on the page, not in a drawer.
-   */
-  disclosure:
-    'Project details, unit counts and areas are as published by the developer. Prices are shared on request. Some images are artist’s impressions, not photographs of the completed building. Verify all documents, approvals and figures independently before committing.',
-} as const;
+  disclosure: contact.disclosure,
+};
 
 export type NavItem = { label: string; href: string };
 

@@ -3,7 +3,7 @@ title: 'Things to Check Before Buying a Flat'
 description: 'A working checklist for site visits and paperwork — the specific documents, questions and physical checks that actually surface problems.'
 date: 2026-08-10
 category: 'Buying'
-heroImage: 'hyd-residential-building'
+heroImage: '/src/assets/hyd-residential-building.webp'
 readingTime: 8
 ---
 

@@ -26,6 +26,7 @@ const href = url(`/locations/${location.slug}`);
 >
   <Img
     image={location.image}
+    alt={location.name}
     widths={feature ? [640, 900, 1280] : [400, 640, 800]}
     sizes={feature ? '(min-width: 1024px) 40rem, 92vw' : '(min-width: 1024px) 20rem, 45vw'}
     class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04]"

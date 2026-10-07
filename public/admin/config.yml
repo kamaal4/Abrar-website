@@ -1,0 +1,83 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.230.0/schema/sveltia-cms.json
+# Editor for investforassets.com. Every save is a commit to main, which Cloudflare rebuilds and
+# deploys in ~1-2 minutes. A save that breaks the build leaves the previous version live.
+app_title: InvestForAssets editor
+
+backend:
+  name: github
+  repo: kamaal4/Abrar-website
+  branch: main
+  # The login handler is worker/sveltia-cms-auth.js on the same site. Absolute apex on purpose:
+  # its CSRF cookie belongs to one host, so starting on www must still log in via the apex.
+  base_url: https://investforassets.com
+  auth_endpoint: oauth/authorize
+  # Enough to write to a public repo. Switch to `repo` if the repository is ever made private.
+  auth_scope: public_repo
+  auth_methods: [oauth]
+
+# Uploads land next to the existing photos. Entries store `/src/assets/<file>`, which
+# src/data/images.ts resolves; phone photos (including HEIC) are converted to WebP.
+media_folder: /src/assets
+public_folder: /src/assets
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 80
+          width: 2000
+          height: 2000
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+# Leave empty optional fields out of the files: the site checks `price === undefined` etc.
+output:
+  omit_empty_optional_fields: true
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    folder: src/content/blog
+    extension: md
+    format: frontmatter
+    create: true
+    identifier_field: title
+    summary: '{{title}} · {{date}}'
+    sortable_fields: [date, title]
+    preview_path: /blog/{{slug}}
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Short description, widget: text, hint: 'One or two sentences. Shown in search results and on the blog list.' }
+      - { name: date, label: Date, widget: datetime, type: date, format: YYYY-MM-DD, default: '{{now}}' }
+      - name: category
+        label: Category
+        widget: select
+        options: [Buying, Investment, Locations, Guides]
+      - { name: heroImage, label: Main photo, widget: image, choose_url: false }
+      - { name: readingTime, label: Reading time (minutes), widget: number, value_type: int, min: 1, default: 5 }
+      - { name: draft, label: Draft (hidden from the site), widget: boolean, default: false, required: false }
+      - { name: body, label: Article, widget: richtext }
+
+  - name: settings
+    label: Contact details
+    files:
+      - name: contact
+        label: Contact details & footer
+        file: src/config/settings.json
+        format: json
+        fields:
+          - name: whatsapp
+            label: WhatsApp number
+            widget: string
+            hint: 'Digits only, with country code, e.g. 918247378529. Every WhatsApp button uses this.'
+            pattern: ['^\d{10,15}$', 'Digits only, with country code (e.g. 918247378529)']
+          - { name: phone, label: Phone (as shown on the site), widget: string, required: false, hint: 'Leave empty to hide the call buttons.' }
+          - { name: email, label: Email, widget: string, required: false, hint: 'Leave empty if there is no business email yet.' }
+          - { name: instagram, label: Instagram link, widget: string, required: false }
+          - { name: facebook, label: Facebook link, widget: string, required: false }
+          - { name: disclosure, label: Footer disclosure, widget: text }

@@ -3,7 +3,7 @@ title: 'Hyderabad Real Estate Investment Guide'
 description: 'How the city is structured, which corridors do what, and a process for deciding — without the return projections nobody can honestly make.'
 date: 2026-07-27
 category: 'Investment'
-heroImage: 'orr-night'
+heroImage: '/src/assets/orr-night.webp'
 readingTime: 9
 ---
 
