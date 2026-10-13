@@ -1,10 +1,11 @@
 ---
-title: '2 BHK vs 3 BHK: Which Should You Buy?'
-description: 'The decision is rarely about the extra room. It is about resale liquidity, monthly outgo and how long you plan to stay.'
+title: '2 BHK vs 3 BHK: Which Should You Buy??'
+description: The decision is rarely about the extra room. It is about resale liquidity, monthly outgo and how long you plan to stay.
 date: 2026-08-18
-category: 'Buying'
-heroImage: '/src/assets/interior-living-plants.webp'
+category: Buying
+heroImage: /src/assets/interior-living-plants.webp
 readingTime: 6
+draft: false
 ---
 
 Most people frame this as a space question: do we need the third bedroom? That is the least useful way in, because the honest answer for a couple with one child is usually "not yet, maybe later" — and that gets you nowhere.
