@@ -1,4 +1,5 @@
 {
+  "order": 8,
   "title": "3 BHK in Hashim Residency",
   "listing": [
     "buy",
@@ -74,6 +75,5 @@
       "distance": "1.5 km"
     }
   ],
-  "postedOn": "2026-09-08",
-  "order": 9
+  "postedOn": "2026-09-08"
 }

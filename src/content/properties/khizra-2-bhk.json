@@ -1,4 +1,5 @@
 {
+  "order": 10,
   "title": "2 BHK in Khizra",
   "listing": [
     "buy",
@@ -63,6 +64,5 @@
       "distance": "3.7 km"
     }
   ],
-  "postedOn": "2026-09-08",
-  "order": 11
+  "postedOn": "2026-09-08"
 }

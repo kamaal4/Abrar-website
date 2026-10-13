@@ -1,4 +1,5 @@
 {
+  "order": 29,
   "title": "Commercial space at Crown Enclave",
   "listing": [
     "buy",
@@ -29,6 +30,5 @@
     "Two 6 Passenger Standard Lift",
     "CCTV Surveillance"
   ],
-  "postedOn": "2026-09-08",
-  "order": 30
+  "postedOn": "2026-09-08"
 }
