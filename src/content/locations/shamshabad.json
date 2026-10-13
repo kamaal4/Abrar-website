@@ -1,0 +1,53 @@
+{
+  "name": "Shamshabad",
+  "zone": "South",
+  "tagline": "The airport corridor, and plotted land",
+  "image": "/src/assets/plot-layout-moinabad.webp",
+  "featured": true,
+  "about": [
+    "Shamshabad is the airport belt — Rajiv Gandhi International Airport sits here, and the expressway and Outer Ring Road both serve it. That infrastructure is the entire investment case for the area.",
+    "Unlike the western corridor, a lot of what trades here is plotted land and layouts rather than apartments. Ramanujapur and the surrounding villages are where several of those layouts sit.",
+    "It is a longer-horizon area: the roads and the airport are already built, but the residential density that would push prices is still arriving."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "plot",
+    "open-land"
+  ],
+  "configurations": [
+    "Plots",
+    "Open land"
+  ],
+  "connectivity": [
+    {
+      "label": "Rajiv Gandhi International Airport",
+      "detail": "within the same belt"
+    },
+    {
+      "label": "PV Narasimha Rao Expressway",
+      "detail": "direct link to the city centre"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "multiple interchanges nearby"
+    }
+  ],
+  "nearbyAreas": [
+    "Attapur",
+    "Rajendranagar",
+    "Kothur",
+    "Maheshwaram",
+    "Adibatla"
+  ],
+  "faq": [
+    {
+      "q": "What is the main risk with a plotted layout out here?",
+      "a": "Title and approval, in that order. Confirm the layout is approved (HMDA or the relevant authority), that the specific plot number appears on the sanctioned plan, and that the land is not assigned or under any acquisition notice."
+    },
+    {
+      "q": "How long a horizon does land here need?",
+      "a": "Longer than an apartment in the west. The infrastructure exists, but plotted land pays nothing while you hold it, so plan on years rather than months and do not borrow against a timeline you cannot control."
+    }
+  ],
+  "order": 23
+}

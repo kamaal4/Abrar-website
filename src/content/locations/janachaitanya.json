@@ -1,0 +1,31 @@
+{
+  "name": "Jana Chaitanya",
+  "zone": "West",
+  "tagline": "A residential colony on the western side",
+  "image": "/src/assets/hitec-apartment.webp",
+  "about": [
+    "Jana Chaitanya is a residential colony on the western side of the city, of the kind that filled in as the IT corridor pulled housing demand outward. It is small and almost entirely residential in character.",
+    "Development here is individual buildings rather than large projects, so expect fewer shared amenities and a shorter build timeline than a township."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [],
+  "nearbyAreas": [
+    "Manikonda",
+    "Puppalaguda",
+    "Alkapur"
+  ],
+  "faq": [
+    {
+      "q": "How do I judge a small colony like this?",
+      "a": "Walk it at two different times of day. Water supply, approach road width and how far you are from the nearest arterial road tell you more about daily life here than any brochure."
+    }
+  ],
+  "order": 22
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Kollur",
+  "zone": "West",
+  "tagline": "Large-format gated projects at the ORR edge",
+  "image": "/src/assets/tellapur-towers-2.webp",
+  "startingPrice": 6500000,
+  "about": [
+    "Kollur has drawn very large gated developments on the western ORR edge, next to Tellapur. Project scale is the defining feature — several thousand units in a single development is not unusual.",
+    "That scale brings amenities that smaller projects cannot match, and it brings the corresponding questions: how the layout handles traffic at peak hours, and how maintenance is run once handover is complete."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹65 L – ₹90 L"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹95 L – ₹1.6 Cr"
+    },
+    {
+      "label": "Villa plot",
+      "range": "₹55 L onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "plot"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK",
+    "4 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Financial District",
+      "detail": "25–35 minutes"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "access at the Kollur interchange"
+    },
+    {
+      "label": "Tellapur",
+      "detail": "about 10 minutes"
+    }
+  ],
+  "nearbyAreas": [
+    "Tellapur",
+    "Mokila",
+    "Osman Sagar",
+    "Patancheru",
+    "Nallagandla"
+  ],
+  "faq": [
+    {
+      "q": "Do very large projects hold value well?",
+      "a": "They can, but supply within the project itself becomes your competition at resale. If you buy in a several-thousand-unit development, pick a differentiated unit — a better floor, a better view, a less common configuration."
+    }
+  ],
+  "order": 12
+}

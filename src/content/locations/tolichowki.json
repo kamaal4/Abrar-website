@@ -1,0 +1,72 @@
+{
+  "name": "Tolichowki",
+  "zone": "West",
+  "tagline": "Established, dense and extremely well connected",
+  "image": "/src/assets/tolichowki-villa.webp",
+  "startingPrice": 5500000,
+  "featured": true,
+  "about": [
+    "Tolichowki sits between the old city and the western IT belt, which is a large part of its appeal. It is a mature, fully built-out neighbourhood — schools, clinics, bakeries and grocers are all within walking distance, and you are not waiting on a layout to develop around you.",
+    "Most of the stock here is apartments in mid-rise buildings, with a smaller number of independent houses and villas in pockets such as Bharani Layout. Because the area is established, resale inventory usually outnumbers new launches, and the trade-off is age of building against location.",
+    "Buyers typically look here when the daily commute matters more than a large clubhouse — Mehdipatnam, Banjara Hills and the Financial District are all reachable without leaving the arterial roads."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹55 L – ₹80 L"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹75 L – ₹1.3 Cr"
+    },
+    {
+      "label": "Independent house / villa",
+      "range": "₹1.4 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "villa"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK",
+    "4 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Mehdipatnam",
+      "detail": "roughly 10 minutes by road"
+    },
+    {
+      "label": "Financial District",
+      "detail": "25–35 minutes via the Outer Ring Road approach"
+    },
+    {
+      "label": "Rajiv Gandhi International Airport",
+      "detail": "about 45 minutes via the ORR"
+    },
+    {
+      "label": "Metro",
+      "detail": "nearest station on the Red Line at Lakdikapul"
+    }
+  ],
+  "nearbyAreas": [
+    "Langar Houz",
+    "Pasha Colony",
+    "Mehdipatnam",
+    "Shaikpet",
+    "Manikonda"
+  ],
+  "faq": [
+    {
+      "q": "Is Tolichowki better for living in or for investment?",
+      "a": "It reads more as an end-use location than a pure appreciation play. The area is already built out, so growth tends to be steady rather than sharp, and rental demand is consistently good because of how central it is."
+    },
+    {
+      "q": "What should I check before buying a resale flat here?",
+      "a": "Building age and maintenance record, the water source, parking allotment in writing, and whether the society has a functioning association. Ask for the occupancy certificate and the last two years of maintenance dues."
+    }
+  ],
+  "order": 1
+}

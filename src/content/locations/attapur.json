@@ -1,0 +1,47 @@
+{
+  "name": "Attapur",
+  "zone": "South",
+  "tagline": "On the Rajendranagar side of the Ring Road",
+  "image": "/src/assets/hyd-residential-building.webp",
+  "about": [
+    "Attapur sits south-west of Mehdipatnam on the road towards Rajendranagar and the airport corridor. It grew as an overflow from Mehdipatnam and remains well connected to it.",
+    "Stock is mostly apartments with a growing commercial layer along the main road. It draws buyers who want to be near the centre and the airport route without central-city pricing."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat",
+    "commercial"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Mehdipatnam",
+      "detail": "a short distance north-east"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "access on the Rajendranagar side"
+    },
+    {
+      "label": "Rajiv Gandhi International Airport",
+      "detail": "along the Aramghar route"
+    }
+  ],
+  "nearbyAreas": [
+    "Mehdipatnam",
+    "Rajendranagar",
+    "Hyderguda",
+    "Upperpally",
+    "Shamshabad"
+  ],
+  "faq": [
+    {
+      "q": "Is Attapur mainly an end-use or investment area?",
+      "a": "Mostly end-use, driven by the commute into the centre and along the airport corridor. Treat any appreciation case as dependent on the specific road and how the corridor develops, not on the area label."
+    }
+  ],
+  "order": 20
+}

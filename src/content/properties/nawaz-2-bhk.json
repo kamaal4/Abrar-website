@@ -1,0 +1,70 @@
+{
+  "title": "2 BHK in Nawaz",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "nawaz",
+  "areaUnit": "sqft",
+  "bhk": 2,
+  "verified": false,
+  "images": [
+    "/src/assets/nawaz-1.webp",
+    "/src/assets/nawaz-2.webp",
+    "/src/assets/nawaz-3.webp",
+    "/src/assets/nawaz-4.webp"
+  ],
+  "summary": "You can dream, create, design and build the most wonderful place in the world. 2 BHK in Sa Colony, Tolichowki, Hyderabad — 7 units, 7,500+ sq.ft built-up.",
+  "highlights": [
+    "2 BHK configuration",
+    "1 unit per floor",
+    "Possession stated as December 2025",
+    "7,500+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Religious Places",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.1 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "2.7 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 61
+}

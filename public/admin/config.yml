@@ -39,6 +39,155 @@ output:
   omit_empty_optional_fields: true
 
 collections:
+  - name: properties
+    label: Properties
+    label_singular: Property
+    description: 'One entry per unit type (e.g. "3 BHK in Aasheen"). To add another unit of an existing project, open a sibling and use Duplicate.'
+    folder: src/content/properties
+    format: json
+    identifier_field: title
+    summary: '{{title}} · {{location}}'
+    preview_path: /properties/{{slug}}
+    reorder: true
+    fields:
+      - { name: title, label: Title, widget: string, hint: 'e.g. 3 BHK in Aasheen' }
+      - name: listing
+        label: Listed for
+        widget: select
+        multiple: true
+        min: 1
+        options: [{ label: Buy, value: buy }, { label: Rent, value: rent }, { label: Invest, value: invest }]
+      - name: type
+        label: Type
+        widget: select
+        options:
+          - { label: Flat, value: flat }
+          - { label: Villa, value: villa }
+          - { label: Plot, value: plot }
+          - { label: Open land, value: open-land }
+          - { label: Farm land, value: farm-land }
+          - { label: Commercial, value: commercial }
+      - &status
+        name: status
+        label: Status
+        widget: select
+        options:
+          - { label: Ready to move, value: ready-to-move }
+          - { label: Under construction, value: under-construction }
+          - { label: New launch, value: new-launch }
+      - { name: location, label: Location, widget: relation, collection: locations, display_fields: [name], search_fields: [name] }
+      - { name: project, label: Project, widget: relation, collection: projects, display_fields: [name], search_fields: [name], required: false }
+      - { name: price, label: Price (₹), widget: number, value_type: int, min: 0, required: false, hint: 'Full rupees: 7500000 = ₹75 L. Leave empty to show "Price on request".' }
+      - { name: rent, label: Monthly rent (₹), widget: number, value_type: int, min: 0, required: false }
+      - { name: area, label: Area, widget: number, value_type: int, min: 0, required: false, hint: 'Leave empty to show "Area on request".' }
+      - { name: areaUnit, label: Area unit, widget: select, options: [{ label: sq.ft, value: sqft }, { label: sq.yd, value: sqyd }], default: sqft }
+      - { name: bhk, label: BHK, widget: number, value_type: int, min: 1, required: false }
+      - { name: bathrooms, label: Bathrooms, widget: number, value_type: int, min: 0, required: false }
+      - { name: parking, label: Parking spaces, widget: number, value_type: int, min: 0, required: false }
+      - { name: floor, label: Floor, widget: string, required: false }
+      - { name: facing, label: Facing, widget: select, required: false, options: [East, West, North, South, North-East, South-East] }
+      - { name: featured, label: Show on homepage, widget: boolean, default: false, required: false }
+      # Policy, not editable: nothing is marked verified until we inspect documents ourselves.
+      - { name: verified, widget: hidden, default: false }
+      - { name: images, label: Photos (first one is the cover), widget: image, multiple: true, min: 1, choose_url: false }
+      - { name: summary, label: Summary, widget: text }
+      - { name: highlights, label: Highlights, widget: list, min: 1, field: { name: item, label: Highlight, widget: string } }
+      - { name: amenities, label: Amenities, widget: list, required: false, field: { name: item, label: Amenity, widget: string } }
+      - &nearby
+        name: nearby
+        label: Nearby places
+        widget: list
+        required: false
+        summary: '{{label}} · {{distance}}'
+        fields:
+          - { name: label, label: Place, widget: string }
+          - { name: distance, label: Distance, widget: string, hint: 'e.g. 2 km or 5 min' }
+      - { name: postedOn, label: Posted on, widget: datetime, type: date, format: YYYY-MM-DD, default: '{{now}}' }
+
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: src/content/projects
+    format: json
+    identifier_field: name
+    summary: '{{name}} · {{location}}'
+    preview_path: /projects/{{slug}}
+    reorder: true
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: location, label: Location, widget: relation, collection: locations, display_fields: [name], search_fields: [name] }
+      - { name: locality, label: Colony / street, widget: string, required: false, hint: 'e.g. Golden Sands Colony, Tolichowki' }
+      - { name: kind, label: Kind, widget: select, required: false, options: [{ label: Residential, value: residential }, { label: Commercial, value: commercial }] }
+      - { name: category, label: Badge, widget: string, required: false, hint: "The developer's label, e.g. Premium or Budget Friendly" }
+      - *status
+      - { name: possession, label: Possession, widget: string, hint: 'e.g. December 2026' }
+      - { name: configurations, label: Configurations, widget: list, min: 1, field: { name: item, label: Configuration, widget: string, hint: 'e.g. 3 BHK' } }
+      - { name: units, label: Units, widget: string, hint: 'e.g. 28 units' }
+      - { name: landArea, label: Built-up area, widget: string, hint: 'e.g. 15,000+ sq.ft' }
+      - { name: unitsAvailable, label: Units still available, widget: number, value_type: int, min: 0, required: false }
+      - { name: unitsPerFloor, label: Units per floor, widget: number, value_type: int, min: 1, required: false }
+      - { name: startingPrice, label: Starting price (₹), widget: number, value_type: int, min: 0, required: false, hint: 'Full rupees. Leave empty to show "Price on request".' }
+      - { name: featured, label: Show on homepage, widget: boolean, default: false, required: false }
+      - { name: images, label: Photos (first one is the cover), widget: image, multiple: true, min: 1, choose_url: false }
+      - { name: summary, label: Summary, widget: text }
+      - { name: highlights, label: Highlights, widget: list, min: 1, field: { name: item, label: Highlight, widget: string } }
+      - { name: amenities, label: Amenities, widget: list, min: 1, field: { name: item, label: Amenity, widget: string } }
+      - { name: specs, label: Specification, widget: list, required: false, field: { name: item, label: Line, widget: string } }
+      - *nearby
+      - { name: sourceUrl, label: Source page, widget: string, required: false }
+
+  - name: locations
+    label: Locations
+    label_singular: Location
+    folder: src/content/locations
+    format: json
+    identifier_field: name
+    summary: '{{name}} · {{zone}}'
+    preview_path: /locations/{{slug}}
+    reorder: true
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: zone, label: Zone, widget: select, options: [West, North, South, Central, East] }
+      - { name: tagline, label: Tagline, widget: string }
+      - { name: image, label: Photo, widget: image, choose_url: false }
+      - { name: startingPrice, label: Starting price (₹), widget: number, value_type: int, min: 0, required: false, hint: 'Full rupees. Leave empty if we have not priced this area.' }
+      - { name: featured, label: Show on homepage, widget: boolean, default: false, required: false }
+      - { name: about, label: About (paragraphs), widget: list, min: 1, field: { name: paragraph, label: Paragraph, widget: text } }
+      - name: priceRanges
+        label: Price ranges
+        widget: list
+        summary: '{{label}} · {{range}}'
+        fields:
+          - { name: label, label: What, widget: string, hint: 'e.g. 2 BHK flat' }
+          - { name: range, label: Range, widget: string, hint: 'e.g. ₹55 L – ₹80 L' }
+      - name: popularTypes
+        label: Popular property types
+        widget: select
+        multiple: true
+        options:
+          - { label: Flat, value: flat }
+          - { label: Villa, value: villa }
+          - { label: Plot, value: plot }
+          - { label: Open land, value: open-land }
+          - { label: Farm land, value: farm-land }
+          - { label: Commercial, value: commercial }
+      - { name: configurations, label: Common configurations, widget: list, field: { name: item, label: Configuration, widget: string } }
+      - name: connectivity
+        label: Connectivity
+        widget: list
+        summary: '{{label}}'
+        fields:
+          - { name: label, label: To, widget: string }
+          - { name: detail, label: Detail, widget: string }
+      - { name: nearbyAreas, label: Nearby areas, widget: list, field: { name: item, label: Area, widget: string } }
+      - name: faq
+        label: FAQ
+        widget: list
+        summary: '{{q}}'
+        fields:
+          - { name: q, label: Question, widget: string }
+          - { name: a, label: Answer, widget: text }
+
   - name: blog
     label: Blog posts
     label_singular: Blog post

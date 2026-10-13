@@ -1,0 +1,88 @@
+{
+  "name": "Al Qasr",
+  "location": "tolichowki",
+  "locality": "Surya Nagar Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "under-construction",
+  "possession": "December 2027",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "28 units",
+  "landArea": "49,000+ sq.ft",
+  "unitsAvailable": 16,
+  "unitsPerFloor": 4,
+  "featured": true,
+  "images": [
+    "/src/assets/al-qasr-1.webp",
+    "/src/assets/al-qasr-2.webp",
+    "/src/assets/al-qasr-3.webp",
+    "/src/assets/al-qasr-4.webp"
+  ],
+  "summary": "A premium residential tower offering modern amenities and luxurious living spaces in a prime location. Experience the perfect blend of comfort, style, and convenience with world-class infrastructure and contemporary design.",
+  "highlights": [
+    "3 BHK configuration",
+    "16 of 28 units still available",
+    "4 units per floor",
+    "Possession stated as December 2027",
+    "49,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "GHMC Approved",
+    "Best Quality Red Brick",
+    "Teakwood Frames",
+    "Vitrified Tile Flooring",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & colleges",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "Religious places",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Restaurants & cafeteria",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Public transportation hubs",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "1.9 km"
+    }
+  ],
+  "order": 3
+}

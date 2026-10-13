@@ -1,0 +1,76 @@
+{
+  "title": "3 BHK in Pearls",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "alkapur",
+  "project": "pearls",
+  "areaUnit": "sqft",
+  "bhk": 3,
+  "verified": false,
+  "images": [
+    "/src/assets/pearls-1.webp",
+    "/src/assets/pearls-2.webp"
+  ],
+  "summary": "Pearls — 3 BHK in Diamond Hills Colony, Alkapur, Hyderabad. 13 units, 21,600+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as January 2023",
+    "21,600+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 63
+}

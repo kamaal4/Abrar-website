@@ -1,0 +1,45 @@
+{
+  "name": "Vijay Nagar Colony",
+  "zone": "Central",
+  "tagline": "Established colony near the city centre",
+  "image": "/src/assets/hyd-skyline-hotel.webp",
+  "about": [
+    "Vijay Nagar Colony is a long-established residential colony in the central belt, within reach of the Masab Tank and Mehdipatnam approaches. It is fully built out, with a mix of older independent houses and newer apartment buildings replacing them.",
+    "New projects are infill on individual plots rather than layouts. The draw is central location and mature surroundings, not new amenities."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Masab Tank and Mehdipatnam",
+      "detail": "a short distance west"
+    },
+    {
+      "label": "Banjara Hills",
+      "detail": "directly to the north"
+    },
+    {
+      "label": "Metro",
+      "detail": "nearest Red Line access at Lakdikapul"
+    }
+  ],
+  "nearbyAreas": [
+    "Masab Tank",
+    "Mehdipatnam",
+    "Banjara Hills",
+    "Asif Nagar"
+  ],
+  "faq": [
+    {
+      "q": "What is worth checking in an established colony like this?",
+      "a": "On a redeveloped plot, ask what stood there before and confirm the demolition and rebuild were permitted. Parking allotment in writing matters more here than in a newer layout, because plots are small."
+    }
+  ],
+  "order": 21
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Ayesha Enclave",
+  "location": "tolichowki",
+  "locality": "Golden Sands Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Budget Friendly",
+  "status": "ready-to-move",
+  "possession": "December 2023",
+  "configurations": [
+    "4 BHK"
+  ],
+  "units": "7 units",
+  "landArea": "16,000+ sq.ft",
+  "unitsPerFloor": 1,
+  "images": [
+    "/src/assets/ayesha-enclave-1.webp",
+    "/src/assets/ayesha-enclave-2.webp"
+  ],
+  "summary": "We construct your plan, your future. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 7 units, 16,000+ sq.ft built-up.",
+  "highlights": [
+    "4 BHK configuration",
+    "1 unit per floor",
+    "Possession stated as December 2023",
+    "16,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "GHMC Approved",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Religious Places",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    }
+  ],
+  "order": 28
+}

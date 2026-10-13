@@ -1,0 +1,77 @@
+{
+  "name": "Khizra",
+  "location": "mehdipatnam",
+  "locality": "Mehdipatnam",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "under-construction",
+  "possession": "August 2027",
+  "configurations": [
+    "2 BHK",
+    "4 BHK"
+  ],
+  "units": "7 units",
+  "landArea": "14,000+ sq.ft",
+  "unitsAvailable": 6,
+  "images": [
+    "/src/assets/khizra-1.webp",
+    "/src/assets/khizra-2.webp",
+    "/src/assets/khizra-3.webp"
+  ],
+  "summary": "Your comfort zone. Ever lasting happiness. 2 BHK & 4 BHK in Mehdipatnam, Hyderabad — 7 units, 14,000+ sq.ft built-up.",
+  "highlights": [
+    "2 BHK & 4 BHK configuration",
+    "6 of 7 units still available",
+    "Possession stated as August 2027",
+    "14,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "GHMC Approved",
+    "Best Quality Red Brick",
+    "Teakwood Frames",
+    "Vitrified Tile Flooring",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Restaurants & cafeteria",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Schools & colleges",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Religious places",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "2.9 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    }
+  ],
+  "order": 10
+}

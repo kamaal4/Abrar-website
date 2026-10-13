@@ -1,0 +1,54 @@
+{
+  "name": "Alkapur",
+  "zone": "West",
+  "tagline": "Township living on the Manikonda–Puppalaguda stretch",
+  "image": "/src/assets/manikonda-sprawl.webp",
+  "featured": true,
+  "about": [
+    "Alkapur Township sits off the Manikonda–Puppalaguda road, close enough to the western IT corridor that the commute is the main reason people buy here. It filled in fast over the last decade, so most of what you see is apartment stock of recent vintage rather than resale from the 1990s.",
+    "Diamond Hills Colony, inside the township, is where a good deal of the newer mid-rise development has landed. The area is largely residential in character, with retail and commercial arriving along the main approach roads rather than inside the layouts.",
+    "It appeals to buyers who want proximity to Gachibowli and the Financial District without the pricing of Kokapet or the newness of Tellapur."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat",
+    "commercial"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK",
+    "4 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Gachibowli and the Financial District",
+      "detail": "reachable via Manikonda and the ORR approach"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "nearest access at Narsingi"
+    },
+    {
+      "label": "Mehdipatnam",
+      "detail": "along the Puppalaguda–Rethibowli road"
+    }
+  ],
+  "nearbyAreas": [
+    "Manikonda",
+    "Puppalaguda",
+    "Narsingi",
+    "Neknampur",
+    "Shaikpet"
+  ],
+  "faq": [
+    {
+      "q": "How does Alkapur compare with Manikonda?",
+      "a": "They adjoin each other and share the same road network. Alkapur is more layout-led and residential; Manikonda has more retail and older stock. Check the specific colony rather than the area name — the two vary more within themselves than between each other."
+    },
+    {
+      "q": "What should I verify before buying here?",
+      "a": "Layout approvals and the building permission, water source and borewell reliability, and whether the internal roads and drainage have been handed over to the municipality. Ask for the occupancy certificate on completed buildings."
+    }
+  ],
+  "order": 13
+}

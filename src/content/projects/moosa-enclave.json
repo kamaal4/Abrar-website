@@ -1,0 +1,78 @@
+{
+  "name": "Moosa Enclave",
+  "location": "tolichowki",
+  "locality": "Sa Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "ready-to-move",
+  "possession": "November 2024",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "13 units",
+  "landArea": "27,000+ sq.ft",
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/moosa-enclave-1.webp",
+    "/src/assets/moosa-enclave-2.webp",
+    "/src/assets/moosa-enclave-3.webp",
+    "/src/assets/moosa-enclave-4.webp"
+  ],
+  "summary": "Building spaces that stand the test of time. 3 BHK in Sa Colony, Tolichowki, Hyderabad — 13 units, 27,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as November 2024",
+    "27,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings",
+    "Masterfully Designed 3 BHK"
+  ],
+  "nearby": [
+    {
+      "label": "Religious Places",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "2.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "3.3 km"
+    }
+  ],
+  "order": 47
+}

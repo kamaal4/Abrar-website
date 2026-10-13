@@ -1,0 +1,49 @@
+{
+  "name": "Mehdipatnam",
+  "zone": "West",
+  "tagline": "The transport hub the west of the city routes through",
+  "image": "/src/assets/hyd-residential-building.webp",
+  "featured": true,
+  "about": [
+    "Mehdipatnam is one of the busiest interchanges in Hyderabad — the bus terminus, the Rethibowli and Aramghar approaches and the road towards Tolichowki all meet here. That makes it convenient and loud in roughly equal measure.",
+    "Stock is dense and mostly apartments, with a substantial commercial layer along the main roads. Humayun Nagar and the surrounding colonies are quieter than the junction itself while staying within walking distance of it.",
+    "It suits buyers who value being able to get anywhere in the city without a car, and who are willing to trade quiet for that."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat",
+    "commercial"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "City bus terminus",
+      "detail": "at the junction itself"
+    },
+    {
+      "label": "Tolichowki and the western corridor",
+      "detail": "along the Seven Tombs road"
+    },
+    {
+      "label": "Rajiv Gandhi International Airport",
+      "detail": "via the Aramghar and PV Narasimha Rao Expressway route"
+    }
+  ],
+  "nearbyAreas": [
+    "Tolichowki",
+    "Humayun Nagar",
+    "Asif Nagar",
+    "Rethibowli",
+    "Attapur"
+  ],
+  "faq": [
+    {
+      "q": "Is the traffic a problem for a home here?",
+      "a": "At the junction, yes — it is one of the heaviest in the city. Colonies a few hundred metres off the main road are noticeably calmer, so the specific street matters a great deal more here than the area name."
+    }
+  ],
+  "order": 15
+}

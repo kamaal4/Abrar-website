@@ -1,0 +1,71 @@
+{
+  "title": "3 BHK in MK Tower",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "narsingi",
+  "project": "mk-tower",
+  "areaUnit": "sqft",
+  "bhk": 3,
+  "verified": false,
+  "images": [
+    "/src/assets/mk-tower-1.webp",
+    "/src/assets/mk-tower-2.webp",
+    "/src/assets/mk-tower-3.webp",
+    "/src/assets/mk-tower-4.webp"
+  ],
+  "summary": "Your dream home is the launchpad for your family's biggest goals. 2 BHK & 3 BHK in Narsingi, Hyderabad — 38 units, 59,000+ sq.ft built-up.",
+  "highlights": [
+    "2 BHK & 3 BHK configuration",
+    "3 of 38 units still available",
+    "6 units per floor",
+    "Possession stated as April 2026",
+    "59,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "Two 6 Passenger Standard Lifts",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Religious Places",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "ORR",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "2.0 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 56
+}

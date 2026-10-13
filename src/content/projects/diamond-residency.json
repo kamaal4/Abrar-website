@@ -1,0 +1,78 @@
+{
+  "name": "Diamond Residency",
+  "location": "tolichowki",
+  "locality": "Sa Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "ready-to-move",
+  "possession": "November 2022",
+  "configurations": [
+    "4 BHK"
+  ],
+  "units": "45 units",
+  "landArea": "90,000+ sq.ft",
+  "unitsPerFloor": 6,
+  "images": [
+    "/src/assets/diamond-residency-1.webp",
+    "/src/assets/diamond-residency-2.webp",
+    "/src/assets/diamond-residency-3.webp",
+    "/src/assets/diamond-residency-4.webp"
+  ],
+  "summary": "Safe hands. Strong walls. Smart construction. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 45 units, 90,000+ sq.ft built-up.",
+  "highlights": [
+    "4 BHK configuration",
+    "6 units per floor",
+    "Possession stated as November 2022",
+    "90,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "Two 6 Passenger Standard Lifts",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Flooring",
+    "Premium Bathroom Fittings",
+    "False Ceilings",
+    "Masterfully Designed 4 BHK"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.1 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.3 km"
+    }
+  ],
+  "order": 34
+}

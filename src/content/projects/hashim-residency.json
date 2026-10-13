@@ -1,0 +1,87 @@
+{
+  "name": "Hashim Residency",
+  "location": "tolichowki",
+  "locality": "Gulshan Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "under-construction",
+  "possession": "August 2027",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "13 units",
+  "landArea": "25,000+ sq.ft",
+  "unitsAvailable": 3,
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/hashim-residency-1.webp",
+    "/src/assets/hashim-residency-2.webp",
+    "/src/assets/hashim-residency-3.webp",
+    "/src/assets/hashim-residency-4.webp"
+  ],
+  "summary": "Hashim Residency — 3 BHK in Gulshan Colony, Tolichowki, Hyderabad. 13 units, 25,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "3 of 13 units still available",
+    "2 units per floor",
+    "Possession stated as August 2027",
+    "25,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & colleges",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Religious places",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Public transportation hubs",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Restaurants & cafeteria",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "1.5 km"
+    }
+  ],
+  "order": 8
+}

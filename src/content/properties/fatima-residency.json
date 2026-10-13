@@ -1,0 +1,76 @@
+{
+  "title": "Commercial space at Fatima Residency",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "commercial",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "fatima-residency",
+  "areaUnit": "sqft",
+  "verified": false,
+  "images": [
+    "/src/assets/fatima-residency-1.webp",
+    "/src/assets/fatima-residency-2.webp",
+    "/src/assets/fatima-residency-3.webp"
+  ],
+  "summary": "Fatima Residency — 3 BHK in Gulshan Colony, Tolichowki, Hyderabad. 14 units, 29,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as DEC 2024",
+    "29,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC APPROVED",
+    "24/7 SECURITY",
+    "POWER BACKUP",
+    "6 PASSENGER STANDARD LIFT",
+    "CCTV SURVEILLANCE"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Supermarkets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.3 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 72
+}

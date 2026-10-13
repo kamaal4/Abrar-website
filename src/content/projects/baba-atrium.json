@@ -1,0 +1,87 @@
+{
+  "name": "Baba Atrium",
+  "location": "shaikpet",
+  "locality": "Shaikpet",
+  "kind": "commercial",
+  "category": "Prestige",
+  "status": "under-construction",
+  "possession": "December 2027",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "12 units",
+  "landArea": "61,000+ sq.ft",
+  "unitsAvailable": 3,
+  "unitsPerFloor": 3,
+  "images": [
+    "/src/assets/baba-atrium-1.webp",
+    "/src/assets/baba-atrium-2.webp",
+    "/src/assets/baba-atrium-3.webp",
+    "/src/assets/baba-atrium-4.webp"
+  ],
+  "summary": "Baba Atrium — 3 BHK in Shaikpet, Hyderabad. 12 units, 61,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "3 of 12 units still available",
+    "3 units per floor",
+    "Possession stated as December 2027",
+    "61,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "Two 6 Passenger Standard Lifts"
+  ],
+  "specs": [
+    "Best Quality Red Brick",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Supermarkets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "2.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.0 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "1.3 km"
+    }
+  ],
+  "order": 19
+}

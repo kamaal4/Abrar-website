@@ -1,0 +1,81 @@
+{
+  "name": "Amer",
+  "location": "tolichowki",
+  "locality": "Golden Sands Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "under-construction",
+  "possession": "November 2026",
+  "configurations": [
+    "4 BHK"
+  ],
+  "units": "13 units",
+  "landArea": "36,000+ sq.ft",
+  "unitsAvailable": 2,
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/amer-1.webp",
+    "/src/assets/amer-2.webp",
+    "/src/assets/amer-3.webp",
+    "/src/assets/amer-4.webp"
+  ],
+  "summary": "Your dream. Our blueprint. One perfect result. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 13 units, 36,000+ sq.ft built-up.",
+  "highlights": [
+    "4 BHK configuration",
+    "2 of 13 units still available",
+    "2 units per floor",
+    "Possession stated as November 2026",
+    "36,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "GHMC Approved",
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings",
+    "No Common Walls",
+    "Spacious & Fully Ventilated"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & colleges",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Restaurants & cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Religious places",
+      "distance": "0.3 km"
+    }
+  ],
+  "order": 5
+}

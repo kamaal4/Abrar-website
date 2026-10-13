@@ -1,0 +1,45 @@
+{
+  "name": "Neknampur",
+  "zone": "West",
+  "tagline": "Lake-side pocket off the Manikonda road",
+  "image": "/src/assets/manikonda-sprawl.webp",
+  "about": [
+    "Neknampur lies off the Manikonda–Narsingi stretch and is best known for its lake and the restoration work around it. Residentially it is a smaller, quieter pocket than its neighbours, with development arriving later.",
+    "The stock is mostly recent apartments. The appeal is being within reach of Gachibowli and the Financial District while sitting a little off the main traffic routes."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Manikonda",
+      "detail": "directly adjoining"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "nearest access at Narsingi"
+    },
+    {
+      "label": "Financial District",
+      "detail": "via Narsingi or Manikonda"
+    }
+  ],
+  "nearbyAreas": [
+    "Manikonda",
+    "Alkapur",
+    "Narsingi",
+    "Puppalaguda"
+  ],
+  "faq": [
+    {
+      "q": "Does the lake affect buying here?",
+      "a": "It is worth checking the full tank bed level and buffer zone for any plot or building close to the water. Ask specifically for the layout approval and whether any part of the site falls within the buffer."
+    }
+  ],
+  "order": 18
+}

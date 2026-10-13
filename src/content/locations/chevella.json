@@ -1,0 +1,43 @@
+{
+  "name": "Chevella",
+  "zone": "West",
+  "tagline": "Farm land and open plots west of the city",
+  "image": "/src/assets/telangana-farmland-2.webp",
+  "about": [
+    "Chevella is out on the western highway past the city edge, in the belt where farm land and farmhouse plots trade rather than apartments. Damergidda is one of the villages within it.",
+    "This is a land market, with the characteristics that implies: low holding cost, no rental income, and a return that depends entirely on whether the city grows in this direction on your timeline."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "farm-land",
+    "open-land",
+    "plot"
+  ],
+  "configurations": [
+    "Farm land",
+    "Open land"
+  ],
+  "connectivity": [
+    {
+      "label": "Outer Ring Road",
+      "detail": "via the Shankarpally and Moinabad approaches"
+    },
+    {
+      "label": "Financial District",
+      "detail": "along the Chevella road through Shankarpally"
+    }
+  ],
+  "nearbyAreas": [
+    "Shankarpally",
+    "Moinabad",
+    "Vikarabad",
+    "Mokila"
+  ],
+  "faq": [
+    {
+      "q": "What has to be checked before buying agricultural land here?",
+      "a": "Pattadar passbook and title deed in the seller’s name, the survey number and extent against the revenue records, whether the land is assigned or endowment land, and access — a plot with no legal road access is very hard to sell on."
+    }
+  ],
+  "order": 24
+}

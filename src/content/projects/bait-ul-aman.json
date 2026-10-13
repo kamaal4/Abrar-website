@@ -1,0 +1,70 @@
+{
+  "name": "Bait Ul Aman",
+  "location": "mohammedi-lines",
+  "locality": "Al Kareem Colony, Md Lines",
+  "kind": "residential",
+  "category": "Premium Project",
+  "status": "ready-to-move",
+  "possession": "June 2026",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "13 units",
+  "landArea": "21,000+ sq.ft",
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/bait-ul-aman-1.webp",
+    "/src/assets/bait-ul-aman-2.webp",
+    "/src/assets/bait-ul-aman-3.webp",
+    "/src/assets/bait-ul-aman-4.webp"
+  ],
+  "summary": "Brick by brick, stone by stone, every great thing was built by those who believed they could.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as June 2026",
+    "21,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality Red Brick",
+    "Teakwood Frames",
+    "Vitrified Tile Flooring",
+    "Premium Bathroom Fittings",
+    "False Ceilings",
+    "Masterfully Designed 3 BHK"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.1 km"
+    }
+  ],
+  "order": 30
+}

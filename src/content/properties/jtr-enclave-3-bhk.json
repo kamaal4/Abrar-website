@@ -1,0 +1,76 @@
+{
+  "title": "3 BHK in JTR Enclave",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "under-construction",
+  "location": "alkapur",
+  "project": "jtr-enclave",
+  "areaUnit": "sqft",
+  "bhk": 3,
+  "verified": false,
+  "images": [
+    "/src/assets/jtr-enclave-1.webp",
+    "/src/assets/jtr-enclave-2.webp"
+  ],
+  "summary": "Beautiful living, smart investing. JTR Enclave – premium 3 BHK homes with a secure future in mind.",
+  "highlights": [
+    "3 BHK configuration",
+    "4 of 19 units still available",
+    "3 units per floor",
+    "Possession stated as December 2027",
+    "29,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "Religious places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "2.1 km"
+    },
+    {
+      "label": "Restaurants & cafeteria",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Public transportation hubs",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.3 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 10
+}

@@ -32,7 +32,7 @@ export type Property = {
   listing: ListingType[];
   type: PropertyType;
   status: PropertyStatus;
-  /** Location slug — must match a Location in src/data/locations.ts. */
+  /** Location slug — must match a file in src/content/locations/. */
   location: string;
   /**
    * Sale price in rupees. For rentals this is the notional asset value.
@@ -61,9 +61,11 @@ export type Property = {
   highlights: string[];
   amenities?: string[];
   nearby?: { label: string; distance: string }[];
-  /** Optional link to a project in src/data/projects.ts. */
+  /** Optional link to a project in src/content/projects/. */
   project?: string;
   postedOn: string;
+  /** Position set by the editor's drag-to-reorder; entries without one sort last. */
+  order?: number;
 };
 
 export type Project = {
@@ -96,6 +98,8 @@ export type Project = {
   nearby?: { label: string; distance: string }[];
   /** The page this record was built from, so the mapping stays traceable. */
   sourceUrl?: string;
+  /** Position set by the editor's drag-to-reorder; entries without one sort last. */
+  order?: number;
 };
 
 export type Location = {
@@ -117,6 +121,8 @@ export type Location = {
   nearbyAreas: string[];
   faq: { q: string; a: string }[];
   featured?: boolean;
+  /** Position set by the editor's drag-to-reorder; entries without one sort last. */
+  order?: number;
 };
 
 export type BlogPost = {

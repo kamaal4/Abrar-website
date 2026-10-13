@@ -1,0 +1,68 @@
+{
+  "title": "Commercial space at Imperial",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "commercial",
+  "status": "under-construction",
+  "location": "mehdipatnam",
+  "project": "imperial",
+  "areaUnit": "sqft",
+  "verified": false,
+  "images": [
+    "/src/assets/imperial-1.webp",
+    "/src/assets/imperial-2.webp"
+  ],
+  "summary": "A community of modern homes in Humayun Nagar, Mehdipatnam, Hyderabad, with access to schools, healthcare, shopping and transit hubs.",
+  "highlights": [
+    "3 BHK & 4 BHK configuration",
+    "11 of 39 units still available",
+    "5 units per floor",
+    "Possession stated as November 2027",
+    "70,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "Two 6 Passenger Standard Lifts"
+  ],
+  "nearby": [
+    {
+      "label": "Religious Places",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.5 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 27
+}

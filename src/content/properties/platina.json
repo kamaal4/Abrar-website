@@ -1,0 +1,79 @@
+{
+  "title": "Commercial space at Platina",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "commercial",
+  "status": "ready-to-move",
+  "location": "alkapur",
+  "project": "platina",
+  "areaUnit": "sqft",
+  "featured": true,
+  "verified": false,
+  "images": [
+    "/src/assets/platina-1.webp",
+    "/src/assets/platina-2.webp",
+    "/src/assets/platina-3.webp",
+    "/src/assets/platina-4.webp"
+  ],
+  "summary": "Built for your family today, designed to grow your portfolio tomorrow. This GHMC-approved mixed-use development features spacious residences and commercial spaces with excellent connectivity.",
+  "highlights": [
+    "3 BHK configuration",
+    "11 of 42 units still available",
+    "6 units per floor",
+    "Possession stated as March 2026",
+    "110,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "CCTV Surveillance",
+    "Power Backup",
+    "Two 6-passenger standard lifts",
+    "Gym/Park access"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Supermarkets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "1.9 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.5 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "2.5 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 73
+}

@@ -1,0 +1,36 @@
+{
+  "title": "3 BHK in Neknampur",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "under-construction",
+  "location": "neknampur",
+  "project": "neknampur",
+  "areaUnit": "sqft",
+  "bhk": 3,
+  "verified": false,
+  "images": [
+    "/src/assets/neknampur-1.webp",
+    "/src/assets/neknampur-2.webp",
+    "/src/assets/neknampur-3.webp",
+    "/src/assets/neknampur-4.webp"
+  ],
+  "summary": "A goal without a plan is just a wish—and we planned every detail. 3 BHK in Neknampur, Hyderabad — 10 units, 25,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as December 2027",
+    "25,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "6 Passenger Standard Lift"
+  ],
+  "postedOn": "2026-09-08",
+  "order": 17
+}

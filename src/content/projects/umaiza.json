@@ -1,0 +1,80 @@
+{
+  "name": "Umaiza",
+  "location": "shaikpet",
+  "locality": "Aziz Bagh Colony, Shaikpet",
+  "kind": "residential",
+  "category": "Prestige",
+  "status": "under-construction",
+  "possession": "October 2027",
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "units": "80 units",
+  "landArea": "139,000+ sq.ft",
+  "unitsAvailable": 15,
+  "unitsPerFloor": 10,
+  "featured": true,
+  "images": [
+    "/src/assets/umaiza-1.webp",
+    "/src/assets/umaiza-2.webp",
+    "/src/assets/umaiza-3.webp"
+  ],
+  "summary": "Umaiza — luxury, connectivity and future-ready living in Aziz Bagh Colony, Shaikpet.",
+  "highlights": [
+    "2 BHK & 3 BHK configuration",
+    "15 of 80 units still available",
+    "10 units per floor",
+    "Possession stated as October 2027",
+    "139,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "Four 6 Passenger Standard Lifts"
+  ],
+  "specs": [
+    "Best Quality Red Brick",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "0.9 km"
+    }
+  ],
+  "order": 17
+}

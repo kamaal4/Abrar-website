@@ -1,0 +1,54 @@
+{
+  "title": "Farm land at Farm House",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "farm-land",
+  "status": "ready-to-move",
+  "location": "chevella",
+  "project": "farm-house",
+  "areaUnit": "sqft",
+  "verified": false,
+  "images": [
+    "/src/assets/telangana-farmland.webp"
+  ],
+  "summary": "A farmhouse is designed to blend luxury with a nature-centric countryside vibe. 3 units in Damergidda, Chevella, Hyderabad — 3 units, 4+ acres built-up.",
+  "highlights": [
+    "Possession stated as January 2023",
+    "4+ acres of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "10 Spacious Bedrooms",
+    "15 Bathrooms",
+    "Largest Box Cricket Turf",
+    "Lavish Swimming Pool",
+    "Indoor Area",
+    "50+ Indoor Games",
+    "Two Big Lawns",
+    "100+ Cars Parking Space"
+  ],
+  "nearby": [
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "5 minutes"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "10 minutes"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "5 minutes"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "15 minutes"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 43
+}

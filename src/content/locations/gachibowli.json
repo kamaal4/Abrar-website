@@ -1,0 +1,67 @@
+{
+  "name": "Gachibowli",
+  "zone": "West",
+  "tagline": "The centre of the IT corridor",
+  "image": "/src/assets/gachibowli-skyview.webp",
+  "startingPrice": 9500000,
+  "about": [
+    "Gachibowli is the heart of the western employment corridor — the Financial District, university campuses and a large share of the city’s office stock are all within a short radius. That proximity is what you are paying for.",
+    "Residential stock ranges from older apartment buildings to premium towers, with very little land left to develop. Rental demand is the strongest in the city, which makes it a common choice for buyers who want an income-producing asset.",
+    "Expect to pay a clear premium per square foot compared with locations even fifteen minutes further out."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹95 L – ₹1.4 Cr"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹1.5 Cr – ₹2.8 Cr"
+    },
+    {
+      "label": "4 BHK / premium",
+      "range": "₹3 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "villa"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK",
+    "4 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Financial District",
+      "detail": "10–15 minutes"
+    },
+    {
+      "label": "HITEC City",
+      "detail": "10–20 minutes"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "direct access at Gachibowli and Nanakramguda"
+    },
+    {
+      "label": "Airport",
+      "detail": "about 35 minutes via the ORR"
+    }
+  ],
+  "nearbyAreas": [
+    "Nanakramguda",
+    "Kondapur",
+    "Manikonda",
+    "Kokapet",
+    "Nallagandla"
+  ],
+  "faq": [
+    {
+      "q": "Are rental yields actually better here?",
+      "a": "Occupancy tends to be easier and tenant turnover lower because of the office density nearby. Gross yields are still modest in absolute terms — Indian residential yields generally are — so buy for the combination of rent and location, not rent alone."
+    }
+  ],
+  "order": 9
+}

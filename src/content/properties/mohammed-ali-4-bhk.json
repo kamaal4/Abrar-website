@@ -1,0 +1,78 @@
+{
+  "title": "4 BHK in Mohammed Ali",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "under-construction",
+  "location": "alkapur",
+  "project": "mohammed-ali",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/mohammed-ali-1.webp",
+    "/src/assets/mohammed-ali-2.webp",
+    "/src/assets/mohammed-ali-3.webp",
+    "/src/assets/mohammed-ali-4.webp"
+  ],
+  "summary": "Mohammed Ali Residency — 3 BHK homes in Alkapur, designed around family comfort.",
+  "highlights": [
+    "3 BHK & 4 BHK configuration",
+    "3 of 20 units still available",
+    "3 units per floor",
+    "Possession stated as November 2026",
+    "36,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lifts",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & colleges",
+      "distance": "1.9 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.5 km"
+    },
+    {
+      "label": "Religious places",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "2.3 km"
+    },
+    {
+      "label": "Restaurants & cafeteria",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Public transportation hubs",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.7 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 14
+}

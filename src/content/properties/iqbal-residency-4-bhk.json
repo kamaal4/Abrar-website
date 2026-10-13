@@ -1,0 +1,75 @@
+{
+  "title": "4 BHK in Iqbal Residency",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "janachaitanya",
+  "project": "iqbal-residency",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/iqbal-residency-1.webp",
+    "/src/assets/iqbal-residency-2.webp",
+    "/src/assets/iqbal-residency-3.webp",
+    "/src/assets/iqbal-residency-4.webp"
+  ],
+  "summary": "A 4 BHK flat at Iqbal Residency, with premium interiors, high-quality finishes and bank-approved titles.",
+  "highlights": [
+    "4 BHK configuration",
+    "5 of 19 units still available",
+    "2 units per floor",
+    "Possession stated as March 2026",
+    "29,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.5 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "2.0 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.3 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 50
+}

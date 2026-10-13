@@ -1,8 +1,8 @@
 # InvestForAssets
 
 A static marketing and listings site for a Hyderabad real-estate consultancy. Built with
-Astro, TypeScript and Tailwind CSS. No backend, no database, no CMS — it builds to plain
-HTML and deploys to GitHub Pages.
+Astro, TypeScript and Tailwind CSS. No backend and no database — it builds to plain HTML on
+Cloudflare. Content is files in this repository, edited from a phone at `/admin`.
 
 The primary conversion goal is a WhatsApp enquiry, so every call to action routes through
 one helper (`src/utils/whatsapp.ts`) and one config value.
@@ -31,21 +31,19 @@ Node 22.12 or newer is required.
 
 ## Configuration — start here
 
-Everything contact- and brand-related lives in **`src/config/site.ts`**.
+Contact details live in **`src/config/settings.json`**, which is edited through
+**/admin → Contact details** (see [Content](#content)). Brand and navigation stay in code in
+**`src/config/site.ts`**, which merges the two into `siteConfig`.
 
-```ts
-export const siteConfig = {
-  name: 'InvestForAssets',
-  tagline: 'Your Property. Your Asset. Your Future.',
-  whatsapp: '918247378529',   // digits only, with country code
-  phone: '+91 82473 78529',   // shown next to Call buttons; empty hides them
-  email: '',                  // empty shows "not published yet" on /contact
-  social: {
-    instagram: 'https://www.instagram.com/invest4assets',
-    facebook: 'https://www.facebook.com/share/1C5UFY1qM4/',
-    whatsapp: 'https://wa.me/918247378529',
-  },
-};
+```json
+{
+  "whatsapp": "918247378529",
+  "phone": "+91 82473 78529",
+  "email": "",
+  "instagram": "https://www.instagram.com/invest4assets",
+  "facebook": "https://www.facebook.com/share/1C5UFY1qM4/",
+  "disclosure": "…"
+}
 ```
 
 ### WhatsApp
@@ -73,7 +71,7 @@ should be able to send it unedited.
 
 ### Instagram and Facebook
 
-Set `social.instagram` and `social.facebook` to full URLs. They appear in the footer and on
+Set `instagram` and `facebook` to full URLs. They appear in the footer and on
 `/contact`. Leaving a value empty removes that channel from both places automatically — no
 dead icons.
 
@@ -89,6 +87,7 @@ rather than rendering a broken `mailto:`.
 | What | Where |
 | --- | --- |
 | Name, tagline, description | `src/config/site.ts` |
+| Contact details, footer disclosure | `src/config/settings.json` (via /admin) |
 | Colours, type scale, radii, shadows, motion | the `@theme` block in `src/styles/global.css` |
 | Fonts | the Google Fonts `<link>` in `src/layouts/BaseLayout.astro` plus `--font-*` tokens |
 | Wordmark | `src/components/Header.astro` and `src/components/Footer.astro` |
@@ -107,133 +106,96 @@ accent. **Read `DESIGN.md` before touching colour, type or motion**: it records 
 
 ## Content
 
-All content is typed and lives in `src/data/`. Pages never touch the arrays directly; they
-call the accessor functions, which is what makes swapping in an API later a change to these
-files alone.
+Day-to-day content is edited at **https://investforassets.com/admin/** — properties,
+projects, locations, blog posts and contact details — from a phone or a laptop. The editor
+is [Sveltia CMS](https://sveltiacms.app) (`public/admin/`). Every save is a commit to
+`main`; Cloudflare rebuilds and the change is live in 1–2 minutes.
+
+If a save breaks the data — a property pointing at a project that was deleted, a photo that
+no longer exists — the build fails with the file name and the previous version stays live.
+Failed builds show under **Cloudflare → Workers & Pages → abrar-website → Deployments**.
+
+**Who can edit:** anyone with write access to the GitHub repository. They sign in with
+GitHub; the login runs in this site's own Worker (`worker/sveltia-cms-auth.js`) using the
+GitHub OAuth app "InvestForAssets editor" on the repository owner's account, whose
+`GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` are secrets under **abrar-website → Settings
+→ Variables and Secrets**. To add an editor, invite their GitHub account as a collaborator
+with Write access.
+
+### Where content lives
+
+| Content | Files | Editor |
+| --- | --- | --- |
+| Properties | `src/content/properties/<slug>.json` | Properties |
+| Projects | `src/content/projects/<slug>.json` | Projects |
+| Locations | `src/content/locations/<slug>.json` | Locations |
+| Blog posts | `src/content/blog/<slug>.md` | Blog posts |
+| Contact details | `src/config/settings.json` | Contact details |
+
+The file name is the slug and the URL. Fields are typed in `src/types.ts`. Pages never read
+the files directly: they call the accessors in `src/data/` (`getAllProperties()`,
+`getPropertyBySlug()`, …), which load the files, sort them by `order` (the editor's
+drag-to-reorder; new entries sort last), and check at build time that every property and
+project points at a real location, every property's project exists, every listing has a
+photo, and nothing is marked verified.
 
 ### Add a property
 
-Append to `properties` in **`src/data/properties.ts`**:
+In the editor: **Properties → New**. To add another unit of an existing project, open one
+of its sibling units and use **Duplicate**, then change the title and BHK.
 
-```ts
-{
-  slug: '3-bhk-apartment-kondapur',        // becomes /properties/3-bhk-apartment-kondapur
-  title: '3 BHK Apartment',
-  listing: ['buy', 'invest'],              // buy | rent | invest
-  type: 'flat',                            // flat | villa | plot | open-land | farm-land
-  status: 'ready-to-move',                 // ready-to-move | under-construction | new-launch
-  location: 'gachibowli',                  // must match a slug in locations.ts
-  price: 12_500_000,                       // rupees
-  rent: 45_000,                            // optional, rupees per month
-  area: 1650,
-  areaUnit: 'sqft',                        // sqft | sqyd
-  bhk: 3, bathrooms: 3, parking: 2,
-  floor: '7th of 14', facing: 'East',
-  verified: true,                          // only true if you have actually checked
-  featured: true,                          // shows on the homepage
-  images: ['aparna-zenon-towers', 'interior-living-plants'],   // keys from src/data/images.ts
-  summary: 'One or two sentences on who this suits and why.',
-  highlights: ['…'],
-  amenities: ['…'],
-  nearby: [{ label: 'Schools', distance: 'within 2 km' }],
-  postedOn: '2026-09-01',
-}
-```
+- Leave **Price** or **Area** empty and the site shows "on request" — never an estimate.
+- **Show on homepage** puts it in the featured grid (the first 8 featured, in order).
+- `verified` is hidden and stays `false`: the build rejects `true` until we inspect
+  documents ourselves (see the check in `src/data/properties.ts`).
 
-Types are enforced, so a wrong `location` slug or an unknown image key fails the build
-rather than shipping broken. `getStaticPaths` picks the new slug up automatically.
+Editing by hand works too — add a JSON file shaped like its neighbours.
 
-Set `verified: false` when the documents have not been checked — the card and detail page
-then omit the Verified badge instead of implying one.
+### Add a project or a location
 
-### Add a project
-
-Append to `projects` in **`src/data/projects.ts`** — same pattern, with
-`startingPrice`, `configurations`, `possession`, `units` and `landArea`. A new
-`/projects/<slug>` page is generated, and the project is grouped on `/projects` by its
-`status`.
-
-### Add a location
-
-Append to `locations` in **`src/data/locations.ts`**. Each entry generates a full
-`/locations/<slug>` page (about, price ranges, configurations, connectivity, nearby areas,
-FAQ, listings, projects) and adds the location to:
-
-- the hero and filter dropdowns, via `locationOptions()`
-- the `/locations` table, grouped by `zone`
-- the homepage location chips
-
-Set `featured: true` to include it in the homepage and `/locations` image grid.
+**Projects → New** generates `/projects/<slug>`, grouped on `/projects` by status.
+**Locations → New** generates `/locations/<slug>` and adds the location to the search and
+filter dropdowns, the `/locations` table (grouped by zone) and the homepage chips;
+**Show on homepage** adds it to the image grid. A location that a property or project still
+uses can't be deleted.
 
 ### Add a blog post
 
-Create `src/content/blog/<slug>.md`:
+**Blog posts → New**, or create `src/content/blog/<slug>.md` with the frontmatter validated
+by `src/content.config.ts` (category is one of Buying, Investment, Locations, Guides;
+`draft: true` keeps it out of the build).
 
-```yaml
----
-title: 'Your title'
-description: 'One sentence, used for the card and the meta description.'
-date: 2026-09-01
-category: 'Buying'          # Buying | Investment | Locations | Guides
-heroImage: 'orr-night'      # key from src/data/images.ts
-readingTime: 6              # minutes
-draft: false                # true keeps it out of the build
----
+### Images
 
-Markdown body. Headings from `##` down, tables and lists are all styled.
-```
+Photos uploaded in the editor are converted to WebP (at most 2000px), saved in
+`src/assets/`, and stored in the entry as `/src/assets/<file>.webp`. Their alt text is the
+listing's title.
 
-The file name is the URL. Frontmatter is validated by the schema in
-`src/content.config.ts`, so a typo in `category` or a missing field fails the build.
-
-### Add an image
-
-1. Put a `.webp` file in `src/assets/`. Roughly 1400px wide is plenty — Astro generates the
-   responsive derivatives at build time.
-2. Register it in `src/data/images.ts` with alt text and, where the licence requires it, the
-   author, licence and source URL.
-
-Alt text is written as a description of what is in the photograph, not a label. Anything
-with an `author` is listed automatically on `/credits`.
-
-Then reference it by key: `<Img image="my-new-image" widths={[400, 800]} sizes="…" />`.
+Images that page templates use directly (homepage, section heroes) are referenced by bare
+key — `<Img image="orr-night" alt="…" />` means `src/assets/orr-night.webp` — and the
+original set is registered in `src/data/images.ts` with alt text and, where the licence
+requires it, author and source. Anything with an `author` is listed on `/credits`.
+Deleting a photo that is still in use fails the build rather than shipping a broken page.
 
 ---
 
 ## Deployment
 
-### GitHub Pages
+The site is a Cloudflare **Worker with static assets** (`wrangler.jsonc`), connected to this
+repository: every push to `main` — including every editor save — runs `npm run build` and
+deploys `dist/`. The only Worker code is the editor login on `/oauth/*`; everything else is
+served as static files.
 
-`.github/workflows/deploy.yml` runs on every push to `main`: install, test, typecheck,
-build, deploy.
-
-One-time setup:
-
-1. Push the repository to GitHub.
-2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-3. Push to `main`.
-
-The workflow reads the origin and base path from `actions/configure-pages`, so a project
-site at `https://<user>.github.io/<repo>/` works with no configuration. Nothing about the
-URL is hardcoded in the application.
-
-### Custom domain
-
-1. **Settings → Pages → Custom domain** — enter the domain and let GitHub verify DNS.
-2. Add a `CNAME` file containing just the domain to `public/`:
-   ```bash
-   echo 'investinrealestatehyderabad.com' > public/CNAME
-   ```
-3. Push. `configure-pages` now reports the custom origin with a base path of `/`, and the
-   build follows automatically.
-
-To override either value explicitly, set repository variables (**Settings → Secrets and
-variables → Actions → Variables**):
-
-| Variable | Example |
+| Setting | Where |
 | --- | --- |
-| `SITE_URL` | `https://investinrealestatehyderabad.com` |
-| `BASE_PATH` | `/` |
+| `SITE_URL=https://investforassets.com` | abrar-website → Settings → Build → Variables |
+| `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` | abrar-website → Settings → Variables and Secrets (type Secret) |
+| `ALLOWED_DOMAINS` (sites the login may serve) | `vars` in `wrangler.jsonc` |
+
+The domain is registered at GoDaddy with its nameservers on Cloudflare. `investforassets.com`
+is a custom domain on the Worker and `www` is a proxied CNAME to it. GitHub Pages is off.
+
+To deploy by hand: `npm run build && npx wrangler deploy`.
 
 ### Building for a different host
 
@@ -255,20 +217,29 @@ the same source works under a subpath or at a domain root.
 src/
 ├── assets/              images (WebP), processed by Astro at build time
 ├── components/          Header, Footer, cards, SearchBar, filters, assistant, EMI, Icon…
-├── config/site.ts       ← contact details, social links, navigation
-├── content/blog/        Markdown articles
+├── config/
+│   ├── site.ts          brand, navigation; merges in settings.json
+│   └── settings.json    ← contact details, social links, disclosure (edited in /admin)
+├── content/
+│   ├── properties/      ← one JSON file per listing (edited in /admin)
+│   ├── projects/        ← one JSON file per project
+│   ├── locations/       ← one JSON file per location
+│   └── blog/            Markdown articles
 ├── content.config.ts    blog frontmatter schema
 ├── data/
-│   ├── properties.ts    listings + accessors
-│   ├── projects.ts      projects + accessors
-│   ├── locations.ts     locations + accessors
-│   └── images.ts        image registry, alt text and credits
+│   ├── properties.ts    loads content/properties + build-time checks + accessors
+│   ├── projects.ts      loads content/projects + accessors
+│   ├── locations.ts     loads content/locations + accessors
+│   ├── entries.ts       shared file loader and check()
+│   └── images.ts        image lookup; alt text and credits for the original set
 ├── layouts/BaseLayout.astro   head, SEO, JSON-LD, header/footer/assistant
 ├── pages/               routes (see below)
 ├── scripts/             client-side TS: filters, favourites, assistant flow
 ├── styles/global.css    design tokens and component classes
 ├── types.ts             Property, Project, Location, BlogPost
 └── utils/               whatsapp, format, emi, url
+public/admin/            the editor: index.html (pinned Sveltia version) + config.yml
+worker/                  editor login (vendored sveltia-cms-auth)
 ```
 
 Routes: `/`, `/properties`, `/properties/[slug]`, `/projects`, `/projects/[slug]`,
@@ -307,13 +278,13 @@ The listings shipped here are real published stock; what the developer does not 
 prices, chiefly — the site says is on request rather than inventing a figure. The site-wide
 disclosure lives in `siteConfig.disclosure` and renders in the footer.
 
-When inventory moves to a system rather than a file, the seam is the accessor functions.
+Inventory is files edited through /admin today. If it moves to a database or API, the seam is the accessor functions.
 Pages only ever call `getAllProperties()`, `getPropertyBySlug()`, `getFeaturedProperties()`
 and friends, so a data source change means rewriting those function bodies to fetch, and
 nothing else.
 
 For a static build, fetch at build time inside `getStaticPaths` and the page frontmatter —
-the site stays fully static and keeps deploying to Pages. If you later need runtime data,
+the site stays fully static. If you later need runtime data,
 switch Astro to a hybrid or server output and swap the same accessors for runtime fetches.
 
 ---

@@ -1,0 +1,87 @@
+{
+  "name": "Mujeeb Atrium",
+  "location": "alkapur",
+  "locality": "Alkapur",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "under-construction",
+  "possession": "June 2027",
+  "configurations": [
+    "3 BHK",
+    "4 BHK"
+  ],
+  "units": "26 units",
+  "landArea": "61,000+ sq.ft",
+  "unitsAvailable": 4,
+  "unitsPerFloor": 4,
+  "images": [
+    "/src/assets/mujeeb-atrium-1.webp",
+    "/src/assets/mujeeb-atrium-2.webp"
+  ],
+  "summary": "Mujeeb Atrium — 3 & 4 BHK residences in Alkapur, one of the city's more sought-after neighbourhoods.",
+  "highlights": [
+    "3 BHK & 4 BHK configuration",
+    "4 of 26 units still available",
+    "4 units per floor",
+    "Possession stated as June 2027",
+    "61,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "6 Passenger Standard Lift",
+    "Masterfully Crafted 3 & 4 BHK Units"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Gym/Park",
+      "distance": "0.2 km"
+    },
+    {
+      "label": "Supermarkets & Grocery Stores",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.0 km"
+    }
+  ],
+  "order": 12
+}

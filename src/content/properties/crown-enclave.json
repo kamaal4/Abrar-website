@@ -1,0 +1,34 @@
+{
+  "title": "Commercial space at Crown Enclave",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "commercial",
+  "status": "new-launch",
+  "location": "attapur",
+  "project": "crown-enclave",
+  "areaUnit": "sqft",
+  "verified": false,
+  "images": [
+    "/src/assets/crown-enclave-1.webp",
+    "/src/assets/crown-enclave-2.webp",
+    "/src/assets/crown-enclave-3.webp"
+  ],
+  "summary": "Homes that stand the test of time. 3 BHK in Attapur, Hyderabad — 35 units, 1,000+ sq.yd built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "50 of 35 units still available",
+    "6 units per floor",
+    "Possession stated as December 2027",
+    "1,000+ sq.yd of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "Two 6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "postedOn": "2026-09-08",
+  "order": 30
+}

@@ -1,0 +1,62 @@
+{
+  "title": "2 BHK in Ameena Fasi Manzil",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "vijay-nagar",
+  "project": "ameena-fasi-manzil",
+  "areaUnit": "sqft",
+  "bhk": 2,
+  "verified": false,
+  "images": [
+    "/src/assets/ameena-fasi-manzil-1.webp",
+    "/src/assets/ameena-fasi-manzil-2.webp",
+    "/src/assets/ameena-fasi-manzil-3.webp",
+    "/src/assets/ameena-fasi-manzil-4.webp"
+  ],
+  "summary": "In every beam we place, in every wall we raise, exists the potential for something amazing.",
+  "highlights": [
+    "2 BHK configuration",
+    "2 units per floor",
+    "Possession stated as March 2026",
+    "15,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.3 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 33
+}

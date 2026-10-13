@@ -1,0 +1,88 @@
+{
+  "name": "Quadri Plaza",
+  "location": "shaikpet",
+  "locality": "Satya Colony, Shaikpet",
+  "kind": "commercial",
+  "category": "Prestige",
+  "status": "under-construction",
+  "possession": "October 2026",
+  "configurations": [
+    "4 BHK"
+  ],
+  "units": "11 units",
+  "landArea": "39,000+ sq.ft",
+  "unitsAvailable": 2,
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/quadri-plaza-1.webp",
+    "/src/assets/quadri-plaza-2.webp",
+    "/src/assets/quadri-plaza-3.webp",
+    "/src/assets/quadri-plaza-4.webp"
+  ],
+  "summary": "The bitterness of poor quality remains long after the sweetness of low price is forgotten.",
+  "highlights": [
+    "4 BHK configuration",
+    "2 of 11 units still available",
+    "2 units per floor",
+    "Possession stated as October 2026",
+    "39,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "6 Passenger Standard Lift",
+    "Gym/Park"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.7 km"
+    }
+  ],
+  "order": 22
+}

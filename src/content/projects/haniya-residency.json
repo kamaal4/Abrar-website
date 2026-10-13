@@ -1,0 +1,78 @@
+{
+  "name": "Haniya Residency",
+  "location": "mohammedi-lines",
+  "locality": "Al Kareem Colony, Md Lines",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "ready-to-move",
+  "possession": "December 2020",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "13 units",
+  "landArea": "21,000+ sq.ft",
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/haniya-residency-1.webp",
+    "/src/assets/haniya-residency-2.webp",
+    "/src/assets/haniya-residency-3.webp",
+    "/src/assets/haniya-residency-4.webp"
+  ],
+  "summary": "Where simplicity meets serenity. 3 BHK in Al Kareem Colony, Md Lines, Hyderabad — 13 units, 21,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as December 2020",
+    "21,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Flooring",
+    "Premium Bathroom Fittings",
+    "False Ceilings",
+    "Masterfully Designed 3 BHK"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.1 km"
+    }
+  ],
+  "order": 37
+}

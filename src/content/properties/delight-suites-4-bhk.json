@@ -1,0 +1,70 @@
+{
+  "title": "4 BHK in Delight Suites",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "delight-suites",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/delight-suites-1.webp",
+    "/src/assets/delight-suites-2.webp",
+    "/src/assets/delight-suites-3.webp",
+    "/src/assets/delight-suites-4.webp"
+  ],
+  "summary": "Some people look for beautiful places, while others make the places beautiful. 3 BHK & 4 BHK in Paramount Colony, Tolichowki, Hyderabad — 28 units, 51,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK & 4 BHK configuration",
+    "4 units per floor",
+    "Possession stated as December 2024",
+    "51,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "Two 6 Passenger Standard Lifts",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "2.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.5 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "1.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 41
+}

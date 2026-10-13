@@ -1,0 +1,90 @@
+{
+  "name": "RF Arcade",
+  "location": "alkapur",
+  "locality": "Alkapur",
+  "kind": "commercial",
+  "category": "Premium Project",
+  "status": "under-construction",
+  "possession": "December 2027",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "52 units",
+  "landArea": "135,000+ sq.ft",
+  "unitsAvailable": 12,
+  "unitsPerFloor": 8,
+  "featured": true,
+  "images": [
+    "/src/assets/rf-arcade-1.webp",
+    "/src/assets/rf-arcade-2.webp"
+  ],
+  "summary": "RF Arcade — commercial floors in Alkapur, 135,000+ sq.ft across 52 units.",
+  "highlights": [
+    "3 BHK configuration",
+    "12 of 52 units still available",
+    "8 units per floor",
+    "Possession stated as December 2027",
+    "135,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "Three 6 Passenger Standard Lifts",
+    "CCTV Surveillance",
+    "Triple Side Road",
+    "Spacious Ventilated 3 BHK",
+    "8 Units Per Floor",
+    "No Common Walls"
+  ],
+  "specs": [
+    "Best Quality AAC Blocks",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.0 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.2 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "3.0 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "2.0 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.9 km"
+    }
+  ],
+  "order": 23
+}

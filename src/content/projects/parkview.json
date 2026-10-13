@@ -1,0 +1,86 @@
+{
+  "name": "Parkview",
+  "location": "alkapur",
+  "locality": "Alkapur",
+  "kind": "residential",
+  "category": "Premium",
+  "status": "under-construction",
+  "possession": "December 2027",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "21 units",
+  "landArea": "37,000+ sq.ft",
+  "unitsAvailable": 13,
+  "unitsPerFloor": 3,
+  "images": [
+    "/src/assets/parkview-1.webp",
+    "/src/assets/parkview-2.webp",
+    "/src/assets/parkview-3.webp"
+  ],
+  "summary": "Parkview — 3 BHK in Alkapur, Hyderabad. 21 units, 37,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "13 of 21 units still available",
+    "3 units per floor",
+    "Possession stated as December 2027",
+    "37,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "6 Passenger Standard Lift"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Supermarkets & Grocery Stores",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.0 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "0.3 km"
+    }
+  ],
+  "order": 15
+}

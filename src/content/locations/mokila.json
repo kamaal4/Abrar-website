@@ -1,0 +1,74 @@
+{
+  "name": "Mokila",
+  "zone": "West",
+  "tagline": "Villa plots and farm land on the western fringe",
+  "image": "/src/assets/telangana-farmland-2.webp",
+  "startingPrice": 3500000,
+  "about": [
+    "Mokila is best known for plotted development and villa layouts rather than apartments. It sits beyond Tellapur on the western side, and the appeal is space — plot sizes here buy you a footprint that would be unthinkable closer in.",
+    "This is a location where the layout matters more than the area. An HMDA-approved layout with laid roads, drainage and electricity is a different asset from an unapproved one on the next road, even if the asking price looks similar.",
+    "Buyers are typically either building a house over the next few years, or holding land while the corridor develops. Both are long-horizon positions."
+  ],
+  "priceRanges": [
+    {
+      "label": "Residential plot (200 sq.yd)",
+      "range": "₹35 L – ₹60 L"
+    },
+    {
+      "label": "Villa plot (300+ sq.yd)",
+      "range": "₹60 L – ₹1.2 Cr"
+    },
+    {
+      "label": "Farm land (per acre)",
+      "range": "₹1.2 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "plot",
+    "open-land",
+    "farm-land",
+    "villa"
+  ],
+  "configurations": [
+    "200 sq.yd",
+    "267 sq.yd",
+    "300 sq.yd",
+    "400 sq.yd"
+  ],
+  "connectivity": [
+    {
+      "label": "Financial District",
+      "detail": "35–45 minutes"
+    },
+    {
+      "label": "Tellapur",
+      "detail": "about 20 minutes"
+    },
+    {
+      "label": "Shankarpally",
+      "detail": "about 15 minutes"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "via the Kollur interchange"
+    }
+  ],
+  "nearbyAreas": [
+    "Shankarpally",
+    "Tellapur",
+    "Kollur",
+    "Chevella",
+    "Janwada"
+  ],
+  "faq": [
+    {
+      "q": "What approvals should a plot here have?",
+      "a": "Look for HMDA or DTCP layout approval, an LP or RUP number you can verify, and clear conversion from agricultural use if applicable. Ask to see the approved layout plan with your plot number marked on it."
+    },
+    {
+      "q": "Can I get a home loan on a plot?",
+      "a": "Plot loans exist but terms are stricter than home loans — usually lower loan-to-value and shorter tenure. Construction-linked composite loans are often the better route if you plan to build."
+    }
+  ],
+  "order": 5
+}

@@ -1,0 +1,71 @@
+{
+  "name": "Tellapur",
+  "zone": "West",
+  "tagline": "High-rise growth corridor west of the Financial District",
+  "image": "/src/assets/tellapur-towers.webp",
+  "startingPrice": 7500000,
+  "about": [
+    "Tellapur has been one of the most active high-rise corridors on the western side, with large gated developments going up along the Osman Sagar and Ramachandrapuram approaches. The character of the area is defined by towers rather than street-level neighbourhood.",
+    "Because so much of the stock is under construction or recently completed, buyers here are usually choosing between possession timelines: a ready unit at a premium, or an under-construction unit with a longer wait and a payment plan.",
+    "Social infrastructure is still catching up in parts of the layout. Schools and retail have arrived, but check the specific stretch you are buying on rather than the area as a whole."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹75 L – ₹1 Cr"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹1.1 Cr – ₹1.9 Cr"
+    },
+    {
+      "label": "4 BHK / duplex",
+      "range": "₹2.2 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "villa"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK",
+    "4 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Financial District",
+      "detail": "20–30 minutes"
+    },
+    {
+      "label": "HITEC City",
+      "detail": "25–35 minutes"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "access via the Kollur and Patancheru interchanges"
+    },
+    {
+      "label": "MMTS",
+      "detail": "Tellapur station on the Hyderabad–Ramachandrapuram line"
+    }
+  ],
+  "nearbyAreas": [
+    "Kollur",
+    "Nallagandla",
+    "Ramachandrapuram",
+    "Osman Sagar",
+    "Gopanpally"
+  ],
+  "faq": [
+    {
+      "q": "Ready-to-move or under-construction in Tellapur?",
+      "a": "If you are moving in yourself and paying rent elsewhere, a ready unit usually wins once you add the rent you would pay while waiting. If you are investing with a horizon of several years, an under-construction unit in a well-funded project can make sense — but weight the developer’s delivery record heavily."
+    },
+    {
+      "q": "Is water supply an issue in the high-rises?",
+      "a": "Ask the specific project about its water source, borewell yield and whether Krishna or Godavari supply has reached the layout. This is a real differentiator here and the answer changes street by street."
+    }
+  ],
+  "order": 4
+}

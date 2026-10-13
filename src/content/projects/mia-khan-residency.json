@@ -1,0 +1,77 @@
+{
+  "name": "Mia Khan Residency",
+  "location": "tolichowki",
+  "locality": "Golden Sands Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Budget Friendly",
+  "status": "ready-to-move",
+  "possession": "December 2020",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "11 units",
+  "landArea": "19,000+ sq.ft",
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/mia-khan-residency-1.webp",
+    "/src/assets/mia-khan-residency-2.webp",
+    "/src/assets/mia-khan-residency-3.webp",
+    "/src/assets/mia-khan-residency-4.webp"
+  ],
+  "summary": "From foundation to finish — we handle it all. 3 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 11 units, 19,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as December 2020",
+    "19,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.2 km"
+    }
+  ],
+  "order": 45
+}

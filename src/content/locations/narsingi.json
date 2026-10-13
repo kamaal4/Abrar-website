@@ -1,0 +1,63 @@
+{
+  "name": "Narsingi",
+  "zone": "West",
+  "tagline": "ORR-adjacent, between the city and the western fringe",
+  "image": "/src/assets/narsingi-orr-flyover.webp",
+  "startingPrice": 8000000,
+  "featured": true,
+  "about": [
+    "Narsingi sits on the Outer Ring Road between Manikonda and Kokapet, which gives it a practical advantage: you can be on the ORR in minutes and in the Financial District shortly after.",
+    "The stock is a mix of gated apartment projects and villa communities, with pricing that generally sits below Kokapet and above the outer layouts. It has become a common shortlist entry for buyers who want ORR access without Kokapet pricing."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹80 L – ₹1.1 Cr"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹1.15 Cr – ₹2 Cr"
+    },
+    {
+      "label": "Villa",
+      "range": "₹2.5 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "villa"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK",
+    "4 BHK villa"
+  ],
+  "connectivity": [
+    {
+      "label": "Financial District",
+      "detail": "15–20 minutes"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "direct access at the Narsingi interchange"
+    },
+    {
+      "label": "Gachibowli",
+      "detail": "20–25 minutes"
+    }
+  ],
+  "nearbyAreas": [
+    "Kokapet",
+    "Manikonda",
+    "Gandipet",
+    "Puppalguda",
+    "Bandlaguda Jagir"
+  ],
+  "faq": [
+    {
+      "q": "What is the main risk to check in Narsingi?",
+      "a": "Internal road and drainage quality varies significantly between layouts. Visit the specific project approach road during or just after rain if you can — it tells you more than a brochure will."
+    }
+  ],
+  "order": 11
+}

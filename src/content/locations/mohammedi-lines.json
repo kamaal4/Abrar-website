@@ -1,0 +1,41 @@
+{
+  "name": "Mohammedi Lines",
+  "zone": "West",
+  "tagline": "A quiet pocket within the Tolichowki belt",
+  "image": "/src/assets/tolichowki-building-rainbow.webp",
+  "about": [
+    "Mohammedi Lines — MD Lines locally — is a residential pocket inside the wider Tolichowki area, with Al Kareem Colony among the layouts where new building has happened. It is small, largely residential, and reached off the main Tolichowki roads.",
+    "Because the pocket is compact, projects here tend to be single mid-rise buildings rather than multi-tower developments. That means fewer shared amenities and, usually, a shorter completion timeline."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Tolichowki main road",
+      "detail": "immediately adjoining"
+    },
+    {
+      "label": "Mehdipatnam",
+      "detail": "via the Seven Tombs road"
+    }
+  ],
+  "nearbyAreas": [
+    "Tolichowki",
+    "Shaikpet",
+    "Langar Houz",
+    "Mehdipatnam"
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between MD Lines and Tolichowki?",
+      "a": "MD Lines is a pocket within the Tolichowki belt rather than a separate area. Expect the same connectivity and a slightly quieter street environment than the arterial roads."
+    }
+  ],
+  "order": 16
+}

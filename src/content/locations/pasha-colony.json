@@ -1,0 +1,59 @@
+{
+  "name": "Pasha Colony",
+  "zone": "West",
+  "tagline": "Quiet residential streets inside the Tolichowki belt",
+  "image": "/src/assets/tolichowki-villa.webp",
+  "startingPrice": 5000000,
+  "about": [
+    "Pasha Colony is a settled residential pocket within the wider Tolichowki area, known more for its quiet internal streets than for new launches. Buyers usually arrive here after looking at Tolichowki main road and deciding they want less traffic noise.",
+    "Expect independent houses and modest apartment buildings rather than large gated projects. Because turnover is low, good units tend to move through word of mouth."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹50 L – ₹72 L"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹70 L – ₹1.1 Cr"
+    },
+    {
+      "label": "Independent house",
+      "range": "₹1.2 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "villa"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Tolichowki junction",
+      "detail": "about 5 minutes"
+    },
+    {
+      "label": "Financial District",
+      "detail": "25–35 minutes"
+    },
+    {
+      "label": "Mehdipatnam",
+      "detail": "about 12 minutes"
+    }
+  ],
+  "nearbyAreas": [
+    "Tolichowki",
+    "Langar Houz",
+    "Shaikpet"
+  ],
+  "faq": [
+    {
+      "q": "Is there much new construction here?",
+      "a": "Not a lot. Most activity is redevelopment of older plots into small apartment buildings, so supply is thin and specific — it helps to tell us what you want and let us watch for it."
+    }
+  ],
+  "order": 3
+}

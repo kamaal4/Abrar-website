@@ -1,0 +1,68 @@
+{
+  "name": "Ashiyana",
+  "location": "tolichowki",
+  "locality": "Anurag Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Budget Friendly",
+  "status": "under-construction",
+  "possession": "December 2027",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "14 units",
+  "landArea": "27,000+ sq.ft",
+  "unitsAvailable": 6,
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/ashiyana-1.webp"
+  ],
+  "summary": "3 BHK in Anurag Colony, Tolichowki, Hyderabad — 14 units, 27,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "6 of 14 units still available",
+    "2 units per floor",
+    "Possession stated as December 2027",
+    "27,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "GHMC Approved",
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.5 km"
+    }
+  ],
+  "order": 6
+}

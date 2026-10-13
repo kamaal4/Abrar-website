@@ -1,0 +1,69 @@
+{
+  "name": "Ameena Fasi Manzil",
+  "location": "vijay-nagar",
+  "locality": "Vijay Nagar Colony",
+  "kind": "residential",
+  "category": "Premium Project",
+  "status": "ready-to-move",
+  "possession": "March 2026",
+  "configurations": [
+    "2 BHK"
+  ],
+  "units": "11 units",
+  "landArea": "15,000+ sq.ft",
+  "unitsPerFloor": 2,
+  "images": [
+    "/src/assets/ameena-fasi-manzil-1.webp",
+    "/src/assets/ameena-fasi-manzil-2.webp",
+    "/src/assets/ameena-fasi-manzil-3.webp",
+    "/src/assets/ameena-fasi-manzil-4.webp"
+  ],
+  "summary": "In every beam we place, in every wall we raise, exists the potential for something amazing.",
+  "highlights": [
+    "2 BHK configuration",
+    "2 units per floor",
+    "Possession stated as March 2026",
+    "15,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality Red Brick",
+    "Teakwood Frames",
+    "Vitrified Tile Flooring",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.3 km"
+    }
+  ],
+  "order": 26
+}

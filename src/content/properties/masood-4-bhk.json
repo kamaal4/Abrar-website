@@ -1,0 +1,68 @@
+{
+  "title": "4 BHK in Masood",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "masood",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/masood-1.webp",
+    "/src/assets/masood-2.webp"
+  ],
+  "summary": "Every brick counts. Every deadline matters. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 7 units, 17,000+ sq.ft built-up.",
+  "highlights": [
+    "4 BHK configuration",
+    "1 unit per floor",
+    "Possession stated as April 2024",
+    "17,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.9 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 53
+}

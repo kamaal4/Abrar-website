@@ -1,0 +1,46 @@
+{
+  "name": "Malakpet",
+  "zone": "Central",
+  "tagline": "Central, connected and served by the Metro",
+  "image": "/src/assets/hussain-sagar.webp",
+  "about": [
+    "Malakpet sits south-east of the centre, on the Metro Blue Line and close to the Musi and the old-city approaches. Akbar Bagh is one of the colonies within it where residential building has continued.",
+    "It is an established, dense area — the stock is mostly apartments, and much of it is resale rather than new. The Metro station is the single biggest practical advantage for a daily commuter."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Metro",
+      "detail": "Malakpet station on the Blue Line"
+    },
+    {
+      "label": "Secunderabad and Koti",
+      "detail": "direct road and rail links"
+    },
+    {
+      "label": "Dilsukhnagar",
+      "detail": "a short distance east"
+    }
+  ],
+  "nearbyAreas": [
+    "Dilsukhnagar",
+    "Saidabad",
+    "Koti",
+    "Chaderghat",
+    "Nalgonda X Roads"
+  ],
+  "faq": [
+    {
+      "q": "Why buy in Malakpet rather than the western corridor?",
+      "a": "Price per square foot and Metro access. If your work is in the centre, Secunderabad or the east, Malakpet is a far shorter commute than anything in the west — and you are buying into an area that is already fully serviced."
+    }
+  ],
+  "order": 17
+}

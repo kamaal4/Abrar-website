@@ -1,0 +1,77 @@
+{
+  "name": "Avenue",
+  "location": "tolichowki",
+  "locality": "Golden Sands Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Premium Project",
+  "status": "ready-to-move",
+  "possession": "December 2022",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "7 units",
+  "landArea": "13,000+ sq.ft",
+  "unitsPerFloor": 1,
+  "images": [
+    "/src/assets/avenue-1.webp",
+    "/src/assets/avenue-2.webp",
+    "/src/assets/avenue-3.webp",
+    "/src/assets/avenue-4.webp"
+  ],
+  "summary": "We build. You shine. 3 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 7 units, 13,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "1 unit per floor",
+    "Possession stated as December 2022",
+    "13,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.3 km"
+    }
+  ],
+  "order": 27
+}

@@ -1,0 +1,78 @@
+{
+  "title": "2 BHK in Haseeb Residency",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "alkapur",
+  "project": "haseeb-residency",
+  "areaUnit": "sqft",
+  "bhk": 2,
+  "verified": false,
+  "images": [
+    "/src/assets/haseeb-residency-1.webp",
+    "/src/assets/haseeb-residency-2.webp",
+    "/src/assets/haseeb-residency-3.webp",
+    "/src/assets/haseeb-residency-4.webp"
+  ],
+  "summary": "Haseeb Residency — 2 to 3 BHK homes in Diamond Hills Colony, Alkapur.",
+  "highlights": [
+    "2 BHK & 3 BHK configuration",
+    "4 units per floor",
+    "Possession stated as December 2023",
+    "31,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.5 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 46
+}

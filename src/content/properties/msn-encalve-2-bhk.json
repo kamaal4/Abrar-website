@@ -1,0 +1,78 @@
+{
+  "title": "2 BHK in MSN Encalve",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "alkapur",
+  "project": "msn-encalve",
+  "areaUnit": "sqft",
+  "bhk": 2,
+  "verified": false,
+  "images": [
+    "/src/assets/msn-encalve-1.webp",
+    "/src/assets/msn-encalve-2.webp",
+    "/src/assets/msn-encalve-3.webp",
+    "/src/assets/msn-encalve-4.webp"
+  ],
+  "summary": "MSN Enclave – 3 BHK homes designed for comfort, security and a future-ready lifestyle.",
+  "highlights": [
+    "2 BHK & 3 BHK configuration",
+    "3 units per floor",
+    "Possession stated as January 2023",
+    "27,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 58
+}

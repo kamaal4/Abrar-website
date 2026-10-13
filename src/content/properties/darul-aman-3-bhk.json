@@ -1,0 +1,70 @@
+{
+  "title": "3 BHK in Darul Aman",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "alkapur",
+  "project": "darul-aman",
+  "areaUnit": "sqft",
+  "bhk": 3,
+  "verified": false,
+  "images": [
+    "/src/assets/darul-aman-1.webp",
+    "/src/assets/darul-aman-2.webp",
+    "/src/assets/darul-aman-3.webp",
+    "/src/assets/darul-aman-4.webp"
+  ],
+  "summary": "Darul Aman — 3 BHK in Alkapur, Hyderabad. 26 units, 49,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "4 units per floor",
+    "Possession stated as October 2024",
+    "49,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.5 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 38
+}

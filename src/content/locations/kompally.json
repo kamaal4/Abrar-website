@@ -1,0 +1,64 @@
+{
+  "name": "Kompally",
+  "zone": "North",
+  "tagline": "North-side residential belt with room to grow",
+  "image": "/src/assets/kompally-sunset.webp",
+  "startingPrice": 4800000,
+  "about": [
+    "Kompally is the established anchor of the northern residential belt, on the Medchal highway side of the city. Gated apartment projects, independent villas and plotted layouts all coexist here.",
+    "The area has good access to the northern stretch of the Outer Ring Road, and it has drawn buyers who work on the north side or want more built-up area for the money than the west offers.",
+    "Schools, hospitals and retail are all present, which makes it a practical family location rather than a purely speculative one."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹48 L – ₹70 L"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹68 L – ₹1.1 Cr"
+    },
+    {
+      "label": "Villa",
+      "range": "₹1.6 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "villa",
+    "plot"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK",
+    "4 BHK villa"
+  ],
+  "connectivity": [
+    {
+      "label": "Secunderabad",
+      "detail": "25–35 minutes"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "access at the Shamirpet and Medchal interchanges"
+    },
+    {
+      "label": "Airport",
+      "detail": "about 60 minutes via the ORR"
+    }
+  ],
+  "nearbyAreas": [
+    "Medchal",
+    "Bahadurpally",
+    "Suchitra",
+    "Alwal",
+    "Dundigal"
+  ],
+  "faq": [
+    {
+      "q": "How does Kompally compare with the western corridor on price?",
+      "a": "For the same budget you generally get more built-up area on the north side. What you trade away is proximity to the IT corridor, so it depends where the household actually commutes."
+    }
+  ],
+  "order": 7
+}

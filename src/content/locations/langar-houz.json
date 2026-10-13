@@ -1,0 +1,60 @@
+{
+  "name": "Langar Houz",
+  "zone": "West",
+  "tagline": "Older west-city pocket in the shadow of Golconda",
+  "image": "/src/assets/golconda-city.webp",
+  "startingPrice": 4500000,
+  "about": [
+    "Langar Houz is one of the older residential pockets on the western side, close to Golconda Fort and the Golconda–Gachibowli link. Plot sizes tend to be irregular and the street pattern is organic, which is worth knowing before you shortlist.",
+    "Inventory is a mix of independent houses, small apartment buildings and occasional redevelopment projects. Pricing is generally softer than Tolichowki for comparable carpet area, which is why it comes up for buyers stretching a budget to stay on this side of the city."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹45 L – ₹65 L"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹65 L – ₹95 L"
+    },
+    {
+      "label": "Independent house",
+      "range": "₹90 L onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "plot"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Tolichowki",
+      "detail": "about 10 minutes"
+    },
+    {
+      "label": "Gachibowli",
+      "detail": "20–30 minutes via the Golconda link road"
+    },
+    {
+      "label": "Mehdipatnam",
+      "detail": "about 15 minutes"
+    }
+  ],
+  "nearbyAreas": [
+    "Tolichowki",
+    "Golconda",
+    "Shaikpet",
+    "Pasha Colony"
+  ],
+  "faq": [
+    {
+      "q": "Are plot titles usually clean here?",
+      "a": "It varies more than in planned layouts, because many holdings are old and subdivided. Get an independent title search and check the encumbrance certificate for at least 30 years before you pay an advance."
+    }
+  ],
+  "order": 2
+}

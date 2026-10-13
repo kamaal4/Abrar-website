@@ -1,0 +1,68 @@
+{
+  "name": "Shankarpally",
+  "zone": "West",
+  "tagline": "Farm land, weekend homes and long-horizon plots",
+  "image": "/src/assets/telangana-farmland-3.webp",
+  "startingPrice": 2800000,
+  "about": [
+    "Shankarpally has a distinctly semi-rural character — farm land, weekend-home layouts and gated plot developments rather than city density. The Shankarpally road corridor has seen steady interest as the western side has expanded.",
+    "Because it is further out, price entry is lower and the horizon is longer. Buyers here are usually thinking in five-to-ten-year terms, or buying land for a second home rather than a primary residence."
+  ],
+  "priceRanges": [
+    {
+      "label": "Residential plot (200 sq.yd)",
+      "range": "₹28 L – ₹50 L"
+    },
+    {
+      "label": "Villa plot",
+      "range": "₹50 L – ₹95 L"
+    },
+    {
+      "label": "Farm land (per acre)",
+      "range": "₹80 L onwards"
+    }
+  ],
+  "popularTypes": [
+    "plot",
+    "farm-land",
+    "open-land"
+  ],
+  "configurations": [
+    "200 sq.yd",
+    "250 sq.yd",
+    "333 sq.yd",
+    "1 acre"
+  ],
+  "connectivity": [
+    {
+      "label": "Financial District",
+      "detail": "45–55 minutes"
+    },
+    {
+      "label": "Mokila",
+      "detail": "about 15 minutes"
+    },
+    {
+      "label": "Regional Ring Road (proposed)",
+      "detail": "alignment passes to the west"
+    },
+    {
+      "label": "MMTS",
+      "detail": "Shankarpally railway station"
+    }
+  ],
+  "nearbyAreas": [
+    "Mokila",
+    "Chevella",
+    "Kollur",
+    "Janwada",
+    "Moinabad"
+  ],
+  "faq": [
+    {
+      "q": "Is farm land a sensible first investment?",
+      "a": "It is a slower and less liquid asset than a flat, and it needs active checking of title, access and land use. If it is your first property purchase, it is worth understanding those risks properly before committing."
+    }
+  ],
+  "order": 6
+}

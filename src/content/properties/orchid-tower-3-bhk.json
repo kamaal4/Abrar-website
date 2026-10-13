@@ -1,0 +1,70 @@
+{
+  "title": "3 BHK in Orchid Tower",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "orchid-tower",
+  "areaUnit": "sqft",
+  "bhk": 3,
+  "verified": false,
+  "images": [
+    "/src/assets/orchid-tower-1.webp",
+    "/src/assets/orchid-tower-2.webp",
+    "/src/assets/orchid-tower-3.webp",
+    "/src/assets/orchid-tower-4.webp"
+  ],
+  "summary": "Architecting the Extraordinary. 3 BHK in Paramount Colony, Tolichowki, Hyderabad — 15 units, 25,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "2 units per floor",
+    "Possession stated as February 2023",
+    "25,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Schools & Colleges",
+      "distance": "2.1 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.7 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 62
+}

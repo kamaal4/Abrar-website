@@ -1,0 +1,67 @@
+{
+  "name": "Kokapet",
+  "zone": "West",
+  "tagline": "Premium high-rise district on the ORR",
+  "image": "/src/assets/kokapet-lake.webp",
+  "startingPrice": 12000000,
+  "about": [
+    "Kokapet, and the Neopolis layout in particular, has become the address for premium high-rise development in Hyderabad. Land here has been sold at some of the highest rates the city has recorded, and the built form reflects that — tall towers, large clubhouses, wide internal roads.",
+    "The area sits directly on the Outer Ring Road with quick access to the Financial District, which is the practical case for it alongside the aspirational one.",
+    "Almost everything here is either recently completed or under construction, so possession timelines and developer track record are the deciding factors."
+  ],
+  "priceRanges": [
+    {
+      "label": "3 BHK flat",
+      "range": "₹1.6 Cr – ₹3 Cr"
+    },
+    {
+      "label": "4 BHK flat",
+      "range": "₹3 Cr – ₹6 Cr"
+    },
+    {
+      "label": "Villa",
+      "range": "₹4 Cr onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "villa"
+  ],
+  "configurations": [
+    "3 BHK",
+    "4 BHK",
+    "5 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Financial District",
+      "detail": "10–15 minutes"
+    },
+    {
+      "label": "Gachibowli",
+      "detail": "15–20 minutes"
+    },
+    {
+      "label": "Outer Ring Road",
+      "detail": "direct access at the Kokapet interchange"
+    },
+    {
+      "label": "Airport",
+      "detail": "about 30 minutes via the ORR"
+    }
+  ],
+  "nearbyAreas": [
+    "Narsingi",
+    "Gandipet",
+    "Manikonda",
+    "Nanakramguda",
+    "Tellapur"
+  ],
+  "faq": [
+    {
+      "q": "Is Kokapet overpriced?",
+      "a": "It is priced as a premium district, and that premium is real — it reflects location on the ORR and the scale of the projects. Whether it is right for you depends on whether you need that address or would rather hold a larger unit further out for the same money."
+    }
+  ],
+  "order": 10
+}

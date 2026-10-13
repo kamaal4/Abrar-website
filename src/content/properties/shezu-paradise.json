@@ -1,0 +1,69 @@
+{
+  "title": "Commercial space at Shezu Paradise",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "commercial",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "shezu-paradise",
+  "areaUnit": "sqft",
+  "verified": false,
+  "images": [
+    "/src/assets/shezu-paradise-1.webp",
+    "/src/assets/shezu-paradise-2.webp",
+    "/src/assets/shezu-paradise-3.webp",
+    "/src/assets/shezu-paradise-4.webp"
+  ],
+  "summary": "Don't just plan your future - build it. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 13 units, 33,000+ sq.ft built-up.",
+  "highlights": [
+    "4 BHK configuration",
+    "2 units per floor",
+    "Possession stated as JAN 2022",
+    "33,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC APPROVED",
+    "24/7 SECURITY",
+    "POWER BACKUP",
+    "TWO 6 PASSENGER STANDARD LIFTS",
+    "CCTV SURVEILLANCE"
+  ],
+  "nearby": [
+    {
+      "label": "SCHOOLS & COLLEGES",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "HOSPITALS & PHARMACIES",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "SUPER MARKETS & GROCERY STORES",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "ATM'S & BANKS",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/CORPORATES",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "HERITAGE MONUMENTS",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "RESTAURANTS & CAFETERIA",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "RELIGIOUS PLACES",
+      "distance": "0.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 74
+}

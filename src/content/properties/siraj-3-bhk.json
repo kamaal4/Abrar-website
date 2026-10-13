@@ -1,0 +1,71 @@
+{
+  "title": "3 BHK in Siraj",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "under-construction",
+  "location": "tolichowki",
+  "project": "siraj",
+  "areaUnit": "sqft",
+  "bhk": 3,
+  "verified": false,
+  "images": [
+    "/src/assets/siraj-1.webp",
+    "/src/assets/siraj-2.webp",
+    "/src/assets/siraj-3.webp",
+    "/src/assets/siraj-4.webp"
+  ],
+  "summary": "A destination of peace and luxury. 3 BHK in Paramount Colony, Tolichowki, Hyderabad — 16 units, 33,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "11 of 16 units still available",
+    "2 units per floor",
+    "Possession stated as January 2027",
+    "33,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "6 Passenger Standard Lift"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Supermarkets & Grocery Stores",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.0 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "1.3 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 21
+}

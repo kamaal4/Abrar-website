@@ -1,0 +1,62 @@
+{
+  "title": "4 BHK in Noor Khan Bazar",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "under-construction",
+  "location": "noor-khan-bazar",
+  "project": "noor-khan-bazar",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/noor-khan-bazar-1.webp",
+    "/src/assets/noor-khan-bazar-2.webp",
+    "/src/assets/noor-khan-bazar-3.webp",
+    "/src/assets/noor-khan-bazar-4.webp"
+  ],
+  "summary": "Good buildings come from good people, and all problems are solved by good design. 3 BHK & 4 BHK in Noor Khan Bazar, Hyderabad — 6 units, 25,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK & 4 BHK configuration",
+    "1 unit per floor",
+    "Possession stated as July 2027",
+    "25,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "CCTV Surveillance",
+    "Two 6 Passenger Standard Lifts"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.0 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "1.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 19
+}

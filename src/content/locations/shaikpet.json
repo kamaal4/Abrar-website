@@ -1,0 +1,53 @@
+{
+  "name": "Shaikpet",
+  "zone": "West",
+  "tagline": "Between Golconda and the Jubilee Hills edge",
+  "image": "/src/assets/golconda-city.webp",
+  "featured": true,
+  "about": [
+    "Shaikpet runs from the Golconda side towards the Jubilee Hills and Film Nagar edge, which gives it an unusual mix: heritage land on one flank, established high-value residential on the other. Aziz Bagh and Satya Colony are among the pockets where newer development has concentrated.",
+    "The area is fully built out along its main roads, so new projects here are infill rather than greenfield — smaller plots, mid-rise buildings, and a fair amount of commercial on the arterial stretches.",
+    "People buy here for the location rather than for amenities: you are close to Banjara Hills, Tolichowki and the western corridor at once."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat",
+    "commercial"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Jubilee Hills and Banjara Hills",
+      "detail": "directly adjoining to the north"
+    },
+    {
+      "label": "Tolichowki",
+      "detail": "along the Seven Tombs road"
+    },
+    {
+      "label": "Golconda Fort",
+      "detail": "immediately west"
+    }
+  ],
+  "nearbyAreas": [
+    "Tolichowki",
+    "Golconda",
+    "Film Nagar",
+    "Manikonda",
+    "Langar Houz"
+  ],
+  "faq": [
+    {
+      "q": "Is Shaikpet a good rental area?",
+      "a": "Rental demand is generally steady because of how central it is and how close it sits to Banjara Hills and the western offices. As always the specific building and its parking matter more to a tenant than the postcode."
+    },
+    {
+      "q": "Anything specific to check in Shaikpet?",
+      "a": "Land near the Golconda side can carry heritage-zone and height restrictions. Confirm the sanctioned plan and the permitted number of floors against what has actually been built."
+    }
+  ],
+  "order": 14
+}

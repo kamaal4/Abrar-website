@@ -1,0 +1,71 @@
+{
+  "title": "4 BHK in Al Quadeer",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "under-construction",
+  "location": "alkapur",
+  "project": "al-quadeer",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/al-quadeer-1.webp",
+    "/src/assets/al-quadeer-2.webp",
+    "/src/assets/al-quadeer-3.webp",
+    "/src/assets/al-quadeer-4.webp"
+  ],
+  "summary": "Al Quadeer — 3 BHK & 4 BHK in Alkapur, Hyderabad. 22 units, 47,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK & 4 BHK configuration",
+    "6 of 22 units still available",
+    "3 units per floor",
+    "Possession stated as August 2026",
+    "47,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & colleges",
+      "distance": "1.9 km"
+    },
+    {
+      "label": "Hospitals & pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Religious places",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Super markets & grocery stores",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Heritage monuments",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "ATMs & banks",
+      "distance": "1.5 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 5
+}

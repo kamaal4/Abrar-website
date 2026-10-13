@@ -1,0 +1,80 @@
+{
+  "name": "Serene Heights",
+  "location": "tolichowki",
+  "locality": "Golden Sands Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Prestige",
+  "status": "ready-to-move",
+  "possession": "January 2023",
+  "configurations": [
+    "3 BHK",
+    "4 BHK"
+  ],
+  "units": "53 units",
+  "landArea": "160,000+ sq.ft",
+  "unitsPerFloor": 7,
+  "featured": true,
+  "images": [
+    "/src/assets/serene-heights-1.webp",
+    "/src/assets/serene-heights-2.webp",
+    "/src/assets/serene-heights-3.webp",
+    "/src/assets/serene-heights-4.webp"
+  ],
+  "summary": "Great construction doesn't cost more - it pays more. 3 BHK & 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 53 units, 160,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK & 4 BHK configuration",
+    "7 units per floor",
+    "Possession stated as January 2023",
+    "160,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "Three 6 Passenger Standard Lifts",
+    "CCTV Surveillance"
+  ],
+  "specs": [
+    "Best Quality AAC Block",
+    "Teakwood Frames",
+    "Vitrified Tile Floorings",
+    "Premium Bathroom Fittings",
+    "False Ceilings",
+    "Masterfully Crafted 3 & 4 BHK"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.9 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.3 km"
+    }
+  ],
+  "order": 54
+}

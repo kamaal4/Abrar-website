@@ -1,0 +1,71 @@
+{
+  "title": "4 BHK in Sapphire",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "sapphire",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/sapphire-1.webp",
+    "/src/assets/sapphire-2.webp",
+    "/src/assets/sapphire-3.webp",
+    "/src/assets/sapphire-4.webp"
+  ],
+  "summary": "From foundation to finish - we handle it all. 4 BHK in Golden Sands Colony, Tolichowki, Hyderabad — 33 units, 72,000+ sq.ft built-up.",
+  "highlights": [
+    "4 BHK configuration",
+    "2 of 33 units still available",
+    "4 units per floor",
+    "Possession stated as April 2026",
+    "72,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "Two 6 passenger standard lifts",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Supermarkets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATMs & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.5 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 71
+}

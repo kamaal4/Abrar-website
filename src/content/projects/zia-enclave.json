@@ -1,0 +1,85 @@
+{
+  "name": "Zia Enclave",
+  "location": "tolichowki",
+  "locality": "Brindavan Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Budget Friendly",
+  "status": "ready-to-move",
+  "possession": "July 2024",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "7 units",
+  "landArea": "11,900+ sq.ft",
+  "unitsPerFloor": 1,
+  "images": [
+    "/src/assets/zia-enclave-1.webp",
+    "/src/assets/zia-enclave-2.webp",
+    "/src/assets/zia-enclave-3.webp",
+    "/src/assets/zia-enclave-4.webp"
+  ],
+  "summary": "Where every square foot adds value to your future. 3 BHK in Brindavan Colony, Tolichowki, Hyderabad — 7 units, 11,900+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "1 unit per floor",
+    "Possession stated as July 2024",
+    "11,900+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC approved",
+    "24/7 security",
+    "Power backup",
+    "6 passenger standard lift",
+    "CCTV surveillance",
+    "Premium bathroom fittings",
+    "False ceilings"
+  ],
+  "specs": [
+    "Best quality AAC block",
+    "Teakwood frames",
+    "Vitrified tile floorings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.9 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.1 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.1 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "1.7 km"
+    },
+    {
+      "label": "Public Transportation Hubs",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Gym/Park",
+      "distance": "1.1 km"
+    }
+  ],
+  "order": 57
+}

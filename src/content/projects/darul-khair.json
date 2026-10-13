@@ -1,0 +1,78 @@
+{
+  "name": "Darul Khair",
+  "location": "tolichowki",
+  "locality": "Surya Nagar Colony, Tolichowki",
+  "kind": "residential",
+  "category": "Premium Project",
+  "status": "ready-to-move",
+  "possession": "December 2023",
+  "configurations": [
+    "3 BHK"
+  ],
+  "units": "26 units",
+  "landArea": "47,000+ sq.ft",
+  "unitsPerFloor": 4,
+  "images": [
+    "/src/assets/darul-khair-1.webp",
+    "/src/assets/darul-khair-2.webp",
+    "/src/assets/darul-khair-3.webp",
+    "/src/assets/darul-khair-4.webp"
+  ],
+  "summary": "Your home should tell the story of who you are, and be a collection of what you love. 3 BHK in Surya Nagar Colony, Tolichowki, Hyderabad — 26 units, 47,000+ sq.ft built-up.",
+  "highlights": [
+    "3 BHK configuration",
+    "4 units per floor",
+    "Possession stated as December 2023",
+    "47,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "Two 6 Passenger Standard Lifts",
+    "CCTV Surveillance",
+    "Masterfully Designed 3 BHK"
+  ],
+  "specs": [
+    "Best Quality Red Brick",
+    "Teakwood Frames",
+    "Vitrified Tile Flooring",
+    "Premium Bathroom Fittings",
+    "False Ceilings"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.1 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.3 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.9 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.7 km"
+    }
+  ],
+  "order": 32
+}

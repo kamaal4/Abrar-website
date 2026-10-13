@@ -1,0 +1,61 @@
+{
+  "name": "Kapra",
+  "zone": "East",
+  "tagline": "Eastern residential area around Kapra Lake",
+  "image": "/src/assets/kapra-lake.webp",
+  "startingPrice": 4000000,
+  "about": [
+    "Kapra sits on the eastern side near ECIL and Sainikpuri, with Kapra Lake as its landmark. It is a settled residential area with a long-standing local population rather than a new corridor.",
+    "Apartments and independent houses dominate. Pricing is among the more accessible in the city for a fully serviced area, and demand is driven largely by proximity to eastern employment centres and the defence establishments."
+  ],
+  "priceRanges": [
+    {
+      "label": "2 BHK flat",
+      "range": "₹40 L – ₹60 L"
+    },
+    {
+      "label": "3 BHK flat",
+      "range": "₹58 L – ₹90 L"
+    },
+    {
+      "label": "Independent house",
+      "range": "₹95 L onwards"
+    }
+  ],
+  "popularTypes": [
+    "flat",
+    "plot"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "ECIL / Uppal",
+      "detail": "15–25 minutes"
+    },
+    {
+      "label": "Secunderabad",
+      "detail": "about 30 minutes"
+    },
+    {
+      "label": "Metro",
+      "detail": "Blue Line terminus at Nagole, then road"
+    }
+  ],
+  "nearbyAreas": [
+    "Sainikpuri",
+    "ECIL",
+    "Nagaram",
+    "Cherlapally",
+    "Uppal"
+  ],
+  "faq": [
+    {
+      "q": "Is the east side worth considering for investment?",
+      "a": "It is more of a rental-yield and affordability story than a rapid-appreciation one. If your budget is tighter and you want a serviced area rather than a developing layout, it deserves a look."
+    }
+  ],
+  "order": 8
+}

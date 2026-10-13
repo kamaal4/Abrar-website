@@ -1,0 +1,45 @@
+{
+  "name": "Noor Khan Bazar",
+  "zone": "Central",
+  "tagline": "Old city, walking distance from Charminar",
+  "image": "/src/assets/charminar.webp",
+  "about": [
+    "Noor Khan Bazar is in the old city, close to Charminar and the historic commercial quarter. It is one of the oldest continuously inhabited parts of Hyderabad, and it reads that way: narrow streets, mixed residential and commercial use, and very little vacant land.",
+    "New residential building here is small-scale and infill by necessity. What you get in exchange is a genuinely central location within the old city and an area that needs no infrastructure to arrive."
+  ],
+  "priceRanges": [],
+  "popularTypes": [
+    "flat"
+  ],
+  "configurations": [
+    "2 BHK",
+    "3 BHK"
+  ],
+  "connectivity": [
+    {
+      "label": "Charminar",
+      "detail": "within walking distance"
+    },
+    {
+      "label": "Metro",
+      "detail": "nearest Blue Line access at Malakpet"
+    },
+    {
+      "label": "Koti and Afzalgunj",
+      "detail": "a short distance north"
+    }
+  ],
+  "nearbyAreas": [
+    "Charminar",
+    "Moghalpura",
+    "Chatta Bazar",
+    "Malakpet"
+  ],
+  "faq": [
+    {
+      "q": "What is different about buying in the old city?",
+      "a": "Title history tends to be longer and more layered than in newer layouts, and plots are often small and irregular. Budget for a proper legal search rather than a quick one, and confirm the building permission against what stands."
+    }
+  ],
+  "order": 19
+}

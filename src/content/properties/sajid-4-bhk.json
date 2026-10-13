@@ -1,0 +1,70 @@
+{
+  "title": "4 BHK in Sajid",
+  "listing": [
+    "buy",
+    "invest"
+  ],
+  "type": "flat",
+  "status": "ready-to-move",
+  "location": "tolichowki",
+  "project": "sajid",
+  "areaUnit": "sqft",
+  "bhk": 4,
+  "verified": false,
+  "images": [
+    "/src/assets/sajid-1.webp",
+    "/src/assets/sajid-2.webp",
+    "/src/assets/sajid-3.webp",
+    "/src/assets/sajid-4.webp"
+  ],
+  "summary": "Don't just plan your future - build it. 4 BHK in Sa Colony, Tolichowki, Hyderabad — 8 units, 17,000+ sq.ft built-up.",
+  "highlights": [
+    "4 BHK configuration",
+    "1 unit per floor",
+    "Possession stated as December 2024",
+    "17,000+ sq.ft of built-up area"
+  ],
+  "amenities": [
+    "GHMC Approved",
+    "24/7 Security",
+    "Power Backup",
+    "6 Passenger Standard Lift",
+    "CCTV Surveillance"
+  ],
+  "nearby": [
+    {
+      "label": "Schools & Colleges",
+      "distance": "0.7 km"
+    },
+    {
+      "label": "Hospitals & Pharmacies",
+      "distance": "0.3 km"
+    },
+    {
+      "label": "Super Markets & Grocery Stores",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "ATM's & Banks",
+      "distance": "1.3 km"
+    },
+    {
+      "label": "IT/Corporates",
+      "distance": "3.7 km"
+    },
+    {
+      "label": "Heritage Monuments",
+      "distance": "2.1 km"
+    },
+    {
+      "label": "Restaurants & Cafeteria",
+      "distance": "0.5 km"
+    },
+    {
+      "label": "Religious Places",
+      "distance": "0.1 km"
+    }
+  ],
+  "postedOn": "2026-09-08",
+  "order": 64
+}
