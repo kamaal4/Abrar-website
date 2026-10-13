@@ -1,5 +1,6 @@
 {
-  "title": "4 BHK in Aasheen",
+  "order": 1,
+  "title": "4 BHK in Aasheen##",
   "listing": [
     "buy",
     "invest"
@@ -10,6 +11,7 @@
   "project": "aasheen",
   "areaUnit": "sqft",
   "bhk": 4,
+  "featured": false,
   "verified": false,
   "images": [
     "/src/assets/aasheen-1.webp",
@@ -56,6 +58,5 @@
       "distance": "1.5 km"
     }
   ],
-  "postedOn": "2026-09-08",
-  "order": 1
+  "postedOn": "2026-09-08"
 }
