@@ -1,4 +1,5 @@
 {
+  "order": 60,
   "name": "Shezu Paradise",
   "location": "tolichowki",
   "locality": "Sa Colony, Tolichowki",
@@ -72,6 +73,5 @@
       "label": "RELIGIOUS PLACES",
       "distance": "0.1 km"
     }
-  ],
-  "order": 61
+  ]
 }

@@ -1,4 +1,5 @@
 {
+  "order": 54,
   "name": "Shareef Enclave",
   "location": "tolichowki",
   "locality": "Golden Sands Colony, Tolichowki",
@@ -73,6 +74,5 @@
       "label": "Religious Places",
       "distance": "0.3 km"
     }
-  ],
-  "order": 55
+  ]
 }

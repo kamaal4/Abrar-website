@@ -1,4 +1,5 @@
 {
+  "order": 9,
   "name": "Khizra",
   "location": "mehdipatnam",
   "locality": "Mehdipatnam",
@@ -72,6 +73,5 @@
       "label": "IT/Corporates",
       "distance": "3.7 km"
     }
-  ],
-  "order": 10
+  ]
 }

@@ -1,4 +1,5 @@
 {
+  "order": 46,
   "name": "Moosa Enclave",
   "location": "tolichowki",
   "locality": "Sa Colony, Tolichowki",
@@ -73,6 +74,5 @@
       "label": "Heritage Monuments",
       "distance": "3.3 km"
     }
-  ],
-  "order": 47
+  ]
 }

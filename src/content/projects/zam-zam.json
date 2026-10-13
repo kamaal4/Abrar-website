@@ -1,4 +1,5 @@
 {
+  "order": 17,
   "name": "Zam Zam",
   "location": "tolichowki",
   "locality": "Arvind Nagar Colony, Tolichowki",
@@ -64,6 +65,5 @@
       "label": "Religious Places",
       "distance": "0.7 km"
     }
-  ],
-  "order": 18
+  ]
 }

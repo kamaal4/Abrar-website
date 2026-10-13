@@ -1,4 +1,5 @@
 {
+  "order": 21,
   "name": "Quadri Plaza",
   "location": "shaikpet",
   "locality": "Satya Colony, Shaikpet",
@@ -83,6 +84,5 @@
       "label": "Religious Places",
       "distance": "0.7 km"
     }
-  ],
-  "order": 22
+  ]
 }

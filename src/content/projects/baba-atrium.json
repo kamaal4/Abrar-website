@@ -1,4 +1,5 @@
 {
+  "order": 18,
   "name": "Baba Atrium",
   "location": "shaikpet",
   "locality": "Shaikpet",
@@ -82,6 +83,5 @@
       "label": "Religious Places",
       "distance": "1.3 km"
     }
-  ],
-  "order": 19
+  ]
 }

@@ -1,4 +1,5 @@
 {
+  "order": 15,
   "name": "Siraj",
   "location": "tolichowki",
   "locality": "Paramount Colony, Tolichowki",
@@ -74,6 +75,5 @@
       "label": "Religious Places",
       "distance": "1.3 km"
     }
-  ],
-  "order": 16
+  ]
 }

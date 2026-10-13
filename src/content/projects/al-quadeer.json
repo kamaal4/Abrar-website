@@ -1,4 +1,5 @@
 {
+  "order": 3,
   "name": "Al Quadeer",
   "location": "alkapur",
   "locality": "Alkapur",
@@ -75,6 +76,5 @@
       "label": "ATMs & banks",
       "distance": "1.5 km"
     }
-  ],
-  "order": 4
+  ]
 }

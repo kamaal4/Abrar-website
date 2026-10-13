@@ -1,4 +1,5 @@
 {
+  "order": 41,
   "name": "Ishaq Residency",
   "location": "tolichowki",
   "locality": "Golden Sands Colony, Tolichowki",
@@ -72,6 +73,5 @@
       "label": "Religious Places",
       "distance": "0.5 km"
     }
-  ],
-  "order": 42
+  ]
 }

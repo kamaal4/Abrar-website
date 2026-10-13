@@ -1,4 +1,5 @@
 {
+  "order": 44,
   "name": "Mia Khan Residency",
   "location": "tolichowki",
   "locality": "Golden Sands Colony, Tolichowki",
@@ -72,6 +73,5 @@
       "label": "Religious Places",
       "distance": "0.2 km"
     }
-  ],
-  "order": 45
+  ]
 }

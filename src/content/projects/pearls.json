@@ -1,4 +1,5 @@
 {
+  "order": 51,
   "name": "Pearls",
   "location": "alkapur",
   "locality": "Diamond Hills Colony, Alkapur",
@@ -78,6 +79,5 @@
       "label": "Gym/Park",
       "distance": "1.1 km"
     }
-  ],
-  "order": 52
+  ]
 }

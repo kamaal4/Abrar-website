@@ -1,4 +1,5 @@
 {
+  "order": 58,
   "name": "Fatima Residency",
   "location": "tolichowki",
   "locality": "Gulshan Colony, Tolichowki",
@@ -79,6 +80,5 @@
       "label": "Religious Places",
       "distance": "0.3 km"
     }
-  ],
-  "order": 59
+  ]
 }

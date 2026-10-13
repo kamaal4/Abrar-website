@@ -1,4 +1,5 @@
 {
+  "order": 45,
   "name": "MK Tower",
   "location": "narsingi",
   "locality": "Narsingi",
@@ -75,6 +76,5 @@
       "label": "IT/Corporates",
       "distance": "2.0 km"
     }
-  ],
-  "order": 46
+  ]
 }

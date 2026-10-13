@@ -1,4 +1,5 @@
 {
+  "order": 12,
   "name": "Neknampur",
   "location": "neknampur",
   "locality": "Neknampur",
@@ -38,6 +39,5 @@
     "Vitrified Tile Flooring",
     "Premium Bathroom Fittings",
     "False Ceilings"
-  ],
-  "order": 13
+  ]
 }

@@ -1,4 +1,5 @@
 {
+  "order": 53,
   "name": "Serene Heights",
   "location": "tolichowki",
   "locality": "Golden Sands Colony, Tolichowki",
@@ -75,6 +76,5 @@
       "label": "Religious Places",
       "distance": "0.3 km"
     }
-  ],
-  "order": 54
+  ]
 }

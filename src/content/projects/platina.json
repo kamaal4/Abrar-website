@@ -1,4 +1,5 @@
 {
+  "order": 59,
   "name": "Platina",
   "location": "alkapur",
   "locality": "Alkapur",
@@ -84,6 +85,5 @@
       "label": "Gym/Park",
       "distance": "1.1 km"
     }
-  ],
-  "order": 60
+  ]
 }

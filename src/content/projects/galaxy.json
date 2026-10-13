@@ -1,4 +1,5 @@
 {
+  "order": 19,
   "name": "Galaxy",
   "location": "tolichowki",
   "locality": "Paramount Colony, Tolichowki",
@@ -75,6 +76,5 @@
       "label": "Religious Places",
       "distance": "0.5 km"
     }
-  ],
-  "order": 20
+  ]
 }

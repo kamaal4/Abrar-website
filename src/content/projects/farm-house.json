@@ -1,4 +1,5 @@
 {
+  "order": 34,
   "name": "Farm House",
   "location": "chevella",
   "locality": "Damergidda, Chevella",
@@ -49,6 +50,5 @@
       "label": "Public Transportation Hubs",
       "distance": "15 minutes"
     }
-  ],
-  "order": 35
+  ]
 }

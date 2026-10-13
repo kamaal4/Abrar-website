@@ -1,4 +1,5 @@
 {
+  "order": 31,
   "name": "Darul Khair",
   "location": "tolichowki",
   "locality": "Surya Nagar Colony, Tolichowki",
@@ -73,6 +74,5 @@
       "label": "Religious Places",
       "distance": "0.7 km"
     }
-  ],
-  "order": 32
+  ]
 }

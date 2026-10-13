@@ -1,4 +1,5 @@
 {
+  "order": 48,
   "name": "Nashika Avenue",
   "location": "tolichowki",
   "locality": "Sa Colony, Tolichowki",
@@ -72,6 +73,5 @@
       "label": "ATM's & Banks",
       "distance": "1.1 km"
     }
-  ],
-  "order": 49
+  ]
 }

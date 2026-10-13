@@ -1,4 +1,5 @@
 {
+  "order": 36,
   "name": "Haniya Residency",
   "location": "mohammedi-lines",
   "locality": "Al Kareem Colony, Md Lines",
@@ -73,6 +74,5 @@
       "label": "Religious Places",
       "distance": "0.1 km"
     }
-  ],
-  "order": 37
+  ]
 }
